@@ -218,13 +218,13 @@ lvim.plugins={
       --   ]])
       -- end
     },
-    {
-    "Pocco81/AutoSave.nvim",
-    config = function()
-      require("autosave").setup()
-    end,
-    disable = not lvim.builtin.autosave.active,
-    },
+    -- {
+    -- "Pocco81/AutoSave.nvim",
+    -- config = function()
+    --   require("autosave").setup()
+    -- end,
+    -- disable = not lvim.builtin.autosave.active,
+    -- },
   {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
@@ -252,9 +252,14 @@ lvim.plugins={
     'ZSaberLv0/ZFVimJob',
     event = "InsertEnter",
   },
+  -- {
+  --   'qdzhang/ZFVimIM_xiaohe',
+  --   after="ZFVimIM",
+  --   disable = true,
+  -- },
   {
-    'qdzhang/ZFVimIM_xiaohe',
-    after="ZFVimIM",
+    'Yiklek/ZFVimIM_openfly',
+    after = "ZFVimIM",
   },
   {
     'numToStr/Navigator.nvim',
@@ -267,15 +272,15 @@ lvim.plugins={
     config = function()
       require("user.dashboard").config()
     end,
-    disable = not lvim.builtin.fancy_dashboard.active,
+    --disable = not lvim.builtin.fancy_dashboard.active,
   },
-  {
-      "simrat39/symbols-outline.nvim",
-      config = function()
-        vim.g.symbols_outline.auto_preview = false
-      end,
-      cmd = "SymbolsOutline",
-  },
+  -- {
+  --     "simrat39/symbols-outline.nvim",
+  --     config = function()
+  --       vim.g.symbols_outline.auto_preview = false
+  --     end,
+  --     cmd = "SymbolsOutline",
+  -- },
   {
     "machakann/vim-sandwich",
 
@@ -291,12 +296,6 @@ lvim.plugins={
       event = "InsertEnter",
       requires = "nvim-treesitter/nvim-treesitter",
   },
-  -- {
-  --   'nvim-treesitter/nvim-treesitter-textobjects',
-  --   config = function ()
-  --     require("user.treesitter-textobjects")
-  --   end
-  -- }
 }
 end
 return M
