@@ -7,7 +7,7 @@ lvim.lint_on_save = true
 
 lvim.format_on_save = false
 
-lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
+lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
 lvim.builtin.fancy_dashboard = {active = true}
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
