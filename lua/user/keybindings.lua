@@ -1,13 +1,20 @@
 local M={}
 
 M.config = function()
-   --Generates keybindings
+   --基础设置
    vim.opt.relativenumber = true
    vim.opt.cmdheight = 1
    vim.opt.timeoutlen = 500
    vim.opt.encoding = "utf-8"
+   --基与treesitter的代码折叠
+   vim.o.foldmethod = "expr"
+   vim.o.foldexpr = "nvim_treesitter#foldexpr()" --为每行折叠的设置等级
+   vim.o.foldlevel = 4 --设置折叠等级高于4 就会关闭这个折叠片段
+   vim.o.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
+   vim.o.foldnestmax = 3 --设置“缩进”和“语法”的最大折叠嵌套方法。这样可以避免创建过多的折叠。使用更多大于20不起作用，因为内部限制为20。
+   vim.o.foldminlines = 1 --设置可以显示折叠的屏幕行数 关闭也适用于手动闭合的折叠。默认值为 只有在占用两条或多条屏幕线时，才能关闭一个折叠。 设置为零可以关闭一条屏幕线的折叠。 请注意，这仅对显示内容产生影响。使用后 “zc”关闭折叠，因为折叠较小，所以显示为打开 除了“折叠线”，后面的“zc”可以关闭包含折叠的部分。
 
-   -- keymappings [view all the defaults by pressing <leader>Lk]
+
    lvim.leader = "space"
    -- add your own keymapping
    lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
