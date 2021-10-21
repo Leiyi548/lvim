@@ -7,6 +7,9 @@
 ![photo2](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020192604.png)
 ![photo3](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020192658.png)
 
+## 代码结构图
+![代码结构图](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020201649.png) 
+
 ## 快捷键
 ### 窗口操作
 | 按键       | 模式         |
