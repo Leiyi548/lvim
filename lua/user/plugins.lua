@@ -296,6 +296,10 @@ lvim.plugins={
       event = "InsertEnter",
       requires = "nvim-treesitter/nvim-treesitter",
   },
+  {
+    'junegunn/vim-easy-align',
+    cmd = "EasyAlign",
+  }
 }
 end
 return M
