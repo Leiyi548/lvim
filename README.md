@@ -14,12 +14,12 @@
 ### 窗口操作
 | 按键       | 模式         |
 |------------|--------------|
-| <leader>wh | 向左移动窗口 |
-| <leader>wj | 向下移动窗口 |
-| <leader>wk | 向上移动窗口 |
-| <leader>wl | 向右移动窗口 |
-| <leaer>wv  | 垂直分屏     |
-| <leaer>ws  | 水平分屏     |
+| \<leader>wh | 向左移动窗口 |
+| \<leader>wj | 向下移动窗口 |
+| \<leader>wk | 向上移动窗口 |
+| \<leader>wl | 向右移动窗口 |
+| \<leader>wv  | 垂直分屏     |
+| \<leader>ws  | 水平分屏     |
 ### markdown
 | 按键 | 模式         |
 |------|--------------|
