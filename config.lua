@@ -28,7 +28,7 @@ require("user.plugins").config()
 require("user.keybindings").config()
 -- Customization
 -- =========================================
-
+require("user.lua_snip")
 -- Additional Formatters
 -- =========================================
 -- exe value can be "clang_format" or "uncrustify"

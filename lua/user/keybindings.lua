@@ -39,6 +39,9 @@ M.config = function()
    -- accelerated-jk
    vim.api.nvim_set_keymap('n','j','<Plug>(accelerated_jk_gj)',{ silent=true })
    vim.api.nvim_set_keymap('n','k','<Plug>(accelerated_jk_gk)',{ silent=true })
+   -- vim-easy-align
+   vim.api.nvim_set_keymap('n','ga','<Plug>(EasyAlign)',{ silent=true })
+   vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{ silent=true })
    -- run 保持终端
    vim.api.nvim_set_keymap('t','<Esc>',"<C-\\><C-n>",{silent=true})
    --tmux navigation

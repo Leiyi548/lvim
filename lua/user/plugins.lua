@@ -53,6 +53,9 @@ lvim.plugins={
       end,
     },
     {
+      "olimorris/onedarkpro.nvim"
+    },
+    {
       "rhysd/accelerated-jk"
     },
 
@@ -209,7 +212,7 @@ lvim.plugins={
     --Emmet-vim
     {
       "mattn/emmet-vim",
-      ft = {"html","css","markdown"},
+      ft = {"html","css","php","jsp","markdown"},
       -- config = function ()
       --   require("user.emmet").config()
       --   vim.cmd([[
@@ -297,8 +300,7 @@ lvim.plugins={
       requires = "nvim-treesitter/nvim-treesitter",
   },
   {
-    'junegunn/vim-easy-align',
-    cmd = "EasyAlign",
+    'junegunn/vim-easy-align'
   }
 }
 end
