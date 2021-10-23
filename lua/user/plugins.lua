@@ -301,6 +301,12 @@ lvim.plugins={
   },
   {
     'junegunn/vim-easy-align'
+  },
+  {
+    'glepnir/lspsaga.nvim'
+  },
+  {
+    "lukas-reineke/cmp-under-comparator",
   }
 }
 end

@@ -22,7 +22,7 @@ M.setup = function()
     "dashboard",
     "packer",
     "neogitstatus",
-    "NvimTree",
+    --"NvimTree",
     "Trouble",
     "lspinfo",
     "", -- for all buffers without a file type

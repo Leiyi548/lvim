@@ -10,6 +10,7 @@ lvim.format_on_save = false
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
 lvim.builtin.fancy_dashboard = {active = true}
+lvim.builtin.tabnine ={active = true}
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
@@ -18,6 +19,7 @@ lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+require("user.builtin").config()
 
 -- Additional Plugins
 -- =========================================

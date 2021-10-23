@@ -44,6 +44,13 @@ M.config = function()
    vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{ silent=true })
    -- run 保持终端
    vim.api.nvim_set_keymap('t','<Esc>',"<C-\\><C-n>",{silent=true})
+   --lspsaga
+   lvim.keys.normal_mode["<leader>ca"] = "<CMD>lua require('lspsaga.codeaction').code_action()<CR>"
+   lvim.keys.normal_mode["<leader>rm"] = "<CMD>lua require('lspsaga.rename').rename()<CR>"
+   lvim.keys.normal_mode["gp"] = "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>"
+   lvim.keys.normal_mode["K"] = "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>"
+   lvim.keys.normal_mode["<C-j>"] = "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"
+   lvim.keys.normal_mode["<C-k>"] = "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"
    --tmux navigation
    lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<CR>";
    lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<CR>"
