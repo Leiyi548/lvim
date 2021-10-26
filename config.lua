@@ -4,8 +4,9 @@
 --lvim.format_on_save = true
 lvim.lint_on_save = true
 --lvim.colorscheme = "tokyonight"
-
-lvim.format_on_save = false
+lvim.format_on_save = true
+lvim.debug = false
+lvim.log.level = "warn"
 
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
@@ -20,6 +21,7 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 require("user.builtin").config()
+require("user.cmp-comparator")
 
 -- Additional Plugins
 -- =========================================
@@ -38,6 +40,13 @@ require("user.lua_snip")
 lvim.lang.c.formatters = { { exe = "clang-format" } }
 lvim.lang.cpp.formatters = lvim.lang.c.formatters
 --Python
+lvim.lang.html.formatters = {{exe = "prettier"}}
+-- lvim.lang.markdown.linters = {
+--     {
+--       exe = "markdownlint",
+--     },
+--   }
+--lvim.lang.markdown.linters ={ {exe = "markdownlint" } }
 -- exe value can be "black", "yapf", or "isort"
---lvim.lang.python.linters = { { exe = "isort" } }
---lvim.lang.python.formatters = { { exe = "black" } }
+-- lvim.lang.python.linters = { { exe = "isort" } }
+-- lvim.lang.python.formatters = { { exe = "black" } }

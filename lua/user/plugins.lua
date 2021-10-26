@@ -307,6 +307,25 @@ lvim.plugins={
   },
   {
     "lukas-reineke/cmp-under-comparator",
+  },
+  {
+    "chentau/marks.nvim",
+    keys ={"m"},
+    config = function ()
+      require("user.mark")
+    end
+  },
+  {
+    'prettier/vim-prettier',
+    ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'},
+  },
+  {
+    'yamatsum/nvim-cursorline',
+    event = {"BufReadPre","BufNewFile"},
+  },
+  {
+    'mbbill/undotree',
+	  cmd = {"UndotreeToggle"},
   }
 }
 end
