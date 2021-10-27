@@ -1,7 +1,7 @@
 local M={}
 
 M.config = function()
-   -- INFO:基础设置
+   -- INFO:basic setting
    vim.opt.relativenumber = true
    vim.opt.cmdheight = 1
    vim.opt.timeoutlen = 500
@@ -16,8 +16,14 @@ M.config = function()
    vim.o.foldnestmax = 3 --设置“缩进”和“语法”的最大折叠嵌套方法。这样可以避免创建过多的折叠。使用更多大于20不起作用，因为内部限制为20。
    vim.o.foldminlines = 1 --设置可以显示折叠的屏幕行数 关闭也适用于手动闭合的折叠。默认值为 只有在占用两条或多条屏幕线时，才能关闭一个折叠。 设置为零可以关闭一条屏幕线的折叠。 请注意，这仅对显示内容产生影响。使用后 “zc”关闭折叠，因为折叠较小，所以显示为打开 除了“折叠线”，后面的“zc”可以关闭包含折叠的部分。
    vim.g.dashboard_disable_statusline = 1
-
-
+   -- FIX: delete H L to move buffer
+   lvim.builtin.bufferline.keymap={
+     normal_mode = {
+       ["<S-h>"] = nil;
+       ["<S-l>"] = nil;
+    }
+  }
+   --leader key
    lvim.leader = "space"
    -- INFO: add your own keymapping
    -- INFO: normal_mode
@@ -26,8 +32,8 @@ M.config = function()
    lvim.keys.normal_mode["<S-Tab>"] = ":bprevious<CR>"
    lvim.keys.normal_mode["Q"]=":qa!<cr>"
    lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
-   lvim.keys.normal_mode["H"] = "0"
-   lvim.keys.normal_mode["L"] = "$"
+   lvim.keys.normal_mode["<S-h>"] = "0"
+   lvim.keys.normal_mode["<S-l>"] = "$"
    lvim.keys.normal_mode["<leader>sc"] = "<cmd>nohlsearch<cr>"
    lvim.keys.normal_mode["<leader>wv"] = "<cmd>vsplit<cr>"
    lvim.keys.normal_mode["<leader>ws"] = "<cmd>split<cr>"
@@ -39,7 +45,7 @@ M.config = function()
    -- INFO: visula_mode
    lvim.keys.visual_mode["H"] = "0"
    lvim.keys.visual_mode["L"] = "$"
-   -- INFO:fix jk to Escape
+   -- FIX: delete jk to escape
    lvim.keys.insert_mode["jk"] = nil
    lvim.keys.insert_mode["kj"] = nil
    lvim.keys.insert_mode["jj"] = nil

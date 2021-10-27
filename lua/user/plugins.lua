@@ -337,6 +337,13 @@ lvim.plugins={
     "nvim-treesitter/nvim-treesitter-textobjects",
     before = "nvim-treesitter",
   },
+  {
+    'romgrk/nvim-treesitter-context',
+    after = "nvim-treesitter",
+    -- config = function ()
+    --   require("user.nvim-treesitter-context")
+    -- end
+  }
 }
 end
 return M

@@ -35,9 +35,6 @@ M.config = function()
     calc = "  ",
     cmp_tabnine = "  ",
   }
-  -- lvim.builtin.cmp.sorting = {
-  --   require "cmp-under-comparator".under,
-  -- }
 
   -- LSP
   -- =========================================
