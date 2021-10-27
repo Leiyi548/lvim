@@ -2,9 +2,9 @@
 
 -- general
 --lvim.format_on_save = true
-lvim.lint_on_save = true
+lvim.lint_on_save = false
 --lvim.colorscheme = "tokyonight"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.debug = false
 lvim.log.level = "warn"
 
@@ -30,9 +30,14 @@ require("user.plugins").config()
 -- Additional keybindings
 -- =========================================
 require("user.keybindings").config()
+
 -- Customization
 -- =========================================
 require("user.lua_snip")
+
+-- Autocommands
+-- =========================================
+require("user.autocommands").config()
 -- Additional Formatters
 -- =========================================
 -- exe value can be "clang_format" or "uncrustify"
@@ -41,6 +46,7 @@ lvim.lang.c.formatters = { { exe = "clang-format" } }
 lvim.lang.cpp.formatters = lvim.lang.c.formatters
 --Python
 lvim.lang.html.formatters = {{exe = "prettier"}}
+--if you want to use markdown linters
 -- lvim.lang.markdown.linters = {
 --     {
 --       exe = "markdownlint",

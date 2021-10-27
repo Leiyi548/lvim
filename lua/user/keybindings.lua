@@ -32,6 +32,10 @@ M.config = function()
    lvim.keys.normal_mode["<leader>wv"] = "<cmd>vsplit<cr>"
    lvim.keys.normal_mode["<leader>ws"] = "<cmd>split<cr>"
    lvim.keys.normal_mode["<leader>wd"] = "<C-w>c"
+   lvim.keys.normal_mode["<leader>wh"] = "<C-w>h"
+   lvim.keys.normal_mode["<leader>wj"] = "<C-w>j"
+   lvim.keys.normal_mode["<leader>wk"] = "<C-w>k"
+   lvim.keys.normal_mode["<leader>wl"] = "<C-w>l"
    -- INFO: visula_mode
    lvim.keys.visual_mode["H"] = "0"
    lvim.keys.visual_mode["L"] = "$"
@@ -42,8 +46,8 @@ M.config = function()
     -- INFO:quickcopy
    lvim.keys.normal_mode["Y"] = "y$"
 -- lvim.keys.normal_mode["<leader>y"] = '"+y'
-   -- lvim.keys.normal_mode["<leader>yy"] = '"+yy'
-   -- lvim.keys.normal_mode["<leader>p"] = '"+p"'
+-- lvim.keys.normal_mode["<leader>yy"] = '"+yy'
+-- lvim.keys.normal_mode["<leader>p"] = '"+p"'
 
    -- X closes a buffer
    lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"

@@ -50,29 +50,20 @@ M.config = function()
 
 
 
-  -- Project
+  -- INFO:Project
   -- =========================================
   lvim.builtin.project.active = true
 
-  -- Treesitter
-  -- =========================================
-  -- lvim.builtin.treesitter.context_commentstring.enable = true
-  -- lvim.builtin.treesitter.ensure_installed = "maintained"
-  -- lvim.builtin.treesitter.highlight.disable = {}
-  -- lvim.builtin.treesitter.ignore_install = { "haskell" }
-  -- lvim.builtin.treesitter.incremental_selection = {
-  --   enable = true,
-  --   keymaps = {
-  --     init_selection = "<C-n>",
-  --     node_incremental = "<C-n>",
-  --     scope_incremental = "<C-s>",
-  --     node_decremental = "<C-r>",
-  --   },
-  -- }
+  -- INFO:treesitter
   lvim.builtin.treesitter.indent = { enable = true, disable = { "yaml", "python" } } -- treesitter is buggy :(
   lvim.builtin.treesitter.matchup.enable = true
-  --lvim.treesitter.textsubjects.enable = true
-  --lvim.treesitter.playground.enable = true
+  lvim.builtin.treesitter.textsubjects = { enable = true }
+  lvim.builtin.treesitter.playground = { enable = true }
+  lvim.builtin.treesitter.context_commentstring = { enable = true }
+  lvim.builtin.treesitter.highlight = { enable = true }
+  lvim.builtin.treesitter.autotag = { enable = true }
+  lvim.builtin.treesitter.playground = { enable = true }
+  lvim.builtin.treesitter.rainbow = { enable = true }
   lvim.builtin.treesitter.query_linter = {
     enable = true,
     use_virtual_text = true,
@@ -97,7 +88,51 @@ M.config = function()
     }
   end
 
-  -- Telescope
+  lvim.builtin.treesitter.textobjects = {
+  lookahead = true,
+  select = {
+    enable = true,
+    keymaps = {
+      ["af"] = "@function.outer",
+      ["if"] = "@function.inner",
+      ["ac"] = "@class.outer",
+      ["ic"] = "@class.inner",
+      ["aC"] = "@conditional.outer",
+      ["iC"] = "@conditional.inner",
+    },
+  },
+  swap = {
+    enable = true,
+    swap_next = {
+      ["[w"] = "@parameter.inner",
+    },
+    swap_previous = {
+      ["]w"] = "@parameter.inner",
+    },
+  },
+  move = {
+    enable = true,
+    set_jumps = true, -- whether to set jumps in the jumplist
+    goto_next_start = {
+      ["]m"] = "@function.outer",
+      ["]]"] = "@class.outer",
+    },
+    goto_previous_start = {
+      ["[m"] = "@function.outer",
+      ["[["] = "@class.outer",
+    },
+  },
+  lsp_interop = {
+    enable = true,
+    border = "rounded",
+    peek_definition_code = {
+      ["df"] = "@function.outer",
+      ["dF"] = "@class.outer",
+    },
+  },
+}
+
+  -- INFO:Telescope
   -- =========================================
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
@@ -124,14 +159,14 @@ M.config = function()
     },
   }
 
-  -- Terminal
+  -- INFO:Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
   -- lvim.builtin.terminal.execs = {
   --   { "lazygit", "gg", "LazyGit" },
   -- }
 
-  -- WhichKey
+  -- INFO:WhichKey
   -- =========================================
   lvim.builtin.which_key.setup.window.winblend = 10
   lvim.builtin.which_key.setup.window.border = "none"
@@ -156,18 +191,6 @@ M.config = function()
     wk.register(keys, { mode = "n" })
   end
 
-  -- ETC
-  -- =========================================
-  -- local _time = os.date "*t"
-  -- if _time.hour >= 21 and _time.hour <= 24 then
-  --   lvim.colorscheme = "onedarker"
-  -- end
-  --   if lvim.builtin.lastplace.active == false then
-  --     -- go to last loc when opening a buffer
-  --     vim.cmd [[
-  --   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
-  -- ]]
-  --   end
 end
 
 return M

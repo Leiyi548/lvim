@@ -102,7 +102,13 @@ lvim.plugins={
       end
     },
     {
-      "voldikss/vim-floaterm"
+      "voldikss/vim-floaterm",
+      config = function ()
+        vim.g.floaterm_width=0.7
+        vim.g.floaterm_height=0.7
+        vim.g.floaterm_title=""
+        vim.g.floaterm_borderchars   = {'─','│','─','│','╭','╮','╯','╰'}
+      end
     },
 
     --search file
@@ -326,7 +332,11 @@ lvim.plugins={
   {
     'mbbill/undotree',
 	  cmd = {"UndotreeToggle"},
-  }
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    before = "nvim-treesitter",
+  },
 }
 end
 return M
