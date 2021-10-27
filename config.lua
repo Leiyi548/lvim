@@ -4,7 +4,7 @@
 --lvim.format_on_save = true
 lvim.lint_on_save = false
 --lvim.colorscheme = "tokyonight"
-lvim.format_on_save = false
+lvim.format_on_save = true
 lvim.debug = false
 lvim.log.level = "warn"
 
@@ -19,6 +19,7 @@ lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.notify.active = true
 
 require("user.builtin").config()
 require("user.cmp-comparator")

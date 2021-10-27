@@ -219,13 +219,12 @@ lvim.plugins={
     {
       "mattn/emmet-vim",
       ft = {"html","css","php","jsp","markdown"},
-      -- config = function ()
-      --   require("user.emmet").config()
-      --   vim.cmd([[
-      --   source ~/.config/nvim/html-snippets.vim
-      --   autocmd BufRead,BufNewFile *.md setlocal spell
-      --   ]])
-      -- end
+      config = function ()
+        vim.cmd([[
+        source ~/.config/nvim/html-snippets.vim
+        autocmd BufRead,BufNewFile *.md setlocal spell
+        ]])
+      end
     },
     -- {
     -- "Pocco81/AutoSave.nvim",
@@ -324,11 +323,12 @@ lvim.plugins={
   {
     'prettier/vim-prettier',
     ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'},
+    disable = "true",
   },
-  {
-    'yamatsum/nvim-cursorline',
-    event = {"BufReadPre","BufNewFile"},
-  },
+  -- {
+  --   'yamatsum/nvim-cursorline',
+  --   event = {"BufReadPre","BufNewFile"},
+  -- },
   {
     'mbbill/undotree',
 	  cmd = {"UndotreeToggle"},
@@ -340,10 +340,11 @@ lvim.plugins={
   {
     'romgrk/nvim-treesitter-context',
     after = "nvim-treesitter",
-    -- config = function ()
-    --   require("user.nvim-treesitter-context")
-    -- end
-  }
+  },
+  {
+	'itchyny/vim-cursorword',
+	event = {"BufReadPre","BufNewFile"},
+  },
 }
 end
 return M
