@@ -15,7 +15,8 @@ M.config = function()
     { name = "emoji" },
     { name = "treesitter" },
     { name = "crates" },
-    { name = "spell"},
+    { name = "spell", max_item_count = 3},
+    { name = "orgmode"},
   }
   lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   lvim.builtin.cmp.experimental = {
@@ -52,9 +53,9 @@ M.config = function()
   -- =========================================
   lvim.builtin.project.active = true
 
-  -- INFO:treesitter
   lvim.builtin.treesitter.indent = { enable = true, disable = { "yaml", "python" } } -- treesitter is buggy :(
   lvim.builtin.treesitter.matchup.enable = true
+  -- INFO:treesitter
   lvim.builtin.treesitter.textsubjects = { enable = true }
   lvim.builtin.treesitter.playground = { enable = true }
   lvim.builtin.treesitter.context_commentstring = { enable = true }
@@ -84,6 +85,14 @@ M.config = function()
         files = { "src/parser.c", "src/scanner.cc" },
       },
     }
+    parser_config.org = {
+    install_info = {
+      url = 'https://github.com/milisims/tree-sitter-org',
+      revision = 'main',
+      files = {'src/parser.c', 'src/scanner.cc'},
+    },
+    filetype = 'org',
+  }
   end
 
   lvim.builtin.treesitter.textobjects = {

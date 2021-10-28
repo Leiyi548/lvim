@@ -1,3 +1,4 @@
+---@diagnostic disable: duplicate-index
 local M ={}
 
 M.config = function ()
@@ -137,12 +138,45 @@ lvim.plugins={
     {
     'kristijanhusak/orgmode.nvim',
     ft = {'org'},
+    branch = "tree-sitter",
     config = function()
     require('orgmode').setup{}
     end,
     disable = not lvim.builtin.orgmode.active,
 	  },
-
+    {
+    "akinsho/org-bullets.nvim",
+    ft = {'org'},
+    config = function()
+    require("org-bullets").setup {
+---@diagnostic disable-next-line: duplicate-index
+      symbols = { "◉", "○", "✸", "✿" },
+      -- or a function that receives the defaults and returns a list
+      symbols = function(default_list)
+        table.insert(default_list, "♥")
+        return default_list
+      end
+      }
+    end
+    },
+    {
+    'lukas-reineke/headlines.nvim',
+    ft = {'org'},
+    config = function()
+      vim.cmd [[highlight Headline1 guibg=#1e2718]]
+      vim.cmd [[highlight Headline2 guibg=#21262d]]
+      vim.cmd [[highlight CodeBlock guibg=#1c1c1c]]
+      vim.cmd [[highlight Dash guibg=#D19A66 gui=bold]]
+      vim.fn.sign_define("Headline1", { linehl = "Headline1" })
+      vim.fn.sign_define("Headline2",  { linehl = "Headline2" })
+      require('headlines').setup{
+        org = {
+        headline_signs = { "Headline1", "Headline2" },
+        },
+        }
+    end,
+    --disable = true,
+    },
     --Startup time
     {
 	  "dstein64/vim-startuptime",
@@ -203,7 +237,7 @@ lvim.plugins={
       event = {"InsertEnter"},
       config = function ()
         vim.g.smartim_default = 'com.apple.keylayout.ABC'
-      end
+      end,
     },
     --trouble
     {
@@ -270,7 +304,7 @@ lvim.plugins={
   -- },
   {
     'Yiklek/ZFVimIM_openfly',
-    after = "ZFVimIM",
+    event = "InsertEnter",
   },
   {
     'numToStr/Navigator.nvim',

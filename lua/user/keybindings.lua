@@ -1,6 +1,6 @@
 local M={}
 
-local actions = require "user.actions"
+--local actions = require "user.actions"
 M.config = function()
    -- INFO:basic setting
    vim.opt.relativenumber = true
@@ -73,8 +73,8 @@ M.config = function()
    lvim.keys.normal_mode["<leader>rn"] = "<CMD>lua require('lspsaga.rename').rename()<CR>"
    --lvim.keys.normal_mode["gp"] = "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>"
    --lvim.keys.normal_mode["K"] = "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>"
-   lvim.keys.normal_mode["<C-j>"] = "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"
-   lvim.keys.normal_mode["<C-k>"] = "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"
+   lvim.keys.normal_mode["<C-f>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"
+   lvim.keys.normal_mode["<C-b>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"
    --tmux navigation
    lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<CR>";
    lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<CR>"
@@ -120,6 +120,7 @@ M.config = function()
       p = {
         name = "Packer",
         c = { "<cmd>PackerCompile<cr>", "Compile" },
+        C = { "<cmd>PackerClean<cr>", "Clean" },
         i = { "<cmd>PackerInstall<cr>", "Install" },
         r = { "<cmd>lua require('lvim.utils').reload_lv_config()<cr>", "Reload" },
         s = { "<cmd>PackerStatus<cr>", "Status" },
