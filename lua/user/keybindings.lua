@@ -1,5 +1,6 @@
 local M={}
 
+local actions = require "user.actions"
 M.config = function()
    -- INFO:basic setting
    vim.opt.relativenumber = true
@@ -28,8 +29,8 @@ M.config = function()
    -- INFO: add your own keymapping
    -- INFO: normal_mode
    lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-   lvim.keys.normal_mode["<Tab>"] = ":bnext<CR>"
-   lvim.keys.normal_mode["<S-Tab>"] = ":bprevious<CR>"
+   lvim.keys.normal_mode["<Tab>"] = ":BufferNext<CR>"
+   lvim.keys.normal_mode["<S-Tab>"] = ":BufferPrevious<CR>"
    lvim.keys.normal_mode["Q"]=":qa!<cr>"
    lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
    lvim.keys.normal_mode["<S-h>"] = "0"
@@ -42,6 +43,8 @@ M.config = function()
    lvim.keys.normal_mode["<leader>wj"] = "<C-w>j"
    lvim.keys.normal_mode["<leader>wk"] = "<C-w>k"
    lvim.keys.normal_mode["<leader>wl"] = "<C-w>l"
+   -- Save colorscheme
+   --lvim.keys.normal_mode["<C-s>"] = actions.save_colorscheme
    -- INFO: visula_mode
    lvim.keys.visual_mode["H"] = "0"
    lvim.keys.visual_mode["L"] = "$"
@@ -61,14 +64,14 @@ M.config = function()
    vim.api.nvim_set_keymap('n','j','<Plug>(accelerated_jk_gj)',{ silent=true })
    vim.api.nvim_set_keymap('n','k','<Plug>(accelerated_jk_gk)',{ silent=true })
    -- vim-easy-align
-   vim.api.nvim_set_keymap('n','ga','<Plug>(EasyAlign)',{ silent=true })
-   vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{ silent=true })
+   --vim.api.nvim_set_keymap('n','ga','<Plug>(EasyAlign)',{ silent=true })
+   --vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{ silent=true })
    -- run 保持终端
    vim.api.nvim_set_keymap('t','<Esc>',"<C-\\><C-n>",{silent=true})
    --lspsaga
    lvim.keys.normal_mode["<leader>ca"] = "<CMD>lua require('lspsaga.codeaction').code_action()<CR>"
-   lvim.keys.normal_mode["<leader>rm"] = "<CMD>lua require('lspsaga.rename').rename()<CR>"
-   lvim.keys.normal_mode["gp"] = "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>"
+   lvim.keys.normal_mode["<leader>rn"] = "<CMD>lua require('lspsaga.rename').rename()<CR>"
+   --lvim.keys.normal_mode["gp"] = "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>"
    --lvim.keys.normal_mode["K"] = "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>"
    lvim.keys.normal_mode["<C-j>"] = "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"
    lvim.keys.normal_mode["<C-k>"] = "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"

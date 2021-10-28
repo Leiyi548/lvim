@@ -56,6 +56,9 @@ lvim.plugins={
       "olimorris/onedarkpro.nvim"
     },
     {
+      "ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"},
+    },
+    {
       "rhysd/accelerated-jk"
     },
 
@@ -305,10 +308,12 @@ lvim.plugins={
       requires = "nvim-treesitter/nvim-treesitter",
   },
   {
-    'junegunn/vim-easy-align'
+    'junegunn/vim-easy-align',
+    disable = not lvim.builtin.easy_align.active,
   },
   {
-    'glepnir/lspsaga.nvim'
+      'tami5/lspsaga.nvim',
+      branch = 'nvim51'
   },
   {
     "lukas-reineke/cmp-under-comparator",
@@ -325,10 +330,6 @@ lvim.plugins={
     ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'},
     disable = "true",
   },
-  -- {
-  --   'yamatsum/nvim-cursorline',
-  --   event = {"BufReadPre","BufNewFile"},
-  -- },
   {
     'mbbill/undotree',
 	  cmd = {"UndotreeToggle"},
@@ -345,6 +346,20 @@ lvim.plugins={
 	'itchyny/vim-cursorword',
 	event = {"BufReadPre","BufNewFile"},
   },
+  {
+  'hrsh7th/cmp-calc',
+  requires = "hrsh7th/nvim-cmp",
+  --event = {"InsertEnter"},
+  },
+  {
+  'f3fora/cmp-spell',
+  --event = {"InsertEnter"},
+  requires = "hrsh7th/nvim-cmp",
+  config = function ()
+    vim.opt.spell = true
+    vim.opt.spelllang = { 'en_us'}
+  end
+  }
 }
 end
 return M

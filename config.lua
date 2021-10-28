@@ -3,15 +3,16 @@
 -- general
 --lvim.format_on_save = true
 lvim.lint_on_save = false
---lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight"
 lvim.format_on_save = true
 lvim.debug = false
 lvim.log.level = "warn"
 
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
-lvim.builtin.fancy_dashboard = {active = true}
-lvim.builtin.tabnine ={active = true}
+lvim.builtin.fancy_dashboard = {active = true} --change to true if you want to fancy_dashboard
+lvim.builtin.easy_align = {active = false} -- change to true if you want easy_align
+lvim.builtin.tabnine = {active = false}  --change to true if you want tabnine
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"

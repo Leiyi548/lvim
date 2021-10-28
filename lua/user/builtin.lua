@@ -15,6 +15,7 @@ M.config = function()
     { name = "emoji" },
     { name = "treesitter" },
     { name = "crates" },
+    { name = "spell"},
   }
   lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   lvim.builtin.cmp.experimental = {
@@ -172,6 +173,8 @@ M.config = function()
       ["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },
       ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
       ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
+      ["gh"] = { "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", "lspsaga_finder"},
+      ["gp"] = { "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>","preview_definition"},
     }
 
     -- better keybindings for ts and tsx files
@@ -180,7 +183,7 @@ M.config = function()
     if vim.tbl_contains(langs, ftype) then
       local ts_keys = {
         ["gA"] = { "<cmd>TSLspImportAll<CR>", "Import All" },
-        ["gr"] = { "<cmd>TSLspRenameFile<CR>", "Rename File" },
+        ["gr"] = { "<cmd>lua require('lspsaga.rename').rename()<CR>", "Rename File" },
         ["gS"] = { "<cmd>TSLspOrganize<CR>", "Organize Imports" },
       }
       wk.register(ts_keys, { mode = "n" })
