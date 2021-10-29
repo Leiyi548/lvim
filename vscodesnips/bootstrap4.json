@@ -1,0 +1,102 @@
+{
+  "bootstrap4": {
+    "prefix": "bs4",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"$1en\">",
+      "\t<head>",
+      "\t\t<title>$2</title>",
+      "\t\t<meta charset=\"UTF-8\">",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "\t\t<link href=\"https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">",
+      "\t\t<script src=\"https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js\"></script>",
+      "\t\t<script src=\"https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js\"></script>",
+      "\t\t<script src=\"https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>",
+      "\t</head>",
+      "\t<body>",
+      "\t$4",
+      "\t</body>",
+      "</html>"
+    ],
+    "description": "bootstrap4",
+    "scope": "text.html"
+  },
+  "p": {
+    "prefix": "p",
+    "body": [
+      "<p>$0</p>"
+    ]
+  },
+  "text-muted": {
+    "prefix": "text-muted",
+    "body": [
+      "text-muted"
+    ],
+    "description": "柔和的文本(灰色)",
+    "scope": "text.html"
+  },
+  "text-primary": {
+    "prefix": "text-primary",
+    "body": [
+      "text-primary"
+    ],
+    "description": "重要的文本(蓝色)",
+    "scope": "text.html"
+  },
+  "text-success": {
+    "prefix": "text-success",
+    "body": [
+      "text-success"
+    ],
+    "description": "执行成功的文本(绿色)",
+    "scope": "text.html"
+  },
+  "text-info": {
+    "prefix": "text-info",
+    "body": [
+      "text-info"
+    ],
+    "description": "代表一些提示信息(青色)",
+    "scope": "text.html"
+  },
+  "text-danger": {
+    "prefix": "text-danger",
+    "body": [
+      "text-danger"
+    ],
+    "description": "危险操作文本(红色)",
+    "scope": "text.html"
+  },
+  ".table-bordered": {
+    "prefix": ".table-bordered",
+    "body": [
+      ".table-bordered"
+    ],
+    "description": "表格添加边框",
+    "scope": "text.html"
+  },
+  ".table-hover": {
+    "prefix": ".table-hover",
+    "body": [
+      ".table-hover"
+    ],
+    "description": "鼠标悬停改变颜色",
+    "scope": "text.html"
+  },
+  ".table-borderless": {
+    "prefix": ".table-borderless",
+    "body": [
+      ".table-borderless"
+    ],
+    "description": "无边框表格",
+    "scope": "text.html"
+  },
+  ".table-striped": {
+    "prefix": ".table-striped",
+    "body": [
+      ".table-striped"
+    ],
+    "description": "条纹表格",
+    "scope": "text.html"
+  }
+}
