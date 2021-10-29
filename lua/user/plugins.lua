@@ -140,7 +140,7 @@ lvim.plugins={
     ft = {'org'},
     branch = "tree-sitter",
     config = function()
-    require('orgmode').setup{}
+    require('orgmode').setup(require("user.orgmode_config"))
     end,
     disable = not lvim.builtin.orgmode.active,
 	  },
@@ -292,19 +292,17 @@ lvim.plugins={
   {
     "ZSaberLv0/ZFVimIM",
     event = "InsertEnter",
+    disable = not lvim.builtin.ZFvim.active,
   },
   {
     'ZSaberLv0/ZFVimJob',
     event = "InsertEnter",
+    disable = not lvim.builtin.ZFvim.active,
   },
-  -- {
-  --   'qdzhang/ZFVimIM_xiaohe',
-  --   after="ZFVimIM",
-  --   disable = true,
-  -- },
   {
     'Yiklek/ZFVimIM_openfly',
     event = "InsertEnter",
+    disable = not lvim.builtin.ZFvim.active,
   },
   {
     'numToStr/Navigator.nvim',

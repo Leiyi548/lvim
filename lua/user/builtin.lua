@@ -9,7 +9,7 @@ M.config = function()
     --{ name = "cmp_tabnine", max_item_count = 3 },
     { name = "buffer", max_item_count = 5, keyword_length = 5 },
     { name = "path", max_item_count = 5 },
-    { name = "luasnip", max_item_count = 3 },
+    { name = "luasnip", max_item_count = 3  },
     { name = "nvim_lua" },
     { name = "calc" },
     { name = "emoji" },
@@ -29,6 +29,7 @@ M.config = function()
     buffer = "(Buffer)",
     nvim_lsp = "(LSP)",
     luasnip = "(Snip)",
+    org = "(org)",
     treesitter = " ",
     nvim_lua = "(NvLua)",
     spell = " 暈",
@@ -59,7 +60,7 @@ M.config = function()
   lvim.builtin.treesitter.textsubjects = { enable = true }
   lvim.builtin.treesitter.playground = { enable = true }
   lvim.builtin.treesitter.context_commentstring = { enable = true }
-  lvim.builtin.treesitter.highlight = { enable = true }
+  lvim.builtin.treesitter.highlight = { enable = true,additional_vim_regex_highlighting = {'org'} }
   lvim.builtin.treesitter.autotag = { enable = true }
   lvim.builtin.treesitter.playground = { enable = true }
   lvim.builtin.treesitter.rainbow = { enable = true }
@@ -111,10 +112,10 @@ M.config = function()
   swap = {
     enable = true,
     swap_next = {
-      ["[w"] = "@parameter.inner",
+      ["]w"] = "@parameter.inner",
     },
     swap_previous = {
-      ["]w"] = "@parameter.inner",
+      ["[w"] = "@parameter.inner",
     },
   },
   move = {

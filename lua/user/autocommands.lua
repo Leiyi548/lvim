@@ -5,13 +5,8 @@ M.config = function ()
     -- dashboard
     { "FileType", "alpha", "nnoremap <silent> <buffer> q :q<CR>" },
     -- python
-    {
-      "Filetype",
-      "python",
-      "nnoremap <leader>ru <cmd>lua require('lvim.core.terminal')._exec_toggle('python "
-        .. vim.fn.expand "%"
-        .. ";read')<CR>",
-    }
+    { "FileType", "python", "inoremap <silent> <buffer> ,, <++>"},
+    { "FileType", "python", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>_c4l"}
   }
 end
 return M
