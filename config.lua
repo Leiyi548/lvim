@@ -8,7 +8,7 @@ lvim.debug = false
 lvim.log.level = "warn"
 
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
-lvim.builtin.ZFvim = { active = false}  -- change to ture if you want ZFvim
+lvim.builtin.ZFvim = { active = true}  -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
 lvim.builtin.fancy_dashboard = {active = true} --change to true if you want to fancy_dashboard
 lvim.builtin.easy_align = {active = false} -- change to true if you want easy_align
