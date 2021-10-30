@@ -109,7 +109,7 @@ lvim.plugins={
       "voldikss/vim-floaterm",
       config = function ()
         vim.g.floaterm_width=0.7
-        vim.g.floaterm_height=0.7
+        vim.g.floaterm_height=0.8
         vim.g.floaterm_title=""
         vim.g.floaterm_borderchars   = {'─','│','─','│','╭','╮','╯','╰'}
       end
@@ -290,18 +290,18 @@ lvim.plugins={
     end
   },
   {
-    "ZSaberLv0/ZFVimIM",
-    event = "InsertEnter",
+    "Leiyi548/ZFVimIM",
+    --after = "ZFVimJob",
     disable = not lvim.builtin.ZFvim.active,
   },
   {
     'ZSaberLv0/ZFVimJob',
-    event = "InsertEnter",
+    --event = "InsertEnter",
     disable = not lvim.builtin.ZFvim.active,
   },
   {
-    'Yiklek/ZFVimIM_openfly',
-    event = "InsertEnter",
+    'Leiyi548/ZFVimIM_openfly',
+    --event = "InsertEnter",
     disable = not lvim.builtin.ZFvim.active,
   },
   {

@@ -4,6 +4,14 @@ M.dashboard = function()
   math.randomseed(os.time())
   local headers = {
     {
+        "       888     Y88b      / 888      e    e             ",
+        "       888      Y88b    /  888     d8b  d8b            ",
+        "       888       Y88b  /   888    d888bdY88b           ",
+        "       888        Y888/    888   / Y88Y Y888b          ",
+        "       888         Y8/     888  /   YY   Y888b         ",
+        "       888____      Y      888 /          Y888b        "
+    },
+    {
       [[      ____                                        ]],
       [[     /___/\_                                      ]],
       [[    _\   \/_/\__                     __           ]],

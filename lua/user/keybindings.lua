@@ -7,6 +7,8 @@ M.config = function()
    vim.opt.cmdheight = 1
    vim.opt.timeoutlen = 500
    vim.opt.encoding = "utf-8"
+   vim.opt.clipboard = ""
+
    --vim.opt.clipboard = nil
 
    --基与treesitter的代码折叠
@@ -29,8 +31,8 @@ M.config = function()
    -- INFO: add your own keymapping
    -- INFO: normal_mode
    lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-   lvim.keys.normal_mode["<Tab>"] = ":BufferNext<CR>"
-   lvim.keys.normal_mode["<S-Tab>"] = ":BufferPrevious<CR>"
+   lvim.keys.normal_mode["<Tab>"] = ":BufferNext<cr>"
+   lvim.keys.normal_mode["<S-Tab>"] = ":BufferPrevious<cr>"
    lvim.keys.normal_mode["Q"]=":qa!<cr>"
    lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
    lvim.keys.normal_mode["<S-h>"] = "0"
@@ -43,6 +45,14 @@ M.config = function()
    lvim.keys.normal_mode["<leader>wj"] = "<C-w>j"
    lvim.keys.normal_mode["<leader>wk"] = "<C-w>k"
    lvim.keys.normal_mode["<leader>wl"] = "<C-w>l"
+   -- nice N and n navigation
+   lvim.keys.normal_mode["n"] = "nzzzv"
+   lvim.keys.normal_mode["N"] = "Nzzzv"
+   -- nice J
+   lvim.keys.normal_mode["J"] = "mzJ`zmdz"
+   -- better indent
+   lvim.keys.normal_mode["<"] = "<<"
+   lvim.keys.normal_mode[">"] = ">>"
    -- Save colorscheme
    --lvim.keys.normal_mode["<C-s>"] = actions.save_colorscheme
    -- INFO: visula_mode
@@ -54,12 +64,14 @@ M.config = function()
    lvim.keys.insert_mode["jj"] = nil
     -- INFO:quickcopy
    lvim.keys.normal_mode["Y"] = "y$"
--- lvim.keys.normal_mode["<leader>y"] = '"+y'
--- lvim.keys.normal_mode["<leader>yy"] = '"+yy'
--- lvim.keys.normal_mode["<leader>p"] = '"+p"'
+   lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
+   lvim.keys.normal_mode["<leader>y"] = '"+y'
+   lvim.keys.visual_mode["<leader>y"] = '"+y'
+   lvim.keys.normal_mode["<leader>yy"] = '"+yy'
+   lvim.keys.normal_mode["<leader>p"] = '"+p"'
 
    -- X closes a buffer
-   lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+   lvim.keys.normal_mode["<S-x>"] = ":bdelete!<cr>"
    -- accelerated-jk
    vim.api.nvim_set_keymap('n','j','<Plug>(accelerated_jk_gj)',{ silent=true })
    vim.api.nvim_set_keymap('n','k','<Plug>(accelerated_jk_gk)',{ silent=true })
@@ -69,29 +81,29 @@ M.config = function()
    -- run 保持终端
    vim.api.nvim_set_keymap('t','<Esc>',"<C-\\><C-n>",{silent=true})
    --lspsaga
-   lvim.keys.normal_mode["<leader>ca"] = "<CMD>lua require('lspsaga.codeaction').code_action()<CR>"
-   lvim.keys.normal_mode["<leader>rn"] = "<CMD>lua require('lspsaga.rename').rename()<CR>"
-   --lvim.keys.normal_mode["gp"] = "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>"
-   --lvim.keys.normal_mode["K"] = "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>"
-   lvim.keys.normal_mode["<C-f>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"
-   lvim.keys.normal_mode["<C-b>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"
+   lvim.keys.normal_mode["<leader>ca"] = "<CMD>lua require('lspsaga.codeaction').code_action()<cr>"
+   lvim.keys.normal_mode["<leader>rn"] = "<CMD>lua require('lspsaga.rename').rename()<cr>"
+   --lvim.keys.normal_mode["gp"] = "<cmd>lua require'lspsaga.provider'.preview_definition()<cr>"
+   --lvim.keys.normal_mode["K"] = "<cmd>lua require('lspsaga.hover').render_hover_doc()<cr>"
+   lvim.keys.normal_mode["<C-f>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>"
+   lvim.keys.normal_mode["<C-b>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>"
    --tmux navigation
-   lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<CR>";
-   lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<CR>"
-   lvim.keys.normal_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<CR>"
-   lvim.keys.normal_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<CR>"
+   lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>";
+   lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
+   lvim.keys.normal_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
+   lvim.keys.normal_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
    --whichkey
    lvim.builtin.which_key.mappings = {
-      ["q"] = { "<cmd>q!<CR>", "Quit" },
-      --["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
-      ["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
-      --["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
-      --["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+      ["q"] = { "<cmd>q!<cr>", "Quit" },
+      --["/"] = { "<cmd>lua require('Comment').toggle()<cr>", "Comment" },
+      ["c"] = { "<cmd>BufferClose!<cr>", "Close Buffer" },
+      --["f"] = { "<cmd>Telescope find_files<cr>", "Find File" },
+      --["h"] = { "<cmd>nohlsearch<cr>", "No Highlight" },
       --Whichkey-b
-  --lvim.builtin.which_key.mappings[";"] = { "<cmd>Dashboard<CR>", "Dashboard" }
-      [";"] = { "<cmd>Alpha<CR>","Dashboard"},
-  --lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" }
-      ["e"] = { "<cmd>NvimTreeToggle<CR>","Explorer"},
+  --lvim.builtin.which_key.mappings[";"] = { "<cmd>Dashboard<cr>", "Dashboard" }
+      [";"] = { "<cmd>Alpha<cr>","Dashboard"},
+  --lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
+      ["e"] = { "<cmd>NvimTreeToggle<cr>","Explorer"},
       b = {
         name = "Buffers",
         j = { "<cmd>BufferPick<cr>", "Jump" },
@@ -130,33 +142,33 @@ M.config = function()
       --Whichkey-E
       E = {
         name = "Hello",
-        v = { "<cmd>Vista<CR>", "Vista" },
-	      u = { "<cmd>UndotreeToggle<CR>","UndoTree"},
-        s = { "<cmd>SymbolsOutline<CR>","SymbolsOutline"},
+        v = { "<cmd>Vista<cr>", "Vista" },
+	      u = { "<cmd>UndotreeToggle<cr>","UndoTree"},
+        s = { "<cmd>SymbolsOutline<cr>","SymbolsOutline"},
       },
       --Whichkey-t
       t = {
         name = "Terminal",
-        r = { "<cmd>RnvimrToggle<CR>", "ranger" },
-	      a = { "<cmd>RnvimrResize<CR>", "resize"},
+        r = { "<cmd>RnvimrToggle<cr>", "ranger" },
+	      a = { "<cmd>RnvimrResize<cr>", "resize"},
       },
       --Whichkey-r
       r = {
         name = "Run",
-         t = { "<cmd>AsyncTask file-run<CR>", "Run on default terminal" },
-	       f = { "<cmd>AsyncTask file-run-floaterm<CR>","Run on floaterm" }
+         t = { "<cmd>AsyncTask file-run<cr>", "Run on default terminal" },
+	       f = { "<cmd>AsyncTask file-run-floaterm<cr>","Run on floaterm" }
       },
       --Whichkey-f
       f = {
         name = "+File",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope colorscheme<CR>", "Change colorscheme" },
+        c = { "<cmd>Telescope colorscheme<cr>", "Change colorscheme" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
-	      f = { "<cmd>Telescope find_files<CR>", "Find File" },
+	      f = { "<cmd>Telescope find_files<cr>", "Find File" },
         H = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         n = { "<cmd>enew<cr>", "New File" },
-        r = { "<cmd>Telescope oldfiles<CR>", "Open Recent File" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         t = { "<cmd>Telescope live_grep<cr>", "Text" },
       },
@@ -237,14 +249,14 @@ M.config = function()
       --WhichKey-m
       m ={
         name="Markdown",
-        p = {"<cmd>MarkdownPreview<CR>","Preview"},
-	      g = {"<cmd>Glow<CR>","Glow"}
+        p = {"<cmd>MarkdownPreview<cr>","Preview"},
+	      g = {"<cmd>Glow<cr>","Glow"}
       },
       --WhichKey-m
       n ={
         name="Neogen",
-         c = { "<cmd>lua require('neogen').generate({ type = 'class'})<CR>", "Class Documentation" },
-         f = { "<cmd>lua require('neogen').generate({ type = 'func'})<CR>", "Function Documentation" },
+         c = { "<cmd>lua require('neogen').generate({ type = 'class'})<cr>", "Class Documentation" },
+         f = { "<cmd>lua require('neogen').generate({ type = 'func'})<cr>", "Function Documentation" },
       },
       --Whichkey-L
       L = {
@@ -300,11 +312,11 @@ M.config = function()
       s = {
         name = "Search",
         c = {name="clear-search-result"},
-        p = { "<cmd>HopPattern<CR>", "search like /" },
-	      s = { "<cmd>HopChar2<CR>","search by char2" },
-        S = { "<cmd>HopChar1<CR>","search by char1" },
-        w = { "<cmd>HopWord<CR>", "search word" },
-	      l = { "<cmd>HopLine<CR>","search line" },
+        p = { "<cmd>HopPattern<cr>", "search like /" },
+	      s = { "<cmd>HopChar2<cr>","search by char2" },
+        S = { "<cmd>HopChar1<cr>","search by char1" },
+        w = { "<cmd>HopWord<cr>", "search word" },
+	      l = { "<cmd>HopLine<cr>","search line" },
       },
         T = {
         name = "Treesitter",
