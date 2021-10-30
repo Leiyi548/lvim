@@ -161,7 +161,7 @@ M.config = function()
       --Whichkey-f
       f = {
         name = "+File",
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        b = { "<cmd>Telescope buffers<cr>", "Find buffer" },
         c = { "<cmd>Telescope colorscheme<cr>", "Change colorscheme" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
 	      f = { "<cmd>Telescope find_files<cr>", "Find File" },

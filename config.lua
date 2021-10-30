@@ -21,6 +21,9 @@ lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.notify.active = true
+-- Customization
+-- =========================================
+require("user.lua_snip")
 
 require("user.builtin").config()
 require("user.cmp-comparator")
@@ -28,14 +31,9 @@ require("user.cmp-comparator")
 -- Additional Plugins
 -- =========================================
 require("user.plugins").config()
-
 -- Additional keybindings
 -- =========================================
 require("user.keybindings").config()
-
--- Customization
--- =========================================
-require("user.lua_snip")
 
 -- Autocommands
 -- =========================================
