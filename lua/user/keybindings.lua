@@ -53,6 +53,8 @@ M.config = function()
    -- better indent
    lvim.keys.normal_mode["<"] = "<<"
    lvim.keys.normal_mode[">"] = ">>"
+   -- easymotion
+   lvim.keys.normal_mode["ss"] = "<cmd>HopChar2<cr>"
    -- Save colorscheme
    --lvim.keys.normal_mode["<C-s>"] = actions.save_colorscheme
    -- INFO: visula_mode
@@ -313,8 +315,8 @@ M.config = function()
         name = "Search",
         c = {name="clear-search-result"},
         p = { "<cmd>HopPattern<cr>", "search like /" },
-	      s = { "<cmd>HopChar2<cr>","search by char2" },
-        S = { "<cmd>HopChar1<cr>","search by char1" },
+	      --s = { "<cmd>HopChar2<cr>","search by char2" },
+        s = { "<cmd>HopChar1<cr>","search by char1" },
         w = { "<cmd>HopWord<cr>", "search word" },
 	      l = { "<cmd>HopLine<cr>","search line" },
       },

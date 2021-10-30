@@ -235,6 +235,7 @@ lvim.plugins={
     {
       'ybian/smartim',
       event = {"InsertEnter"},
+      --cmd = {"helloworld"},
       config = function ()
         vim.g.smartim_default = 'com.apple.keylayout.ABC'
       end,
