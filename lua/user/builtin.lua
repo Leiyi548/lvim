@@ -176,6 +176,13 @@ M.config = function()
 
   -- INFO:WhichKey
   -- =========================================
+  lvim.builtin.which_key.setup.triggers_blacklist = {
+    -- list of mode / prefixes that should never be hooked by WhichKey
+    -- this is mostly relevant for key maps that start with a native binding
+    -- most people should not need to change this
+    i = {"j","k",";"},
+    v = {"j","k",";"}
+  }
   lvim.builtin.which_key.setup.window.winblend = 10
   lvim.builtin.which_key.setup.window.border = "none"
   lvim.builtin.which_key.on_config_done = function(wk)
