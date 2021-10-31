@@ -71,6 +71,7 @@ M.config = function()
    lvim.keys.visual_mode["<leader>y"] = '"+y'
    lvim.keys.normal_mode["<leader>yy"] = '"+yy'
    lvim.keys.normal_mode["<leader>p"] = '"+p"'
+   lvim.keys.visual_mode["<leader>p"] = '"+p'
 
    -- X closes a buffer
    lvim.keys.normal_mode["<S-x>"] = ":bdelete!<cr>"
@@ -94,6 +95,10 @@ M.config = function()
    lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
    lvim.keys.normal_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
    lvim.keys.normal_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
+   lvim.keys.visual_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>";
+   lvim.keys.visual_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
+   lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
+   lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
    --whichkey
    lvim.builtin.which_key.mappings = {
       --["q"] = { "<cmd>q!<cr>", "Quit" },
