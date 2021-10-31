@@ -170,9 +170,10 @@ M.config = function()
   -- INFO:Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
-  -- lvim.builtin.terminal.execs = {
-  --   { "lazygit", "gg", "LazyGit" },
-  -- }
+  --using lazygit
+  lvim.builtin.terminal.execs = {
+    { "lazygit", "gg", "LazyGit" },
+  }
 
   -- INFO:WhichKey
   -- =========================================
