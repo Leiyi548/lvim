@@ -96,9 +96,8 @@ M.config = function()
    lvim.keys.normal_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
    --whichkey
    lvim.builtin.which_key.mappings = {
-      ["q"] = { "<cmd>q!<cr>", "Quit" },
+      --["q"] = { "<cmd>q!<cr>", "Quit" },
       --["/"] = { "<cmd>lua require('Comment').toggle()<cr>", "Comment" },
-      ["c"] = { "<cmd>BufferClose!<cr>", "Close Buffer" },
       --["f"] = { "<cmd>Telescope find_files<cr>", "Find File" },
       --["h"] = { "<cmd>nohlsearch<cr>", "No Highlight" },
       --Whichkey-b
@@ -106,6 +105,11 @@ M.config = function()
       [";"] = { "<cmd>Alpha<cr>","Dashboard"},
   --lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
       ["e"] = { "<cmd>NvimTreeToggle<cr>","Explorer"},
+      ["c"] = { "<cmd>BufferClose!<cr>", "Close Buffer" },
+      ["u"] = { "<cmd>UndotreeToggle<cr>","Undotree"},
+      ["Y"] = { "CopyAll"},
+      ["y"] = { "CopyClipboard"},
+      ["w"] = { "Windows"},
       b = {
         name = "Buffers",
         j = { "<cmd>BufferPick<cr>", "Jump" },
@@ -148,6 +152,7 @@ M.config = function()
 	      u = { "<cmd>UndotreeToggle<cr>","UndoTree"},
         s = { "<cmd>SymbolsOutline<cr>","SymbolsOutline"},
       },
+      --Whichkey-E
       --Whichkey-t
       t = {
         name = "Terminal",
