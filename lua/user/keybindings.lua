@@ -173,6 +173,7 @@ M.config = function()
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         t = { "<cmd>Telescope live_grep<cr>", "Text" },
+        m = { "<cmd>Telescope marks<cr>","Marks"},
       },
       --which_key-x
       x = {
