@@ -207,7 +207,6 @@ lvim.plugins={
       config = function()
         require("user.colorizer").config()
       end,
-      event = "BufRead",
     },
     --todo-comments
     {
@@ -399,6 +398,10 @@ lvim.plugins={
     vim.opt.spell = true
     vim.opt.spelllang = { 'en_us'}
   end
+  },
+  {
+    'andersevenrud/compe-tmux',
+    branch = "cmp"
   }
 }
 end

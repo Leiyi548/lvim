@@ -13,6 +13,7 @@ M.config = function()
     { name = "nvim_lua" },
     { name = "calc" },
     { name = "emoji" },
+    { name = "tmux",max_item_count = 3},
     { name = "treesitter" },
     { name = "crates" },
     { name = "spell", max_item_count = 3},
@@ -37,6 +38,7 @@ M.config = function()
     path = "  ",
     calc = "  ",
     cmp_tabnine = "  ",
+    tmux = "(tmux)",
   }
 
   -- LSP
@@ -162,7 +164,7 @@ M.config = function()
   --lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   lvim.builtin.telescope.defaults.mappings = {
     i = {
-      ["<esc>"] = require("telescope.actions").close,
+      --["<esc>"] = require("telescope.actions").close,
       ["<C-y>"] = require("telescope.actions").which_key,
     },
   }

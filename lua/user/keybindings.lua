@@ -8,6 +8,7 @@ M.config = function()
    vim.opt.timeoutlen = 500
    vim.opt.encoding = "utf-8"
    vim.opt.clipboard = ""
+   --vim.opt.showmode = true
 
    --vim.opt.clipboard = nil
 
@@ -34,7 +35,7 @@ M.config = function()
    lvim.keys.normal_mode["<Tab>"] = ":BufferNext<cr>"
    lvim.keys.normal_mode["<S-Tab>"] = ":BufferPrevious<cr>"
    lvim.keys.normal_mode["Q"]=":qa!<cr>"
-   lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
+   --lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
    lvim.keys.normal_mode["<S-h>"] = "0"
    lvim.keys.normal_mode["<S-l>"] = "$"
    lvim.keys.normal_mode["<leader>sc"] = "<cmd>nohlsearch<cr>"
