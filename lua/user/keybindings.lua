@@ -54,8 +54,16 @@ M.config = function()
    -- better indent
    lvim.keys.normal_mode["<"] = "<<"
    lvim.keys.normal_mode[">"] = ">>"
-   -- easymotion
+   -- easymotion(hop)
    lvim.keys.normal_mode["ss"] = "<cmd>HopChar2<cr>"
+
+   -- lvim.keys.normal_mode["f"] = "<cmd>lua require('ftFT').execute('f')<CR>"
+   -- lvim.keys.normal_mode["t"] = "<cmd>lua require('ftFT').execute('t')<CR>"
+   -- lvim.keys.normal_mode["F"] = "<cmd>lua require('ftFT').execute('F')<CR>"
+   -- lvim.keys.normal_mode["T"] = "<cmd>lua require('ftFT').execute('T')<CR>"
+   -- lvim.keys.normal_mode["df"] = "<cmd>lua require('ftFT').execute('df')<CR>"
+   -- lvim.keys.normal_mode["yf"] = "<cmd>lua require('ftFT').execute('yf')<CR>"
+   -- lvim.keys.normal_mode["cf"] = "<cmd>lua require('ftFT').execute('cf')<CR>"
    -- Save colorscheme
    --lvim.keys.normal_mode["<C-s>"] = actions.save_colorscheme
    -- INFO: visula_mode

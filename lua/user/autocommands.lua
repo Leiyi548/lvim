@@ -13,7 +13,31 @@ M.config = function ()
     },
     -- python
     { "FileType", "python", "inoremap <silent> <buffer> ,, <++>"},
-    { "FileType", "python", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"}
+    { "FileType", "python", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"},
+     -- c, cpp
+    -- {
+    --   "Filetype",
+    --   "c,cpp",
+    --   "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle('make ;read')<CR>",
+    -- },
+    {
+      "Filetype",
+      "c,cpp",
+      "nnoremap <leader>rg <cmd>lua require('lvim.core.terminal')._exec_toggle('make run;read')<CR>",
+    },
+    { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
+
+    -- lua
+    { "FileType", "lua", "inoremap <silent> <buffer> ,, <++>"},
+    { "FileType", "lua", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"},
+    -- go
+    { "FileType", "go", "inoremap <silent> <buffer> ,, <++>"},
+    { "FileType", "go", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"},
+    {
+      "Filetype",
+      "go",
+      "nnoremap <leader>rg <cmd>lua require('lvim.core.terminal')._exec_toggle('go run .;read')<CR>",
+    },
   }
 end
 return M

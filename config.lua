@@ -46,6 +46,7 @@ lvim.lang.c.formatters = { { exe = "clang-format" } }
 lvim.lang.cpp.formatters = lvim.lang.c.formatters
 --Python
 lvim.lang.html.formatters = {{exe = "prettier"}}
+lvim.lang.json.formatters = {{exe = "prettier"}}
 --if you want to use markdown linters
 -- lvim.lang.markdown.linters = {
 --     {
