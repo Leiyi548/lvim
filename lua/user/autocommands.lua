@@ -13,7 +13,7 @@ M.config = function ()
     },
     -- python
     { "FileType", "python", "inoremap <silent> <buffer> ,, <++>"},
-    { "FileType", "python", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>_c4l"}
+    { "FileType", "python", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"}
   }
 end
 return M
