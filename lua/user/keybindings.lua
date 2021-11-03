@@ -109,6 +109,19 @@ M.config = function()
    lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
    lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
    --whichkey
+   lvim.builtin.which_key.vmappings = {
+      s = {
+        name = "Search",
+        c = {name="clear-search-result"},
+        p = { "<cmd>HopPattern<cr>", "search like /" },
+	      --s = { "<cmd>HopChar2<cr>","search by char2" },
+        s = { "<cmd>HopChar1<cr>","search by char1" },
+        w = { "<cmd>HopWord<cr>", "search word" },
+	      l = { "<cmd>HopLine<cr>","search line" },
+      },
+      y = {name = "CopyClipboard"},
+      p = {name = "Paste"}
+  }
    lvim.builtin.which_key.mappings = {
       --["q"] = { "<cmd>q!<cr>", "Quit" },
       --["/"] = { "<cmd>lua require('Comment').toggle()<cr>", "Comment" },

@@ -2,6 +2,10 @@ local M = {}
 
 M.config = function ()
   lvim.autocommands.custom_groups = {
+    --terminal
+    { "FileType", "terminal", "nnoremap <silent> <buffer> q :q<CR>" },
+    -- quickfix
+    { "FileType", "quickfix", "nnoremap <silent> <buffer> q :q<CR>" },
     -- dashboard
     { "FileType", "alpha", "nnoremap <silent> <buffer> q :q<CR>" },
     { "FileType", "alpha", "setlocal nocursorline noswapfile synmaxcol& signcolumn=no norelativenumber nocursorcolumn nospell  nolist  nonumber bufhidden=wipe colorcolumn= foldcolumn=0 matchpairs= " },
