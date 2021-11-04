@@ -62,10 +62,32 @@
 | <kbd>Space</kbd>+<kbd>w</kbd>+<kbd>s</kbd> |   𝐍  | 水平分屏     |
 
 ### File explorer(NvimTree)
-| Key                           | Mode | Action         |
-|-------------------------------|:----:|----------------|
-| <kbd>Space</kbd>+<kbd>e</kbd> |   𝐍  | Open file tree |
+| Key                           | Mode | Action                                                            |
+|-------------------------------|:----:|-------------------------------------------------------------------|
+| <kbd>Space</kbd>+<kbd>e</kbd> |   𝐍  | Open file tree                                                    |
+| <kbd>o</kbd>                  |   𝐍  | Open flie or directory                                            |
+| <kbd>C</kbd>+<kbd>]</kbd>     |   𝐍  | Cd in the directory under the cursor                              |
+| <kbd>BS</kbd>                 |   𝐍  | Close current opened directory or parent                          |
+| <kbd>a</kbd>                  |   𝐍  | Add a file.Adding a directory                                     |
+| <kbd>r</kbd>                  |   𝐍  | Rename a file                                                     |
+| <kbd>x</kbd>                  |   𝐍  | Add/Remove file/directory to cut clipboard                        |
+| <kbd>c</kbd>                  |   𝐍  | Add/Remove file/directory to copy clipboard                       |
+| <kbd>y</kbd>                  |   𝐍  | Copy name to system clipboard                                     |
+| <kbd>Y</kbd>                  |   𝐍  | Copy relative path to system clipboard                            |
+| <kbd>g</kbd>+<kbd>y</kbd>     |   𝐍  | Copy absolute path to system clipboard                            |
+| <kbd>]</kbd>+<kbd>c</kbd>     |   𝐍  | Go to next git item                                               |
+| <kbd>[</kbd>+<kbd>c</kbd>     |   𝐍  | Go to prev git item                                               |
+| <kbd>-</kbd>                  |   𝐍  | Navigate up to the parent directory of the current file/directory |
+| <kbd>s</kbd>                  |   𝐍  | Navigate up to the parent directory of the current file/directory |
+| <kbd>C</kbd>+<kbd>v</kbd>     |   𝐍  | Open the file in a vertical split                                 |
+| <kbd>C</kbd>+<kbd>x</kbd>     |   𝐍  | Open the file in a horizontal split                               |
+| <kbd>C</kbd>+<kbd>t</kbd>     |   𝐍  | Open the file in a new tab                                        |
+| <kbd>Tab</kbd>                |   𝐍  | Open the file as a preview(keeps the cursor in the tree)          |
+| <kbd>I</kbd>                  |   𝐍  | Toggle visibility of hidden folders/files                         |
+| <kbd>H</kbd>                  |   𝐍  | Toggle visibility of hidden folders / files                       |
+| <kbd>R</kbd>                  |   𝐍  | Refresh the tree                                                  |
 
+                                                                                                                                                                                                                                                             
 ### UndoTree
 | Key                           | Mode | Action   |
 |-------------------------------|:----:|----------|
