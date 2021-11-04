@@ -48,7 +48,54 @@
     └── package.json
 ```
 
-## 快捷键
+### Prerequisites
+
+- [Neovim](https://github.com/neovim/neovim) >= v0.6.0
+
+```shell
+  brew install neovim --nightly
+```
+
+### Recommended Linters
+
+```shell
+HTML
+brew install tidy-html5
+Python3
+brew install flake8
+Markdown 
+brew install vale markdwonlint-cli 
+brew upgrade vale markdwonlint-cli 
+Go
+brew install golangci-lint
+brew upgrade golangci-lint
+```
+
+### Recommended Format
+```shell
+HTML JSON
+brew install prettier
+Python3
+brew install black
+C CPP
+brew install clang-format
+brew upgrade clang-format
+```
+
+
+## Custom Key-mappings
+
+<center>Modes: 𝐍=normal 𝐕=visual 𝐒=select 𝐈=insert 𝐂=command</center>
+Note that,
+
+- **Leader** key set as <kbd>Space</kbd>
+
+<details open>
+  <summary>
+    <strong>Key-mappings</strong>
+    <small><i>(🔎 Click to expand/collapse)</i></small>
+  </summary>
+
 <center>Modes: 𝐍=normal 𝐕=visual 𝐒=select 𝐈=insert 𝐂=command</center>
 
 ### 窗口操作
@@ -288,3 +335,4 @@ ga进入easyalign模式<br>
 | ]/[            | vim-visual-multi-mode   | 跳到下一个/上一个匹配的模式,可以代替]/[进行使用                                                                                                 | vim-visual-multi      |
 | S              | vim-visual-multi        | 在多光标模式下,将多个选中的内容以某种符号进行包围                                                                                               | vim-vim-visual-multi  |
 
+</details>

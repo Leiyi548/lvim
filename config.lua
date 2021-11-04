@@ -6,6 +6,7 @@ lvim.lint_on_save = false
 lvim.format_on_save = true
 lvim.debug = false
 lvim.log.level = "warn"
+lvim.lsp.automatic_servers_installation = true
 
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
 lvim.builtin.ZFvim = { active = true}  -- change to ture if you want ZFvim
@@ -46,15 +47,12 @@ lvim.lang.c.formatters = { { exe = "clang-format" } }
 lvim.lang.cpp.formatters = lvim.lang.c.formatters
 --Python
 lvim.lang.html.formatters = {{exe = "prettier"}}
+--lvim.lang.html.linters = {{exe = "tidy"}}
 lvim.lang.json.formatters = {{exe = "prettier"}}
+lvim.lang.python.linters = { { exe = "flake8" } }
+lvim.lang.python.formatters = {{exe = "black"}}
 --if you want to use markdown linters
--- lvim.lang.markdown.linters = {
---     {
---       exe = "markdownlint",
---     },
---   }
 --lvim.lang.markdown.linters ={ {exe = "markdownlint" } }
 -- exe value can be "black", "yapf", or "isort"
--- lvim.lang.python.linters = { { exe = "isort" } }
 -- lvim.lang.python.formatters = { { exe = "black" } }
 --lvim.colorscheme = "gruvbox"
