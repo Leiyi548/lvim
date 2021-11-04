@@ -278,9 +278,10 @@ M.config = function()
       m ={
         name="Markdown",
         p = {"<cmd>MarkdownPreview<cr>","Preview"},
-	      g = {"<cmd>Glow<cr>","Glow"}
+	      g = {"<cmd>Glow<cr>","Glow"},
+        r = {"<cmd>TableModeRealign<cr>","Tablealign"},
       },
-      --WhichKey-m
+      --WhichKey-n
       n ={
         name="Neogen",
          c = { "<cmd>lua require('neogen').generate({ type = 'class'})<cr>", "Class Documentation" },

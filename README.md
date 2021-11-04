@@ -8,34 +8,180 @@
 ![photo3](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020192658.png)
 
 ## 代码结构图
-![代码结构图](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020201649.png) 
+```
+.
+├── README.md
+├── config.lua
+├── ftplugin
+│   └── python.lua
+├── ignore
+├── lsp-settings
+│   └── gopls.json
+├── lua
+│   └── user
+│       ├── actions.lua
+│       ├── autocommands.lua
+│       ├── banners.lua
+│       ├── builtin.lua
+│       ├── cmp-comparator.lua
+│       ├── colorizer.lua
+│       ├── dashboard.lua
+│       ├── indent_blankline.lua
+│       ├── keybindings.lua
+│       ├── lsp_kind.lua
+│       ├── lsp_signature.lua
+│       ├── lua_snip.lua
+│       ├── mark.lua
+│       ├── orgmode_config.lua
+│       ├── plugins.lua
+│       ├── telescope.lua
+│       ├── theme.lua
+│       └── treesitter-textobjects.lua
+├── openfly.txt
+├── plugin
+│   └── packer_compiled.lua
+└── vscodesnips
+    ├── bootstrap4.json
+    ├── cpp.json
+    ├── html.json
+    ├── lua.json
+    └── package.json
+```
 
 ## 快捷键
-### 窗口操作
-| 按键       | 模式         |
-|------------|--------------|
-| \<leader>wh | 向左移动窗口 |
-| \<leader>wj | 向下移动窗口 |
-| \<leader>wk | 向上移动窗口 |
-| \<leader>wl | 向右移动窗口 |
-| \<leader>wv  | 垂直分屏     |
-| \<leader>ws  | 水平分屏     |
-### markdown
-| 按键 | 模式         |
-|------|--------------|
-| ,a   | 打出链接     |
-| ,b   | 加粗字体     |
-| ,c   | 添加代码块   |
-| ,d   | 字体带有方格 |
-| ,i   | 斜体字体     |
-| ,l   | 添加下划线   |
-| ,p   | 打出图片链接 |
-| ,s   | 删除线字体   |
-| ,1   | 1号标题      |
-| ,2   | 2号标题      |
-| ,3   | 3号标题      |
-| ,4   | 4号标题      |
+<center>Modes: 𝐍=normal 𝐕=visual 𝐒=select 𝐈=insert 𝐂=command</center>
 
+### 窗口操作
+| Key                                        | Mode | Action       |
+|--------------------------------------------|:----:|--------------|
+| <kbd>Space</kbd>+<kbd>w</kbd>+<kbd>h</kbd> |   𝐍  | 向左移动窗口 |
+| <kbd>Space</kbd>+<kbd>w</kbd>+<kbd>j</kbd> |   𝐍  | 向下移动窗口 |
+| <kbd>Space</kbd>+<kbd>w</kbd>+<kbd>k</kbd> |   𝐍  | 向上移动窗口 |
+| <kbd>Space</kbd>+<kbd>w</kbd>+<kbd>l</kbd> |   𝐍  | 向右移动窗口 |
+| <kbd>Space</kbd>+<kbd>w</kbd>+<kbd>v</kbd> |   𝐍  | 垂直分屏     |
+| <kbd>Space</kbd>+<kbd>w</kbd>+<kbd>s</kbd> |   𝐍  | 水平分屏     |
+
+### File explorer(NvimTree)
+| Key                           | Mode | Action         |
+|-------------------------------|:----:|----------------|
+| <kbd>Space</kbd>+<kbd>e</kbd> |   𝐍  | Open file tree |
+
+### UndoTree
+| Key                           | Mode | Action   |
+|-------------------------------|:----:|----------|
+| <kbd>Space</kbd>+<kbd>u</kbd> |   𝐍  | Undotree |
+
+### Dashboard
+| Key                           | Mode | Action    |
+|-------------------------------|:----:|-----------|
+| <kbd>Space</kbd>+<kbd>;</kbd> |   𝐍  | Dashboard |
+
+### Comment.nvim
+| Key  | Mode | Action                                                                |
+|------|:----:|-----------------------------------------------------------------------|
+| gc   |   𝐕  | Toggles the region using linewise comment                             |
+| gb   |   𝐕  | Toggles the region using blockwise comment                            |
+| gcc  |   𝐍  | Toggles the current line using linewise comment                       |
+| gcb  |   𝐍  | Toggles the current line using blockwise comment                      |
+| gco  |   𝐍  | Insert comment to the next line and enters INSERT mode                |
+| gcO  |   𝐍  | Insert comment to the previous line and enters INSERT mode            |
+| gcA  |   𝐍  | Insert comment to the end of the current line and enters INSERT mode  |
+| gcw  |   𝐍  | Toggle from the current cursor position to the next word (Linewise)   |
+| gc$  |   𝐍  | Toggle from the current cursor position to the end of word (Linewise) |
+| gcip |   𝐍  | Toggle inside of paragraph (Linewise)                                 |
+| gcia |   𝐍  | Toggle around curly brackets (Linewise)                               |
+| gbaf |   𝐍  | Toggle comment around a function (Blockwise)                          |
+| gbac |   𝐍  | Toggle comment around a class  (Blockwise)                            |
+
+### markdown
+| Key                       | Mode | Action       |
+|---------------------------|:----:|--------------|
+| <kbd>,</kbd>+<kbd>a</kbd> |   𝐍  | 打出链接     |
+| <kbd>,</kbd>+<kbd>b</kbd> |   𝐍  | 加粗字体     |
+| <kbd>,</kbd>+<kbd>c</kbd> |   𝐍  | 添加代码块   |
+| <kbd>,</kbd>+<kbd>d</kbd> |   𝐍  | 字体带有方格 |
+| <kbd>,</kbd>+<kbd>i</kbd> |   𝐍  | 斜体字体     |
+| <kbd>,</kbd>+<kbd>l</kbd> |   𝐍  | 添加下划线   |
+| <kbd>,</kbd>+<kbd>k</kbd> |   𝐍  | 添加键       |
+| <kbd>,</kbd>+<kbd>p</kbd> |   𝐍  | 打出图片链接 |
+| <kbd>,</kbd>+<kbd>a</kbd> |   𝐍  | 删除线字体   |
+| <kbd>,</kbd>+<kbd>1</kbd> |   𝐍  | 1号标题      |
+| <kbd>,</kbd>+<kbd>2</kbd> |   𝐍  | 2号标题      |
+| <kbd>,</kbd>+<kbd>3</kbd> |   𝐍  | 3号标题      |
+| <kbd>,</kbd>+<kbd>4</kbd> |   𝐍  | 4号标题      |
+
+### vim-markdown-table
+| Key                                                     | Mode | Action                          |
+|---------------------------------------------------------|:----:|---------------------------------|
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>m</kbd>              |   𝐍  | Toggle tableMode                |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>t</kbd>              |   𝐍  | converts CSV  data into a table |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>d</kbd>+<kbd>d</kbd> |   𝐍  | Delete Row                      |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>d</kbd>+<kbd>c</kbd> |   𝐍  | Delete Column                   |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>i</kbd>+<kbd>c</kbd> |   𝐍  | Insert Column                   |
+| <kbd>[</kbd>+<kbd>\|</kbd>                              |   𝐍  | Move to left(TableMode)         |
+| <kbd>]</kbd>+<kbd>\|</kbd>                              |   𝐍  | Move to right(TableMode)        |
+| <kbd>{</kbd>+<kbd>\|</kbd>                              |   𝐍  | Move to up(TableMode)           |
+| <kbd>}</kbd>+<kbd>\|</kbd>                              |   𝐍  | Move to down(TableMode)         |
+
+
+### Telescope
+| Key                                        | Mode | Action             |
+|--------------------------------------------|:----:|--------------------|
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>b</kbd> |   𝐍  | Find buffer        |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>c</kbd> |   𝐍  | Change colorscheme |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>C</kbd> |   𝐍  | Find Commands      |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>f</kbd> |   𝐍  | Find File          |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>H</kbd> |   𝐍  | Find Help          |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>k</kbd> |   𝐍  | Find Keymaps       |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>m</kbd> |   𝐍  | Find Marks         |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>n</kbd> |   𝐍  | New File           |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>R</kbd> |   𝐍  | Find Registers     |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>r</kbd> |   𝐍  | Ricent File        |
+| <kbd>Space</kbd>+<kbd>f</kbd>+<kbd>t</kbd> |   𝐍  | Find text          |
+### treesitter-textobjects
+| Key                       | Mode | Action             |
+|---------------------------|:----:|--------------------|
+| <kbd>a</kbd>+<kbd>f</kbd> |   𝐕  | 将整个函数选中     |
+| <kbd>i</kbd>+<kbd>f</kbd> |   𝐕  | 除去函数头选中     |
+| <kbd>a</kbd>+<kbd>c</kbd> |   𝐕  | 将整个类选中       |
+| <kbd>i</kbd>+<kbd>c</kbd> |   𝐕  | 除去类头选中       |
+| <kbd>]</kbd>+<kbd>w</kbd> |   𝐍  | 与后面变量进行交换 |
+| <kbd>[</kbd>+<kbd>w</kbd> |   𝐍  | 与前面变量进行交换 |
+| <kbd>[</kbd>+<kbd>m</kbd> |   𝐍  | 跳到函数头         |
+| <kbd>[</kbd>+<kbd>[</kbd> |   𝐍  | 跳到类头           |
+
+
+### hop
+| key                                        | Mode | Action       |
+|--------------------------------------------|:----:|--------------|
+| <kbd>s</kbd>+<kbd>s</kbd>                  |   𝐕  | 查找两个字符 |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>w</kbd> |   𝐕  | 查找单词     |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>p</kbd> |   𝐕  | 类似与\      |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>l</kbd> |   𝐕  | 查找行       |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>s</kbd> |   𝐕  | 查找一个字符 |
+| <kbd>s</kbd>+<kbd>s</kbd>                  |   𝐍  | 查找两个字符 |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>w</kbd> |   𝐍  | 查找单词     |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>p</kbd> |   𝐍  | 类似与\      |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>l</kbd> |   𝐍  | 查找行       |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>s</kbd> |   𝐍  | 查找一个字符 |
+
+### git
+| Key                                        | Mode | Action                             |
+|--------------------------------------------|:----:|-----------------------------------|
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>b</kbd> |   𝐍  | Checkout branch                   |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>c</kbd> |   𝐍  | Checkout commit                   |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>C</kbd> |   𝐍  | Checkout commit(for current file) |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>d</kbd> |   𝐍  | Git Diff                          |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>g</kbd> |   𝐍  | Lazygit                           |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>j</kbd> |   𝐍  | Next Hunk                         |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>k</kbd> |   𝐍  | Prev Hunk                         |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>l</kbd> |   𝐍  | Git Blame                         |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>o</kbd> |   𝐍  | Open changd file                  |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>p</kbd> |   𝐍  | Preview Hunk                      |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>r</kbd> |   𝐍  | Reset Hunk                        |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>R</kbd> |   𝐍  | Reset Buffer                      |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>s</kbd> |   𝐍  | Stage Hunk                        |
+| <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>u</kbd> |   𝐍  | Undo Stage Hunk                   |
 
 ### [easy-align](https://github.com/junegunn/vim-easy-align) 
 easy-align是一个可以让你代码快速对齐的插件<br>

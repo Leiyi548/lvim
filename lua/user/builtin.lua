@@ -51,14 +51,16 @@ M.config = function()
   }
 
 
-
-  -- INFO:Project
+  --Comment.nvim
+  -- =========================================
+  lvim.builtin.comment.mappings.extra = true
+  --Project
   -- =========================================
   lvim.builtin.project.active = true
 
   lvim.builtin.treesitter.indent = { enable = true, disable = { "yaml", "python" } } -- treesitter is buggy :(
   lvim.builtin.treesitter.matchup.enable = true
-  -- INFO:treesitter
+  --treesitter
   lvim.builtin.treesitter.textsubjects = { enable = true }
   lvim.builtin.treesitter.playground = { enable = true }
   lvim.builtin.treesitter.context_commentstring = { enable = true }
@@ -142,7 +144,7 @@ M.config = function()
   },
 }
 
-  -- INFO:Telescope
+  --Telescope
   -- =========================================
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
@@ -169,7 +171,7 @@ M.config = function()
     },
   }
 
-  -- INFO:Terminal
+  --Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
   --using lazygit
@@ -177,7 +179,7 @@ M.config = function()
     { "lazygit", "gg", "LazyGit" },
   }
 
-  -- INFO:WhichKey
+  --WhichKey
   -- =========================================
   lvim.builtin.which_key.setup.triggers_blacklist = {
     -- list of mode / prefixes that should never be hooked by WhichKey
