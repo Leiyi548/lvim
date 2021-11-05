@@ -254,10 +254,10 @@ lvim.plugins={
     --lsp_signature
     {
       "ray-x/lsp_signature.nvim",
+      event = "BufRead",
       config = function()
         require("user.lsp_signature").config()
       end,
-      event = "BufRead",
     },
     --Emmet-vim
     {
@@ -270,13 +270,13 @@ lvim.plugins={
         ]])
       end
     },
-    -- {
-    -- "Pocco81/AutoSave.nvim",
-    -- config = function()
-    --   require("autosave").setup()
-    -- end,
-    -- disable = not lvim.builtin.autosave.active,
-    -- },
+    {
+    "Pocco81/AutoSave.nvim",
+    config = function()
+      require("autosave").setup()
+    end,
+    disable = not lvim.builtin.autosave.active,
+    },
   {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
