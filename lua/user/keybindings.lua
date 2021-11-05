@@ -122,7 +122,8 @@ M.config = function()
       --["h"] = { "<cmd>nohlsearch<cr>", "No Highlight" },
       --Whichkey-b
   --lvim.builtin.which_key.mappings[";"] = { "<cmd>Dashboard<cr>", "Dashboard" }
-      [";"] = { "<cmd>Alpha<cr>","Dashboard"},
+      --[";"] = { "<cmd>Alpha<cr>","Dashboard"},
+      [";"] = { ':lua NTGlobal["terminal"]:toggle()<cr>',"Vscodeterm" },
   --lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
       ["e"] = { "<cmd>NvimTreeToggle<cr>","Explorer"},
       ["c"] = { "<cmd>BufferClose!<cr>", "Close Buffer" },

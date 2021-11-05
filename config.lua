@@ -51,10 +51,12 @@ lvim.lang.html.formatters = {{exe = "prettier"}}
 lvim.lang.json.formatters = {{exe = "prettier"}}
 lvim.lang.python.linters = { { exe = "flake8" } }
 lvim.lang.python.formatters = {{exe = "black"}}
---lvim.lang.go.linters = { { exe = "golangci-lint" } }
---lvim.lang.go.linters = {{exe = "golangci-lint"}}
+--markdown
+lvim.lang.markdown.formatters = {{exe="prettier"}}
 --if you want to use markdown linters
 --lvim.lang.markdown.linters ={ {exe = "markdownlint" } }
+--lvim.lang.go.linters = { { exe = "golangci-lint" } }
+--lvim.lang.go.linters = {{exe = "golangci-lint"}}
 -- exe value can be "black", "yapf", or "isort"
 -- lvim.lang.python.formatters = { { exe = "black" } }
 --lvim.colorscheme = "gruvbox"
