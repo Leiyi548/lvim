@@ -77,7 +77,7 @@ lvim.plugins={
     vim.g.mkdp_markdown_css = "~/.config/nvim/colorscheme/markdown.css"
     vim.g.mkdp_auto_close =0
     vim.cmd([[
-    source ~/.config/nvim/md-snippets.vim
+    source ~/.config/lvim/md-snippets.vim
     autocmd BufRead,BufNewFile *.md setlocal spell
     ]])
     end
@@ -254,7 +254,7 @@ lvim.plugins={
     --lsp_signature
     {
       "ray-x/lsp_signature.nvim",
-      event = "BufRead",
+      --event = "BufRead",
       config = function()
         require("user.lsp_signature").config()
       end,
@@ -265,7 +265,7 @@ lvim.plugins={
       ft = {"html","css","php","jsp","markdown"},
       config = function ()
         vim.cmd([[
-        source ~/.config/nvim/html-snippets.vim
+        source ~/.config/lvim/html-snippets.vim
         autocmd BufRead,BufNewFile *.md setlocal spell
         ]])
       end
@@ -355,10 +355,10 @@ lvim.plugins={
     'junegunn/vim-easy-align',
     disable = not lvim.builtin.easy_align.active,
   },
-  {
-      'tami5/lspsaga.nvim',
-      branch = 'nvim51'
-  },
+  -- {
+  --     'tami5/lspsaga.nvim',
+  --     branch = 'nvim51'
+  -- },
   {
     "lukas-reineke/cmp-under-comparator",
   },
@@ -408,6 +408,10 @@ lvim.plugins={
   {
     'andersevenrud/compe-tmux',
     branch = "cmp"
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue'},
   },
 }
 end

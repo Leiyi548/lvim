@@ -54,6 +54,10 @@
 
 ```shell
   brew install neovim --nightly
+
+  
+  brew unlink neovim
+  brew install --HEAD neovim
 ```
 
 ### Recommended Linters

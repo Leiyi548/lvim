@@ -251,14 +251,14 @@ M.config = function()
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
         i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-        j = {
-          "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
-          "Next Diagnostic",
-        },
-        k = {
-          "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
-          "Prev Diagnostic",
-        },
+        -- j = {
+        --   "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+        --   "Next Diagnostic",
+        -- },
+        -- k = {
+        --   "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+        --   "Prev Diagnostic",
+        -- },
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
         p = {
           name = "Peek",
