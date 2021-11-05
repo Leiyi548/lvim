@@ -55,9 +55,22 @@
 ```shell
   brew install neovim --nightly
 
-  
+   
   brew unlink neovim
   brew install --HEAD neovim
+```
+- [Neovim](https://github.com/neovim/neovim) >= v0.5.1
+```shell
+ 手动安装neovim 0.51
+ （官方）github下载地址：
+
+https://github.com/neovim/neovim/releases 
+#解压到~/.soft/nvim-osx64/
+mkdir ~/.soft
+mv ~/Downloads/nvim-osx64 ~/.soft/
+# 创建软链接
+ln -s ~/.soft/nvim-osx64/bin/nvim /usr/local/bin/nvim
+
 ```
 
 ### Recommended Linters
