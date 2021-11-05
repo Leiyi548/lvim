@@ -412,13 +412,6 @@ lvim.plugins={
     "windwp/nvim-ts-autotag",
     ft = {'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue'},
   },
-  {
-    "s1n7ax/nvim-terminal",
-    config = function()
-        vim.o.hidden = true
-        require('nvim-terminal').setup()
-    end,
-  }
 }
 end
 return M
