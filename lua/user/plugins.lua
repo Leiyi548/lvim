@@ -297,13 +297,30 @@ lvim.plugins={
     end
   },
   {
-    "Leiyi548/ZFVimIM",
+    "ZSaberLv0/ZFVimIM",
     --after = "ZFVimJob",
     disable = not lvim.builtin.ZFvim.active,
     config = function ()
         vim.cmd[[
         let g:ZFVimIM_cloudAsync_outputTo = {}
+        let g:ZFVimIM_keymap = 0
+        inoremap <expr><silent> ;; ZFVimIME_keymap_toggle_i()
+        let g:ZFVimIM_sentence = 0
+        let g:ZFVimIM_predictLimit = 0
+        let g:ZFVimIM_matchLimit = -1
+
         ]]
+        -- function! s:check()
+        --   let state = ZFVimIME_state()
+        --     if len(state['key']) == 4
+        --         if !empty(state['list'])
+        --             call feedkeys("\<space>", 't')
+        --         else
+        --             call feedkeys(repeat("\<bs>", len(state['key'])), "nt")
+        --         endif
+        --     endif
+        -- endfunction
+        -- autocmd User ZFVimIM_event_OnUpdateOmni call s:check()
     end
   },
   {
