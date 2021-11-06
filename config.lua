@@ -45,8 +45,11 @@ require("user.autocommands").config()
 --C or C++
 lvim.lang.c.formatters = { { exe = "clang-format" } }
 lvim.lang.cpp.formatters = lvim.lang.c.formatters
---Python
+--html
 lvim.lang.html.formatters = {{exe = "prettier"}}
+--go
+lvim.lang.go.formatters = {{exe = "gofmt"}}
+--Python
 --lvim.lang.html.linters = {{exe = "tidy"}}
 lvim.lang.json.formatters = {{exe = "prettier"}}
 lvim.lang.python.linters = { { exe = "flake8" } }
@@ -55,6 +58,7 @@ lvim.lang.python.formatters = {{exe = "black"}}
 lvim.lang.markdown.formatters = {{exe="prettier"}}
 --if you want to use markdown linters
 --lvim.lang.markdown.linters ={ {exe = "markdownlint" } }
+
 --lvim.lang.go.linters = { { exe = "golangci-lint" } }
 --lvim.lang.go.linters = {{exe = "golangci-lint"}}
 -- exe value can be "black", "yapf", or "isort"

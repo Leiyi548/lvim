@@ -91,6 +91,8 @@ brew upgrade vale markdwonlint-cli
 Go
 brew install golangci-lint
 brew upgrade golangci-lint
+npm install gofmt
+npm install eslint
 ```
 
 ### Recommended Format
