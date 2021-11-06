@@ -283,6 +283,15 @@ Note that,
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>s</kbd> |  𝐍   | Stage Hunk                        |
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>u</kbd> |  𝐍   | Undo Stage Hunk                   |
 
+### visual-multi-mode
+
+| Key                                    | Mode | Action                                                                                            |
+| -------------------------------------- | :--: | ------------------------------------------------------------------------------------------------- |
+| <kbd>TAB</kbd>                         |  𝐍   | 光标和扩展模式直接切换                                                                            |
+| <kbd>Shift</kbd>+<kbd>left/right</kbd> |  𝐍   | 选中区域并进入 visual-multi-mode                                                                  |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd>           |  𝐍   | 在当前位置插入一个光标（然后使用上下左右键移动到指定未知添加下一个光标，hjkl 键会移动添加的光标） |
+| <kbd>Ctrl</kbd>+<kbd>down/up</kbd>     |  𝐍   | 垂直方向插入多光标                                                                                |
+
 ### [easy-align](https://github.com/junegunn/vim-easy-align)
 
 easy-align 是一个可以让你代码快速对齐的插件<br>
@@ -354,21 +363,5 @@ ga 进入 easyalign 模式<br>
 | batch_size | Fixnum  |   nil   | number of maximum items to be assigned at once |
 |   logger   | Logger  |   nil   |         logger instance for debug logs         |
 ```
-
-#### 高级用法
-
-### visual-multi-mode
-
-| 按键         | 模式                  | 描述                                                                                                                                                   | 提供者               |
-| ------------ | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
-| tab          | vsiual-multi-mode     | 光标和扩展模式直接切换                                                                                                                                 | vim-visual-multi     |
-| shift-左右键 | normal                | 选中区域并进入 vim-visual-multi-mode                                                                                                                   | vim-visual-multi     |
-| ctrl-c       | noraml                | 在当前位置插入一个光标(然后使用上下左右键移动到指定位置添加下一个光标,hjkl 键会移动添加的光标)                                                         | vim-visual-multi     |
-| ctrl-down/up | noraml                | 垂直方向插入光标                                                                                                                                       | vim-visual-multi     |
-| ctrl-s       | normal/visual         | 1.选中当前光标下的所有单词 2.visual 模式下选中所有的当前选中的内容                                                                                     | vim-visual-multi     |
-| ctrl-n/N     | normal                | 在 visul 模式选中内容之后, 按下 ctrl-n 会在下一处与当前行选中内一样的地方插入光标.非 visual 模式下,与 ctrl-s 表现差不多,不过是依次选择当前光标下的单词 | vim-vim-visual-multi |
-| q            | vim-visual-multi-mode | 取消当前光标或者选中的区域                                                                                                                             | vim-visual-multi     |
-| ]/[          | vim-visual-multi-mode | 跳到下一个/上一个匹配的模式,可以代替]/[进行使用                                                                                                        | vim-visual-multi     |
-| S            | vim-visual-multi      | 在多光标模式下,将多个选中的内容以某种符号进行包围                                                                                                      | vim-vim-visual-multi |
 
 </details>

@@ -75,6 +75,8 @@ M.config = function()
    lvim.keys.normal_mode["<leader>p"] = '"+p"'
    lvim.keys.visual_mode["<leader>p"] = '"+p'
 
+   --IntelliTab
+   -- lvim.keys.insert_mode["<Tab>"] = "<CMD>lua require('intellitab').indent<cr>"
    -- X closes a buffer
    lvim.keys.normal_mode["<S-x>"] = ":bdelete!<cr>"
    -- accelerated-jk
@@ -87,7 +89,7 @@ M.config = function()
    vim.api.nvim_set_keymap('t','<Esc>',"<C-\\><C-n>",{silent=true})
    --lspsaga
    --lvim.keys.normal_mode["<leader>ca"] = "<CMD>lua require('lspsaga.codeaction').code_action()<cr>"
-   lvim.keys.normal_mode["<leader>rn"] = "<CMD>lua require('lspsaga.rename').rename()<cr>"
+   -- lvim.keys.normal_mode["<leader>rn"] = "<CMD>lua require('lspsaga.rename').rename()<cr>"
    --lvim.keys.normal_mode["gp"] = "<cmd>lua require'lspsaga.provider'.preview_definition()<cr>"
    --lvim.keys.normal_mode["K"] = "<cmd>lua require('lspsaga.hover').render_hover_doc()<cr>"
    lvim.keys.normal_mode["<C-f>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>"

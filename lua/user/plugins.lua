@@ -190,6 +190,7 @@ lvim.plugins={
     ft = {'markdown','go','php','python','c','cpp','lua','java','vim'},
     config = function()
     vim.g.vista_default_executive = "nvim_lsp"
+    vim.g.vista_icon_indent = {"╰─▸ ", "├─▸ "}
   end
    },
    --indent_blankline
@@ -412,6 +413,10 @@ lvim.plugins={
     "windwp/nvim-ts-autotag",
     ft = {'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue'},
   },
+  -- {
+  --   "pta2002/intellitab.nvim",
+  --   event = "InsertEnter",
+  -- },
 }
 end
 return M
