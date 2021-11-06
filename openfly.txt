@@ -4121,7 +4121,7 @@ bwiz 悲愁
 bwj 钡
 bwji 北极
 bwjj 百无禁忌
-bwjk 背景 北京
+bwjk 北京
 bwjl 北疆
 bwjm 卑贱
 bwjn 北郊 不畏艰难
@@ -18633,7 +18633,7 @@ hvuz 回收
 hvv 徽章
 hvvf 会诊
 hvvh 会长
-hvvi 回执
+hvvi 绘制 回执
 hvvj 会展
 hvvr 回转
 hvvv 花枝招展
@@ -34800,7 +34800,7 @@ nhyu 那还用说
 nhz 女孩子
 nhzi 男孩子
 nhzy 齉
-ni 你 泥
+ni 泥
 nia 鲵
 niae 鲵
 niai 溺爱
