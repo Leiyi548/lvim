@@ -307,7 +307,7 @@ lvim.plugins={
         inoremap <expr><silent> ;; ZFVimIME_keymap_toggle_i()
         let g:ZFVimIM_sentence = 0
         let g:ZFVimIM_predictLimit = 0
-        let g:ZFVimIM_matchLimit = -1
+        let g:ZFVimIM_matchLimit = 4
 
         ]]
         -- function! s:check()
