@@ -130,6 +130,7 @@ M.config = function()
       ["e"] = { "<cmd>NvimTreeToggle<cr>","Explorer"},
       ["c"] = { "<cmd>BufferClose!<cr>", "Close Buffer" },
       ["u"] = { "<cmd>UndotreeToggle<cr>","Undotree"},
+      ["o"] = { "<cmd>Vista!!<cr>","Outline"},
       ["Y"] = { "CopyAll"},
       ["y"] = { "CopyClipboard"},
       ["w"] = { "Windows"},
@@ -167,13 +168,6 @@ M.config = function()
         s = { "<cmd>PackerStatus<cr>", "Status" },
         S = { "<cmd>PackerSync<cr>", "Sync" },
         u = { "<cmd>PackerUpdate<cr>", "Update" },
-      },
-      --Whichkey-E
-      E = {
-        name = "Hello",
-        v = { "<cmd>Vista<cr>", "Vista" },
-	      u = { "<cmd>UndotreeToggle<cr>","UndoTree"},
-        s = { "<cmd>SymbolsOutline<cr>","SymbolsOutline"},
       },
       --Whichkey-E
       --Whichkey-t
