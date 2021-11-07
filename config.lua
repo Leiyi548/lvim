@@ -25,7 +25,8 @@ lvim.builtin.notify.active = true
 -- Customization
 -- =========================================
 require("user.lua_snip")
-
+vim.cmd[[source ~/.config/lvim/textobjects.vim]]
+--textobjects
 require("user.builtin").config()
 require("user.cmp-comparator")
 

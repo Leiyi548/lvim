@@ -179,12 +179,11 @@ M.config = function()
       --Whichkey-t
       t = {
         name = "Terminal",
-        r = { "<cmd>RnvimrToggle<cr>", "ranger" },
-	      a = { "<cmd>RnvimrResize<cr>", "resize"},
       },
       --Whichkey-r
       r = {
         name = "Run",
+         a = { "<cmd>RnvimrToggle<cr>", "ranger" },
          t = { "<cmd>AsyncTask file-run<cr>", "Run on default terminal" },
 	       f = { "<cmd>AsyncTask file-run-floaterm<cr>","Run on floaterm" }
       },

@@ -355,7 +355,7 @@ lvim.plugins={
   -- },
   {
     "machakann/vim-sandwich",
-
+    keys = {"s"},
   },
   {
       "danymat/neogen",
@@ -434,6 +434,13 @@ lvim.plugins={
   --   "pta2002/intellitab.nvim",
   --   event = "InsertEnter",
   -- },
+  {
+    "wellle/targets.vim",
+  },
+  {
+    "tpope/vim-repeat",
+    keys = {"."},
+  }
 }
 end
 return M
