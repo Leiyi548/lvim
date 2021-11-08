@@ -191,6 +191,13 @@ lvim.plugins={
     config = function()
     vim.g.vista_default_executive = "nvim_lsp"
     vim.g.vista_icon_indent = {"╰─▸ ", "├─▸ "}
+    vim.cmd[[
+    let g:vista#renderer#enable_icon = 1
+    let g:vista#renderer#icons = {
+    \   "function": "\uf794",
+    \   "variable": "\uf71b",
+    \  }
+    ]]
   end
    },
    --indent_blankline
@@ -307,8 +314,7 @@ lvim.plugins={
         inoremap <expr><silent> ;; ZFVimIME_keymap_toggle_i()
         let g:ZFVimIM_sentence = 0
         let g:ZFVimIM_predictLimit = 0
-        let g:ZFVimIM_matchLimit = 4
-
+        let g:ZFVimIM_matchLimit = -1
         ]]
         -- function! s:check()
         --   let state = ZFVimIME_state()
@@ -440,7 +446,11 @@ lvim.plugins={
   {
     "tpope/vim-repeat",
     keys = {"."},
-  }
+  },
+  {
+    "AndrewRadev/tagalong.vim",
+    ft = {"html"},
+  },
 }
 end
 return M
