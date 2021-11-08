@@ -2,6 +2,8 @@ local M = {}
 
 M.config = function()
 
+  -- Lualine
+  --lvim.builtin.lualine.options.theme='gruvbox-material'
   -- CMP
   -- =========================================
   lvim.builtin.cmp.sources = {
@@ -43,11 +45,12 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  -- icon                       既           
   lvim.lsp.diagnostics.signs.values = {
     { name = "LspDiagnosticsSignError", text = " " },
-    { name = "LspDiagnosticsSignWarning", text = "" },
-    { name = "LspDiagnosticsSignHint", text = "" },
-    { name = "LspDiagnosticsSignInformation", text = "" },
+    { name = "LspDiagnosticsSignWarning", text = " " },
+    { name = "LspDiagnosticsSignHint", text = "" },
+    { name = "LspDiagnosticsSignInformation", text = "" },
   }
 
 

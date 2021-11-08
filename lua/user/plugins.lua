@@ -59,6 +59,17 @@ lvim.plugins={
       "ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"},
     },
     {
+      "sainnhe/gruvbox-material",
+      config = function ()
+        vim.cmd[[
+          let g:gruvbox_material_background = 'hard'
+          let g:gruvbox_material_cursor = "red"
+          let g:gruvbox_material_statusline_style = 'original'
+          let g:gruvbox_material_palette = 'original'
+        ]]
+      end
+    },
+    {
       "rhysd/accelerated-jk"
     },
 
