@@ -67,7 +67,7 @@ lvim.plugins={
           let g:gruvbox_material_statusline_style = 'original'
           let g:gruvbox_material_palette = 'original'
         ]]
-      end
+      end,
     },
     {
       "rhysd/accelerated-jk"

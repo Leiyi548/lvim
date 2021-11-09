@@ -187,6 +187,7 @@ M.config = function()
         b = { "<cmd>Telescope buffers<cr>", "Find buffer" },
         c = { "<cmd>Telescope colorscheme<cr>", "Change colorscheme" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
+        d = { "<cmd>Telescope dotfiles<cr>", "Find dotfiles" },
 	      f = { "<cmd>Telescope find_files<cr>", "Find File" },
         H = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },

@@ -150,9 +150,13 @@ M.config = function()
   --Telescope
   -- =========================================
   -- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
+  -- icon                       既            
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
   lvim.builtin.telescope.defaults.winblend = 6
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
+  --lvim.builtin.telescope.defaults.selection_caret = " "
+  --lvim.builtin.telescope.defaults.selection_caret = ""
+  lvim.builtin.telescope.defaults.selection_caret = ""
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
     "vendor/*",
     "node_modules",
@@ -173,7 +177,7 @@ M.config = function()
       ["<C-y>"] = require("telescope.actions").which_key,
     },
   }
-
+require("telescope").load_extension('dotfiles')
   --Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
