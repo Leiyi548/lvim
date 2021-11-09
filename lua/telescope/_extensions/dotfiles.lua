@@ -4,13 +4,13 @@ local make_entry = require('telescope.make_entry')
 local conf =  require('telescope.config').values
 
 local dotfiles_list = function (opts)
-  local dir = opts.path or ''
+  -- local dir = opts.path or ''
   local list = {}
   --打开文件夹
-  local p = io.popen('rg --files --hidden'..dir)
-  for file in p:lines()do
-    table.insert(list,file)
-  end
+  -- local p = io.popen('rg --files --hidden'..dir)
+  -- for file in p:lines()do
+  --   table.insert(list,file)
+  -- end
   local nvim_conf = io.popen('rg --files ~/.config/lvim')
   for file in nvim_conf:lines() do
     table.insert(list,file)

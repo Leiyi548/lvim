@@ -57,6 +57,16 @@ M.config = function()
    -- easymotion(hop)
    lvim.keys.normal_mode["ss"] = "<cmd>HopChar2<cr>"
    lvim.keys.visual_mode["ss"] = "<cmd>HopChar2<cr>"
+   -- quickly replace
+   -- 一口气这是替换全部
+   lvim.keys.normal_mode["<leader>rr"] = ":%s///g<Left><Left>"
+   -- 依次进行替换并进行询问
+   lvim.keys.normal_mode["<leader>rc"] = ":%s///gc<Left><Left><Left>"
+   -- lvim.keys.normal_mode["s*"] = ":let @/='\<'.expand('<cword>').'\>'<CR>cgn"
+   -- lvim.keys.visual_block_mode["s*"] = ":let @/='\<'.expand('<cword>').'\>'<CR>cgn"
+   --先点击* 选中需要替换的代码快后在 visual模式下进行替换
+   lvim.keys.visual_block_mode["<leader>rr"] = ":s///g<Left><Left>"
+   lvim.keys.visual_block_mode["<leader>rc"] = ":s///gc<Left><Left><Left>"
 
    --lvim.keys.normal_mode["<C-s>"] = actions.save_colorscheme
    -- INFO: visula_mode

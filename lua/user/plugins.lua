@@ -28,11 +28,18 @@ lvim.plugins={
         return (_time.hour >= 5 and _time.hour < 8)
       end,
     },
+    -- {
+    --   "Pocco81/Catppuccino.nvim",
+    --   config = function()
+    --     require("user.theme").catppuccino()
+    --   end,
+    --   cond = function()
+    --     local _time = os.date "*t"
+    --     return (_time.hour >= 8 and _time.hour < 11)
+    --   end,
+    -- },
     {
-      "Pocco81/Catppuccino.nvim",
-      config = function()
-        require("user.theme").catppuccino()
-      end,
+      "shaunsingh/nord.nvim",
       cond = function()
         local _time = os.date "*t"
         return (_time.hour >= 8 and _time.hour < 11)

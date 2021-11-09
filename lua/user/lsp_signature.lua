@@ -18,9 +18,9 @@ M.config = function()
     hint_scheme = "String",
     -- use_lspsaga = false, -- set to true if you want to use lspsaga popup
     hi_parameter = "Search", -- how your parameter will be highlight
-    max_height = 12, -- max height of signature floating_window, if content is more than max_height, you can scroll down
+    max_height = 6, -- max height of signature floating_window, if content is more than max_height, you can scroll down
     -- to view the hiding contents
-    max_width = 120, -- max_width of signature floating_window, line will be wrapped if exceed max_width
+    max_width = 60, -- max_width of signature floating_window, line will be wrapped if exceed max_width
     handler_opts = {
       border = "single", -- double, single, shadow, none
     },
