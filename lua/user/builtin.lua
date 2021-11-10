@@ -177,7 +177,19 @@ M.config = function()
       ["<C-y>"] = require("telescope.actions").which_key,
     },
   }
-require("telescope").load_extension('dotfiles')
+  local telescope_actions = require "telescope.actions.set"
+  lvim.builtin.telescope.defaults.pickers.find_files = {
+  attach_mappings = function(_)
+      telescope_actions.select:enhance {
+        post = function()
+          vim.cmd ":normal! zx"
+        end,
+      }
+      return true
+    end,
+  find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
+  }
+  require("telescope").load_extension('dotfiles')
   --Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
@@ -185,7 +197,6 @@ require("telescope").load_extension('dotfiles')
   lvim.builtin.terminal.execs = {
     { "lazygit", "gg", "LazyGit" },
   }
-
   --WhichKey
   -- =========================================
   lvim.builtin.which_key.setup.triggers_blacklist = {
@@ -202,8 +213,8 @@ require("telescope").load_extension('dotfiles')
       ["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },
       ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
       ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
-      ["gh"] = { "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", "lspsaga_finder"},
-      ["gp"] = { "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>","preview_definition"},
+      -- ["gh"] = { "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", "lspsaga_finder"},
+      -- ["gp"] = { "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>","preview_definition"},
     }
 
     -- better keybindings for ts and tsx files
@@ -212,10 +223,11 @@ require("telescope").load_extension('dotfiles')
     if vim.tbl_contains(langs, ftype) then
       local ts_keys = {
         ["gA"] = { "<cmd>TSLspImportAll<CR>", "Import All" },
-        ["gr"] = { "<cmd>lua require('lspsaga.rename').rename()<CR>", "Rename File" },
+        ["gr"] = { "<cmd>TSLspRenameFile<CR>", "Rename File" },
+        --["gr"] = { "<cmd>lua require('lspsaga.rename').rename()<CR>", "Rename File" },
         ["gS"] = { "<cmd>TSLspOrganize<CR>", "Organize Imports" },
       }
-      wk.register(ts_keys, { mode = "n" })
+      wk.register(ts_keys, { mde = "n" })
     end
     wk.register(keys, { mode = "n" })
   end

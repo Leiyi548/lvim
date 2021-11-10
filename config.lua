@@ -60,8 +60,19 @@ lvim.lang.markdown.formatters = {{exe="prettier"}}
 --if you want to use markdown linters
 --lvim.lang.markdown.linters ={ {exe = "markdownlint" } }
 
+--lua
+--lvim.lang.lua.formatters = {{exe="lua-format"}}
+--lvim.lang.lua.linters = {{exe="luacheck"}} --useful
 --lvim.lang.go.linters = { { exe = "golangci-lint" } }
 --lvim.lang.go.linters = {{exe = "golangci-lint"}}
 -- exe value can be "black", "yapf", or "isort"
 -- lvim.lang.python.formatters = { { exe = "black" } }
 --lvim.colorscheme = "gruvbox"
+
+
+--theme
+--lvim.colorscheme = "gruvbox"
+-- lvim.colorscheme = "onedarker"
+-- vim.cmd [[
+-- colorscheme gruvbox
+-- ]]
