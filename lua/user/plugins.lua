@@ -469,6 +469,9 @@ lvim.plugins={
     "AndrewRadev/tagalong.vim",
     ft = {"html"},
   },
+  {
+    "xiyaowong/telescope-emoji.nvim",
+  },
 }
 end
 return M

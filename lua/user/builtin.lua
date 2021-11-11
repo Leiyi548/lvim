@@ -190,6 +190,7 @@ M.config = function()
   find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
   }
   require("telescope").load_extension('dotfiles')
+  require("telescope").load_extension('emoji')
   --Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
