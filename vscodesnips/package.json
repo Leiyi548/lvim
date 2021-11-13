@@ -31,6 +31,10 @@
         "path": "./go.json"
       },
       {
+        "language": "vim",
+        "path": "./vim.json"
+      },
+      {
         "language": [
           "shellscript",
           "shell",

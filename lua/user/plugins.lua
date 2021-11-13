@@ -39,12 +39,24 @@ lvim.plugins={
     --   end,
     -- },
     {
-      "shaunsingh/nord.nvim",
+      "ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"},
+      config = function ()
+        vim.cmd [[
+          colorscheme gruvbox
+        ]]
+      end,
       cond = function()
         local _time = os.date "*t"
         return (_time.hour >= 8 and _time.hour < 11)
       end,
     },
+    -- {
+    --   "shaunsingh/nord.nvim",
+    --   cond = function()
+    --     local _time = os.date "*t"
+    --     return (_time.hour >= 8 and _time.hour < 11)
+    --   end,
+    -- },
     {
       "abzcoding/doom-one.nvim",
       branch = "feat/nvim-cmp-floating",
@@ -62,9 +74,12 @@ lvim.plugins={
     {
       "olimorris/onedarkpro.nvim"
     },
-    {
-      "ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"},
-    },
+    -- {
+    --  "Mofiqul/vscode.nvim",
+    --  config = function ()
+    --    vim.g.vscode_style = "dark"
+    --  end
+    -- },
     {
       "sainnhe/gruvbox-material",
       config = function ()
@@ -325,14 +340,14 @@ lvim.plugins={
     "ZSaberLv0/ZFVimIM",
     --after = "ZFVimJob",
     disable = not lvim.builtin.ZFvim.active,
-    config = function ()
-        vim.cmd[[
+    config = function () --"let g:ZFVimIM_matchLimit = -1
+        vim.cmd[[ 
         let g:ZFVimIM_cloudAsync_outputTo = {}
         let g:ZFVimIM_keymap = 0
         inoremap <expr><silent> ;; ZFVimIME_keymap_toggle_i()
         let g:ZFVimIM_sentence = 0
         let g:ZFVimIM_predictLimit = 0
-        let g:ZFVimIM_matchLimit = -1
+        let g:ZFVimIM_matchLimit = 1
         ]]
         -- function! s:check()
         --   let state = ZFVimIME_state()
