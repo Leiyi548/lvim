@@ -90,8 +90,8 @@ M.config = function()
    -- X closes a buffer
    lvim.keys.normal_mode["<S-x>"] = ":bdelete!<cr>"
    -- accelerated-jk
-   vim.api.nvim_set_keymap('n','j','<Plug>(accelerated_jk_gj)',{ silent=true })
-   vim.api.nvim_set_keymap('n','k','<Plug>(accelerated_jk_gk)',{ silent=true })
+   -- vim.api.nvim_set_keymap('n','j','<Plug>(accelerated_jk_gj)',{ silent=true })
+   -- vim.api.nvim_set_keymap('n','k','<Plug>(accelerated_jk_gk)',{ silent=true })
    -- vim-easy-align
    --vim.api.nvim_set_keymap('n','ga','<Plug>(EasyAlign)',{ silent=true })
    --vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{ silent=true })

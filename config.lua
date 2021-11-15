@@ -13,7 +13,7 @@ lvim.builtin.ZFvim = { active = true}  -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
 lvim.builtin.fancy_dashboard = {active = true} --change to true if you want to fancy_dashboard
 lvim.builtin.easy_align = {active = false} -- change to true if you want easy_align
-lvim.builtin.tabnine = {active = false}  --change to true if you want tabnine
+lvim.builtin.tabnine = {active = true}  --change to true if you want tabnine
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"

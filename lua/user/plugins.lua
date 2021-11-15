@@ -43,6 +43,7 @@ lvim.plugins={
       config = function ()
         vim.cmd [[
           colorscheme gruvbox
+          let g:gruvbox_italicize_comments = 0
         ]]
       end,
       cond = function()
@@ -74,12 +75,16 @@ lvim.plugins={
     {
       "olimorris/onedarkpro.nvim"
     },
-    -- {
-    --  "Mofiqul/vscode.nvim",
-    --  config = function ()
-    --    vim.g.vscode_style = "dark"
-    --  end
-    -- },
+    {
+     "Mofiqul/vscode.nvim",
+     config = function ()
+       -- vim.cmd[[
+       --   colorscheme = "vscode"
+       --  ]]
+      vim.g.vscode_style = "light"
+      --lvim.builtin.lualine.options.theme ="Tomorrow"
+     end
+    },
     {
       "sainnhe/gruvbox-material",
       config = function ()
@@ -91,9 +96,9 @@ lvim.plugins={
         ]]
       end,
     },
-    {
-      "rhysd/accelerated-jk"
-    },
+    -- {
+    --   "rhysd/accelerated-jk"
+    -- },
 
     {
     "tpope/vim-surround",
@@ -486,6 +491,22 @@ lvim.plugins={
   },
   {
     "xiyaowong/telescope-emoji.nvim",
+  },
+  {
+      "tzachar/cmp-tabnine",
+      run = "./install.sh",
+      requires = "hrsh7th/nvim-cmp",
+      config = function()
+        local tabnine = require "cmp_tabnine.config"
+        tabnine:setup {
+          max_lines = 1000,
+          max_num_results = 10,
+          sort = true,
+        }
+      end,
+      opt = true,
+      event = "InsertEnter",
+      disable = not lvim.builtin.tabnine.active,
   },
 }
 end

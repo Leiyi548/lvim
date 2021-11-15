@@ -4,12 +4,20 @@ M.config = function()
 
   -- Lualine
   --lvim.builtin.lualine.options.theme='gruvbox-material'
+  -- local _time = os.date "*t"
+  -- if _time<16  then
+  --  lvim.builtin.lualine.options.theme ="Tomorrow"
+  -- end
   -- CMP
+--require('lualine').setup {options = {theme = gruvbox}}
+  -- local vscode = require("lualine.themes.vscode")
+  -- vscode.insert_b = { fg = vscode.insert.a.bg, gui= "bold"}
+
   -- =========================================
   lvim.builtin.cmp.sources = {
     { name = "nvim_lsp" },
     --{ name = "cmp_tabnine", max_item_count = 3 },
-    { name = "buffer", max_item_count = 5, keyword_length = 5 },
+    { name = "buffer", max_item_count = 10, keyword_length = 5 },
     { name = "path", max_item_count = 5 },
     { name = "luasnip", max_item_count = 3  },
     { name = "nvim_lua" },
@@ -19,6 +27,7 @@ M.config = function()
     { name = "treesitter" },
     { name = "crates" },
     { name = "spell", max_item_count = 3},
+    { name = 'cmp_tabnine' },
     { name = "orgmode"},
   }
   lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
@@ -191,6 +200,7 @@ M.config = function()
   }
   require("telescope").load_extension('dotfiles')
   require("telescope").load_extension('emoji')
+  require("telescope").load_extension('file_create')
   --Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
