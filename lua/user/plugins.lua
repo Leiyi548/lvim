@@ -48,8 +48,22 @@ lvim.plugins={
       end,
       cond = function()
         local _time = os.date "*t"
-        return (_time.hour >= 8 and _time.hour < 11)
+        return (_time.hour >= 8 and _time.hour < 9)
       end,
+    },
+    {
+     "Mofiqul/vscode.nvim",
+     config = function ()
+       -- vim.cmd[[
+       --   colorscheme = "vscode"
+       --  ]]
+      vim.g.vscode_style = "light"
+      --lvim.builtin.lualine.options.theme ="Tomorrow"
+     end,
+    cond = function()
+      local _time = os.date "*t"
+      return (_time.hour >= 9 and _time.hour < 11)
+    end,
     },
     -- {
     --   "shaunsingh/nord.nvim",
@@ -74,16 +88,6 @@ lvim.plugins={
     },
     {
       "olimorris/onedarkpro.nvim"
-    },
-    {
-     "Mofiqul/vscode.nvim",
-     config = function ()
-       -- vim.cmd[[
-       --   colorscheme = "vscode"
-       --  ]]
-      vim.g.vscode_style = "light"
-      --lvim.builtin.lualine.options.theme ="Tomorrow"
-     end
     },
     {
       "sainnhe/gruvbox-material",

@@ -194,7 +194,8 @@ M.config = function()
       --Whichkey-f
       f = {
         name = "+File",
-        b = { "<cmd>Telescope buffers<cr>", "Find buffer" },
+        --b = { "<cmd>Telescope buffers<cr>", "Find buffer" },
+        b = { "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({}))<cr>","Find buffer"},
         c = { "<cmd>Telescope colorscheme<cr>", "Change colorscheme" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         d = { "<cmd>Telescope dotfiles<cr>", "Find dotfiles" },

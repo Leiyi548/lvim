@@ -8,6 +8,7 @@ M.config = function()
   -- if _time<16  then
   --  lvim.builtin.lualine.options.theme ="Tomorrow"
   -- end
+  lvim.builtin.lualine.style = "default"
   -- CMP
 --require('lualine').setup {options = {theme = gruvbox}}
   -- local vscode = require("lualine.themes.vscode")
