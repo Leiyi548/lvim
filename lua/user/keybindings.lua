@@ -85,6 +85,9 @@ M.config = function()
    lvim.keys.normal_mode["<leader>p"] = '"+p"'
    lvim.keys.visual_mode["<leader>p"] = '"+p'
 
+   --Luasnip
+   vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
+   vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
    --IntelliTab
    -- lvim.keys.insert_mode["<Tab>"] = "<CMD>lua require('intellitab').indent<cr>"
    -- X closes a buffer
@@ -188,6 +191,7 @@ M.config = function()
       r = {
         name = "Run",
          a = { "<cmd>RnvimrToggle<cr>", "ranger" },
+         --a = { "<cmd>FloatermNew ranger<cr>", "ranger" },
          t = { "<cmd>AsyncTask file-run<cr>", "Run on default terminal" },
 	       f = { "<cmd>AsyncTask file-run-floaterm<cr>","Run on floaterm" }
       },

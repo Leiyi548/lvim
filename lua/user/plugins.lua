@@ -410,9 +410,10 @@ lvim.plugins={
       config = function()
         require("neogen").setup {
           enabled = true,
+          jump_map = "<C-,>"
         }
       end,
-      ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go" },
+      ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go","java"},
       event = "InsertEnter",
       requires = "nvim-treesitter/nvim-treesitter",
   },
