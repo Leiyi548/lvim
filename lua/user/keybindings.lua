@@ -34,8 +34,10 @@ M.config = function()
    lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
    -- lvim.keys.normal_mode["<Tab>"] = ":BufferNext<cr>"
    -- lvim.keys.normal_mode["<S-Tab>"] = ":BufferPrevious<cr>"
-   lvim.keys.normal_mode["<Tab>"] = "<cmd>BufferLineCycleNext<cr>"
-   lvim.keys.normal_mode["<S-Tab>"] = "<cmd>BufferLineCyclePrev<cr>"
+   if lvim.builtin.fancy_bufferline.active then
+     lvim.keys.normal_mode["<Tab>"] = "<cmd>BufferLineCycleNext<cr>"
+     lvim.keys.normal_mode["<S-Tab>"] = "<cmd>BufferLineCyclePrev<cr>"
+   end
    lvim.keys.normal_mode["Q"]=":qa!<cr>"
    --lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
    lvim.keys.normal_mode["<S-h>"] = "0"
@@ -367,7 +369,25 @@ M.config = function()
         i = { ":TSConfigInfo<cr>", "Info" },
       },
 }
-
+   --plugins keybindings
+   if lvim.builtin.fancy_bufferline.active then
+     lvim.builtin.which_key.mappings.b = {
+      name = "Buffers",
+      ["1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" },
+      ["2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "goto 2" },
+      ["3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "goto 3" },
+      ["4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "goto 4" },
+      ["5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "goto 5" },
+      ["6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "goto 6" },
+      ["7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "goto 7" },
+      ["8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" },
+      ["9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" },
+      c = { "<Cmd>BufferLinePickClose<CR>", "delete buffer" },
+      p = { "<Cmd>BufferLinePick<CR>", "pick buffer" },
+      t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
+      b = { "<cmd>b#<cr>", "Previous" },
+      }
+  end
 end
 
 return M

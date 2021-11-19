@@ -31,7 +31,8 @@ M.cmp_kind = {
 
 M.icons = {
   error = " ",
-  warn = " ",
+  --warn = " ",
+  warn = " ",
   info = "",
   hint = " ",
   code_action = "",
