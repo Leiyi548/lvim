@@ -32,8 +32,10 @@ M.config = function()
    -- INFO: add your own keymapping
    -- INFO: normal_mode
    lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-   lvim.keys.normal_mode["<Tab>"] = ":BufferNext<cr>"
-   lvim.keys.normal_mode["<S-Tab>"] = ":BufferPrevious<cr>"
+   -- lvim.keys.normal_mode["<Tab>"] = ":BufferNext<cr>"
+   -- lvim.keys.normal_mode["<S-Tab>"] = ":BufferPrevious<cr>"
+   lvim.keys.normal_mode["<Tab>"] = "<cmd>BufferLineCycleNext<cr>"
+   lvim.keys.normal_mode["<S-Tab>"] = "<cmd>BufferLineCyclePrev<cr>"
    lvim.keys.normal_mode["Q"]=":qa!<cr>"
    --lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
    lvim.keys.normal_mode["<S-h>"] = "0"

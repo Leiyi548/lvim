@@ -180,7 +180,7 @@ lvim.plugins={
     'kristijanhusak/orgmode.nvim',
     ft = {'org'},
     config = function()
-    require('orgmode').setup(require("user.orgmode_config"))
+      require("user.orgmode").setup()
     end,
     disable = not lvim.builtin.orgmode.active,
 	  },
@@ -489,13 +489,13 @@ lvim.plugins={
     "tpope/vim-repeat",
     keys = {"."},
   },
-  {
-    "AndrewRadev/tagalong.vim",
-    ft = {"html"},
-  },
-  {
-    "xiyaowong/telescope-emoji.nvim",
-  },
+  -- {
+  --   "AndrewRadev/tagalong.vim",
+  --   ft = {"html"},
+  -- },
+  -- {
+  --   "xiyaowong/telescope-emoji.nvim",
+  -- },
   {
       "tzachar/cmp-tabnine",
       run = "./install.sh",
@@ -519,6 +519,14 @@ lvim.plugins={
   {
     "mg979/vim-visual-multi",
     branch = "master",
+  },
+  {
+    "akinsho/bufferline.nvim",
+    config = function()
+      require("user.bufferlineConfig").config()
+    end,
+    requires = "nvim-web-devicons",
+    disable = not lvim.builtin.fancy_bufferline.active,
   }
 }
 end

@@ -11,6 +11,9 @@ lvim.lsp.automatic_servers_installation = true
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
 lvim.builtin.ZFvim = { active = true}  -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
+lvim.builtin.fancy_statusline = { active = true } -- enable/disable fancy statusline
+lvim.builtin.fancy_bufferline = { active = true } -- enable/disable fancy bufferline
+lvim.builtin.bufferline.active = not lvim.builtin.fancy_bufferline.active
 lvim.builtin.fancy_dashboard = {active = true} --change to true if you want to fancy_dashboard
 lvim.builtin.easy_align = {active = false} -- change to true if you want easy_align
 lvim.builtin.tabnine = {active = true}  --change to true if you want tabnine
@@ -24,7 +27,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.notify.active = true
 -- Customization
 -- =========================================
-require("user.lua_snip")
+require("user.luasnipConfig")
 vim.cmd[[source ~/.config/lvim/textobjects.vim]]
 --textobjects
 require("user.builtin").config()
@@ -42,23 +45,34 @@ require("user.keybindings").config()
 require("user.autocommands").config()
 -- Additional Formatters
 -- =========================================
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup{
+  {
+    exe = "prettier",
+    filetypes = { "html", "markdown"}
+  }
+}
+formatters.setup{
+  {
+    exe = "black",
+    filetypes = {"python"}
+  }
+}
+-- local linters = require("lvim.lsp.null-ls.init")
+-- linters.setup(
+--   {
+--     exe =  "flake8",
+--     filetypes = {"python"}
+--   }
+-- )
 -- exe value can be "clang_format" or "uncrustify"
 --C or C++
-lvim.lang.c.formatters = { { exe = "clang-format" } }
-lvim.lang.cpp.formatters = lvim.lang.c.formatters
+-- lvim.lang.c.formatters = { { exe = "clang-format" } }
+-- lvim.lang.cpp.formatters = lvim.lang.c.formatters
 --html
-lvim.lang.html.formatters = {{exe = "prettier"}}
+-- lvim.lang.html.formatters = {{exe = "prettier"}}
 --go
-lvim.lang.go.formatters = {{exe = "gofmt"}}
---Python
---lvim.lang.html.linters = {{exe = "tidy"}}
-lvim.lang.json.formatters = {{exe = "prettier"}}
-lvim.lang.python.linters = { { exe = "flake8" } }
-lvim.lang.python.formatters = {{exe = "black"}}
---markdown
-lvim.lang.markdown.formatters = {{exe="prettier"}}
---if you want to use markdown linters
-lvim.lang.markdown.linters ={ {exe = "markdownlint" } }
+-- lvim.lang.go.formatters = {{exe = "gofmt"}}
 
 --lua
 --lvim.lang.lua.formatters = {{exe="lua-format"}}

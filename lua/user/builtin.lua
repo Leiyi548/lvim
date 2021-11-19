@@ -6,9 +6,8 @@ M.config = function()
   --lvim.builtin.lualine.options.theme='gruvbox-material'
   -- local _time = os.date "*t"
   -- if _time<16  then
-  --  lvim.builtin.lualine.options.theme ="Tomorrow"
   -- end
-  lvim.builtin.lualine.style = "default"
+  --lvim.builtin.lualine.style = "default"
   -- CMP
 --require('lualine').setup {options = {theme = gruvbox}}
   -- local vscode = require("lualine.themes.vscode")
@@ -37,7 +36,7 @@ M.config = function()
     native_menu = false,
     custom_menu = true,
   }
-  lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
+  --lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
   lvim.builtin.cmp.formatting.source_names = {
     buffer = "(Buffer)",
     nvim_lsp = "(LSP)",
@@ -200,7 +199,7 @@ M.config = function()
   find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
   }
   require("telescope").load_extension('dotfiles')
-  require("telescope").load_extension('emoji')
+  -- require("telescope").load_extension('emoji')
   require("telescope").load_extension('file_create')
   --Terminal
   -- =========================================
