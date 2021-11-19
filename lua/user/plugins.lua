@@ -179,7 +179,6 @@ lvim.plugins={
     {
     'kristijanhusak/orgmode.nvim',
     ft = {'org'},
-    branch = "tree-sitter",
     config = function()
     require('orgmode').setup(require("user.orgmode_config"))
     end,
@@ -193,16 +192,16 @@ lvim.plugins={
 ---@diagnostic disable-next-line: duplicate-index
       symbols = { "◉", "○", "✸", "✿" },
       -- or a function that receives the defaults and returns a list
-      symbols = function(default_list)
-        table.insert(default_list, "♥")
-        return default_list
-      end
+      -- symbols = function(default_list)
+      --   table.insert(default_list, "♥")
+      --   return default_list
+      -- end
       }
     end
     },
     {
     'lukas-reineke/headlines.nvim',
-    ft = {'org'},
+    ft = {'org','wiki'},
     config = function()
       vim.cmd [[highlight Headline1 guibg=#1e2718]]
       vim.cmd [[highlight Headline2 guibg=#21262d]]
@@ -513,6 +512,14 @@ lvim.plugins={
       event = "InsertEnter",
       disable = not lvim.builtin.tabnine.active,
   },
+  -- {
+  --   'vimwiki/vimwiki',
+
+  -- },
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+  }
 }
 end
 return M

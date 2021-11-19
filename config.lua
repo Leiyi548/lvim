@@ -56,9 +56,9 @@ lvim.lang.json.formatters = {{exe = "prettier"}}
 lvim.lang.python.linters = { { exe = "flake8" } }
 lvim.lang.python.formatters = {{exe = "black"}}
 --markdown
---lvim.lang.markdown.formatters = {{exe="prettier"}}
+lvim.lang.markdown.formatters = {{exe="prettier"}}
 --if you want to use markdown linters
---lvim.lang.markdown.linters ={ {exe = "markdownlint" } }
+lvim.lang.markdown.linters ={ {exe = "markdownlint" } }
 
 --lua
 --lvim.lang.lua.formatters = {{exe="lua-format"}}
