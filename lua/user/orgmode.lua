@@ -6,18 +6,19 @@ M.setup = function()
     return
   end
   org_mode.setup {
-    org_agenda_files = { "~/Dropbox/org/*" },
-    org_default_notes_file = "~/Dropbox/org/refile.org",
+    org_agenda_files = { "~/Dropbox/Orgzly/*" },
+    org_default_notes_file = "~/Dropbox/Orgzly/refile.org",
+    diagnostic = false,
     org_agenda_templates = {
       T = {
         description = "Todo",
         template = "* TODO %?\n  DEADLINE: %T",
-        target = "~/shared/orgs/todos.org",
+        target = "~/Dropbox/Orgzly/todos.org",
       },
       w = {
         description = "Work todo",
         template = "* TODO %?\n  DEADLINE: %T",
-        target = "~/shared/orgs/work.org",
+        target = "~/Dropbox/Orgzly/work.org",
       },
     },
     mappings = {
@@ -27,6 +28,10 @@ M.setup = function()
       },
       org = {
         org_toggle_checkbox = "gl",
+        org_cycle = "gn",
+        org_global_cycle = "gN",
+        org_timestamp_up = "+",
+        org_timestamp_down = "-",
       }
     },
   }

@@ -48,11 +48,13 @@ M.config = function()
   local groups = require "bufferline.groups"
   local List = require "plenary.collections.py_list"
 
-  require("bufferline").setup {
+  require('bufferline').setup {
     options = {
       -- sort_by = sort_by_mtime,
-      sort_by = "id",
+      --sort_by = "id",
+      sort_by = "ordinal",
       right_mouse_command = "vert sbuffer %d",
+      numbers = "none",
       show_close_icon = false,
       show_buffer_icons = true,
       separator_style = "thin",

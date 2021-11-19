@@ -178,7 +178,7 @@ lvim.plugins={
     --orgmode.nvim
     {
     'kristijanhusak/orgmode.nvim',
-    ft = {'org'},
+    --ft = {'org'},
     config = function()
       require("user.orgmode").setup()
     end,

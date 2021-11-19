@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = function()
-
+  local kind = require("user.lsp_kind")
   -- Lualine
   --lvim.builtin.lualine.options.theme='gruvbox-material'
   -- local _time = os.date "*t"
@@ -36,6 +36,7 @@ M.config = function()
     native_menu = false,
     custom_menu = true,
   }
+  lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
   --lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
   lvim.builtin.cmp.formatting.source_names = {
     buffer = "(Buffer)",
@@ -63,10 +64,25 @@ M.config = function()
   }
 
 
-  --Comment.nvim
+  -- Comment.nvim
   -- =========================================
   lvim.builtin.comment.mappings.extra = true
-  --Project
+
+  -- NvimTree
+  -- =========================================
+  lvim.builtin.nvimtree.setup.auto_open = 0
+  lvim.builtin.nvimtree.setup.diagnostics = {
+    enable = true,
+    icons = {
+      hint = kind.icons.hint,
+      info = kind.icons.info,
+      warning = kind.icons.warn,
+      error = kind.icons.error,
+    },
+  }
+  lvim.builtin.nvimtree.icons = kind.nvim_tree_icons
+  -- lvim.builtin.nvimtree.hide_dotfiles = 0
+  -- Project
   -- =========================================
   lvim.builtin.project.active = true
 
