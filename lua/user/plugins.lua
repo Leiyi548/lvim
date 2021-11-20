@@ -102,6 +102,12 @@ lvim.plugins={
         ]]
       end,
     },
+    {
+      "EdenEast/nightfox.nvim",
+      config = function ()
+        require("user.theme").nightfox()
+      end
+    },
     -- {
     --   "rhysd/accelerated-jk"
     -- },
