@@ -1,5 +1,10 @@
 local M={}
 
+function WhichkeyMarkdown()
+  lvim.builtin.which_key.mappings["o"] = {
+  "<cmd>Vista!!<cr>", "Outline"
+}
+end
 --local actions = require "user.actions"
 M.config = function()
    -- INFO:basic setting
@@ -300,7 +305,7 @@ M.config = function()
         p = {"<cmd>MarkdownPreview<cr>","Preview"},
 	      g = {"<cmd>Glow<cr>","Glow"},
         r = {"<cmd>TableModeRealign<cr>","Tablealign"},
-        o = {"<cmd>Vista!!<cr>","outline"},
+        -- o = {"<cmd>Vista!!<cr>","outline"},
       },
       --WhichKey-n
       n ={
@@ -394,4 +399,6 @@ M.config = function()
   end
 end
 
+-- filetype whichkey
+vim.cmd('autocmd FileType markdown lua WhichkeyMarkdown()')
 return M
