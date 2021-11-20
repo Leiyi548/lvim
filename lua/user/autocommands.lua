@@ -42,6 +42,12 @@ M.config = function ()
       "go",
       "nnoremap <leader>rg <cmd>lua require('lvim.core.terminal')._exec_toggle('go run .;read')<CR>",
     },
+    {
+      "FileType",
+      "markdown",
+      -- ["o"] = { "<cmd>Vista!!<cr>","Outline"},
+      "nnoremap <leader>o <cmd>Vista!!<cr>"
+    }
   }
 end
 return M

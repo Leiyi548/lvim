@@ -300,6 +300,7 @@ M.config = function()
         p = {"<cmd>MarkdownPreview<cr>","Preview"},
 	      g = {"<cmd>Glow<cr>","Glow"},
         r = {"<cmd>TableModeRealign<cr>","Tablealign"},
+        o = {"<cmd>Vista!!<cr>","outline"},
       },
       --WhichKey-n
       n ={
