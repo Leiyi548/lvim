@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 local M = {}
 M.config = function()
   local fn = vim.fn
@@ -54,12 +55,13 @@ M.config = function()
       --sort_by = "id",
       sort_by = "ordinal",
       right_mouse_command = "vert sbuffer %d",
+      --numbers = "buffer_id",
       numbers = "none",
       show_close_icon = false,
       show_buffer_icons = true,
       separator_style = "thin",
       enforce_regular_tabs = false,
-      always_show_bufferline = false,
+      always_show_bufferline = true,
       diagnostics = "nvim_lsp",
       diagnostics_indicator = diagnostics_indicator,
       diagnostics_update_in_insert = false,

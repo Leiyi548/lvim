@@ -10,6 +10,7 @@ lvim.plugins={
         vim.cmd [[
       colorscheme tokyonight
       ]]
+      lvim.builtin.lualine.options.theme = "tokyonight"
       end,
       cond = function()
         local _time = os.date "*t"
@@ -45,6 +46,7 @@ lvim.plugins={
           colorscheme gruvbox
           let g:gruvbox_italicize_comments = 0
         ]]
+        lvim.builtin.lualine.options.theme = "gruvbox"
       end,
       cond = function()
         local _time = os.date "*t"
@@ -54,11 +56,11 @@ lvim.plugins={
     {
      "Mofiqul/vscode.nvim",
      config = function ()
-       -- vim.cmd[[
-       --   colorscheme = "vscode"
-       --  ]]
+     vim.cmd[[
+       colorscheme = "vscode"
+      ]]
       vim.g.vscode_style = "light"
-      --lvim.builtin.lualine.options.theme ="Tomorrow"
+      lvim.builtin.lualine.options.theme ="Tomorrow"
      end,
     cond = function()
       local _time = os.date "*t"
@@ -182,6 +184,7 @@ lvim.plugins={
     ft = {'org'},
     config = function()
       require("user.orgmode").setup()
+      vim.cmd('language en_US.UTF-8')
     end,
     disable = not lvim.builtin.orgmode.active,
 	  },
@@ -202,7 +205,7 @@ lvim.plugins={
     },
     {
     'lukas-reineke/headlines.nvim',
-    ft = {'org','wiki'},
+    ft = {'org','wiki','markdown'},
     config = function()
       vim.cmd [[highlight Headline1 guibg=#1e2718]]
       vim.cmd [[highlight Headline2 guibg=#21262d]]

@@ -11,7 +11,8 @@ lvim.lsp.automatic_servers_installation = true
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
 lvim.builtin.ZFvim = { active = true}  -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
-lvim.builtin.fancy_statusline = { active = true } -- enable/disable fancy statusline
+lvim.builtin.fancy_statusline = { active = false } -- enable/disable fancy statusline
+lvim.builtin.global_status_line = { active = true } -- use the global status line
 lvim.builtin.fancy_bufferline = { active = true } -- enable/disable fancy bufferline
 lvim.builtin.bufferline.active = not lvim.builtin.fancy_bufferline.active
 lvim.builtin.fancy_dashboard = {active = true} --change to true if you want to fancy_dashboard
@@ -33,6 +34,9 @@ vim.cmd[[source ~/.config/lvim/textobjects.vim]]
 require("user.builtin").config()
 require("user.cmp-comparator")
 
+if lvim.builtin.fancy_statusline.active then
+require("user.lualine").config()
+end
 -- Additional Plugins
 -- =========================================
 require("user.plugins").config()

@@ -2,17 +2,6 @@ local M = {}
 
 M.config = function()
   local kind = require("user.lsp_kind")
-  -- Lualine
-  --lvim.builtin.lualine.options.theme='gruvbox-material'
-  -- local _time = os.date "*t"
-  -- if _time<16  then
-  -- end
-  --lvim.builtin.lualine.style = "default"
-  -- CMP
---require('lualine').setup {options = {theme = gruvbox}}
-  -- local vscode = require("lualine.themes.vscode")
-  -- vscode.insert_b = { fg = vscode.insert.a.bg, gui= "bold"}
-
   -- =========================================
   lvim.builtin.cmp.sources = {
     { name = "nvim_lsp" },
@@ -63,7 +52,11 @@ M.config = function()
     { name = "LspDiagnosticsSignInformation", text = "" },
   }
 
-
+  -- Lualine
+  -- =========================================
+  lvim.builtin.lualine.active = true
+  --lvim.builtin.lualine.style = "default"
+  --lvim.builtin.lualine.options = "auto"
   -- Comment.nvim
   -- =========================================
   lvim.builtin.comment.mappings.extra = true

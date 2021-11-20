@@ -8,7 +8,6 @@ M.setup = function()
   org_mode.setup {
     org_agenda_files = { "~/Dropbox/Orgzly/*" },
     org_default_notes_file = "~/Dropbox/Orgzly/refile.org",
-    diagnostic = false,
     org_agenda_templates = {
       T = {
         description = "Todo",
