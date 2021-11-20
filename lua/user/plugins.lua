@@ -238,7 +238,7 @@ lvim.plugins={
    {
    'liuchengxu/vista.vim',
     cmd = "Vista",
-    ft = {'markdown','go','php','python','c','cpp','lua','java','vim'},
+    ft = {'markdown'},
     config = function()
     vim.g.vista_default_executive = "nvim_lsp"
     vim.g.vista_icon_indent = {"╰─▸ ", "├─▸ "}
@@ -540,7 +540,15 @@ lvim.plugins={
     end,
     requires = "nvim-web-devicons",
     disable = not lvim.builtin.fancy_bufferline.active,
-  }
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    setup = function()
+      require("user.symbols_outline").config()
+    end,
+    event = "BufReadPost",
+      -- cmd = "SymbolsOutline",
+  },
 }
 end
 return M
