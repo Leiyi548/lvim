@@ -436,6 +436,9 @@ lvim.plugins={
   -- },
   {
     "lukas-reineke/cmp-under-comparator",
+    config = function ()
+      require("user.cmp-comparator")
+    end
   },
   {
     "chentau/marks.nvim",

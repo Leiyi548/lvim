@@ -9,7 +9,7 @@ lvim.log.level = "warn"
 lvim.lsp.automatic_servers_installation = true
 
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
-lvim.builtin.ZFvim = { active = true}  -- change to ture if you want ZFvim
+lvim.builtin.ZFvim = { active = false}  -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
 lvim.builtin.fancy_statusline = { active = false } -- enable/disable fancy statusline
 lvim.builtin.global_status_line = { active = true } -- use the global status line
@@ -27,7 +27,7 @@ require("user.luasnipConfig")
 vim.cmd[[source ~/.config/lvim/textobjects.vim]]
 --textobjects
 require("user.builtin").config()
-require("user.cmp-comparator")
+--require("user.cmp-comparator")
 
 if lvim.builtin.fancy_statusline.active then
 require("user.lualine").config()
@@ -57,35 +57,10 @@ formatters.setup{
     filetypes = {"python"}
   }
 }
--- local linters = require("lvim.lsp.null-ls.init")
--- linters.setup(
---   {
---     exe =  "flake8",
---     filetypes = {"python"}
---   }
--- )
--- exe value can be "clang_format" or "uncrustify"
---C or C++
--- lvim.lang.c.formatters = { { exe = "clang-format" } }
--- lvim.lang.cpp.formatters = lvim.lang.c.formatters
---html
--- lvim.lang.html.formatters = {{exe = "prettier"}}
---go
--- lvim.lang.go.formatters = {{exe = "gofmt"}}
-
---lua
---lvim.lang.lua.formatters = {{exe="lua-format"}}
---lvim.lang.lua.linters = {{exe="luacheck"}} --useful
---lvim.lang.go.linters = { { exe = "golangci-lint" } }
---lvim.lang.go.linters = {{exe = "golangci-lint"}}
--- exe value can be "black", "yapf", or "isort"
--- lvim.lang.python.formatters = { { exe = "black" } }
---lvim.colorscheme = "gruvbox"
-
 
 --theme
 --lvim.colorscheme = "gruvbox"
--- lvim.colorscheme = "onedarker"
+--lvim.colorscheme = "onedarker"
 -- vim.cmd [[
 -- colorscheme gruvbox
 -- ]]
