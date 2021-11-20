@@ -211,11 +211,12 @@ M.config = function()
 	      f = { "<cmd>Telescope find_files<cr>", "Find File" },
         H = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        n = { "<cmd>enew<cr>", "New File" },
+        N = { "<cmd>enew<cr>", "New File" },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         t = { "<cmd>Telescope live_grep<cr>", "Text" },
         m = { "<cmd>Telescope marks<cr>","Marks"},
+        n = { "<cmd>Telescope notes<cr>","Notes"},
       },
       --which_key-x
       x = {
@@ -231,6 +232,7 @@ M.config = function()
       g = {
         name = "Git",
         j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+        t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle blame" },
         k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
         l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
         p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },

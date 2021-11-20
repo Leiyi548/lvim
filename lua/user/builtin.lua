@@ -55,7 +55,8 @@ M.config = function()
   -- Lualine
   -- =========================================
   lvim.builtin.lualine.active = true
-  --lvim.builtin.lualine.style = "default"
+  lvim.builtin.lualine.style = "default"
+  lvim.builtin.lualine.options.theme = "dracula"
   --lvim.builtin.lualine.options = "auto"
   -- Comment.nvim
   -- =========================================
@@ -64,6 +65,8 @@ M.config = function()
   -- NvimTree
   -- =========================================
   lvim.builtin.nvimtree.setup.auto_open = 0
+  lvim.builtin.nvimtree.setup.view.side = "left"
+  lvim.builtin.nvimtree.show_icons.git = 1
   lvim.builtin.nvimtree.setup.diagnostics = {
     enable = true,
     icons = {
@@ -89,6 +92,9 @@ M.config = function()
   lvim.builtin.treesitter.autotag = { enable = true }
   lvim.builtin.treesitter.playground = { enable = true }
   lvim.builtin.treesitter.rainbow = { enable = true }
+  lvim.builtin.treesitter.ensure_installed = {}
+  lvim.builtin.treesitter.ignore_install = { "haskell" }
+  lvim.builtin.treesitter.highlight.enabled = true
   lvim.builtin.treesitter.query_linter = {
     enable = true,
     use_virtual_text = true,
@@ -210,6 +216,7 @@ M.config = function()
   require("telescope").load_extension('dotfiles')
   -- require("telescope").load_extension('emoji')
   require("telescope").load_extension('file_create')
+  require("telescope").load_extension('notes')
   --Terminal
   -- =========================================
   lvim.builtin.terminal.active = true

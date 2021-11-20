@@ -20,11 +20,6 @@ lvim.builtin.easy_align = {active = false} -- change to true if you want easy_al
 lvim.builtin.tabnine = {active = true}  --change to true if you want tabnine
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
-lvim.builtin.treesitter.ensure_installed = {}
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.notify.active = true
 -- Customization
 -- =========================================
