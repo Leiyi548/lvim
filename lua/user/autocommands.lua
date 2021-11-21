@@ -1,5 +1,4 @@
 local M = {}
-
 M.config = function ()
   lvim.autocommands.custom_groups = {
     --terminal
@@ -14,6 +13,11 @@ M.config = function ()
       "FileType",
       "alpha",
       "set showtabline=0 | autocmd BufLeave <buffer> set showtabline=" .. vim.opt.showtabline._value,
+    },
+    {
+      "FileType",
+      "alpha",
+      "set nonumber" ,
     },
     -- python
     { "FileType", "python", "inoremap <silent> <buffer> ,, <++>"},
@@ -49,5 +53,14 @@ M.config = function ()
       "nnoremap <leader>o <cmd>Vista!!<cr>"
     }
   }
+end
+if lvim.builtin.fancy_number.active then
+  vim.cmd[[
+    augroup numbertoggle
+      autocmd!
+      autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+      autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    augroup END
+  ]]
 end
 return M
