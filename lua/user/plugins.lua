@@ -59,7 +59,8 @@ lvim.plugins={
      vim.cmd[[
        colorscheme = "vscode"
       ]]
-      vim.g.vscode_style = "light"
+      --vim.g.vscode_style = "light"
+      vim.g.vscode_style = "dark"
       lvim.builtin.lualine.options.theme ="Tomorrow"
      end,
     cond = function()

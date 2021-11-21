@@ -54,13 +54,13 @@ M.config = function ()
     }
   }
 end
-if lvim.builtin.fancy_number.active then
-  vim.cmd[[
-    augroup numbertoggle
-      autocmd!
-      autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-      autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-    augroup END
-  ]]
-end
+-- if lvim.builtin.fancy_number.active then
+--   vim.cmd[[
+--     augroup numbertoggle
+--       autocmd!
+--       autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+--       autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+--     augroup END
+--   ]]
+-- end
 return M
