@@ -1,11 +1,5 @@
 local M={}
 
-function WhichkeyMarkdown()
-  lvim.builtin.which_key.mappings["o"] = {
-  "<cmd>Vista!!<cr>", "Outline"
-}
-end
---local actions = require "user.actions"
 M.config = function()
    -- INFO:basic setting
    vim.opt.relativenumber = true
@@ -399,6 +393,11 @@ M.config = function()
   end
 end
 
+function WhichkeyMarkdown()
+  lvim.builtin.which_key.mappings["o"] = {
+  "<cmd>Vista!!<cr>", "Outline"
+}
+end
 -- filetype whichkey
 vim.cmd('autocmd FileType markdown lua WhichkeyMarkdown()')
 return M

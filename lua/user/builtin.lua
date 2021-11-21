@@ -51,18 +51,17 @@ M.config = function()
     { name = "LspDiagnosticsSignHint", text = "" },
     { name = "LspDiagnosticsSignInformation", text = "" },
   }
-  --lvim.lsp.diagnostics.virtual_text.prefix = '●'
-      --prefix = '●', -- Could be '●', '▎', 'x' ■
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = {
-      prefix = '●', -- Could be '●', '▎', 'x' ■
-    }
-  })
+  vim.diagnostic.config {
+  virtual_text = {
+    prefix = "●",-- Could be '●', '▎', 'x' ■ 
+  },
+}
+
   -- Lualine
   -- =========================================
   lvim.builtin.lualine.active = true
   lvim.builtin.lualine.style = "default"
-  lvim.builtin.lualine.options.theme = "dracula"
+  --lvim.builtin.lualine.options.theme = "dracula"
   --lvim.builtin.lualine.options = "auto"
   -- Comment.nvim
   -- =========================================
