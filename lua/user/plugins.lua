@@ -227,12 +227,12 @@ lvim.plugins={
     end,
     --disable = true,
     },
-    --Startup time
-    {
-	  "dstein64/vim-startuptime",
-    opt =true,
-    cmd = "Startuptime",
-    },
+    --Startup time use lvim -startuptime s.log
+   --  {
+	  -- "dstein64/vim-startuptime",
+   --  opt =true,
+   --  cmd = "Startuptime",
+   --  },
 
     --Vista.vim
    {
