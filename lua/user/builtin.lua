@@ -39,7 +39,7 @@ M.config = function()
     path = "  ",
     calc = "  ",
     cmp_tabnine = "  ",
-    tmux = "(tmux)",
+    tmux = "(tmux)", --  
   }
 
   -- LSP
@@ -188,6 +188,7 @@ M.config = function()
   lvim.builtin.telescope.defaults.selection_caret = ""
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
     "vendor/*",
+    "fonts/*",
     "node_modules",
     "%.jpg",
     "%.jpeg",
