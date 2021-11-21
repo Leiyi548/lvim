@@ -403,13 +403,6 @@ lvim.plugins={
     end,
     --disable = not lvim.builtin.fancy_dashboard.active,
   },
-  -- {
-  --     "simrat39/symbols-outline.nvim",
-  --     config = function()
-  --       vim.g.symbols_outline.auto_preview = false
-  --     end,
-  --     cmd = "SymbolsOutline",
-  -- },
   {
     "machakann/vim-sandwich",
     keys = {"s"},
@@ -546,6 +539,7 @@ lvim.plugins={
     setup = function()
       require("user.symbols_outline").config()
     end,
+    ft = {"lua","python","java","javascript","c","cpp"},
     event = "BufReadPost",
       -- cmd = "SymbolsOutline",
   },
