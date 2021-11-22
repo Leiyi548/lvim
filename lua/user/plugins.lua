@@ -157,6 +157,7 @@ lvim.plugins={
     },
     {
       "voldikss/vim-floaterm",
+      cmd = {"FloatermNew"},
       config = function ()
         vim.g.floaterm_width=0.7
         vim.g.floaterm_height=0.8
