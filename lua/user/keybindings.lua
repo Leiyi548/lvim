@@ -79,7 +79,7 @@ M.config = function()
    lvim.keys.insert_mode["jk"] = nil
    lvim.keys.insert_mode["kj"] = nil
    lvim.keys.insert_mode["jj"] = nil
-    -- INFO:quickcopy
+   -- INFO:quickcopy
    lvim.keys.normal_mode["Y"] = "y$"
    lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
    lvim.keys.normal_mode["<leader>y"] = '"+y'
@@ -87,6 +87,10 @@ M.config = function()
    lvim.keys.normal_mode["<leader>yy"] = '"+yy'
    lvim.keys.normal_mode["<leader>p"] = '"+p"'
    lvim.keys.visual_mode["<leader>p"] = '"+p'
+   -- INFO:butter :q
+   vim.cmd[[
+   nnoremap q: :q
+   ]]
 
    --Luasnip
    vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})

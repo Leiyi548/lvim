@@ -39,7 +39,7 @@ M.config = function()
     path = "  ",
     calc = "  ",
     cmp_tabnine = "  ",
-    tmux = "(tmux)", --  
+    tmux = "(tmux)", -- 
   }
 
   -- LSP
@@ -54,8 +54,13 @@ M.config = function()
   vim.diagnostic.config {
   virtual_text = {
     prefix = "●",-- Could be '●', '▎', 'x' ■ 
-  },
-}
+    },
+  }
+
+  -- Gitsigns
+  -- =========================================
+  lvim.builtin.gitsigns.opts.current_line_blame = true
+
 
   -- Lualine
   -- =========================================
@@ -200,6 +205,7 @@ M.config = function()
     ".git",
     "%.jfif%",
     "%.zip%",
+    "openfly.txt",
   }
   --lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   lvim.builtin.telescope.defaults.mappings = {
