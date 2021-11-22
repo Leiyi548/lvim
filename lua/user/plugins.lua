@@ -143,10 +143,14 @@ lvim.plugins={
 
     --run
     {
-      'skywind3000/asyncrun.vim'
+      'skywind3000/asyncrun.vim',
+      ft = {"lua","python","cpp","c","java","go","markdown"},
+      cmd = {"AsyncRun"},
     },
     {
       'skywind3000/asynctasks.vim',
+      ft = {"lua","python","cpp","c","java","go","markdown"},
+      cmd = {"AsyncTask"},
       config = function ()
       vim.g.asynctasks_term_pos = 'bottom'
       vim.g.asynctasks_term_cols = 60
@@ -492,6 +496,7 @@ lvim.plugins={
   -- },
   {
     "wellle/targets.vim",
+    keys = {"c","d","y"},
   },
   {
     "tpope/vim-repeat",
@@ -527,6 +532,7 @@ lvim.plugins={
   {
     "mg979/vim-visual-multi",
     branch = "master",
+    event = "InsertEnter",
   },
   {
     "akinsho/bufferline.nvim",
