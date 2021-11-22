@@ -42,6 +42,13 @@ M.config = function()
     tmux = "(tmux)", -- 
   }
 
+  -- Remove <C-j> <C-k> select snippets
+  lvim.builtin.cmp.mapping["<C-j>"] = nil
+  lvim.builtin.cmp.mapping["<C-k>"] = nil
+  -- Add <C-j> <C-k> to jump in luasnippts
+  lvim.keys.insert_mode["<C-j>"] = "<cmd>lua require('luasnip').jump(1)<cr>"
+  lvim.keys.insert_mode["<C-k>"] = "<cmd>lua require('luasnip').jump(-1)<cr>"
+
   -- LSP
   -- =========================================
   -- icon                       既           
