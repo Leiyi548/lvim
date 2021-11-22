@@ -70,9 +70,9 @@ M.config = function()
    lvim.keys.visual_mode["H"] = "0"
    lvim.keys.visual_mode["L"] = "$"
    -- FIX: delete jk to escape
-   lvim.keys.insert_mode["jk"] = nil
-   lvim.keys.insert_mode["kj"] = nil
-   lvim.keys.insert_mode["jj"] = nil
+   lvim.keys.insert_mode["jk"] = false
+   lvim.keys.insert_mode["kj"] = false
+   lvim.keys.insert_mode["jj"] = false
    -- INFO:quickcopy
    lvim.keys.normal_mode["Y"] = "y$"
    lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
