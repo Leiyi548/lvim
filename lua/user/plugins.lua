@@ -144,13 +144,13 @@ lvim.plugins={
     --run
     {
       'skywind3000/asyncrun.vim',
-      ft = {"lua","python","cpp","c","java","go","markdown"},
       cmd = {"AsyncRun"},
+      --ft = {"lua","python","cpp","c","java","go","markdown"},
     },
     {
       'skywind3000/asynctasks.vim',
-      ft = {"lua","python","cpp","c","java","go","markdown"},
       cmd = {"AsyncTask"},
+      --ft = {"lua","python","cpp","c","java","go","markdown"},
       config = function ()
       vim.g.asynctasks_term_pos = 'bottom'
       vim.g.asynctasks_term_cols = 60
