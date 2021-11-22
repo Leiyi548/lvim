@@ -1,6 +1,8 @@
 local M = {}
 
 M.setup = function()
+  -- vim.opt.list = true
+  -- vim.opt.listchars:append("space:⋅")
   vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
   vim.g.indent_blankline_filetype_exclude = {
     "log",
@@ -10,10 +12,10 @@ M.setup = function()
     "json",
     "txt",
     "vista",
-    "NvimTree",
     "git",
     "TelescopePrompt",
     "undotree",
+    "NvimTree",
     "flutterToolsOutline",
     "org",
     "orgagenda",
@@ -24,7 +26,7 @@ M.setup = function()
     "neogitstatus",
     "Trouble",
     "lspinfo",
-    "", -- for all buffers without a file type
+    --"", -- for all buffers without a file type
   }
   vim.g.indentLine_enabled = 1
   -- vim.g.indent_blankline_char = "│"

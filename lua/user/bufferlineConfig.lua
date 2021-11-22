@@ -56,7 +56,10 @@ M.config = function()
       sort_by = "ordinal",
       right_mouse_command = "vert sbuffer %d",
       --numbers = "buffer_id",
-      numbers = "none",
+      -- numbers = "none",
+      numbers = function(opts)
+        return string.format('%s.', opts.ordinal)
+      end,
       show_close_icon = false,
       show_buffer_icons = true,
       separator_style = "thin",

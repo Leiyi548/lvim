@@ -56,12 +56,12 @@ lvim.plugins={
     {
      "Mofiqul/vscode.nvim",
      config = function ()
+     vim.g.vscode_style = "dark"
+     --vim.g.vscode_style = "light"
      vim.cmd[[
-       colorscheme = "vscode"
+       colorscheme vscode
       ]]
-      --vim.g.vscode_style = "light"
-      vim.g.vscode_style = "dark"
-      lvim.builtin.lualine.options.theme ="Tomorrow"
+      --lvim.builtin.lualine.options.theme ="Tomorrow"
      end,
     cond = function()
       local _time = os.date "*t"
