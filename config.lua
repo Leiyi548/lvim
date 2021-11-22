@@ -1,7 +1,6 @@
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
---lvim.format_on_save = true
 lvim.lint_on_save = false
 lvim.format_on_save = true
 lvim.debug = false
@@ -22,13 +21,14 @@ lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
 lvim.builtin.terminal.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.fancy_number = {active = false} --change to true if you want fancy number
+
 -- Customization
 -- =========================================
 require("user.luasnipConfig")
+-- Textobjects
 vim.cmd[[source ~/.config/lvim/textobjects.vim]]
---textobjects
+-- Lvim builtin setting
 require("user.builtin").config()
---require("user.cmp-comparator")
 
 if lvim.builtin.fancy_statusline.active then
 require("user.lualine").config()
@@ -43,25 +43,3 @@ require("user.keybindings").config()
 -- Autocommands
 -- =========================================
 require("user.autocommands").config()
--- Additional Formatters
--- =========================================
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup{
-  {
-    exe = "prettier",
-    filetypes = { "html", "markdown"}
-  }
-}
-formatters.setup{
-  {
-    exe = "black",
-    filetypes = {"python"}
-  }
-}
-
---theme
---lvim.colorscheme = "gruvbox"
---lvim.colorscheme = "onedarker"
--- vim.cmd [[
--- colorscheme gruvbox
--- ]]
