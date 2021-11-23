@@ -72,7 +72,7 @@ M.config = function()
   -- Lualine
   -- =========================================
   lvim.builtin.lualine.active = true
-  lvim.builtin.lualine.style = "default"
+  --lvim.builtin.lualine.style = "default"
   lvim.builtin.lualine.options.theme = "auto"
   --lvim.builtin.lualine.options.theme = "dracula"
   --lvim.builtin.lualine.options = "auto"
