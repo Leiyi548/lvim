@@ -51,12 +51,12 @@ M.config = function()
 
   -- LSP
   -- =========================================
-  -- icon                       既           
+  -- icon                       既              
   lvim.lsp.diagnostics.signs.values = {
-    { name = "LspDiagnosticsSignError", text = " " },
-    { name = "LspDiagnosticsSignWarning", text = " " },
-    { name = "LspDiagnosticsSignHint", text = "" },
-    { name = "LspDiagnosticsSignInformation", text = "" },
+    { name = "LspDiagnosticsSignError", text = kind.icons.error },
+    { name = "LspDiagnosticsSignWarning", text = kind.icons.warn },
+    { name = "LspDiagnosticsSignHint", text = kind.icons.info },
+    { name = "LspDiagnosticsSignInformation", text = kind.icons.hint },
   }
   vim.diagnostic.config {
   virtual_text = {
@@ -72,7 +72,7 @@ M.config = function()
   -- Lualine
   -- =========================================
   lvim.builtin.lualine.active = true
-  --lvim.builtin.lualine.style = "default"
+  lvim.builtin.lualine.style = "default"
   lvim.builtin.lualine.options.theme = "auto"
   --lvim.builtin.lualine.options.theme = "dracula"
   --lvim.builtin.lualine.options = "auto"

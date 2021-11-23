@@ -10,11 +10,11 @@ M.config = function()
   todo.setup {
     keywords = {
       FIX = { icon = icons.FIX },
-      TODO = { icon = icons.TODO, alt = { "WIP" } },
+      TODO = { icon = icons.TODO, alt = { "WIP" }, color="info"},
       HACK = { icon = icons.HACK, color = "hack" },
       WARN = { icon = icons.WARN },
       PERF = { icon = icons.PERF },
-      NOTE = { icon = icons.NOTE, alt = { "INFO", "NB" } },
+      NOTE = { icon = icons.NOTE, alt = { "INFO", "NB" },color="hint" },
       ERROR = { icon = icons.ERROR, color = "error", alt = { "ERR" } },
       REFS = { icon = icons.REFS },
     },
@@ -22,8 +22,10 @@ M.config = function()
     colors = {
       error = { "DiagnosticError" },
       warning = { "DiagnosticWarn" },
-      info = { "DiagnosticInfo" },
-      hint = { "DiagnosticHint" },
+      -- info = { "DiagnosticInfo" },
+      -- hint = { "DiagnosticHint" },
+      info = { "LspDiagnosticsDefaultInformation", "#2563EB" },
+      hint = { "LspDiagnosticsDefaultHint", "#10B981" },
       hack = { "Function" },
       ref = { "FloatBorder" },
       default = { "Identifier" },
