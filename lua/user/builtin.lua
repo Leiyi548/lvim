@@ -74,8 +74,13 @@ M.config = function()
   lvim.builtin.lualine.active = true
   lvim.builtin.lualine.style = "default"
   lvim.builtin.lualine.options.theme = "auto"
-  --lvim.builtin.lualine.options.theme = "dracula"
-  --lvim.builtin.lualine.options = "auto"
+
+
+  -- Vscode theme
+  -- =========================================
+  vim.g.vscode_style = "dark"
+
+
   -- Comment.nvim
   -- =========================================
   lvim.builtin.comment.mappings.extra = true
