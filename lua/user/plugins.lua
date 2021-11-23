@@ -217,7 +217,7 @@ lvim.plugins={
     },
     {
     'lukas-reineke/headlines.nvim',
-    ft = {'org','wiki','markdown'},
+    ft = {'org','wiki',"markdown"},
     config = function()
       vim.cmd [[highlight Headline1 guibg=#1e2718]]
       vim.cmd [[highlight Headline2 guibg=#21262d]]

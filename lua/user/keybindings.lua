@@ -62,8 +62,8 @@ M.config = function()
    -- lvim.keys.normal_mode["s*"] = ":let @/='\<'.expand('<cword>').'\>'<CR>cgn"
    -- lvim.keys.visual_block_mode["s*"] = ":let @/='\<'.expand('<cword>').'\>'<CR>cgn"
    --先点击* 选中需要替换的代码快后在 visual模式下进行替换
-   lvim.keys.visual_block_mode["<leader>rr"] = ":s///g<Left><Left>"
-   lvim.keys.visual_block_mode["<leader>rc"] = ":s///gc<Left><Left><Left>"
+   -- lvim.keys.visual_block_mode["<leader>rr"] = ":s///g<Left><Left>"
+   -- lvim.keys.visual_block_mode["<leader>rc"] = ":s///gc<Left><Left><Left>"
 
    --lvim.keys.normal_mode["<C-s>"] = actions.save_colorscheme
    -- INFO: visula_mode
