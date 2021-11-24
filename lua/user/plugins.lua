@@ -551,6 +551,13 @@ lvim.plugins={
     event = "BufReadPost",
       -- cmd = "SymbolsOutline",
   },
+  -- {
+  --   "lewis6991/spellsitter.nvim",
+  --   event = "InsertEnter",
+  --   config = function ()
+  --     require('spellsitter').setup()
+  --   end
+  -- },
 }
 end
 return M

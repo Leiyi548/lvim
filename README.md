@@ -8,47 +8,31 @@
 ![photo1](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020192507.png)
 ![photo2](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020192604.png)
 ![photo3](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020192658.png)
+![photo4](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124202856.png)
+![photo5](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203004.png) 
+![photo6](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203056.png) 
+![photo7](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203159.png) 
 
-## 代码结构图
+## Install
 
 ```shell
-.
-├── README.md
-├── config.lua
-├── ftplugin
-│   └── python.lua
-├── ignore
-├── lsp-settings
-│   └── gopls.json
-├── lua
-│   └── user
-│       ├── actions.lua
-│       ├── autocommands.lua
-│       ├── banners.lua
-│       ├── builtin.lua
-│       ├── cmp-comparator.lua
-│       ├── colorizer.lua
-│       ├── dashboard.lua
-│       ├── indent_blankline.lua
-│       ├── keybindings.lua
-│       ├── lsp_kind.lua
-│       ├── lsp_signature.lua
-│       ├── lua_snip.lua
-│       ├── mark.lua
-│       ├── orgmode_config.lua
-│       ├── plugins.lua
-│       ├── telescope.lua
-│       ├── theme.lua
-│       └── treesitter-textobjects.lua
-├── openfly.txt
-├── plugin
-│   └── packer_compiled.lua
-└── vscodesnips
-    ├── bootstrap4.json
-    ├── cpp.json
-    ├── html.json
-    ├── lua.json
-    └── package.json
+# install Lunarvim
+mv ~/.config/lvim ~/.config/lvim_backup
+git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
+lvim +LvimUpdate +LvimCacheReset +q
+lvim # run :PackerSync
+```
+
+### Recommended Fonts
+
+- Any of the [Nerd Font](https://www.nerdfonts.com/)
+
+On macos with Homebrew, choose one of the Nerd Fonts,for example,
+here are some popular fonts:
+
+```shell
+brew tap homebrew/cask-fonts
+brew search nerd-font
 ```
 
 ### Prerequisites
@@ -56,25 +40,26 @@
 - [Neovim](https://github.com/neovim/neovim) >= v0.6.0
 
 ```shell
-  brew install neovim --nightly
-
 
   brew unlink neovim
   brew install --HEAD neovim
+  brew link neovim --HEAD
+
 ```
 
-- [Neovim](https://github.com/neovim/neovim) >= v0.5.1
+- 去github安装[Neovim](https://github.com/neovim/neovim)
 
 ```shell
+例子:
  手动安装neovim 0.51
  （官方）github下载地址：
 
-https://github.com/neovim/neovim/releases
-#解压到~/.soft/nvim-osx64/
-mkdir ~/.soft
-mv ~/Downloads/nvim-osx64 ~/.soft/
-# 创建软链接
-ln -s ~/.soft/nvim-osx64/bin/nvim /usr/local/bin/nvim
+  https://github.com/neovim/neovim/releases
+  #解压到~/.soft/nvim-osx64/
+  mkdir ~/.soft
+  mv ~/Downloads/nvim-osx64 ~/.soft/
+  # 创建软链接
+  ln -s ~/.soft/nvim-osx64/bin/nvim /usr/local/bin/nvim
 
 ```
 
@@ -294,76 +279,5 @@ Note that,
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>           |  𝐍   | 在当前位置插入一个光标（然后使用上下左右键移动到指定未知添加下一个光标，hjkl 键会移动添加的光标） |
 | <kbd>Ctrl</kbd>+<kbd>down/up</kbd>     |  𝐍   | 垂直方向插入多光标                                                                                |
 
-### [easy-align](https://github.com/junegunn/vim-easy-align)
-
-easy-align 是一个可以让你代码快速对齐的插件<br>
-ga 进入 easyalign 模式<br>
-默认向左对其，比如按照空格对其 _<space><br>
-向右对其 <enter>_<space><br>
-居中对其 <enter><enter>*<space><br>
-如果遇到其他字符比如 | , = 啥的，都把空格替换为对应的即可<br>
-*可以换成数字，对应后面的第几个字符，\*就是全部都指定<br>
-
-#### markdown 表格进行对齐
-
-左对齐 vipga*|
-右对齐 vip<Enter>*|
-居中对齐 vip<Enter><Enter>\*|
-
-**动手试验:**
-
-```
-| Option| Type | Default | Description |
-|--|--|--|--|
-| threads | Fixnum | 1 | number of threads in the thread pool |
-|queues |Fixnum | 1 | number of concurrent queues |
-|queue_size | Fixnum | 1000 | size of each queue |
-|   interval | Numeric | 0 | dispatcher interval for batch processing |
-|batch | Boolean | false | enables batch processing mode |
- |batch_size | Fixnum | nil | number of maximum items to be assigned at once |
- |logger | Logger | nil | logger instance for debug logs |
-```
-
-左对齐`vipga*| `
-
-```
-| Option     | Type    | Default | Description                                    |
-| --         | --      | --      | --                                             |
-| threads    | Fixnum  | 1       | number of threads in the thread pool           |
-| queues     | Fixnum  | 1       | number of concurrent queues                    |
-| queue_size | Fixnum  | 1000    | size of each queue                             |
-| interval   | Numeric | 0       | dispatcher interval for batch processing       |
-| batch      | Boolean | false   | enables batch processing mode                  |
-| batch_size | Fixnum  | nil     | number of maximum items to be assigned at once |
-| logger     | Logger  | nil     | logger instance for debug logs                 |
-```
-
-右对齐: `vipga<Enter>*|`
-
-```
-|     Option |    Type | Default |                                    Description |
-|         -- |      -- |      -- |                                             -- |
-|    threads |  Fixnum |       1 |           number of threads in the thread pool |
-|     queues |  Fixnum |       1 |                    number of concurrent queues |
-| queue_size |  Fixnum |    1000 |                             size of each queue |
-|   interval | Numeric |       0 |       dispatcher interval for batch processing |
-|      batch | Boolean |   false |                  enables batch processing mode |
-| batch_size |  Fixnum |     nil | number of maximum items to be assigned at once |
-|     logger |  Logger |     nil |                 logger instance for debug logs |
-```
-
-居中对齐: `vipga<Enter><Enter>*|`
-
-```
-|   Option   |  Type   | Default |                  Description                   |
-|     --     |   --    |   --    |                       --                       |
-|  threads   | Fixnum  |    1    |      number of threads in the thread pool      |
-|   queues   | Fixnum  |    1    |          number of concurrent queues           |
-| queue_size | Fixnum  |  1000   |               size of each queue               |
-|  interval  | Numeric |    0    |    dispatcher interval for batch processing    |
-|   batch    | Boolean |  false  |         enables batch processing mode          |
-| batch_size | Fixnum  |   nil   | number of maximum items to be assigned at once |
-|   logger   | Logger  |   nil   |         logger instance for debug logs         |
-```
 
 </details>
