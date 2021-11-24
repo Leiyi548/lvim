@@ -78,6 +78,10 @@ brew install golangci-lint
 brew upgrade golangci-lint
 npm install gofmt
 npm install eslint
+Lua 
+brew install luarocks 
+luarocks install luacheck # lint
+brew install stylua #formatter
 ```
 
 ### Recommended Format
