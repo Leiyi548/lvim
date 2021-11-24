@@ -1,6 +1,3 @@
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup({{exe = "flake8", filetypes = { "python" } }})
-
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup{
   {
