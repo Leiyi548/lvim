@@ -178,13 +178,14 @@ M.config = function()
 		{
 			"phaazon/hop.nvim",
 			as = "hop",
-			cmd = {
-				"HopWord",
-				"HopLine",
-				"HopChar1",
-				"HopChar2",
-				"HopPattern",
-			},
+			-- cmd = {
+			-- 	"HopWord",
+			-- 	"HopLine",
+			-- 	"HopChar1",
+			-- 	"HopChar2",
+			-- 	"HopPattern",
+			-- },
+			event = "BufRead",
 			config = function()
 				-- you can configure Hop the way you like here; see :h hop-config
 				require("hop").setup({
