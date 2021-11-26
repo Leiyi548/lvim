@@ -52,9 +52,6 @@ M.config = function()
 	-- better indent
 	lvim.keys.normal_mode["<"] = "<<"
 	lvim.keys.normal_mode[">"] = ">>"
-	-- easymotion(hop)
-	lvim.keys.normal_mode["ss"] = "<cmd>HopChar2<cr>"
-	lvim.keys.visual_mode["ss"] = "<cmd>HopChar2<cr>"
 	-- quickly replace
 	-- 一口气这是替换全部
 	-- lvim.keys.normal_mode["<leader>rr"] = ":%s///g<Left><Left>"
@@ -88,6 +85,9 @@ M.config = function()
    ]])
 
 	-- hop
+	-- easymotion(hop)
+	lvim.keys.normal_mode["ss"] = "<cmd>HopChar2<cr>"
+	lvim.keys.visual_mode["ss"] = "<cmd>HopChar2<cr>"
 	-- place this in one of your configuration file(s)
 	vim.api.nvim_set_keymap(
 		"n",
@@ -311,14 +311,14 @@ M.config = function()
 			f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
 			i = { "<cmd>LspInfo<cr>", "Info" },
 			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-			-- j = {
-			--   "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
-			--   "Next Diagnostic",
-			-- },
-			-- k = {
-			--   "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
-			--   "Prev Diagnostic",
-			-- },
+			j = {
+				"<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+				"Next Diagnostic",
+			},
+			k = {
+				"<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+				"Prev Diagnostic",
+			},
 			l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 			p = {
 				name = "Peek",

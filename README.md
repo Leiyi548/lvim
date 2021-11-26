@@ -82,6 +82,8 @@ Lua
 brew install luarocks 
 luarocks install luacheck # lint
 brew install stylua #formatter
+Typescript 
+brew install eslint
 ```
 
 ### Recommended Format
@@ -94,6 +96,8 @@ brew install black
 C CPP
 brew install clang-format
 brew upgrade clang-format
+Typescript
+brew install eslint
 ```
 
 ## Custom Key-mappings
