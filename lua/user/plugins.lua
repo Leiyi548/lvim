@@ -1,6 +1,11 @@
 local M = {}
-
+-- local packer = require("packer")
 M.config = function()
+	-- packer.init({
+	-- 	git = {
+	-- 		default_url_format = "https://hub.fastgit.org/%s",
+	-- 	},
+	-- })
 	lvim.plugins = {
 		{
 			"abzcoding/tokyonight.nvim",
@@ -222,7 +227,7 @@ M.config = function()
 		},
 		{
 			"lukas-reineke/headlines.nvim",
-			ft = { "org", "wiki", "markdown" },
+			ft = { "org", "wiki" },
 			config = function()
 				vim.cmd([[highlight Headline1 guibg=#1e2718]])
 				vim.cmd([[highlight Headline2 guibg=#21262d]])
@@ -318,6 +323,15 @@ M.config = function()
 		--trouble
 		{
 			"folke/trouble.nvim",
+			config = function()
+				require("trouble").setup({
+					auto_open = true,
+					auto_close = true,
+					padding = false,
+					height = 10,
+					use_lsp_diagnostic_signs = true,
+				})
+			end,
 			cmd = "TroubleToggle",
 		},
 		--lsp_signature
@@ -575,6 +589,15 @@ M.config = function()
 		--     require('spellsitter').setup()
 		--   end
 		-- },
+		{
+			"filipdutescu/renamer.nvim",
+			config = function()
+				require("renamer").setup({
+					title = "Rename",
+				})
+			end,
+			disable = not lvim.builtin.fancy_rename.active,
+		},
 	}
 end
 return M

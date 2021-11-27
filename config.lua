@@ -13,6 +13,7 @@ lvim.builtin.fancy_statusline = { active = false } -- enable/disable fancy statu
 lvim.builtin.global_status_line = { active = true } -- use the global status line
 lvim.builtin.fancy_bufferline = { active = true } -- enable/disable fancy bufferline
 lvim.builtin.bufferline.active = not lvim.builtin.fancy_bufferline.active
+lvim.builtin.fancy_rename = { active = true }
 lvim.builtin.fancy_dashboard = { active = true } --change to true if you want to fancy_dashboard
 lvim.builtin.easy_align = { active = false } -- change to true if you want easy_align
 lvim.builtin.tabnine = { active = true } --change to true if you want tabnine
