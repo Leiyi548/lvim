@@ -327,7 +327,6 @@ M.config = function()
 				require("trouble").setup({
 					auto_open = true,
 					auto_close = true,
-					padding = false,
 					height = 10,
 					use_lsp_diagnostic_signs = true,
 				})

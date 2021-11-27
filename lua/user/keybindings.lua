@@ -34,7 +34,7 @@ M.config = function()
 	end
 	lvim.keys.normal_mode["Q"] = ":qa!<cr>"
 	--lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
-	lvim.keys.normal_mode["<S-h>"] = "0"
+	lvim.keys.normal_mode["<S-h>"] = "^"
 	lvim.keys.normal_mode["<S-l>"] = "$"
 	lvim.keys.normal_mode["<leader>sc"] = "<cmd>nohlsearch<cr>"
 	lvim.keys.normal_mode["<leader>wv"] = "<cmd>vsplit<cr>"
@@ -65,7 +65,7 @@ M.config = function()
 
 	--lvim.keys.normal_mode["<C-s>"] = actions.save_colorscheme
 	-- INFO: visula_mode
-	lvim.keys.visual_mode["H"] = "0"
+	lvim.keys.visual_mode["H"] = "^"
 	lvim.keys.visual_mode["L"] = "$"
 	lvim.keys.visual_mode["<leader>lr"] = "<Cmd>lua require('renamer').rename()<CR>"
 	-- FIX: delete jk to escape
@@ -260,7 +260,7 @@ M.config = function()
 			m = { "<cmd>Telescope marks<cr>", "Marks" },
 			n = { "<cmd>Telescope notes<cr>", "Notes" },
 		},
-		--which_key-x
+		--whichkey-x
 		x = {
 			name = "Diagnostics",
 			t = { "<cmd>TroubleToggle<cr>", "trouble" },
