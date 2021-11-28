@@ -506,6 +506,7 @@ M.config = function()
 		{
 			"hrsh7th/cmp-calc",
 			requires = "hrsh7th/nvim-cmp",
+			after = "nvim-cmp",
 			--event = {"InsertEnter"},
 		},
 		-- {
@@ -521,6 +522,27 @@ M.config = function()
 		{
 			"andersevenrud/compe-tmux",
 			branch = "cmp",
+			after = "nvim-cmp",
+		},
+		{
+			"hrsh7th/cmp-cmdline",
+			after = "nvim-cmp",
+		},
+		{
+			"tzachar/cmp-tabnine",
+			run = "./install.sh",
+			requires = "hrsh7th/nvim-cmp",
+			config = function()
+				local tabnine = require("cmp_tabnine.config")
+				tabnine:setup({
+					max_lines = 1000,
+					max_num_results = 10,
+					sort = true,
+				})
+			end,
+			opt = true,
+			event = "InsertEnter",
+			disable = not lvim.builtin.tabnine.active,
 		},
 		{
 			"windwp/nvim-ts-autotag",
@@ -545,22 +567,6 @@ M.config = function()
 		-- {
 		--   "xiyaowong/telescope-emoji.nvim",
 		-- },
-		{
-			"tzachar/cmp-tabnine",
-			run = "./install.sh",
-			requires = "hrsh7th/nvim-cmp",
-			config = function()
-				local tabnine = require("cmp_tabnine.config")
-				tabnine:setup({
-					max_lines = 1000,
-					max_num_results = 10,
-					sort = true,
-				})
-			end,
-			opt = true,
-			event = "InsertEnter",
-			disable = not lvim.builtin.tabnine.active,
-		},
 		-- {
 		--   'vimwiki/vimwiki',
 

@@ -41,7 +41,7 @@ M.config = function()
 		cmp_tabnine = "  ",
 		tmux = "(tmux)", -- 
 	}
-
+	require("cmp").setup.cmdline(":", { sources = { { name = "cmdline" } } })
 	-- Remove <C-j> <C-k> select snippets
 	lvim.builtin.cmp.mapping["<C-j>"] = nil
 	lvim.builtin.cmp.mapping["<C-k>"] = nil
