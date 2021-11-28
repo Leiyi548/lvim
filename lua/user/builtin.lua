@@ -8,7 +8,7 @@ M.config = function()
 		--{ name = "cmp_tabnine", max_item_count = 3 },
 		{ name = "buffer", max_item_count = 10, keyword_length = 5 },
 		{ name = "path", max_item_count = 5 },
-		{ name = "luasnip", max_item_count = 3 },
+		{ name = "luasnip", priority = 9, max_item_count = 3 },
 		{ name = "nvim_lua" },
 		{ name = "calc" },
 		{ name = "emoji" },
@@ -23,7 +23,7 @@ M.config = function()
 	lvim.builtin.cmp.experimental = {
 		ghost_text = true,
 		native_menu = false,
-		custom_menu = true,
+		-- custom_menu = true,
 	}
 	lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
 	--lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
@@ -242,6 +242,14 @@ M.config = function()
 	--Terminal
 	-- =========================================
 	lvim.builtin.terminal.active = true
+	-- horizontal_size
+	lvim.builtin.terminal.size = function(term)
+		if term.direction == "horizontal" then
+			return 10
+		elseif term.direction == "vertical" then
+			return vim.o.columns * 0.4
+		end
+	end
 	--using lazygit
 	lvim.builtin.terminal.execs = {
 		{ "lazygit", "gg", "LazyGit" },

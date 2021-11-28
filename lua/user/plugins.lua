@@ -67,7 +67,7 @@ M.config = function()
 			end,
 			cond = function()
 				local _time = os.date("*t")
-				return  (_time.hour >= 14 and _time.hour < 17)
+				return (_time.hour >= 14 and _time.hour < 17)
 			end,
 		},
 		{
@@ -456,12 +456,12 @@ M.config = function()
 		--     'tami5/lspsaga.nvim',
 		--     branch = 'nvim51'
 		-- },
-		{
-			"lukas-reineke/cmp-under-comparator",
-			config = function()
-				require("user.cmp-comparator")
-			end,
-		},
+		-- {
+		-- 	"lukas-reineke/cmp-under-comparator",
+		-- 	config = function()
+		-- 		require("user.cmp-comparator")
+		-- 	end,
+		-- },
 		{
 			"chentau/marks.nvim",
 			keys = { "m" },
