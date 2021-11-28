@@ -45,6 +45,8 @@ brew search nerd-font
   brew install --HEAD neovim
   brew link neovim --HEAD
 
+  # The im-select program will be downloaded to your /usr/local/bin/ path.
+  curl -Ls https://raw.githubusercontent.com/daipeihust/im-select/master/install_mac.sh | sh  # install im-select
 ```
 
 - 去github安装[Neovim](https://github.com/neovim/neovim)
