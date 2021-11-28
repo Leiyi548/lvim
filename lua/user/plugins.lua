@@ -148,6 +148,15 @@ M.config = function()
 			end,
 		},
 		{
+			"plasticboy/vim-markdown",
+			ft = "markdown",
+			opt = "true",
+			requires = { "godlygeek/tabular" },
+			config = function()
+				require("user.vim-markdown").config()
+			end,
+		},
+		{
 			"npxbr/glow.nvim",
 			ft = { "markdown" },
 		},
