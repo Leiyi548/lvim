@@ -1,27 +1,7 @@
 local M = {}
 -- local packer = require("packer")
 M.config = function()
-	-- packer.init({
-	-- 	git = {
-	-- 		default_url_format = "https://hub.fastgit.org/%s",
-	-- 	},
-	-- })
 	lvim.plugins = {
-		{
-			"abzcoding/tokyonight.nvim",
-			branch = "feature/vim-diagnostics",
-			config = function()
-				require("user.theme").tokyonight()
-				vim.cmd([[
-      colorscheme tokyonight
-      ]])
-				lvim.builtin.lualine.options.theme = "tokyonight"
-			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 17)
-			end,
-		},
 		{
 			"abzcoding/zephyr-nvim",
 			config = function()
@@ -34,16 +14,6 @@ M.config = function()
 				return (_time.hour >= 5 and _time.hour < 8)
 			end,
 		},
-		-- {
-		--   "Pocco81/Catppuccino.nvim",
-		--   config = function()
-		--     require("user.theme").catppuccino()
-		--   end,
-		--   cond = function()
-		--     local _time = os.date "*t"
-		--     return (_time.hour >= 8 and _time.hour < 11)
-		--   end,
-		-- },
 		{
 			"ellisonleao/gruvbox.nvim",
 			requires = { "rktjmp/lush.nvim" },
@@ -74,13 +44,32 @@ M.config = function()
 				return (_time.hour >= 9 and _time.hour < 11)
 			end,
 		},
-		-- {
-		--   "shaunsingh/nord.nvim",
-		--   cond = function()
-		--     local _time = os.date "*t"
-		--     return (_time.hour >= 8 and _time.hour < 11)
-		--   end,
-		-- },
+		{
+			"abzcoding/tokyonight.nvim",
+			branch = "feature/vim-diagnostics",
+			config = function()
+				require("user.theme").tokyonight()
+				vim.cmd([[
+      colorscheme tokyonight
+      ]])
+				lvim.builtin.lualine.options.theme = "tokyonight"
+			end,
+			cond = function()
+				local _time = os.date("*t")
+				return (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 14)
+			end,
+		},
+		{
+			"rose-pine/neovim",
+			as = "rose-pine",
+			config = function()
+				require("user.theme").rose_pine()
+			end,
+			cond = function()
+				local _time = os.date("*t")
+				return  (_time.hour >= 14 and _time.hour < 17)
+			end,
+		},
 		{
 			"abzcoding/doom-one.nvim",
 			branch = "feat/nvim-cmp-floating",
@@ -95,26 +84,43 @@ M.config = function()
 				return (_time.hour >= 17 and _time.hour < 21)
 			end,
 		},
-		{
-			"olimorris/onedarkpro.nvim",
-		},
-		{
-			"sainnhe/gruvbox-material",
-			config = function()
-				vim.cmd([[
-          let g:gruvbox_material_background = 'hard'
-          let g:gruvbox_material_cursor = "red"
-          let g:gruvbox_material_statusline_style = 'original'
-          let g:gruvbox_material_palette = 'original'
-        ]])
-			end,
-		},
-		{
-			"EdenEast/nightfox.nvim",
-			config = function()
-				require("user.theme").nightfox()
-			end,
-		},
+		-- {
+		--   "Pocco81/Catppuccino.nvim",
+		--   config = function()
+		--     require("user.theme").catppuccino()
+		--   end,
+		--   cond = function()
+		--     local _time = os.date "*t"
+		--     return (_time.hour >= 8 and _time.hour < 11)
+		--   end,
+		-- },
+		-- {
+		--   "shaunsingh/nord.nvim",
+		--   cond = function()
+		--     local _time = os.date "*t"
+		--     return (_time.hour >= 8 and _time.hour < 11)
+		--   end,
+		-- },
+		-- {
+		-- 	"olimorris/onedarkpro.nvim",
+		-- },
+		-- {
+		-- 	"sainnhe/gruvbox-material",
+		-- 	config = function()
+		-- 		vim.cmd([[
+		--         let g:gruvbox_material_background = 'hard'
+		--         let g:gruvbox_material_cursor = "red"
+		--         let g:gruvbox_material_statusline_style = 'original'
+		--         let g:gruvbox_material_palette = 'original'
+		--       ]])
+		-- 	end,
+		-- },
+		-- {
+		-- 	"EdenEast/nightfox.nvim",
+		-- 	config = function()
+		-- 		require("user.theme").nightfox()
+		-- 	end,
+		-- },
 		-- {
 		--   "rhysd/accelerated-jk"
 		-- },
