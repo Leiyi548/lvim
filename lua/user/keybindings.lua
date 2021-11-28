@@ -437,14 +437,26 @@ M.config = function()
 			b = { "<cmd>b#<cr>", "Previous" },
 		}
 	end
+	local Terminal = require("toggleterm.terminal").Terminal
+	local toggle_horizontal = function()
+		local horizontal = Terminal:new({
+			direction = "horizontal",
+		})
+		horizontal:toggle()
+	end
+	lvim.builtin.which_key.mappings.t = {
+		name = "Terminal",
+		t = { toggle_horizontal, "Terminal" },
+	}
+
+	function WhichkeyMarkdown()
+		lvim.builtin.which_key.mappings["o"] = {
+			"<cmd>Vista!!<cr>",
+			"Outline",
+		}
+	end
+	-- filetype whichkey
+	vim.cmd("autocmd FileType markdown lua WhichkeyMarkdown()")
 end
 
-function WhichkeyMarkdown()
-	lvim.builtin.which_key.mappings["o"] = {
-		"<cmd>Vista!!<cr>",
-		"Outline",
-	}
-end
--- filetype whichkey
-vim.cmd("autocmd FileType markdown lua WhichkeyMarkdown()")
 return M
