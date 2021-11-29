@@ -40,7 +40,7 @@ end
 require("user.plugins").config()
 -- Additional keybindings
 -- =========================================
-  require("user.keybindings").config()
+require("user.keybindings").config()
 -- Autocommands
 -- =========================================
 require("user.autocommands").config()

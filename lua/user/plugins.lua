@@ -455,6 +455,8 @@ M.config = function()
 		},
 		{
 			"goolord/alpha-nvim",
+			opt = true,
+			event = "BufWinEnter",
 			config = function()
 				require("user.dashboard").config()
 			end,
@@ -498,24 +500,6 @@ M.config = function()
 			end,
 		},
 		{
-			"prettier/vim-prettier",
-			ft = {
-				"javascript",
-				"typescript",
-				"css",
-				"less",
-				"scss",
-				"json",
-				"graphql",
-				"markdown",
-				"vue",
-				"svelte",
-				"yaml",
-				"html",
-			},
-			disable = "true",
-		},
-		{
 			"mbbill/undotree",
 			cmd = { "UndotreeToggle" },
 		},
@@ -537,16 +521,6 @@ M.config = function()
 			after = "nvim-cmp",
 			--event = {"InsertEnter"},
 		},
-		-- {
-		-- 'f3fora/cmp-spell',
-		-- --event = {"InsertEnter"},
-		-- requires = "hrsh7th/nvim-cmp",
-		-- config = function ()
-		--   vim.opt.spell = true
-		--   vim.opt.spelllang = { 'en_us'}
-		-- end,
-		-- disable = true,
-		-- },
 		{
 			"andersevenrud/compe-tmux",
 			branch = "cmp",
@@ -576,10 +550,6 @@ M.config = function()
 			"windwp/nvim-ts-autotag",
 			ft = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
 		},
-		-- {
-		--   "pta2002/intellitab.nvim",
-		--   event = "InsertEnter",
-		-- },
 		{
 			"wellle/targets.vim",
 			keys = { "c", "d", "y" },
@@ -588,10 +558,6 @@ M.config = function()
 			"tpope/vim-repeat",
 			keys = { "." },
 		},
-		-- {
-		--   "AndrewRadev/tagalong.vim",
-		--   ft = {"html"},
-		-- },
 		-- {
 		--   "xiyaowong/telescope-emoji.nvim",
 		-- },
@@ -617,13 +583,6 @@ M.config = function()
 			event = "BufReadPost",
 			-- cmd = "SymbolsOutline",
 		},
-		-- {
-		--   "lewis6991/spellsitter.nvim",
-		--   event = "InsertEnter",
-		--   config = function ()
-		--     require('spellsitter').setup()
-		--   end
-		-- },
 		{
 			"filipdutescu/renamer.nvim",
 			config = function()
