@@ -195,6 +195,11 @@ M.config = function()
 				vim.g.asynctasks_term_rows = 12
 				vim.g.asyncrun_open = 6
 				vim.g.asynctasks_system = "macos"
+				vim.cmd([[
+        let g:asynctasks_extra_config = [
+    \ '~/.config/lvim/tasks.ini',
+    \ ]
+        ]])
 			end,
 		},
 		{
