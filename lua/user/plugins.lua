@@ -157,6 +157,13 @@ M.config = function()
 			end,
 		},
 		{
+			"jakewvincent/mkdnflow.nvim",
+			ft = { "markdown" },
+			config = function()
+				require("user.mkdnflow").config()
+			end,
+		},
+		{
 			"npxbr/glow.nvim",
 			ft = { "markdown" },
 		},
