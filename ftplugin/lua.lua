@@ -7,4 +7,3 @@ formatters.setup{
 -- linter
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup({{exe = "luacheck", filetypes = { "lua" } }})
-
