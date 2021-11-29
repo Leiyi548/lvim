@@ -42,6 +42,17 @@ M.config = function()
 		tmux = "(tmux)", -- 
 	}
 	require("cmp").setup.cmdline(":", { sources = { { name = "cmdline" } } })
+	-- fancy_cmp
+	if lvim.builtin.fancy_cmp.active then
+		lvim.builtin.cmp.formatting.format = function(entry, vim_item)
+			vim_item.kind = string.format("%s %s", lvim.builtin.cmp.formatting.kind_icons[vim_item.kind], vim_item.kind)
+			vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
+			vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
+				or lvim.builtin.cmp.formatting.duplicates_default
+			return vim_item
+		end
+		lvim.builtin.cmp.formatting.fields = { "abbr", "kind", "menu" } -- Organise the layout of the menu
+	end
 	-- Remove <C-j> <C-k> select snippets
 	lvim.builtin.cmp.mapping["<C-j>"] = nil
 	lvim.builtin.cmp.mapping["<C-k>"] = nil

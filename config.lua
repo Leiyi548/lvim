@@ -15,6 +15,7 @@ lvim.builtin.fancy_bufferline = { active = true } -- enable/disable fancy buffer
 lvim.builtin.bufferline.active = not lvim.builtin.fancy_bufferline.active
 lvim.builtin.fancy_rename = { active = true }
 lvim.builtin.fancy_dashboard = { active = true } --change to true if you want to fancy_dashboard
+lvim.builtin.fancy_cmp = { active = true }
 lvim.builtin.easy_align = { active = false } -- change to true if you want easy_align
 lvim.builtin.tabnine = { active = true } --change to true if you want tabnine
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
