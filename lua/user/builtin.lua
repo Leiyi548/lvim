@@ -82,7 +82,7 @@ M.config = function()
 	-- Lualine
 	-- =========================================
 	lvim.builtin.lualine.active = true
-	lvim.builtin.lualine.style = "default"
+	--lvim.builtin.lualine.style = "default"
 	lvim.builtin.lualine.options.theme = "auto"
 
 	-- Vscode theme

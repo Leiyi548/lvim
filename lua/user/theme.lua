@@ -27,6 +27,23 @@ M.tokyonight = function()
 		vim.g.tokyonight_style = "night"
 	end
 end
+M.vscode = function()
+	vim.g.vscode_style = "dark"
+	vim.cmd([[highlight! link CmpItemAbbrMatchFuzzy #569CD6]])
+	vim.cmd([[highlight! link CmpItemKindText #9CDCFE]])
+	vim.cmd([[highlight! link CmpItemKindMethod #C586c0]])
+	vim.cmd([[highlight! link CmpItemKindFunction #C586c0]])
+	vim.cmd([[highlight! link CmpItemKindConstructor Green]])
+	vim.cmd([[highlight! link CmpItemKindField Aqua]])
+	vim.cmd([[highlight! link CmpItemKindVariable #9CDCFE]])
+	vim.cmd([[highlight! link CmpItemKindClass Green]])
+	vim.cmd([[highlight! link CmpItemKindInterface #9CDCFE]])
+	vim.cmd([[highlight! link CmpItemKindValue Orange]])
+	vim.cmd([[highlight! link CmpItemKindKeyword #D4D4D4]])
+	vim.cmd([[highlight! link CmpItemKindSnippet Red]])
+	vim.cmd([[highlight! link CmpItemKindFile Orange]])
+	vim.cmd([[highlight! link CmpItemKindFolder Orange]])
+end
 M.rose_pine = function()
 	-- Set variant
 	-- Defaults to 'dawn' if vim background is light

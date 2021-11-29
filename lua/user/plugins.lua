@@ -17,6 +17,7 @@ M.config = function()
 		{
 			"ellisonleao/gruvbox.nvim",
 			requires = { "rktjmp/lush.nvim" },
+			after = "lush.nvim",
 			config = function()
 				vim.cmd([[
           colorscheme gruvbox
@@ -32,12 +33,10 @@ M.config = function()
 		{
 			"Mofiqul/vscode.nvim",
 			config = function()
-				vim.g.vscode_style = "dark"
-				--vim.g.vscode_style = "light"
+				--require("user.theme").vscode()
 				vim.cmd([[
        colorscheme vscode
       ]])
-				--lvim.builtin.lualine.options.theme ="Tomorrow"
 			end,
 			cond = function()
 				local _time = os.date("*t")
@@ -156,11 +155,19 @@ M.config = function()
 				require("user.vim-markdown").config()
 			end,
 		},
+		-- {
+		-- 	"jakewvincent/mkdnflow.nvim",
+		-- 	ft = { "markdown" },
+		-- 	config = function()
+		-- 		require("user.mkdnflow").config()
+		-- 	end,
+		-- },
 		{
-			"jakewvincent/mkdnflow.nvim",
-			ft = { "markdown" },
+			"vimwiki/vimwiki",
+			branch = "dev",
+			ft = { "wiki", "markdown" },
 			config = function()
-				require("user.mkdnflow").config()
+				require("user.vimwiki").config()
 			end,
 		},
 		{
@@ -582,10 +589,6 @@ M.config = function()
 		-- },
 		-- {
 		--   "xiyaowong/telescope-emoji.nvim",
-		-- },
-		-- {
-		--   'vimwiki/vimwiki',
-
 		-- },
 		{
 			"mg979/vim-visual-multi",
