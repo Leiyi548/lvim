@@ -28,22 +28,26 @@ M.config = function()
 	lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
 	--lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
 	lvim.builtin.cmp.formatting.source_names = {
-		buffer = "(Buffer)", -- ﬘
+		buffer = "[Buf]", -- ﬘
 		nvim_lsp = "  ",
-		luasnip = "(LuaSnip)",
-		org = "(org)",
+		luasnip = "  ", -- "(LuaSnip)"
+		org = "[Org]",
 		treesitter = "  ",
-		nvim_lua = "(NvLua)",
+		nvim_lua = "  ", -- "(NvLua)"
 		spell = " 暈",
 		emoji = "  ",
 		path = "  ", -- 率
 		calc = "  ", -- 
-		cmp_tabnine = "  ",
+		cmp_tabnine = " ﮧ ", -- "  "
 		tmux = "(tmux)", -- 
 	}
 	require("cmp").setup.cmdline(":", { sources = { { name = "cmdline" } } })
 	-- fancy_cmp
 	if lvim.builtin.fancy_cmp.active then
+		local status_cmp_ok, cmp = pcall(require, "cmp")
+		if not status_cmp_ok then
+			return
+		end
 		lvim.builtin.cmp.formatting.format = function(entry, vim_item)
 			vim_item.kind = string.format("%s %s", lvim.builtin.cmp.formatting.kind_icons[vim_item.kind], vim_item.kind)
 			vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
@@ -52,6 +56,9 @@ M.config = function()
 			return vim_item
 		end
 		lvim.builtin.cmp.formatting.fields = { "abbr", "kind", "menu" } -- Organise the layout of the menu
+		lvim.builtin.cmp.documentation.border = nil
+		lvim.builtin.cmp.mapping["<C-d>"] = cmp.mapping.scroll_docs(4)
+		lvim.builtin.cmp.mapping["<C-u>"] = cmp.mapping.scroll_docs(-4)
 	end
 	-- Remove <C-j> <C-k> select snippets
 	lvim.builtin.cmp.mapping["<C-j>"] = nil

@@ -134,7 +134,7 @@ M.config = function()
 			"iamcco/markdown-preview.nvim",
 			run = "cd app && npm install",
 			setup = function()
-				vim.g.mkdp_filetypes = { "markdown" }
+				vim.g.mkdp_filetypes = { "markdown", "tex", "wiki" }
 			end,
 			ft = "markdown",
 			config = function()
@@ -459,6 +459,7 @@ M.config = function()
 			event = "BufWinEnter",
 			config = function()
 				require("user.dashboard").config()
+				vim.cmd("language en_US.UTF-8")
 			end,
 			--disable = not lvim.builtin.fancy_dashboard.active,
 		},
