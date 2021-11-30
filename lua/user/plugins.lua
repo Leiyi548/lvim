@@ -100,9 +100,9 @@ M.config = function()
 		--     return (_time.hour >= 8 and _time.hour < 11)
 		--   end,
 		-- },
-		-- {
-		-- 	"olimorris/onedarkpro.nvim",
-		-- },
+		{
+			"olimorris/onedarkpro.nvim",
+		},
 		-- {
 		-- 	"sainnhe/gruvbox-material",
 		-- 	config = function()
@@ -146,15 +146,15 @@ M.config = function()
     ]])
 			end,
 		},
-		{
-			"plasticboy/vim-markdown",
-			ft = "markdown",
-			opt = "true",
-			requires = { "godlygeek/tabular" },
-			config = function()
-				require("user.vim-markdown").config()
-			end,
-		},
+		-- {
+		-- 	"plasticboy/vim-markdown",
+		-- 	ft = "markdown",
+		-- 	opt = "true",
+		-- 	requires = { "godlygeek/tabular" },
+		-- 	config = function()
+		-- 		require("user.vim-markdown").config()
+		-- 	end,
+		-- },
 		-- {
 		-- 	"jakewvincent/mkdnflow.nvim",
 		-- 	ft = { "markdown" },
@@ -162,14 +162,14 @@ M.config = function()
 		-- 		require("user.mkdnflow").config()
 		-- 	end,
 		-- },
-		{
-			"vimwiki/vimwiki",
-			branch = "dev",
-			ft = { "wiki", "markdown" },
-			config = function()
-				require("user.vimwiki").config()
-			end,
-		},
+		-- {
+		-- 	"Leiyi548/vimwiki",
+		-- 	branch = "dev",
+		-- 	ft = { "vimwiki", "markdown" },
+		-- 	config = function()
+		-- 		require("user.vimwiki").config()
+		-- 	end,
+		-- },
 		{
 			"npxbr/glow.nvim",
 			ft = { "markdown" },
