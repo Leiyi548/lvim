@@ -28,7 +28,7 @@ M.config = function()
 	lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
 	--lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
 	lvim.builtin.cmp.formatting.source_names = {
-		buffer = "[Buf]", -- ﬘
+		buffer = "  ", -- ﬘     "[Buf]"
 		nvim_lsp = "  ",
 		luasnip = "  ", -- "(LuaSnip)"
 		org = "[Org]",
@@ -39,7 +39,7 @@ M.config = function()
 		path = "  ", -- 率
 		calc = "  ", -- 
 		cmp_tabnine = " ﮧ ", -- "  "
-		tmux = "(tmux)", -- 
+		tmux = "[tmux]", -- 
 	}
 	require("cmp").setup.cmdline(":", { sources = { { name = "cmdline" } } })
 	-- fancy_cmp
