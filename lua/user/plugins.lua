@@ -93,13 +93,9 @@ M.config = function()
 		--     return (_time.hour >= 8 and _time.hour < 11)
 		--   end,
 		-- },
-		-- {
-		--   "shaunsingh/nord.nvim",
-		--   cond = function()
-		--     local _time = os.date "*t"
-		--     return (_time.hour >= 8 and _time.hour < 11)
-		--   end,
-		-- },
+		{
+			"shaunsingh/nord.nvim",
+		},
 		{
 			"olimorris/onedarkpro.nvim",
 		},

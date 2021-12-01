@@ -1,5 +1,5 @@
 local M = {}
-
+local kind = require("user.lsp_kind")
 local function clock()
 	return " " .. os.date("%H:%M")
 end
@@ -53,31 +53,31 @@ local mode = function()
 	if mod == "n" or mod == "no" or mod == "nov" then
 		-- return "  "
 		-- return "▊ "
-		return "-- Normal --"
+		return "-- NORMAL --"
 	elseif mod == "i" or mod == "ic" or mod == "ix" then
 		-- return "  "
 		-- return "▊ "
-		return "-- Insert --"
+		return "-- INSERT --"
 	elseif mod == "V" or mod == "v" or mod == "vs" or mod == "Vs" or mod == "cv" then
 		-- return "  "
 		-- return "▊ "
-		return "-- Visual --"
+		return "-- VISUAL --"
 	elseif mod == "c" or mod == "ce" then
 		-- return " ﴣ "
 		-- return "▊ "
-		return "-- Commmand --"
+		return "-- COMMMAND --"
 	elseif mod == "r" or mod == "rm" or mod == "r?" then
 		-- return "  "
 		-- return "▊ "
-		return "-- Normal --"
+		return "-- NORMAL --"
 	elseif mod == "R" or mod == "Rc" or mod == "Rv" or mod == "Rv" then
 		-- return "  "
 		-- return "▊ "
-		return "-- Replace --"
+		return "-- REPLACE --"
 	end
 	-- return "  "
 	-- return "▊ "
-	return "-- Normal --"
+	return "-- NORMAL --"
 end
 local file_icons = {
 	Brown = { "" },
@@ -185,7 +185,7 @@ M.config = function()
 		n = colors.fg,
 		i = colors.fg,
 		v = colors.fg,
-		[""] = colors.fg,
+		[" "] = colors.fg,
 		V = colors.fg,
 		c = colors.fg,
 		no = colors.fg,
@@ -353,7 +353,12 @@ M.config = function()
 		ins_left({
 			"diagnostics",
 			sources = { "nvim" },
-			symbols = { error = " ", warn = " ", info = " ", hint = " " },
+			symbols = {
+				error = kind.icons.error,
+				warn = kind.icons.warn,
+				info = kind.icons.info,
+				hint = kind.icons.hint,
+			},
 			sections = { "error", "warn" },
 			-- sections = {'error', 'warn', 'info', 'hint'},
 			-- cond = conditions.hide_in_width,
@@ -367,7 +372,12 @@ M.config = function()
 			sources = { "nvim_lsp" },
 			sections = { "error", "warn" },
 			-- sections = {'error', 'warn', 'info', 'hint'},
-			symbols = { error = " ", warn = " ", info = " ", hint = " " },
+			symbols = {
+				error = kind.icons.error,
+				warn = kind.icons.warn,
+				info = kind.icons.info,
+				hint = kind.icons.hint,
+			},
 			-- cond = conditions.hide_in_width,
 			colored = false,
 			always_visible = true,
@@ -494,7 +504,7 @@ M.config = function()
 			local buf_clients = vim.lsp.buf_get_clients()
 			if next(buf_clients) == nil then
 				if type(msg) == "boolean" or #msg == 0 then
-					return "LS Inactive"
+					return "LSP Inactive"
 				end
 				return msg
 			end
