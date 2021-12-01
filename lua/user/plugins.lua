@@ -217,13 +217,6 @@ M.config = function()
 		{
 			"phaazon/hop.nvim",
 			as = "hop",
-			-- cmd = {
-			-- 	"HopWord",
-			-- 	"HopLine",
-			-- 	"HopChar1",
-			-- 	"HopChar2",
-			-- 	"HopPattern",
-			-- },
 			event = "BufRead",
 			config = function()
 				-- you can configure Hop the way you like here; see :h hop-config
@@ -275,15 +268,7 @@ M.config = function()
 					},
 				})
 			end,
-			--disable = true,
 		},
-		--Startup time use lvim -startuptime s.log
-		--  {
-		-- "dstein64/vim-startuptime",
-		--  opt =true,
-		--  cmd = "Startuptime",
-		--  },
-
 		--Vista.vim
 		{
 			"liuchengxu/vista.vim",
@@ -349,7 +334,6 @@ M.config = function()
 		{
 			"ybian/smartim",
 			event = { "InsertEnter" },
-			--cmd = {"helloworld"},
 			config = function()
 				vim.g.smartim_default = "com.apple.keylayout.ABC"
 			end,
@@ -487,12 +471,6 @@ M.config = function()
 		--     'tami5/lspsaga.nvim',
 		--     branch = 'nvim51'
 		-- },
-		-- {
-		-- 	"lukas-reineke/cmp-under-comparator",
-		-- 	config = function()
-		-- 		require("user.cmp-comparator")
-		-- 	end,
-		-- },
 		{
 			"chentau/marks.nvim",
 			keys = { "m" },
@@ -558,9 +536,6 @@ M.config = function()
 			"tpope/vim-repeat",
 			keys = { "." },
 		},
-		-- {
-		--   "xiyaowong/telescope-emoji.nvim",
-		-- },
 		{
 			"mg979/vim-visual-multi",
 			branch = "master",

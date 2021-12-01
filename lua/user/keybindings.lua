@@ -68,7 +68,9 @@ M.config = function()
 	-- hop
 	-- easymotion(hop)
 	lvim.keys.normal_mode["E"] = "<cmd>HopChar1<cr>"
-	lvim.keys.normal_mode["<C-m>"] = "<cmd>HopLineStart<cr>"
+	lvim.keys.visual_mode["E"] = "<cmd>HopChar1<cr>"
+	lvim.keys.normal_mode["sl"] = "<cmd>HopLineStart<cr>"
+	lvim.keys.visual_mode["sl"] = "<cmd>HopLineStart<cr>"
 	lvim.keys.normal_mode["ss"] = "<cmd>HopChar2<cr>"
 	lvim.keys.visual_mode["ss"] = "<cmd>HopChar2<cr>"
 	-- place this in one of your configuration file(s)
