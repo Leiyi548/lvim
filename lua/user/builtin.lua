@@ -115,24 +115,36 @@ M.config = function()
 		},
 	}
 	lvim.builtin.nvimtree.icons = kind.nvim_tree_icons
-	-- lvim.builtin.nvimtree.hide_dotfiles = 0
 	-- Project
 	-- =========================================
 	lvim.builtin.project.active = true
 
+	-- lvim.builtin.nvimtree.hide_dotfiles = 0
+	-- Dashboard
+	vim.g.dashboard_disable_statusline = 1
+
+	-- treesitter
+	-- =========================================
 	lvim.builtin.treesitter.indent = { enable = true, disable = { "yaml", "python" } } -- treesitter is buggy :(
 	lvim.builtin.treesitter.matchup.enable = true
-	--treesitter
 	lvim.builtin.treesitter.textsubjects = { enable = true }
 	lvim.builtin.treesitter.playground = { enable = true }
 	lvim.builtin.treesitter.context_commentstring = { enable = true }
 	lvim.builtin.treesitter.highlight = { enable = true, additional_vim_regex_highlighting = { "org" } }
-	lvim.builtin.treesitter.autotag = { enable = true }
 	lvim.builtin.treesitter.playground = { enable = true }
 	lvim.builtin.treesitter.rainbow = { enable = true }
 	lvim.builtin.treesitter.ensure_installed = {}
 	lvim.builtin.treesitter.ignore_install = { "haskell" }
 	lvim.builtin.treesitter.highlight.enabled = true
+	lvim.builtin.treesitter.autotag = {
+		enable = true,
+		filetypes = {
+			"html",
+			"javascript",
+			"typescript",
+			"markdown",
+		},
+	}
 	lvim.builtin.treesitter.query_linter = {
 		enable = true,
 		use_virtual_text = true,
@@ -214,11 +226,26 @@ M.config = function()
 	-- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
 	-- icon                       既            
 	lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
-	lvim.builtin.telescope.defaults.winblend = 6
-	lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
+	lvim.builtin.telescope.defaults.winblend = 20
+	--lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
+	lvim.builtin.telescope.defaults.layout_strategy = "flex"
 	--lvim.builtin.telescope.defaults.selection_caret = " "
 	--lvim.builtin.telescope.defaults.selection_caret = ""
-	lvim.builtin.telescope.defaults.selection_caret = ""
+	--lvim.builtin.telescope.defaults.selection_caret = ""
+	lvim.builtin.telescope.defaults.selection_caret = nil
+	lvim.builtin.telescope.defaults.layout_config = {
+		flex = {
+			flip_columns = 140,
+		},
+		vertical = {
+			preview_cutoff = 40,
+			prompt_position = "bottom",
+		},
+		horizontal = {
+			width = 0.9,
+			height = 0.8,
+		},
+	}
 	lvim.builtin.telescope.defaults.file_ignore_patterns = {
 		"vendor/*",
 		"fonts/*",

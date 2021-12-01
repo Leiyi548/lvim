@@ -38,6 +38,9 @@ end
 -- Additional Plugins
 -- =========================================
 require("user.plugins").config()
+-- Options
+-- =========================================
+require("user.options").config()
 -- Additional keybindings
 -- =========================================
 require("user.keybindings").config()
