@@ -5,9 +5,6 @@ M.config = function()
 	lvim.leader = "space"
 	-- INFO: add your own keymapping
 	-- INFO: normal_mode
-	lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-	-- lvim.keys.normal_mode["<Tab>"] = ":BufferNext<cr>"
-	-- lvim.keys.normal_mode["<S-Tab>"] = ":BufferPrevious<cr>"
 	if lvim.builtin.fancy_bufferline.active then
 		lvim.keys.normal_mode["<Tab>"] = "<cmd>BufferLineCycleNext<cr>"
 		lvim.keys.normal_mode["<S-Tab>"] = "<cmd>BufferLineCyclePrev<cr>"
@@ -19,6 +16,9 @@ M.config = function()
 	lvim.keys.normal_mode["<leader>sc"] = "<cmd>nohlsearch<cr>"
 	lvim.keys.normal_mode["<leader>wv"] = "<cmd>vsplit<cr>"
 	lvim.keys.normal_mode["<leader>ws"] = "<cmd>split<cr>"
+	lvim.keys.normal_mode["sv"] = "<cmd>vsplit<cr>"
+	lvim.keys.normal_mode["sg"] = "<cmd>split<cr>"
+	lvim.keys.normal_mode["sc"] = "<C-w>c"
 	lvim.keys.normal_mode["<leader>wd"] = "<C-w>c"
 	lvim.keys.normal_mode["<leader>wh"] = "<C-w>h"
 	lvim.keys.normal_mode["<leader>wj"] = "<C-w>j"
@@ -32,18 +32,6 @@ M.config = function()
 	-- better indent
 	lvim.keys.normal_mode["<"] = "<<"
 	lvim.keys.normal_mode[">"] = ">>"
-	-- quickly replace
-	-- 一口气这是替换全部
-	-- lvim.keys.normal_mode["<leader>rr"] = ":%s///g<Left><Left>"
-	-- 依次进行替换并进行询问
-	-- lvim.keys.normal_mode["<leader>rc"] = ":%s///gc<Left><Left><Left>"
-	-- lvim.keys.normal_mode["s*"] = ":let @/='\<'.expand('<cword>').'\>'<CR>cgn"
-	-- lvim.keys.visual_block_mode["s*"] = ":let @/='\<'.expand('<cword>').'\>'<CR>cgn"
-	--先点击* 选中需要替换的代码快后在 visual模式下进行替换
-	-- lvim.keys.visual_block_mode["<leader>rr"] = ":s///g<Left><Left>"
-	-- lvim.keys.visual_block_mode["<leader>rc"] = ":s///gc<Left><Left><Left>"
-
-	--lvim.keys.normal_mode["<C-s>"] = actions.save_colorscheme
 	-- INFO: visula_mode
 	lvim.keys.visual_mode["H"] = "^"
 	lvim.keys.visual_mode["L"] = "$"
@@ -64,7 +52,6 @@ M.config = function()
 	vim.cmd([[
    nnoremap q: :q
    ]])
-
 	-- hop
 	-- easymotion(hop)
 	lvim.keys.normal_mode["E"] = "<cmd>HopChar1<cr>"
@@ -114,16 +101,8 @@ M.config = function()
 	--Luasnip
 	vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
 	vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
-	--IntelliTab
-	-- lvim.keys.insert_mode["<Tab>"] = "<CMD>lua require('intellitab').indent<cr>"
 	-- X closes a buffer
 	lvim.keys.normal_mode["<S-x>"] = ":bdelete!<cr>"
-	-- accelerated-jk
-	-- vim.api.nvim_set_keymap('n','j','<Plug>(accelerated_jk_gj)',{ silent=true })
-	-- vim.api.nvim_set_keymap('n','k','<Plug>(accelerated_jk_gk)',{ silent=true })
-	-- vim-easy-align
-	--vim.api.nvim_set_keymap('n','ga','<Plug>(EasyAlign)',{ silent=true })
-	--vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{ silent=true })
 	-- run 保持终端
 	vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { silent = true })
 	--lspsaga
