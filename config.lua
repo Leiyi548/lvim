@@ -34,11 +34,11 @@ vim.cmd([[source ~/.config/lvim/textobjects.vim]])
 -- Lvim builtin setting
 require("user.builtin").config()
 
-if lvim.builtin.fancy_statusline.active then
+if lvim.builtin.fancy_statusline.active and not lvim.builtin.vscode_line.active then
 	require("user.lualine").config()
 end
 
-if lvim.builtin.vscode_line.active then
+if lvim.builtin.vscode_line.active and not lvim.builtin.fancy_statusline.active then
 	require("user.vscode_lualine").config()
 end
 -- Additional Plugins
