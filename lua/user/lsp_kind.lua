@@ -30,12 +30,12 @@ M.cmp_kind = {
 }
 
 M.icons = {
-	error = " ",
+	error = " ", --   
 	--warn = " ",
-	warn = " ", --
+	warn = " ", -- 
 	info = "",
 	hint = " ",
-	code_action = "", -- 
+	code_action = "", --  
 	test = "",
 	docs = "",
 	clock = " ",
