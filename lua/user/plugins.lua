@@ -523,8 +523,7 @@ M.config = function()
 			--event = {"InsertEnter"},
 		},
 		{
-			"andersevenrud/compe-tmux",
-			branch = "cmp",
+			"andersevenrud/cmp-tmux",
 			after = "nvim-cmp",
 		},
 		{
