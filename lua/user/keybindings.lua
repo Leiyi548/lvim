@@ -52,6 +52,9 @@ M.config = function()
 	vim.cmd([[
    nnoremap q: :q
    ]])
+	-- telescope
+	-- fuzzy finder
+	lvim.keys.visual_mode["<leader>st"] = "<Cmd>lua require('user.telescope').grep_string_visual()<CR>"
 	-- hop
 	-- easymotion(hop)
 	lvim.keys.normal_mode["E"] = "<cmd>HopChar1<cr>"
@@ -201,9 +204,20 @@ M.config = function()
 			t = { "<cmd>AsyncTask file-run<cr>", "Run on default terminal" },
 			f = { "<cmd>AsyncTask file-run-floaterm<cr>", "Run on floaterm" },
 		},
+		--Whichkey-F
+		F = {
+			name = "Find",
+			i = { "<cmd>lua require('user.telescope').installed_plugins()<cr>", "Installed Plugins" },
+			b = { "<cmd>lua require('user.telescope').builtin()<cr>", "Builtin" },
+			f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
+			g = { "<cmd>lua require('user.telescope').git_files()<cr>", "Git Files" },
+			p = { "<cmd>lua require('user.telescope').project_search()<cr>", "Project" },
+			s = { "<cmd>lua require('user.telescope').git_status()<cr>", "Git Status" },
+			z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
+		},
 		--Whichkey-f
 		f = {
-			name = "+File",
+			name = "File",
 			--b = { "<cmd>Telescope buffers<cr>", "Find buffer" },
 			b = {
 				"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({}))<cr>",
