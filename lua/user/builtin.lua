@@ -226,6 +226,7 @@ M.config = function()
 	-- =========================================
 	-- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
 	-- icon                       既            
+	lvim.builtin.telescope.extensions.fzf = nil
 	lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
 	lvim.builtin.telescope.defaults.winblend = 0 -- Transparency
 	lvim.builtin.telescope.defaults.layout_strategy = "horizontal" -- "flex"
