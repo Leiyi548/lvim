@@ -239,7 +239,7 @@ M.config = function()
 			N = { "<cmd>enew<cr>", "New File" },
 			r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 			R = { "<cmd>Telescope registers<cr>", "Registers" },
-			t = { "<cmd>Telescope live_grep<cr>", "Text" },
+			g = { "<cmd>Telescope live_grep<cr>", "Grep" },
 			m = { "<cmd>Telescope marks<cr>", "Marks" },
 			n = { "<cmd>Telescope notes<cr>", "Notes" },
 		},

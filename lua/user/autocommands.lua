@@ -12,12 +12,12 @@ M.config = function()
 			"alpha",
 			"setlocal nocursorline noswapfile synmaxcol& signcolumn=no norelativenumber nocursorcolumn nospell  nolist  nonumber bufhidden=wipe colorcolumn= foldcolumn=0 matchpairs= ",
 		},
-		{ "FileType", "alpha", "set laststatus=0" },
-		{
-			"FileType",
-			"alpha",
-			"set showtabline=0 | autocmd BufLeave <buffer> set showtabline=" .. vim.opt.showtabline._value,
-		},
+		-- { "FileType", "alpha", "set laststatus=0" },
+		-- {
+		-- 	"FileType",
+		-- 	"alpha",
+		-- 	"set showtabline=0 | autocmd BufLeave <buffer> set showtabline=" .. vim.opt.showtabline._value,
+		-- },
 		-- python
 		-- { "FileType", "python", "inoremap <silent> <buffer> ,, <++>"},
 		-- { "FileType", "python", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"},
