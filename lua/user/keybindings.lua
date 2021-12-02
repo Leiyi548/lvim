@@ -3,8 +3,7 @@ local M = {}
 M.config = function()
 	--leader key
 	lvim.leader = "space"
-	-- INFO: add your own keymapping
-	-- INFO: normal_mode
+	-- normal_mode
 	if lvim.builtin.fancy_bufferline.active then
 		lvim.keys.normal_mode["<Tab>"] = "<cmd>BufferLineCycleNext<cr>"
 		lvim.keys.normal_mode["<S-Tab>"] = "<cmd>BufferLineCyclePrev<cr>"
@@ -32,15 +31,22 @@ M.config = function()
 	-- better indent
 	lvim.keys.normal_mode["<"] = "<<"
 	lvim.keys.normal_mode[">"] = ">>"
-	-- INFO: visula_mode
+	-- visula_mode
 	lvim.keys.visual_mode["H"] = "^"
 	lvim.keys.visual_mode["L"] = "$"
 	lvim.keys.visual_mode["<leader>lr"] = "<Cmd>lua require('renamer').rename()<CR>"
+	-- cmd mode
+	lvim.keys.command_mode["<C-b>"] = "<Left>"
+	lvim.keys.command_mode["<C-f>"] = "<Right>"
+	lvim.keys.command_mode["<C-a>"] = "<Home>"
+	lvim.keys.command_mode["<C-e>"] = "<End>"
+	lvim.keys.command_mode["<C-d>"] = "<Del>"
+	lvim.keys.command_mode["<C-h>"] = "<BS>"
 	-- FIX: delete jk to escape
 	lvim.keys.insert_mode["jk"] = false
 	lvim.keys.insert_mode["kj"] = false
 	lvim.keys.insert_mode["jj"] = false
-	-- INFO:quickcopy
+	--quickcopy
 	lvim.keys.normal_mode["Y"] = "y$"
 	lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
 	lvim.keys.normal_mode["<leader>y"] = '"+y'
@@ -48,7 +54,7 @@ M.config = function()
 	lvim.keys.normal_mode["<leader>yy"] = '"+yy'
 	lvim.keys.normal_mode["<leader>p"] = '"+p"'
 	lvim.keys.visual_mode["<leader>p"] = '"+p'
-	-- INFO:butter :q
+	--butter :q
 	vim.cmd([[
    nnoremap q: :q
    ]])
