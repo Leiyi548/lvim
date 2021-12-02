@@ -26,3 +26,12 @@ highlight! link CmpItemKindEvent  TSVariable
 highlight! link CmpItemKindOperator  Operator
 highlight! link CmpItemKindTypeParameter  Type
 highlight! link CmpItemKindSnippet  Statement
+"cmp
+" highlight! link CmpItemKind TSConstMacro
+" highlight! link CmpItemMenu TSComment
+" hi! link CmpDocumentation TSVariable 
+" hi! link CmpDocumentationBorder TSVariable
+" hi! link CmpItemAbbr TSVariable
+" hi! link CmpItemAbbrDeprecated TSComment
+" hi! CmpItemAbbrMatchFuzzy guibg=NONE guifg=NONE guisp=NONE gui=NONE
+" hi! CmpItemAbbrMatch guibg=NONE guifg=NONE guisp=NONE gui=NONE
