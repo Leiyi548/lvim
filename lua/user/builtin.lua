@@ -227,14 +227,14 @@ M.config = function()
 	-- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
 	-- icon                       既            
 	lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
-	lvim.builtin.telescope.defaults.winblend = 20
-	--lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
-	lvim.builtin.telescope.defaults.layout_strategy = "flex"
-	--lvim.builtin.telescope.defaults.selection_caret = " "
-	--lvim.builtin.telescope.defaults.selection_caret = ""
-	--lvim.builtin.telescope.defaults.selection_caret = ""
-	lvim.builtin.telescope.defaults.selection_caret = nil
+	lvim.builtin.telescope.defaults.winblend = 0 -- Transparency
+	lvim.builtin.telescope.defaults.layout_strategy = "horizontal" -- "flex"
+	lvim.builtin.telescope.defaults.selection_caret = nil --       "❯ "
+	lvim.builtin.telescope.defaults.prompt_prefix = nil -- "❯ "
 	lvim.builtin.telescope.defaults.layout_config = {
+		width = 0.95,
+		height = 0.85,
+		prompt_position = "top",
 		flex = {
 			flip_columns = 140,
 		},
@@ -243,8 +243,13 @@ M.config = function()
 			prompt_position = "bottom",
 		},
 		horizontal = {
-			width = 0.9,
-			height = 0.8,
+			preview_width = function(_, cols, _)
+				if cols > 200 then
+					return math.floor(cols * 0.4)
+				else
+					return math.floor(cols * 0.6)
+				end
+			end,
 		},
 	}
 	lvim.builtin.telescope.defaults.file_ignore_patterns = {
