@@ -428,10 +428,20 @@ M.config = function()
 			disable = not lvim.builtin.ZFvim.active,
 		},
 		{
+			"aserowy/tmux.nvim",
+			event = "BufRead",
+			config = function()
+				require("user.tmux").setup()
+			end,
+			disable = lvim.builtin.tmuxNavigator.active,
+		},
+		{
 			"numToStr/Navigator.nvim",
+			event = "BufRead",
 			config = function()
 				require("Navigator").setup()
 			end,
+			disable = not lvim.builtin.tmuxNavigator.active,
 		},
 		{
 			"goolord/alpha-nvim",
@@ -463,13 +473,9 @@ M.config = function()
 			"junegunn/vim-easy-align",
 			disable = not lvim.builtin.easy_align.active,
 		},
-		-- {
-		--     'tami5/lspsaga.nvim',
-		--     branch = 'nvim51'
-		-- },
 		{
 			"chentau/marks.nvim",
-			keys = { "m" },
+			event = "BufReadPost",
 			config = function()
 				require("user.mark")
 			end,
@@ -494,7 +500,6 @@ M.config = function()
 			"hrsh7th/cmp-calc",
 			requires = "hrsh7th/nvim-cmp",
 			after = "nvim-cmp",
-			--event = {"InsertEnter"},
 		},
 		{
 			"andersevenrud/cmp-tmux",
@@ -552,7 +557,6 @@ M.config = function()
 			end,
 			ft = { "lua", "python", "java", "javascript", "c", "cpp" },
 			event = "BufReadPost",
-			-- cmd = "SymbolsOutline",
 		},
 		{
 			"filipdutescu/renamer.nvim",

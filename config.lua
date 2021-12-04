@@ -24,6 +24,7 @@ lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
 lvim.builtin.terminal.active = true
 lvim.builtin.dap.active = false
 lvim.builtin.notify.active = true
+lvim.builtin.tmuxNavigator = { active = false }
 lvim.builtin.fancy_number = { active = false } --change to true if you want fancy number
 
 -- Customization

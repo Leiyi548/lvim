@@ -122,6 +122,7 @@ M.config = function()
 	-- lvim.keys.normal_mode["<C-f>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>"
 	-- lvim.keys.normal_mode["<C-b>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>"
 	--tmux navigation
+if lvim.builtin.tmuxNavigator.active then
 	lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>"
 	lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
 	lvim.keys.normal_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
@@ -130,6 +131,7 @@ M.config = function()
 	lvim.keys.visual_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
 	lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
 	lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
+end
 	--whichkey
 	lvim.builtin.which_key.vmappings = {
 		s = {
