@@ -36,7 +36,7 @@ local dotfiles = function(opts)
 			prompt_position = "top",
 			--prompt_position = 'bottom'
 		},
-		--previewer = conf.file_previewer(opts),
+		previewer = conf.file_previewer(opts),
 		sorter = conf.file_sorter(opts),
 	}):find()
 end

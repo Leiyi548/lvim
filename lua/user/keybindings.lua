@@ -223,7 +223,10 @@ M.config = function()
 			},
 			c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
-			d = { "<cmd>Telescope dotfiles<cr>", "Dotfiles" },
+			d = {
+				"<cmd>lua require'telescope'.extensions.dotfiles.dotfiles(require('telescope.themes').get_dropdown({}))<cr>",
+				"Dotfiles",
+			},
 			-- e = { "<cmd>Telescope emoji<cr>", "emoji" },
 			f = {
 				"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>",
