@@ -281,6 +281,7 @@ M.config = function()
 	}
 	local telescope_actions = require("telescope.actions.set")
 	lvim.builtin.telescope.defaults.pickers.find_files = {
+		theme = "dropdown",
 		attach_mappings = function(_)
 			telescope_actions.select:enhance({
 				post = function()
@@ -294,7 +295,7 @@ M.config = function()
 	require("telescope").load_extension("dotfiles")
 	-- require("telescope").load_extension('emoji')
 	-- require("telescope").load_extension("file_create")
-	require("telescope").load_extension("notes")
+	-- require("telescope").load_extension("notes")
 	require("telescope").load_extension("luasnip")
 	--Terminal
 	-- =========================================

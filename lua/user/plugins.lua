@@ -122,7 +122,7 @@ M.config = function()
 
 		{
 			"tpope/vim-surround",
-			keys = { "c", "d", "y" },
+			keys = { "c", "d", "y", "s", "S" },
 		},
 
 		--telescope

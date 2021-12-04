@@ -34,6 +34,17 @@ function M.layout_config()
 	}
 end
 
+function M.find_note()
+	local opts = {
+		prompt_title = " Find Notes",
+		path_display = { "smart" },
+		prompt_position = "top",
+		cwd = "~/Dropbox/Orgzly",
+	}
+	-- layout_strategy = "horizontal",
+	-- layout_config = { preview_width = 0.65, width = 0.75 },
+	builtin.find_files(themes.get_dropdown(opts))
+end
 -- another file string search
 function M.find_string()
 	local opts = {

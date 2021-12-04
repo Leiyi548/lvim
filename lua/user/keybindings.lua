@@ -122,16 +122,16 @@ M.config = function()
 	-- lvim.keys.normal_mode["<C-f>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>"
 	-- lvim.keys.normal_mode["<C-b>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>"
 	--tmux navigation
-if lvim.builtin.tmuxNavigator.active then
-	lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>"
-	lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
-	lvim.keys.normal_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
-	lvim.keys.normal_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
-	lvim.keys.visual_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>"
-	lvim.keys.visual_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
-	lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
-	lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
-end
+	if lvim.builtin.tmuxNavigator.active then
+		lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>"
+		lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
+		lvim.keys.normal_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
+		lvim.keys.normal_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
+		lvim.keys.visual_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>"
+		lvim.keys.visual_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
+		lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
+		lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
+	end
 	--whichkey
 	lvim.builtin.which_key.vmappings = {
 		s = {
@@ -147,15 +147,7 @@ end
 		p = { name = "Paste" },
 	}
 	lvim.builtin.which_key.mappings = {
-		--["q"] = { "<cmd>q!<cr>", "Quit" },
-		--["/"] = { "<cmd>lua require('Comment').toggle()<cr>", "Comment" },
-		--["f"] = { "<cmd>Telescope find_files<cr>", "Find File" },
-		--["h"] = { "<cmd>nohlsearch<cr>", "No Highlight" },
-		--Whichkey-b
-		--lvim.builtin.which_key.mappings[";"] = { "<cmd>Dashboard<cr>", "Dashboard" }
 		[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
-		--[";"] = { ':lua NTGlobal["terminal"]:toggle()<cr>',"Vscodeterm" },
-		--lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
 		["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 		["c"] = { "<cmd>BufferClose!<cr>", "Close Buffer" },
 		["u"] = { "<cmd>UndotreeToggle<cr>", "Undotree" },
@@ -199,7 +191,6 @@ end
 			S = { "<cmd>PackerSync<cr>", "Sync" },
 			u = { "<cmd>PackerUpdate<cr>", "Update" },
 		},
-		--Whichkey-E
 		--Whichkey-t
 		-- t = {
 		-- 	name = "Terminal",
@@ -226,24 +217,42 @@ end
 		--Whichkey-f
 		f = {
 			name = "File",
-			--b = { "<cmd>Telescope buffers<cr>", "Find buffer" },
 			b = {
 				"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({}))<cr>",
 				"Find buffer",
 			},
 			c = { "<cmd>Telescope colorscheme<cr>", "Change colorscheme" },
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
-			d = { "<cmd>Telescope dotfiles<cr>", "Find dotfiles" },
-			e = { "<cmd>Telescope emoji<cr>", "Find emoji" },
-			f = { "<cmd>Telescope find_files<cr>", "Find File" },
-			H = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+			d = { "<cmd>Telescope dotfiles<cr>", "dotfiles" },
+			-- e = { "<cmd>Telescope emoji<cr>", "emoji" },
+			f = {
+				"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>",
+				"File",
+			},
+			H = { "<cmd>Telescope help_tags<cr>", "Help" },
 			k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 			N = { "<cmd>enew<cr>", "New File" },
-			r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+			r = {
+				"<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({}))<cr>",
+				"Recent File",
+			},
+			j = {
+				"<cmd>lua require'telescope.builtin'.jumplist(require('telescope.themes').get_dropdown({}))<cr>",
+				"jumplist",
+			},
 			R = { "<cmd>Telescope registers<cr>", "Registers" },
-			g = { "<cmd>Telescope live_grep<cr>", "Grep" },
-			m = { "<cmd>Telescope marks<cr>", "Marks" },
-			n = { "<cmd>Telescope notes<cr>", "Notes" },
+			g = {
+				"<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({}))<cr>",
+				"Grep",
+			},
+			m = {
+				"<cmd>lua require'telescope.builtin'.marks(require('telescope.themes').get_dropdown({}))<cr>",
+				"Marks",
+			},
+			n = {
+				"<cmd>lua require('user.telescope').find_note()<cr>",
+				"note",
+			},
 		},
 		--whichkey-x
 		x = {
