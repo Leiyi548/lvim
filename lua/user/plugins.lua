@@ -125,6 +125,12 @@ M.config = function()
 			keys = { "c", "d", "y" },
 		},
 
+		--telescope
+		{
+			"benfowler/telescope-luasnip.nvim",
+			--module = "telescope._extensions.luasnip", -- if you wish to lazy-load
+		},
+
 		--markdown
 		{
 			"iamcco/markdown-preview.nvim",

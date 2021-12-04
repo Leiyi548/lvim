@@ -293,8 +293,9 @@ M.config = function()
 	}
 	require("telescope").load_extension("dotfiles")
 	-- require("telescope").load_extension('emoji')
-	require("telescope").load_extension("file_create")
+	-- require("telescope").load_extension("file_create")
 	require("telescope").load_extension("notes")
+	require("telescope").load_extension("luasnip")
 	--Terminal
 	-- =========================================
 	lvim.builtin.terminal.active = true
