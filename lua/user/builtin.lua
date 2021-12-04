@@ -121,6 +121,7 @@ M.config = function()
 	lvim.builtin.project.active = true
 	-- Manual mode doesn't automatically change your root directory, so you have
 	-- the option to manually do so using `:ProjectRoot` command.
+	-- lvim.builtin.project.detection_methods = { "lsp" }
 	lvim.builtin.project.manual_mode = true
 
 	-- lvim.builtin.nvimtree.hide_dotfiles = 0
