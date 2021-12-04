@@ -221,9 +221,9 @@ M.config = function()
 				"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({}))<cr>",
 				"Find buffer",
 			},
-			c = { "<cmd>Telescope colorscheme<cr>", "Change colorscheme" },
+			c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
-			d = { "<cmd>Telescope dotfiles<cr>", "dotfiles" },
+			d = { "<cmd>Telescope dotfiles<cr>", "Dotfiles" },
 			-- e = { "<cmd>Telescope emoji<cr>", "emoji" },
 			f = {
 				"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>",
@@ -252,6 +252,10 @@ M.config = function()
 			n = {
 				"<cmd>lua require('user.telescope').find_note()<cr>",
 				"note",
+			},
+			l = {
+				"<cmd>lua require'telescope'.extensions.luasnip.luasnip(require('telescope.themes').get_cursor({}))<cr>",
+				"luasnip",
 			},
 		},
 		--whichkey-x
