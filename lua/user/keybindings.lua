@@ -266,9 +266,9 @@ M.config = function()
 				"<cmd>lua require('user.telescope').find_note()<cr>",
 				"note",
 			},
-			l = {
+			s = {
 				"<cmd>lua require'telescope'.extensions.luasnip.luasnip(require('telescope.themes').get_cursor({}))<cr>",
-				"luasnip",
+				"Snippet",
 			},
 		},
 		--whichkey-x
