@@ -13,16 +13,16 @@ M.config = function()
 	lvim.keys.normal_mode["<S-h>"] = "^"
 	lvim.keys.normal_mode["<S-l>"] = "$"
 	lvim.keys.normal_mode["<leader>sc"] = "<cmd>nohlsearch<cr>"
-	lvim.keys.normal_mode["<leader>wv"] = "<cmd>vsplit<cr>"
-	lvim.keys.normal_mode["<leader>ws"] = "<cmd>split<cr>"
+	-- lvim.keys.normal_mode["<leader>wv"] = "<cmd>vsplit<cr>"
+	-- lvim.keys.normal_mode["<leader>ws"] = "<cmd>split<cr>"
 	lvim.keys.normal_mode["sv"] = "<cmd>vsplit<cr>"
 	lvim.keys.normal_mode["sg"] = "<cmd>split<cr>"
 	lvim.keys.normal_mode["sc"] = "<C-w>c"
-	lvim.keys.normal_mode["<leader>wd"] = "<C-w>c"
-	lvim.keys.normal_mode["<leader>wh"] = "<C-w>h"
-	lvim.keys.normal_mode["<leader>wj"] = "<C-w>j"
-	lvim.keys.normal_mode["<leader>wk"] = "<C-w>k"
-	lvim.keys.normal_mode["<leader>wl"] = "<C-w>l"
+	-- lvim.keys.normal_mode["<leader>wd"] = "<C-w>c"
+	-- lvim.keys.normal_mode["<leader>wh"] = "<C-w>h"
+	-- lvim.keys.normal_mode["<leader>wj"] = "<C-w>j"
+	-- lvim.keys.normal_mode["<leader>wk"] = "<C-w>k"
+	-- lvim.keys.normal_mode["<leader>wl"] = "<C-w>l"
 	-- nice N and n navigation
 	lvim.keys.normal_mode["n"] = "nzzzv"
 	lvim.keys.normal_mode["N"] = "Nzzzv"
@@ -137,10 +137,10 @@ M.config = function()
 		lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
 	end
 	if not lvim.builtin.tmuxNavigator.active then
-		lvim.keys.normal_mode["<C-Left>"] = "<cmd>lua require('tmux').resize_left()<cr>"
-		lvim.keys.normal_mode["<C-Down>"] = "<cmd>lua require('tmux').resize_bottom()<cr>"
-		lvim.keys.normal_mode["<C-Up>"] = "<cmd>lua require('tmux').resize_top()<cr>"
-		lvim.keys.normal_mode["<C-Right>"] = "<cmd>lua require('tmux').resize_right()<cr>"
+		lvim.keys.normal_mode["<leader>wh"] = ":lua require('tmux').resize_left()<cr>"
+		lvim.keys.normal_mode["<leader>wj"] = ":lua require('tmux').resize_bottom()<cr>"
+		lvim.keys.normal_mode["<leader>wk"] = ":lua require('tmux').resize_top()<cr>"
+		lvim.keys.normal_mode["<leader>wl"] = ":lua require('tmux').resize_right()<cr>"
 	end
 	--whichkey
 	lvim.builtin.which_key.vmappings = {
