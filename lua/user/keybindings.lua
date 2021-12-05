@@ -122,6 +122,10 @@ M.config = function()
 	-- lvim.keys.normal_mode["<C-f>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>"
 	-- lvim.keys.normal_mode["<C-b>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>"
 	--tmux navigation
+	lvim.keys.normal_mode["<C-Left>"] = false
+	lvim.keys.normal_mode["<C-Down>"] = false
+	lvim.keys.normal_mode["<C-Up>"] = false
+	lvim.keys.normal_mode["<C-Right>"] = false
 	if lvim.builtin.tmuxNavigator.active then
 		lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>"
 		lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
@@ -131,6 +135,12 @@ M.config = function()
 		lvim.keys.visual_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
 		lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
 		lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
+	end
+	if not lvim.builtin.tmuxNavigator.active then
+		lvim.keys.normal_mode["<C-Left>"] = "<cmd>lua require('tmux').resize_left()<cr>"
+		lvim.keys.normal_mode["<C-Down>"] = "<cmd>lua require('tmux').resize_bottom()<cr>"
+		lvim.keys.normal_mode["<C-Up>"] = "<cmd>lua require('tmux').resize_top()<cr>"
+		lvim.keys.normal_mode["<C-Right>"] = "<cmd>lua require('tmux').resize_right()<cr>"
 	end
 	--whichkey
 	lvim.builtin.which_key.vmappings = {
