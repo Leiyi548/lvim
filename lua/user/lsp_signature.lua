@@ -13,7 +13,7 @@ M.config = function()
 		floating_window_above_cur_line = true,
 		fix_pos = false, -- set to true, the floating window will not auto-close until finish all parameters
 		hint_enable = true, -- virtual hint enable
-		--hint_prefix = "🐼 ", -- Panda for parameter
+		-- hint_prefix = "🐼 ", -- Panda for parameter
 		hint_prefix = " ",
 		hint_scheme = "String",
 		-- use_lspsaga = false, -- set to true if you want to use lspsaga popup
@@ -22,7 +22,7 @@ M.config = function()
 		-- to view the hiding contents
 		max_width = 60, -- max_width of signature floating_window, line will be wrapped if exceed max_width
 		handler_opts = {
-			border = nil, -- double, single, shadow, none
+			border = "single", -- double, single, shadow, none
 		},
 		-- transpancy = 80,
 		-- extra_trigger_chars = { "(", "," }, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
