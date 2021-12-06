@@ -485,19 +485,6 @@ M.config = function()
 		cond = conditions.hide_in_width,
 		-- cond = nil,
 	})
-	-- ins_right {
-	--   function()
-	--     if next(vim.treesitter.highlighter.active) then
-	--       return "  "
-	--     end
-	--     return ""
-	--   end,
-	--   padding = 0,
-	--   -- left_padding = 0,
-	--   -- right_padding = 0,
-	--   color = { fg = colors.green },
-	--   cond = conditions.hide_in_width,
-	-- }
 	-- ins_right({
 	-- 	function(msg)
 	-- 		msg = msg or "LS Inactive"
