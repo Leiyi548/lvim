@@ -308,10 +308,6 @@ M.config = function()
 			return vim.o.columns * 0.4
 		end
 	end
-	--using lazygit
-	lvim.builtin.terminal.execs = {
-		{ "lazygit", "gg", "LazyGit" },
-	}
 	--WhichKey
 	-- =========================================
 	lvim.builtin.which_key.setup.triggers_blacklist = {
