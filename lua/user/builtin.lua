@@ -72,10 +72,10 @@ M.config = function()
 	-- =========================================
 	-- icon                       既             
 	lvim.lsp.diagnostics.signs.values = {
-		{ name = "LspDiagnosticsSignError", text = kind.icons.error },
-		{ name = "LspDiagnosticsSignWarning", text = kind.icons.warn },
-		{ name = "LspDiagnosticsSignHint", text = kind.icons.info },
-		{ name = "LspDiagnosticsSignInformation", text = kind.icons.hint },
+		{ name = "DiagnosticSignError", text = kind.icons.error },
+		{ name = "DiagnosticSignWarn", text = kind.icons.warn },
+		{ name = "DiagnosticSignInfo", text = kind.icons.info },
+		{ name = "DiagnosticSignHint", text = kind.icons.hint },
 	}
 	vim.diagnostic.config({
 		virtual_text = {
