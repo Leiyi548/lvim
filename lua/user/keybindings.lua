@@ -1,5 +1,13 @@
 local M = {}
 
+M.set_terminal_keymaps = function()
+	local opts = { noremap = true }
+	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
+end
 M.config = function()
 	--leader key
 	lvim.leader = "space"
@@ -201,17 +209,13 @@ M.config = function()
 			S = { "<cmd>PackerSync<cr>", "Sync" },
 			u = { "<cmd>PackerUpdate<cr>", "Update" },
 		},
-		--Whichkey-t
-		-- t = {
-		-- 	name = "Terminal",
-		-- },
 		--Whichkey-r
 		r = {
 			name = "Run",
 			a = { "<cmd>RnvimrToggle<cr>", "ranger" },
-			--a = { "<cmd>FloatermNew ranger<cr>", "ranger" },
 			t = { "<cmd>AsyncTask file-run<cr>", "Run on default terminal" },
 			f = { "<cmd>AsyncTask file-run-floaterm<cr>", "Run on floaterm" },
+			l = { "<cmd>AsyncTask file-run-toggleTerminal<cr>", "Run on toggleTerminal" },
 		},
 		--Whichkey-F
 		F = {
@@ -452,6 +456,15 @@ M.config = function()
 	local toggle_horizontal = function()
 		local horizontal = Terminal:new({
 			direction = "horizontal",
+			float_opts = { border = "double" },
+			on_open = function(term)
+				vim.cmd("startinsert!")
+				vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+			end,
+			---@diagnostic disable-next-line: unused-local
+			on_close = function(term)
+				vim.cmd("Closing terminal")
+			end,
 		})
 		horizontal:toggle()
 	end

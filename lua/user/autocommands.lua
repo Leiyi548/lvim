@@ -1,8 +1,9 @@
 local M = {}
 M.config = function()
 	lvim.autocommands.custom_groups = {
-		--terminal
-		{ "FileType", "terminal", "nnoremap <silent> <buffer> q :q<CR>" },
+		-- toggleterm
+		{ "TermOpen", "term://*", "lua require('user.keybindings').set_terminal_keymaps()" },
+		{ "TermOpen", "term://*", "nnoremap <silent> <buffer> q :q<CR>" },
 		-- quickfix
 		{ "FileType", "quickfix", "nnoremap <silent> <buffer> q :q<CR>" },
 		-- dashboard
@@ -21,26 +22,37 @@ M.config = function()
 		-- python
 		-- { "FileType", "python", "inoremap <silent> <buffer> ,, <++>"},
 		-- { "FileType", "python", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"},
-		-- c, cpp
+		-- g++  -std=c++17 -g -Wall "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/a.out" && "$(VIM_FILEDIR)/a.out"
+		--  $(VIM_FILEPATH)    # 当前 buffer 的文件名全路径
+		--  $(VIM_FILEDIR)     # 当前 buffer 的文件所在路径
 		-- {
-		--   "Filetype",
-		--   "c,cpp",
-		--   "nnoremap <leader>m <cmd>lua require('lvim.core.terminal')._exec_toggle('make ;read')<CR>",
+		-- 	"Filetype",
+		-- 	"c,cpp",
+		-- 	"nnoremap <leader>rr <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='g++ -std=c++17 -g -Wall "
+		-- 		.. vim.fn.expand("%")
+		-- 		.. "',count=2,direction='float'})<CR>",
 		-- },
-		-- {
-		--   "Filetype",
-		--   "c,cpp",
-		--   "nnoremap <leader>rg <cmd>lua require('lvim.core.terminal')._exec_toggle('make run;read')<CR>",
-		-- },
-		-- { "Filetype", "c,cpp", "nnoremap <leader>H <Cmd>ClangdSwitchSourceHeader<CR>" },
-
-		-- lua
-		-- { "FileType", "lua", "inoremap <silent> <buffer> ,, <++>"},
-		-- { "FileType", "lua", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"},
-		-- go
-		-- { "FileType", "go", "inoremap <silent> <buffer> ,, <++>"},
-		-- { "FileType", "go", "inoremap <silent> <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>c4l"},
-		-- {
+		{
+			"Filetype",
+			"python",
+			"nnoremap <leader>rr <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='python " .. vim.fn.expand(
+				"%"
+			) .. "',count=2,direction='float'})<CR>",
+		},
+		{
+			"Filetype",
+			"lua",
+			"nnoremap <leader>rr <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='lua "
+				.. vim.fn.expand("%")
+				.. "',count=2,direction='float'})<CR>",
+		},
+		{
+			"Filetype",
+			"typescript",
+			"nnoremap <leader>rr <cmd>lua require('lvim.core.terminal')._exec_toggle({cmd='ts-node " .. vim.fn.expand(
+				"%"
+			) .. "',count=2,direction='float'})<CR>",
+		},
 	}
 end
 if lvim.builtin.fancy_number.active then

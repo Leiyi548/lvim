@@ -300,6 +300,8 @@ M.config = function()
 	--Terminal
 	-- =========================================
 	lvim.builtin.terminal.active = true
+	lvim.builtin.terminal.close_on_exit = false
+	-- lvim.builtin.terminal.hide_numbers = false
 	-- horizontal_size
 	lvim.builtin.terminal.size = function(term)
 		if term.direction == "horizontal" then
