@@ -308,6 +308,7 @@ M.config = function()
 			return vim.o.columns * 0.4
 		end
 	end
+	lvim.builtin.terminal.execs[2] = nil
 	--WhichKey
 	-- =========================================
 	lvim.builtin.which_key.setup.triggers_blacklist = {
