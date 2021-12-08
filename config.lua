@@ -26,6 +26,7 @@ lvim.builtin.dap.active = false
 lvim.builtin.notify.active = true
 lvim.builtin.tmuxNavigator = { active = true }
 lvim.builtin.fancy_number = { active = false } --change to true if you want fancy number
+lvim.builtin.orginal_lsp = { active = true } -- orginal lsp diagnostic
 
 -- Customization
 -- =========================================

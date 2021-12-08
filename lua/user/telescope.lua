@@ -217,6 +217,7 @@ end
 
 function M.installed_plugins()
 	builtin.find_files({
+		prompt_title = " Find plugins",
 		cwd = join_paths(os.getenv("LUNARVIM_RUNTIME_DIR"), "site", "pack", "packer"),
 	})
 end

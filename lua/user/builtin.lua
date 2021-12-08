@@ -45,6 +45,21 @@ M.config = function()
 	require("cmp").setup.cmdline(":", { sources = { { name = "cmdline" } } })
 	-- fancy_cmp
 	if lvim.builtin.fancy_cmp.active then
+		lvim.builtin.cmp.formatting.source_names = {
+			buffer = "[BUF]", -- ﬘     "[Buf]" 
+			nvim_lsp = "[LSP]",
+			luasnip = "[SNIP]", -- "(LuaSnip)"
+			org = "[Org]",
+			treesitter = "  ",
+			nvim_lua = "[NVLUA]", -- "(NvLua)"
+			spell = " 暈",
+			look = "  ",
+			emoji = "  ",
+			path = "[PATH]", -- 率
+			calc = "  ", -- 
+			cmp_tabnine = " ﮧ ", -- "  "
+			tmux = "[tmux]", -- 
+		}
 		local status_cmp_ok, cmp = pcall(require, "cmp")
 		if not status_cmp_ok then
 			return
@@ -57,7 +72,8 @@ M.config = function()
 			return vim_item
 		end
 		lvim.builtin.cmp.formatting.fields = { "abbr", "kind", "menu" } -- Organise the layout of the menu
-		lvim.builtin.cmp.documentation.border = nil
+		-- lvim.builtin.cmp.documentation.border = nil
+		lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 		lvim.builtin.cmp.mapping["<C-d>"] = cmp.mapping.scroll_docs(4)
 		lvim.builtin.cmp.mapping["<C-u>"] = cmp.mapping.scroll_docs(-4)
 	end
@@ -82,6 +98,20 @@ M.config = function()
 			prefix = "■", -- Could be '●', '▎', 'x' ■ 
 		},
 	})
+
+	if lvim.builtin.orginal_lsp.active == true then
+		lvim.lsp.diagnostics.signs.values = {
+			{ name = "DiagnosticSignError", text = "E" },
+			{ name = "DiagnosticSignWarn", text = "W" },
+			{ name = "DiagnosticSignInfo", text = "I"},
+			{ name = "DiagnosticSignHint", text = "H"},
+		}
+		vim.diagnostic.config({
+			virtual_text = {
+				prefix = "■", -- Could be '●', '▎', 'x' ■ 
+			},
+		})
+	end
 
 	-- Gitsigns
 	-- =========================================
