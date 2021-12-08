@@ -464,6 +464,7 @@ M.config = function()
 		{
 			"machakann/vim-sandwich",
 			keys = { "s" },
+			disable = "true",
 		},
 		{
 			"danymat/neogen",
