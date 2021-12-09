@@ -5,8 +5,11 @@ M.config = function()
 	-- =========================================
 	lvim.builtin.cmp.sources = {
 		{ name = "nvim_lsp" },
-		--{ name = "cmp_tabnine", max_item_count = 3 },
-		{ name = "buffer", max_item_count = 10, keyword_length = 5 },
+		{ name = "cmp_tabnine", max_item_count = 3 },
+		{
+			name = "buffer",
+			max_item_count = 10,--[[ , keyword_length = 5  ]]
+		},
 		{ name = "path", max_item_count = 5 },
 		{ name = "luasnip", priority = 9, max_item_count = 3 },
 		{ name = "nvim_lua" },
@@ -16,7 +19,6 @@ M.config = function()
 		{ name = "treesitter" },
 		{ name = "crates" },
 		{ name = "spell", max_item_count = 3 },
-		{ name = "cmp_tabnine" },
 		{ name = "orgmode" },
 	}
 	lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
@@ -26,7 +28,6 @@ M.config = function()
 		-- custom_menu = true,
 	}
 	lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
-	--lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
 	lvim.builtin.cmp.formatting.source_names = {
 		buffer = "  ", -- ﬘     "[Buf]" 
 		nvim_lsp = "  ",
@@ -49,7 +50,7 @@ M.config = function()
 			buffer = "[BUF]", -- ﬘     "[Buf]" 
 			nvim_lsp = "[LSP]",
 			luasnip = "[SNIP]", -- "(LuaSnip)"
-			org = "[Org]",
+			org = "[ORG]",
 			treesitter = "  ",
 			nvim_lua = "[NVLUA]", -- "(NvLua)"
 			spell = " 暈",
@@ -58,7 +59,7 @@ M.config = function()
 			path = "[PATH]", -- 率
 			calc = "  ", -- 
 			cmp_tabnine = " ﮧ ", -- "  "
-			tmux = "[tmux]", -- 
+			tmux = "[TMUX]", -- 
 		}
 		local status_cmp_ok, cmp = pcall(require, "cmp")
 		if not status_cmp_ok then
