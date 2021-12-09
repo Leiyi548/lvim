@@ -103,8 +103,8 @@ M.config = function()
 		lvim.lsp.diagnostics.signs.values = {
 			{ name = "DiagnosticSignError", text = "E" },
 			{ name = "DiagnosticSignWarn", text = "W" },
-			{ name = "DiagnosticSignInfo", text = "I"},
-			{ name = "DiagnosticSignHint", text = "H"},
+			{ name = "DiagnosticSignInfo", text = "I" },
+			{ name = "DiagnosticSignHint", text = "H" },
 		}
 		vim.diagnostic.config({
 			virtual_text = {
@@ -116,6 +116,9 @@ M.config = function()
 	-- Gitsigns
 	-- =========================================
 	lvim.builtin.gitsigns.opts.current_line_blame = true
+	lvim.builtin.gitsigns.opts.current_line_blame_formatter_opts = {
+		relative_time = true,
+	}
 
 	-- Lualine
 	-- =========================================
