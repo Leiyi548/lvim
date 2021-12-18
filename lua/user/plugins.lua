@@ -350,7 +350,7 @@ M.config = function()
 					auto_open = true,
 					auto_close = true,
 					height = 10,
-					use_lsp_diagnostic_signs = true,
+					use_diagnostic_signs = true,
 				})
 			end,
 			cmd = "TroubleToggle",

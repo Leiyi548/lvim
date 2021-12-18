@@ -352,7 +352,7 @@ M.config = function()
 	if ok then
 		ins_left({
 			"diagnostics",
-			sources = { "nvim" },
+			sources = { "nvim_diagnostic" },
 			symbols = {
 				error = kind.icons.error,
 				warn = kind.icons.warn,
