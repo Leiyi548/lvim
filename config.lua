@@ -4,7 +4,7 @@ lvim.lint_on_save = false
 lvim.format_on_save = true
 lvim.debug = false
 lvim.log.level = "warn"
-lvim.colorscheme = "vscode"
+-- lvim.colorscheme = "vscode"
 lvim.lsp.automatic_servers_installation = true
 
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim

@@ -290,22 +290,19 @@ M.config = function()
     ]])
 			end,
 		},
-		--indent_blankline
 		{
 			"lukas-reineke/indent-blankline.nvim",
-			setup = function()
-				require("user.indent_blankline").setup()
+			config = function()
+				require("user.indent_blankline").config()
 			end,
 			event = "BufRead",
 		},
-		--colorizer
 		{
 			"norcalli/nvim-colorizer.lua",
 			config = function()
 				require("user.colorizer").config()
 			end,
 		},
-		--todo-comments
 		{
 			"folke/todo-comments.nvim",
 			requires = "nvim-lua/plenary.nvim",
@@ -314,12 +311,10 @@ M.config = function()
 			end,
 			event = "BufRead",
 		},
-		--ts-rainbow
 		{
 			"p00f/nvim-ts-rainbow",
 			after = "nvim-treesitter",
 		},
-		--ranger
 		{
 			"kevinhwang91/rnvimr",
 			cmd = "RnvimrToggle",
@@ -334,7 +329,6 @@ M.config = function()
 				--vim.api.nvim_set_keymap("t", "<C-a>", ":RnvimrResize", { noremap = true, silent = true })
 			end,
 		},
-		--smartim
 		{
 			"ybian/smartim",
 			event = { "InsertEnter" },
@@ -342,7 +336,6 @@ M.config = function()
 				vim.g.smartim_default = "com.apple.keylayout.ABC"
 			end,
 		},
-		--trouble
 		{
 			"folke/trouble.nvim",
 			config = function()
@@ -355,7 +348,6 @@ M.config = function()
 			end,
 			cmd = "TroubleToggle",
 		},
-		--lsp_signature
 		{
 			"ray-x/lsp_signature.nvim",
 			--event = "BufRead",
@@ -363,7 +355,6 @@ M.config = function()
 				require("user.lsp_signature").config()
 			end,
 		},
-		--Emmet-vim
 		{
 			"mattn/emmet-vim",
 			ft = { "html", "css", "php", "jsp", "markdown" },
@@ -453,13 +444,12 @@ M.config = function()
 		},
 		{
 			"goolord/alpha-nvim",
-			opt = true,
 			event = "BufWinEnter",
 			config = function()
 				require("user.dashboard").config()
-				vim.cmd("language en_US.UTF-8")
+				-- vim.cmd("language en_US.UTF-8")
 			end,
-			--disable = not lvim.builtin.fancy_dashboard.active,
+			disable = not lvim.builtin.fancy_dashboard.active,
 		},
 		{
 			"machakann/vim-sandwich",
