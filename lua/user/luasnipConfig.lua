@@ -5,15 +5,9 @@
 --─────────────────────────────────────────────────--
 --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-
-
-
-
-
 --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 --━━━━━━━━━━━━━━━━━━━❰ configs ❱━━━━━━━━━━━━━━━━━━━--
 --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
 
 local ls = require("luasnip")
 -- some shorthands...
@@ -27,18 +21,18 @@ local d = ls.dynamic_node
 
 local types = require("luasnip.util.types")
 
-require'luasnip'.config.setup({
+require("luasnip").config.setup({
 	ext_opts = {
 		[types.choiceNode] = {
 			active = {
-				virt_text = {{"●", "GruvboxOrange"}}
-			}
+				virt_text = { { "●", "GruvboxOrange" } },
+			},
 		},
 		[types.insertNode] = {
 			active = {
-				virt_text = {{"●", "GruvboxBlue"}}
-			}
-		}
+				virt_text = { { "●", "GruvboxBlue" } },
+			},
+		},
 	},
 })
 
@@ -48,8 +42,8 @@ local date_input = function(args, state, fmt)
 	return sn(nil, i(1, os.date(fmt)))
 end
 local date_output = function(format)
-  local format = format or "%Y-%m-%d"
-  return os.date(format)
+	local format = format or "%Y-%m-%d"
+	return os.date(format)
 end
 -- Every unspecified option will be set to the default.
 ls.config.set_config({
@@ -58,16 +52,15 @@ ls.config.set_config({
 	updateevents = "TextChanged,TextChangedI",
 })
 
-
 ls.snippets = {
 
 	all = {
-    s("novel", {
+		s("novel", {
 			t("It was a dark and stormy night on "),
 			d(1, date_input, {}, "%A, %B %d of %Y"),
 			t(" and the clocks were striking thirteen."),
 		}),
-    s("class", {
+		s("class", {
 			-- Choice: Switch between two different Nodes, first parameter is its position, second a list of nodes.
 			c(1, {
 				t("public "),
@@ -95,32 +88,41 @@ ls.snippets = {
 			i(0),
 			t({ "", "}" }),
 		}),
-  },
+	},
 
-  python = {
-    s("author",{
-      t({"\"\"\"",""}),
-      t({"author: Leiyi548",""}),
-      t({"Lences: MIT",""}),
-      t("date: "),
-      --d(1,date_input, {}, "%A,%B %d of %Y"),
-      t(os.date("%Y年-%m月-%d日")),
-      t({"","\"\"\"",""}),
-    }),
-    s("def",{
-      t("def "),
-      i(1,"myFunc"),
-      t("("),
-      i(2),
-      t(")"),
-      t({" {","\t"}),
-      i(0),
-      t({"","}"}),
-    }),
-  }
+	cpp = {
+		s("author", {
+			t({ "/*", "" }),
+			t({ "author: Leiyi548", "" }),
+			t({ "Lences: MIT", "" }),
+			t("date: "),
+			t(os.date("%Y年-%m月-%d日")),
+			t({ "", "*/", " " }),
+		}),
+	},
 
+	python = {
+		s("author", {
+			t({ '"""', "" }),
+			t({ "author: Leiyi548", "" }),
+			t({ "Lences: MIT", "" }),
+			t("date: "),
+			--d(1,date_input, {}, "%A,%B %d of %Y"),
+			t(os.date("%Y年-%m月-%d日")),
+			t({ "", '"""', "" }),
+		}),
+		s("def", {
+			t("def "),
+			i(1, "myFunc"),
+			t("("),
+			i(2),
+			t(")"),
+			t({ " {", "\t" }),
+			i(0),
+			t({ "", "}" }),
+		}),
+	},
 }
-
 
 --[[
 -- Beside defining your own snippets you can also load snippets from "vscode-like" packages
@@ -133,9 +135,7 @@ ls.snippets = {
 --require("luasnip/loaders/from_vscode").load({ paths = { "~/.config/nvim/extra/snippets" } }) -- Load snippets from my-snippets folder
 
 -- You can also use lazy loading so you only get in memory snippets of languages you use
-require'luasnip/loaders/from_vscode'.lazy_load({ paths = {"~/.config/lvim/vscodesnips"} })
-
-
+require("luasnip/loaders/from_vscode").lazy_load({ paths = { "~/.config/lvim/vscodesnips" } })
 
 --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 --━━━━━━━━━━━━━━━━━❰ end configs ❱━━━━━━━━━━━━━━━━━--
