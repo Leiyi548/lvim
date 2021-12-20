@@ -11,6 +11,14 @@
         "path": "./lua.json"
       },
       {
+        "language": "html",
+        "path": "./vue.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vue.json"
+      },
+      {
         "language": "python",
         "path": "./python.json"
       },

@@ -33,7 +33,6 @@ M.config = function()
 		{
 			"Mofiqul/vscode.nvim",
 			config = function()
-				--require("user.theme").vscode()
 				vim.cmd([[
        colorscheme vscode
       ]])
