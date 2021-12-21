@@ -4,7 +4,7 @@ M.config = function()
 	local kind = require("user.lsp_kind")
 	-- =========================================
 	lvim.builtin.cmp.sources = {
-		{ name = "nvim_lsp" },
+		{ name = "nvim_lsp", max_item_count = 5 },
 		{ name = "cmp_tabnine", max_item_count = 3 },
 		{
 			name = "buffer",
@@ -120,6 +120,10 @@ M.config = function()
 	lvim.builtin.gitsigns.opts.current_line_blame_formatter_opts = {
 		relative_time = true,
 	}
+
+	-- Notify
+	-- =========================================
+	vim.notify = require("notify")
 
 	-- Lualine
 	-- =========================================
