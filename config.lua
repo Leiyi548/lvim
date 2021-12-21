@@ -1,7 +1,7 @@
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 -- general
 lvim.lint_on_save = false
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.debug = false
 lvim.log.level = "warn"
 -- lvim.colorscheme = "catppuccin"
