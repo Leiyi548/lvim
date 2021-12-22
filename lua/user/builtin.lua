@@ -124,6 +124,14 @@ M.config = function()
 	-- Notify
 	-- =========================================
 	vim.notify = require("notify")
+	lvim.builtin.notify.opts.timeout = 2000
+	lvim.builtin.notify.opts.icons = {
+		ERROR = "",
+		WARN = "",
+		INFO = "",
+		DEBUG = "",
+		TRACE = "✎",
+	}
 
 	-- Lualine
 	-- =========================================
