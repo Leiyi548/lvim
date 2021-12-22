@@ -94,6 +94,12 @@ M.config = function()
 				return (_time.hour >= 21 and _time.hour < 24)
 			end,
 		},
+		{
+			"projekt0n/github-nvim-theme",
+			config = function()
+				require("user.theme").github()
+			end,
+		},
 		-- {
 		--   "Pocco81/Catppuccino.nvim",
 		--   config = function()
@@ -243,7 +249,7 @@ M.config = function()
 
 		--orgmode.nvim
 		{
-			"kristijanhusak/orgmode.nvim",
+			"nvim-orgmode/orgmode.nvim",
 			keys = { "go", "gC" },
 			ft = { "org" },
 			config = function()
