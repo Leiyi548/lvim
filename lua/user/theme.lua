@@ -1,10 +1,12 @@
 local M = {}
 
 M.github = function()
-	-- Example config in Lua
 	require("github-theme").setup({
-		theme_style = "dark",
-		function_style = "italic",
+		theme_style = "dark_default", -- Set theme variant (options: dark/dark_default/dimmed/light/light_default)
+		function_style = "NONE",
+		comment_style = "NONE", -- italic
+		keyword_style = "NONE",
+		variable_style = "NONE",
 		sidebars = { "qf", "vista_kind", "terminal", "packer" },
 
 		-- Change the "hint" color to the "orange" color, and make the "error" color bright red
@@ -21,6 +23,7 @@ M.github = function()
 		end,
 	})
 end
+
 M.tokyonight = function()
 	vim.g.tokyonight_dev = true
 	vim.g.tokyonight_style = "storm"

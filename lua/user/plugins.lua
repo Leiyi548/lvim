@@ -91,13 +91,20 @@ M.config = function()
 			end,
 			cond = function()
 				local _time = os.date("*t")
-				return (_time.hour >= 21 and _time.hour < 24)
+				return (_time.hour >= 21 and _time.hour < 22)
 			end,
 		},
 		{
 			"projekt0n/github-nvim-theme",
 			config = function()
 				require("user.theme").github()
+        vim.cmd([[
+        colorscheme github_dark_default
+        ]])
+			end,
+			cond = function()
+				local _time = os.date("*t")
+				return (_time.hour >= 22 and _time.hour < 24)
 			end,
 		},
 		-- {
