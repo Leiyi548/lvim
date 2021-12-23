@@ -26,11 +26,6 @@ M.config = function()
 	lvim.keys.normal_mode["sv"] = "<cmd>vsplit<cr>"
 	lvim.keys.normal_mode["sg"] = "<cmd>split<cr>"
 	lvim.keys.normal_mode["sc"] = "<C-w>c"
-	-- lvim.keys.normal_mode["<leader>wd"] = "<C-w>c"
-	-- lvim.keys.normal_mode["<leader>wh"] = "<C-w>h"
-	-- lvim.keys.normal_mode["<leader>wj"] = "<C-w>j"
-	-- lvim.keys.normal_mode["<leader>wk"] = "<C-w>k"
-	-- lvim.keys.normal_mode["<leader>wl"] = "<C-w>l"
 	-- nice N and n navigation
 	lvim.keys.normal_mode["n"] = "nzzzv"
 	lvim.keys.normal_mode["N"] = "Nzzzv"
@@ -50,11 +45,11 @@ M.config = function()
 	lvim.keys.command_mode["<C-e>"] = "<End>"
 	lvim.keys.command_mode["<C-d>"] = "<Del>"
 	lvim.keys.command_mode["<C-h>"] = "<BS>"
-	-- FIX: delete jk to escape
+	-- delete jk to escape
 	lvim.keys.insert_mode["jk"] = false
 	lvim.keys.insert_mode["kj"] = false
 	lvim.keys.insert_mode["jj"] = false
-	--quickcopy
+	-- quickcopy
 	lvim.keys.normal_mode["Y"] = "y$"
 	lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
 	lvim.keys.normal_mode["<leader>y"] = '"+y'
@@ -62,7 +57,7 @@ M.config = function()
 	lvim.keys.normal_mode["<leader>yy"] = '"+yy'
 	lvim.keys.normal_mode["<leader>p"] = '"+p"'
 	lvim.keys.visual_mode["<leader>p"] = '"+p'
-	--butter :q
+	-- butter :q
 	vim.cmd([[
    nnoremap q: :q
    ]])
@@ -77,6 +72,8 @@ M.config = function()
 	lvim.keys.visual_mode["sl"] = "<cmd>HopLineStart<cr>"
 	lvim.keys.normal_mode["ss"] = "<cmd>HopChar2<cr>"
 	lvim.keys.visual_mode["ss"] = "<cmd>HopChar2<cr>"
+	lvim.keys.normal_mode["sw"] = "<cmd>HopWord<cr>"
+	lvim.keys.visual_mode["sw"] = "<cmd>HopWord<cr>"
 	-- place this in one of your configuration file(s)
 	vim.api.nvim_set_keymap(
 		"n",
