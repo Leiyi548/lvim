@@ -120,6 +120,12 @@ M.config = function()
 		{
 			"shaunsingh/nord.nvim",
 		},
+    {
+      "rebelot/kanagawa.nvim",
+      config = function ()
+        require("user.theme").kanagawa()
+      end
+    },
 		{
 			"olimorris/onedarkpro.nvim",
 		},

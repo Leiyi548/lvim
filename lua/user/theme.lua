@@ -1,5 +1,23 @@
 local M = {}
 
+M.kanagawa = function()
+	local kanagawa = require("kanagawa")
+	kanagawa.setup({
+		undercurl = true, -- enable undercurls
+		commentStyle = "italic",
+		functionStyle = "NONE",
+		keywordStyle = "italic",
+		statementStyle = "bold",
+		typeStyle = "NONE",
+		variablebuiltinStyle = "italic",
+		specialReturn = true, -- special highlight for the return keyword
+		specialException = true, -- special highlight for exception handling keywords
+		transparent = lvim.transparent_window,
+		colors = {},
+		overrides = {},
+	})
+end
+
 M.github = function()
 	require("github-theme").setup({
 		theme_style = "dark_default", -- Set theme variant (options: dark/dark_default/dimmed/light/light_default)
@@ -42,7 +60,7 @@ M.tokyonight = function()
 	vim.g.tokyonight_italic_keywords = true
 	vim.g.tokyonight_italic_functions = false
 	vim.g.tokyonight_italic_variables = false
-	vim.g.tokyonight_transparent = false
+	vim.g.tokyonight_transparent = lvim.transparent_window
 	vim.g.tokyonight_hide_inactive_statusline = true
 	vim.g.tokyonight_dark_sidebar = true
 	vim.g.tokyonight_dark_float = true
