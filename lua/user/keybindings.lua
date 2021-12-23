@@ -328,11 +328,11 @@ M.config = function()
 			i = { "<cmd>LspInfo<cr>", "Info" },
 			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 			j = {
-				"<cmd>lua vim.diagnostic.goto_next({float = {border = 'rounded', focusable = false, source = 'always'}})<cr>",
+				"<cmd>lua vim.diagnostic.goto_next()<cr>",
 				"Next Diagnostic",
 			},
 			k = {
-				"<cmd>lua vim.diagnostic.goto_prev({float = {border = 'rounded', focusable = false, source = 'always'}})<cr>",
+				"<cmd>lua vim.diagnostic.goto_prev()<cr>",
 				"Prev Diagnostic",
 			},
 			l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
