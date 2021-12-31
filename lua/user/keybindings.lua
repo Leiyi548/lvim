@@ -49,6 +49,11 @@ M.config = function()
 	lvim.keys.insert_mode["jk"] = false
 	lvim.keys.insert_mode["kj"] = false
 	lvim.keys.insert_mode["jj"] = false
+  -- some emacs keymapping
+  lvim.keys.insert_mode['<C-a>'] = '<HOME>'
+  lvim.keys.insert_mode['<C-e>'] = '<END>'
+  lvim.keys.insert_mode['<C-b>'] = '<LEFT>'
+  lvim.keys.insert_mode['<C-f>'] = '<RIGHT>'
 	-- quickcopy
 	lvim.keys.normal_mode["Y"] = "y$"
 	lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
