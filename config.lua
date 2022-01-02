@@ -26,6 +26,7 @@ lvim.builtin.notify.active = true
 lvim.builtin.tmuxNavigator = { active = true }
 lvim.builtin.fancy_number = { active = false } --change to true if you want fancy number
 lvim.builtin.orginal_lsp = { active = false } -- orginal lsp diagnostic
+lvim.builtin.fancy_telescope = { active = true }
 
 -- Customization
 -- =========================================
@@ -56,4 +57,4 @@ require("user.keybindings").config()
 require("user.autocommands").config()
 -- color
 -- =========================================
-lvim.colorscheme = "rose-pine"
+lvim.colorscheme = "github_dark_default"
