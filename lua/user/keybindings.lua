@@ -49,11 +49,11 @@ M.config = function()
 	lvim.keys.insert_mode["jk"] = false
 	lvim.keys.insert_mode["kj"] = false
 	lvim.keys.insert_mode["jj"] = false
-  -- some emacs keymapping
-  lvim.keys.insert_mode['<C-a>'] = '<HOME>'
-  lvim.keys.insert_mode['<C-e>'] = '<END>'
-  lvim.keys.insert_mode['<C-b>'] = '<LEFT>'
-  lvim.keys.insert_mode['<C-f>'] = '<RIGHT>'
+	-- some emacs keymapping
+	lvim.keys.insert_mode["<C-a>"] = "<HOME>"
+	lvim.keys.insert_mode["<C-e>"] = "<END>"
+	lvim.keys.insert_mode["<C-b>"] = "<LEFT>"
+	lvim.keys.insert_mode["<C-f>"] = "<RIGHT>"
 	-- quickcopy
 	lvim.keys.normal_mode["Y"] = "y$"
 	lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
@@ -235,7 +235,7 @@ M.config = function()
 				"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({}))<cr>",
 				"Find buffer",
 			},
-      c = {"<cmd>luafile".."~/.config/lvim/lua/user/colors.lua".."<cr>","Colorscheme"};
+			c = { "<cmd>luafile" .. "~/.config/lvim/lua/user/colors.lua" .. "<cr>", "Colorscheme" },
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
 			d = {
 				"<cmd>lua require'telescope'.extensions.dotfiles.dotfiles(require('telescope.themes').get_dropdown({}))<cr>",
@@ -450,6 +450,54 @@ M.config = function()
 			p = { "<Cmd>BufferLinePick<CR>", "pick buffer" },
 			t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
 			b = { "<cmd>b#<cr>", "Previous" },
+		}
+	end
+	if lvim.builtin.fancy_telescope.active then
+		lvim.builtin.which_key.mappings.f = {
+			name = "File",
+			b = {
+				"<cmd>lua require'telescope.builtin'.buffers()<cr>",
+				"Find buffer",
+			},
+			c = { "<cmd>luafile" .. "~/.config/lvim/lua/user/colors.lua" .. "<cr>", "Colorscheme" },
+			C = { "<cmd>Telescope commands<cr>", "Commands" },
+			d = {
+				"<cmd>lua require'telescope'.extensions.dotfiles.dotfiles(require('telescope.themes').get_dropdown({}))<cr>",
+				"Dotfiles",
+			},
+			-- e = { "<cmd>Telescope emoji<cr>", "emoji" },
+			f = {
+				"<cmd>lua require'telescope.builtin'.find_files()<cr>",
+				"File",
+			},
+			H = { "<cmd>Telescope help_tags<cr>", "Help" },
+			k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+			N = { "<cmd>enew<cr>", "New File" },
+			r = {
+				"<cmd>lua require'telescope.builtin'.oldfiles()<cr>",
+				"Recent File",
+			},
+			j = {
+				"<cmd>lua require'telescope.builtin'.jumplist(require('telescope.themes').get_dropdown({}))<cr>",
+				"jumplist",
+			},
+			R = { "<cmd>Telescope registers<cr>", "Registers" },
+			g = {
+				"<cmd>lua require'telescope.builtin'.live_grep()<cr>",
+				"Grep",
+			},
+			m = {
+				"<cmd>lua require'telescope.builtin'.marks(require('telescope.themes').get_dropdown({}))<cr>",
+				"Marks",
+			},
+			n = {
+				"<cmd>lua require('user.telescope').find_note()<cr>",
+				"note",
+			},
+			s = {
+				"<cmd>lua require'telescope'.extensions.luasnip.luasnip(require('telescope.themes').get_cursor({}))<cr>",
+				"Snippet",
+			},
 		}
 	end
 	local Terminal = require("toggleterm.terminal").Terminal
