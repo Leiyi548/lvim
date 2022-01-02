@@ -224,6 +224,7 @@ M.config = function()
 			f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
 			g = { "<cmd>lua require('user.telescope').git_files()<cr>", "Git Files" },
 			p = { "<cmd>lua require('user.telescope').project_search()<cr>", "Project" },
+			c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 			s = { "<cmd>lua require('user.telescope').git_status()<cr>", "Git Status" },
 			z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
 		},
@@ -234,7 +235,7 @@ M.config = function()
 				"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({}))<cr>",
 				"Find buffer",
 			},
-			c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+      c = {"<cmd>luafile".."~/.config/lvim/lua/user/colors.lua".."<cr>","Colorscheme"};
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
 			d = {
 				"<cmd>lua require'telescope'.extensions.dotfiles.dotfiles(require('telescope.themes').get_dropdown({}))<cr>",

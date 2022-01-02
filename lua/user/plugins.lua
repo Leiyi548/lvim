@@ -4,15 +4,6 @@ M.config = function()
 	lvim.plugins = {
 		{
 			"abzcoding/zephyr-nvim",
-			config = function()
-				vim.cmd([[
-       colorscheme zephyr
-       ]])
-			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 5 and _time.hour < 8)
-			end,
 		},
 		{
 			"ellisonleao/gruvbox.nvim",
@@ -20,42 +11,16 @@ M.config = function()
 			after = "lush.nvim",
 			config = function()
 				vim.cmd([[
-          colorscheme gruvbox
           let g:gruvbox_italicize_comments = 0
         ]])
-				lvim.builtin.lualine.options.theme = "gruvbox"
-			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 8 and _time.hour < 9)
 			end,
 		},
 		{
 			"Mofiqul/vscode.nvim",
-			config = function()
-				vim.cmd([[
-       colorscheme vscode
-      ]])
-			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 9 and _time.hour < 11)
-			end,
 		},
 		{
 			"abzcoding/tokyonight.nvim",
 			branch = "feature/vim-diagnostics",
-			config = function()
-				require("user.theme").tokyonight()
-				vim.cmd([[
-      colorscheme tokyonight
-      ]])
-				lvim.builtin.lualine.options.theme = "tokyonight"
-			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 0 and _time.hour < 5) or (_time.hour >= 11 and _time.hour < 14)
-			end,
 		},
 		{
 			"rose-pine/neovim",
@@ -63,60 +28,23 @@ M.config = function()
 			config = function()
 				require("user.theme").rose_pine()
 			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 14 and _time.hour < 17)
-			end,
 		},
 		{
 			"abzcoding/doom-one.nvim",
 			branch = "feat/nvim-cmp-floating",
 			config = function()
-				require("user.theme").doom()
-				vim.cmd([[
-      colorscheme doom-one
-      ]])
-			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 17 and _time.hour < 21)
+				-- require("user.theme").doom()
 			end,
 		},
 		{
 			"catppuccin/nvim",
-			config = function()
-				vim.cmd([[
-        colorscheme catppuccin
-        ]])
-			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 21 and _time.hour < 22)
-			end,
 		},
 		{
 			"projekt0n/github-nvim-theme",
 			config = function()
-				require("user.theme").github()
-        vim.cmd([[
-        colorscheme github_dark_default
-        ]])
-			end,
-			cond = function()
-				local _time = os.date("*t")
-				return (_time.hour >= 22 and _time.hour < 24)
+				-- require("user.theme").github()
 			end,
 		},
-		-- {
-		--   "Pocco81/Catppuccino.nvim",
-		--   config = function()
-		--     require("user.theme").catppuccino()
-		--   end,
-		--   cond = function()
-		--     local _time = os.date "*t"
-		--     return (_time.hour >= 8 and _time.hour < 11)
-		--   end,
-		-- },
 		{
 			"shaunsingh/nord.nvim",
 		},

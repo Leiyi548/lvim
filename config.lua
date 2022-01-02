@@ -4,7 +4,6 @@ lvim.lint_on_save = false
 lvim.format_on_save = false
 lvim.debug = false
 lvim.log.level = "warn"
--- lvim.colorscheme = "catppuccin"
 lvim.lsp.automatic_servers_installation = true
 
 lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
@@ -55,3 +54,6 @@ require("user.keybindings").config()
 -- Autocommands
 -- =========================================
 require("user.autocommands").config()
+-- color
+-- =========================================
+lvim.colorscheme = "rose-pine"

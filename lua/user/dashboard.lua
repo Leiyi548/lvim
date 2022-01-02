@@ -88,7 +88,7 @@ M.config = function()
 			button("r", "   Recent Files", ":Telescope oldfiles<CR>"),
 			--button("b", "   Find Buffers", ":Telescope buffers<CR>"),
 			button("o", "   Configure", ":e ~/.config/lvim/config.lua <CR>"),
-			button("q", "   Quit"),
+			button("q", "   Quit",":q<CR>"),
 		},
 		opts = {
 			spacing = 1,

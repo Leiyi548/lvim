@@ -7,7 +7,7 @@ M.config = function()
 		-- quickfix
 		{ "FileType", "quickfix", "nnoremap <silent> <buffer> q :q<CR>" },
 		-- dashboard
-		{ "FileType", "alpha", "nnoremap <silent> <buffer> q :q<CR>" },
+		-- { "FileType", "alpha", "nnoremap <silent> <buffer> q :q<CR>" },
 		{
 			"FileType",
 			"alpha",

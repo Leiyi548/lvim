@@ -188,7 +188,7 @@ M.catppuccino = function()
 			hop = true,
 		},
 	})
-	catppuccino.load()
+	-- catppuccino.load()
 end
 
 M.doom = function()
