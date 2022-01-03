@@ -9,7 +9,13 @@ M.set_terminal_keymaps = function()
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 end
 M.config = function()
-	--leader key
+  --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+  --━━━━━━━━━━━━━━━━━━━❰ Mappings ❱━━━━━━━━━━━━━━━━━━--
+  --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+  --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+  --━━━━━━━━━━━━━━━━━❰ end Mappings ❱━━━━━━━━━━━━━━━━--
+  --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+	-- leader key
 	lvim.leader = "space"
 	-- normal_mode
 	if lvim.builtin.fancy_bufferline.active then
@@ -17,12 +23,9 @@ M.config = function()
 		lvim.keys.normal_mode["<S-Tab>"] = "<cmd>BufferLineCyclePrev<cr>"
 	end
 	lvim.keys.normal_mode["Q"] = ":qa!<cr>"
-	--lvim.keys.normal_mode["<esc><esc>"] = "<cmd>nohlsearch<cr>"
 	lvim.keys.normal_mode["<S-h>"] = "^"
 	lvim.keys.normal_mode["<S-l>"] = "$"
 	lvim.keys.normal_mode["<leader>sc"] = "<cmd>nohlsearch<cr>"
-	-- lvim.keys.normal_mode["<leader>wv"] = "<cmd>vsplit<cr>"
-	-- lvim.keys.normal_mode["<leader>ws"] = "<cmd>split<cr>"
 	lvim.keys.normal_mode["sv"] = "<cmd>vsplit<cr>"
 	lvim.keys.normal_mode["sg"] = "<cmd>split<cr>"
 	lvim.keys.normal_mode["sc"] = "<C-w>c"
@@ -116,26 +119,14 @@ M.config = function()
 		"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
 		{}
 	)
-
-	--Luasnip
+	-- Luasnip
 	vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
 	vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
 	-- X closes a buffer
 	lvim.keys.normal_mode["<S-x>"] = ":bdelete!<cr>"
 	-- run 保持终端
 	vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { silent = true })
-	--lspsaga
-	--lvim.keys.normal_mode["<leader>ca"] = "<CMD>lua require('lspsaga.codeaction').code_action()<cr>"
-	-- lvim.keys.normal_mode["<leader>rn"] = "<CMD>lua require('lspsaga.rename').rename()<cr>"
-	--lvim.keys.normal_mode["gp"] = "<cmd>lua require'lspsaga.provider'.preview_definition()<cr>"
-	--lvim.keys.normal_mode["K"] = "<cmd>lua require('lspsaga.hover').render_hover_doc()<cr>"
-	-- lvim.keys.normal_mode["<C-f>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>"
-	-- lvim.keys.normal_mode["<C-b>"] = "<CMD>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>"
 	--tmux navigation
-	lvim.keys.normal_mode["<C-Left>"] = false
-	lvim.keys.normal_mode["<C-Down>"] = false
-	lvim.keys.normal_mode["<C-Up>"] = false
-	lvim.keys.normal_mode["<C-Right>"] = false
 	if lvim.builtin.tmuxNavigator.active then
 		lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>"
 		lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
@@ -145,12 +136,6 @@ M.config = function()
 		lvim.keys.visual_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
 		lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
 		lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
-	end
-	if not lvim.builtin.tmuxNavigator.active then
-		lvim.keys.normal_mode["<leader>wh"] = ":lua require('tmux').resize_left()<cr>"
-		lvim.keys.normal_mode["<leader>wj"] = ":lua require('tmux').resize_bottom()<cr>"
-		lvim.keys.normal_mode["<leader>wk"] = ":lua require('tmux').resize_top()<cr>"
-		lvim.keys.normal_mode["<leader>wl"] = ":lua require('tmux').resize_right()<cr>"
 	end
 	--whichkey
 	lvim.builtin.which_key.vmappings = {
@@ -453,6 +438,7 @@ M.config = function()
 		}
 	end
 	if lvim.builtin.fancy_telescope.active then
+		--Whichkey-f
 		lvim.builtin.which_key.mappings.f = {
 			name = "File",
 			b = {

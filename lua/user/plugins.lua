@@ -57,27 +57,18 @@ M.config = function()
 		{
 			"olimorris/onedarkpro.nvim",
 		},
-		-- {
-		-- 	"sainnhe/gruvbox-material",
-		-- 	config = function()
-		-- 		vim.cmd([[
-		--         let g:gruvbox_material_background = 'hard'
-		--         let g:gruvbox_material_cursor = "red"
-		--         let g:gruvbox_material_statusline_style = 'original'
-		--         let g:gruvbox_material_palette = 'original'
-		--       ]])
-		-- 	end,
-		-- },
-		-- {
-		-- 	"EdenEast/nightfox.nvim",
-		-- 	config = function()
-		-- 		require("user.theme").nightfox()
-		-- 	end,
-		-- },
-		-- {
-		--   "rhysd/accelerated-jk"
-		-- },
-
+		{
+			"EdenEast/nightfox.nvim",
+			config = function()
+				require("user.theme").nightfox()
+			end,
+		},
+    {
+      "dracula/vim"
+    },
+    {
+      "sainnhe/edge",
+    },
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y", "s", "S" },

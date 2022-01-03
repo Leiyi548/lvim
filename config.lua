@@ -55,6 +55,6 @@ require("user.keybindings").config()
 -- Autocommands
 -- =========================================
 require("user.autocommands").config()
--- color
+-- Colorscheme
 -- =========================================
-lvim.colorscheme = "github_dark_default"
+lvim.colorscheme = "nord"

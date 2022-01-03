@@ -279,13 +279,13 @@ M.config = function()
 	lvim.builtin.telescope.extensions.fzf = nil
 	lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
 	lvim.builtin.telescope.defaults.winblend = 0 -- Transparency
-	lvim.builtin.telescope.defaults.layout_strategy = "horizontal" -- "flex"
+	lvim.builtin.telescope.defaults.layout_strategy = "horizontal" -- flex horizontal
 	lvim.builtin.telescope.defaults.selection_caret = nil --       "❯ "
 	lvim.builtin.telescope.defaults.prompt_prefix = nil -- "❯ "
 	lvim.builtin.telescope.defaults.layout_config = {
 		width = 0.95,
 		height = 0.85,
-		prompt_position = "top",
+		prompt_position = "bottom", -- bottom top
 		flex = {
 			flip_columns = 140,
 		},
