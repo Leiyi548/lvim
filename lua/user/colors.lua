@@ -11,7 +11,7 @@ local function enter(prompt_bufnr)
 	local cmd = "colorscheme " .. selected[1]
 	vim.cmd(cmd)
 	local lvimColor = "lvim.colorscheme =" .." \"" ..selected[1] .."\""
-	local config_dir = vim.fn.expand("~/.config/lvim/config.lua")
+	local config_dir = vim.fn.expand("~/.config/lvim/lua/user/lvimColorScheme.lua")
 	local job_cmd = "sed -i '' '$d' " .. config_dir .. " && echo '" .. lvimColor .. "'>>" .. config_dir
 	vim.fn.jobstart(job_cmd)
 	actions.close(prompt_bufnr)

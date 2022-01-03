@@ -57,4 +57,4 @@ require("user.keybindings").config()
 require("user.autocommands").config()
 -- Colorscheme
 -- =========================================
-lvim.colorscheme = "nord"
+require("user.lvimColorScheme")

@@ -2,4 +2,4 @@ packer_compiled.lua
 s.log
 1.txt
 
-config.lua
+lua/user/lvimColorScheme.lua
