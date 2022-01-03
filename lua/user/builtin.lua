@@ -285,7 +285,7 @@ M.config = function()
 	lvim.builtin.telescope.defaults.layout_config = {
 		width = 0.95,
 		height = 0.85,
-		prompt_position = "bottom", -- bottom top
+		prompt_position = "top", -- bottom top
 		flex = {
 			flip_columns = 140,
 		},
