@@ -83,7 +83,7 @@ M.config = function()
 		val = {
 			button("f", "   Find File ", ":Telescope find_files<CR>"),
 			button("n", "    New file", ":ene <BAR> startinsert <CR>"), -- 
-			button("g", "   Find word", "<cmd>Telescope live_grep<CR>"),
+			button("w", "   Find word", "<cmd>Telescope live_grep<CR>"),
 			button("p", "   Recent Projects", ":Telescope projects<CR>"),
 			button("r", "   Recent Files", ":Telescope oldfiles<CR>"),
 			--button("b", "   Find Buffers", ":Telescope buffers<CR>"),

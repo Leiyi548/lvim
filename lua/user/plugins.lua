@@ -48,12 +48,12 @@ M.config = function()
 		{
 			"shaunsingh/nord.nvim",
 		},
-    {
-      "rebelot/kanagawa.nvim",
-      config = function ()
-        require("user.theme").kanagawa()
-      end
-    },
+		{
+			"rebelot/kanagawa.nvim",
+			config = function()
+				require("user.theme").kanagawa()
+			end,
+		},
 		{
 			"olimorris/onedarkpro.nvim",
 		},
@@ -63,12 +63,12 @@ M.config = function()
 				require("user.theme").nightfox()
 			end,
 		},
-    {
-      "dracula/vim"
-    },
-    {
-      "sainnhe/edge",
-    },
+		{
+			"dracula/vim",
+		},
+		{
+			"sainnhe/edge",
+		},
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y", "s", "S" },
@@ -514,6 +514,10 @@ M.config = function()
 				})
 			end,
 			disable = not lvim.builtin.fancy_rename.active,
+		},
+		{
+			"tpope/vim-fugitive",
+			cmd = { "Git", "G" },
 		},
 	}
 end
