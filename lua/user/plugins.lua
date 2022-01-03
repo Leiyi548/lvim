@@ -519,6 +519,20 @@ M.config = function()
 			"tpope/vim-fugitive",
 			cmd = { "Git", "G" },
 		},
+    {
+      "folke/zen-mode.nvim",
+      config = function ()
+        require("user.zen").config()
+      end,
+      cmd = {"ZenMode"},
+    },
+    {
+      'folke/twilight.nvim',
+      config = function ()
+        require("user.twilight").config()
+      end,
+      cmd = {"Twilight"},
+    }
 	}
 end
 return M

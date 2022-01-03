@@ -158,6 +158,7 @@ M.config = function()
 		["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" },
 		["Y"] = { "CopyAll" },
 		["y"] = { "CopyClipboard" },
+		["z"] = { "<cmd>ZenMode<cr>","ZenMode" },
 		b = {
 			name = "Buffers",
 			j = { "<cmd>BufferPick<cr>", "Jump" },
@@ -233,6 +234,7 @@ M.config = function()
 			},
 			H = { "<cmd>Telescope help_tags<cr>", "Help" },
 			k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+			p = { "<cmd>Telescope projects<cr>", "Keymaps" },
 			N = { "<cmd>enew<cr>", "New File" },
 			r = {
 				"<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({}))<cr>",
@@ -456,6 +458,7 @@ M.config = function()
 				"<cmd>lua require'telescope.builtin'.find_files()<cr>",
 				"File",
 			},
+			p = { "<cmd>Telescope projects<cr>", "Keymaps" },
 			H = { "<cmd>Telescope help_tags<cr>", "Help" },
 			k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 			N = { "<cmd>enew<cr>", "New File" },
