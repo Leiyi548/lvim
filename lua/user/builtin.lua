@@ -4,7 +4,7 @@ M.config = function()
 	local kind = require("user.lsp_kind")
 	-- =========================================
 	lvim.builtin.cmp.sources = {
-		{ name = "nvim_lsp", max_item_count = 5 },
+		{ name = "nvim_lsp", max_item_count = 10 },
 		{ name = "cmp_tabnine", max_item_count = 3 },
 		{
 			name = "buffer",
