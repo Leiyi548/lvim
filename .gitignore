@@ -3,3 +3,4 @@ s.log
 1.txt
 
 lua/user/lvimColorScheme.lua
+.luarc.json
