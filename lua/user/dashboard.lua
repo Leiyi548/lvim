@@ -16,7 +16,7 @@ M.config = function()
 	local num_plugins_loaded = #vim.fn.globpath(get_runtime_dir() .. "/site/pack/packer/start", "*", 0, 1)
 
 	-- local thingy = io.popen('echo "$(date +%a) $(date +%b) $(date +%d)" | tr -d "\n"')
-	local thingy = io.popen('echo "$(date +%a) $(date +%b月)$(date +%d日)" | tr -d "\n"')
+	local thingy = io.popen('echo "$(date +%a)$(date +%b月)$(date +%d日)" | tr -d "\n"')
 	local date = thingy:read("*a")
 	thingy:close()
 	--local date = os.date("%a")
@@ -42,7 +42,8 @@ M.config = function()
 		},
 	}
 
-	local fortune = require("alpha.fortune")
+	-- local fortune = require("alpha.fortune")
+  local fortune = require("user.fortune")
 	local footer = {
 		type = "text",
 		val = fortune(),
@@ -111,13 +112,10 @@ M.config = function()
 			section.header,
 			{ type = "padding", val = 2 },
 			section.heading,
-			section.plugin_count,
-			{ type = "padding", val = 1 },
-			-- section.top_bar,
-			section.buttons,
-			-- section.bot_bar,
-			-- { type = "padding", val = 1 },
 			section.footer,
+			{ type = "padding", val = 1 },
+			section.buttons,
+			section.plugin_count,
 		},
 		opts = {
 			margin = 5,

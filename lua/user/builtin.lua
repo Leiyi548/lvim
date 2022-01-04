@@ -322,10 +322,11 @@ M.config = function()
 	lvim.builtin.telescope.defaults.mappings = {
 		i = {
 			["?"] = actions.which_key,
-			["<C-q>"] = actions.close,
+			["<C-c>"] = actions.close,
 		},
 		n = {
 			["q"] = actions.close,
+			["<C-c>"] = actions.close,
 			["?"] = actions.which_key,
 		},
 	}
