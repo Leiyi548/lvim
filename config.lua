@@ -27,6 +27,7 @@ lvim.builtin.tmuxNavigator = { active = true }
 lvim.builtin.fancy_number = { active = false } --change to true if you want fancy number
 lvim.builtin.orginal_lsp = { active = false } -- orginal lsp diagnostic
 lvim.builtin.fancy_telescope = { active = true }
+lvim.builtin.fancy_mark = { active = false }
 
 -- Customization
 -- =========================================

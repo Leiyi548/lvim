@@ -427,6 +427,7 @@ M.config = function()
 			config = function()
 				require("user.mark")
 			end,
+      disable = not lvim.builtin.fancy_mark.active;
 		},
 		{
 			"mbbill/undotree",
