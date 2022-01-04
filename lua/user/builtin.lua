@@ -321,12 +321,12 @@ M.config = function()
 	local actions = require("telescope.actions")
 	lvim.builtin.telescope.defaults.mappings = {
 		i = {
-			--["<esc>"] = require("telescope.actions").close,
-			["<C-y>"] = actions.which_key,
+			["?"] = actions.which_key,
 			["<C-q>"] = actions.close,
 		},
 		n = {
 			["q"] = actions.close,
+			["?"] = actions.which_key,
 		},
 	}
 	local telescope_actions = require("telescope.actions.set")
@@ -349,7 +349,7 @@ M.config = function()
 	-- Terminal
 	-- =========================================
 	lvim.builtin.terminal.active = true
-  lvim.builtin.terminal.open_mapping = [[<C-]>]]
+  lvim.builtin.terminal.open_mapping = [[<C-t>]]
 	lvim.builtin.terminal.close_on_exit = false
 	-- lvim.builtin.terminal.hide_numbers = false
 	-- horizontal_size

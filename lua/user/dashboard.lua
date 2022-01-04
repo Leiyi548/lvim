@@ -86,7 +86,7 @@ M.config = function()
 			button("w", "   Find word", "<cmd>Telescope live_grep<CR>"),
 			button("p", "   Recent Projects", ":Telescope projects<CR>"),
 			button("r", "   Recent Files", ":Telescope oldfiles<CR>"),
-			--button("b", "   Find Buffers", ":Telescope buffers<CR>"),
+			button("c", "   Colorscheme", "<cmd>luafile" .. "~/.config/lvim/lua/user/colors.lua" .. "<cr>"),
 			button("o", "   Configure", ":e ~/.config/lvim/config.lua <CR>"),
 			button("q", "   Quit",":q<CR>"),
 		},
