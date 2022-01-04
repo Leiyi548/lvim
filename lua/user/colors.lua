@@ -46,7 +46,7 @@ local colors = function(opts)
 			-- width = 0.8,
 			-- preview_cutoff = 1,
 			-- preview_height = 0.7,
-			prompt_position = "bottom", -- top
+			prompt_position = "top", -- top bottom
 		},
 		attach_mappings = function(prompt_bufnr, map)
 			map("i", "<cr>", enter)

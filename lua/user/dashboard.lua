@@ -15,7 +15,8 @@ M.config = function()
 	}
 	local num_plugins_loaded = #vim.fn.globpath(get_runtime_dir() .. "/site/pack/packer/start", "*", 0, 1)
 
-	local thingy = io.popen('echo "$(date +%a) $(date +%b) $(date +%d)" | tr -d "\n"')
+	-- local thingy = io.popen('echo "$(date +%a) $(date +%b) $(date +%d)" | tr -d "\n"')
+	local thingy = io.popen('echo "$(date +%a) $(date +%b月)$(date +%d日)" | tr -d "\n"')
 	local date = thingy:read("*a")
 	thingy:close()
 	--local date = os.date("%a")
@@ -33,7 +34,8 @@ M.config = function()
 
 	local heading = {
 		type = "text",
-		val = "  Today is " .. date .. "",
+		-- val = "  Today is " .. date .. "",
+		val = " 今天是周" .. date .. "",
 		opts = {
 			position = "center",
 			hl = "String",
@@ -88,7 +90,7 @@ M.config = function()
 			button("r", "   Recent Files", ":Telescope oldfiles<CR>"),
 			button("c", "   Colorscheme", "<cmd>luafile" .. "~/.config/lvim/lua/user/colors.lua" .. "<cr>"),
 			button("o", "   Configure", ":e ~/.config/lvim/config.lua <CR>"),
-			button("q", "   Quit",":q<CR>"),
+			button("q", "   Quit", ":q<CR>"),
 		},
 		opts = {
 			spacing = 1,
