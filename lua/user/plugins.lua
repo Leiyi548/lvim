@@ -69,6 +69,9 @@ M.config = function()
 		{
 			"sainnhe/edge",
 		},
+    {
+      "lunarvim/darkplus.nvim",
+    },
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y", "s", "S" },

@@ -272,7 +272,7 @@ M.config = function()
 		},
 	}
 
-	--Telescope
+	-- Telescope
 	-- =========================================
 	-- lvim.builtin.telescope.defaults.path_display = { "smart", "absolute", "truncate" }
 	-- icon                       既            
@@ -318,11 +318,15 @@ M.config = function()
 		"%.zip%",
 		"openfly.txt",
 	}
-	--lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
+	local actions = require("telescope.actions")
 	lvim.builtin.telescope.defaults.mappings = {
 		i = {
 			--["<esc>"] = require("telescope.actions").close,
-			["<C-y>"] = require("telescope.actions").which_key,
+			["<C-y>"] = actions.which_key,
+			["<C-q>"] = actions.close,
+		},
+		n = {
+			["q"] = actions.close,
 		},
 	}
 	local telescope_actions = require("telescope.actions.set")
@@ -342,9 +346,10 @@ M.config = function()
 	-- require("telescope").load_extension('emoji')
 	-- require("telescope").load_extension("file_create")
 	require("telescope").load_extension("luasnip")
-	--Terminal
+	-- Terminal
 	-- =========================================
 	lvim.builtin.terminal.active = true
+  lvim.builtin.terminal.open_mapping = [[<C-]>]]
 	lvim.builtin.terminal.close_on_exit = false
 	-- lvim.builtin.terminal.hide_numbers = false
 	-- horizontal_size
