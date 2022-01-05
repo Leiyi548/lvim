@@ -207,6 +207,7 @@ M.config = function()
 					-- end
 				})
 			end,
+			disable = not lvim.builtin.orgmode.active,
 		},
 		{
 			"lukas-reineke/headlines.nvim",
@@ -224,6 +225,7 @@ M.config = function()
 					},
 				})
 			end,
+			disable = not lvim.builtin.orgmode.active,
 		},
 		--Vista.vim
 		{
