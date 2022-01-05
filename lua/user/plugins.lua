@@ -161,9 +161,9 @@ M.config = function()
 			cmd = { "FloatermNew" },
 			config = function()
 				vim.cmd([[hi FloatermNC guibg=gray]])
-				vim.g.floaterm_width = 0.7
+				vim.g.floaterm_width = 0.9
 				vim.g.floaterm_wintype = "float"
-				vim.g.floaterm_height = 0.8
+				vim.g.floaterm_height = 0.9
 				vim.g.floaterm_title = ""
 				vim.g.floaterm_borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
 			end,
