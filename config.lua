@@ -6,7 +6,7 @@ lvim.debug = false
 lvim.log.level = "warn"
 lvim.lsp.automatic_servers_installation = true
 
-lvim.builtin.orgmode = { active = true } -- change to true if you want orgmode.nvim
+lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.ZFvim = { active = false } -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
 lvim.builtin.fancy_statusline = { active = false } -- enable/disable fancy statusline
