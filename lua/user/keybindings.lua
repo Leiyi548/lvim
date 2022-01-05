@@ -422,6 +422,7 @@ M.config = function()
 	}
 	--plugins keybindings
 	if lvim.builtin.fancy_bufferline.active then
+		-- Whichkey-b
 		lvim.builtin.which_key.mappings.b = {
 			name = "Buffers",
 			["1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "goto 1" },
@@ -433,6 +434,7 @@ M.config = function()
 			["7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "goto 7" },
 			["8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "goto 8" },
 			["9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "goto 9" },
+			f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "FuzzyFind" },
 			c = { "<Cmd>BufferLinePickClose<CR>", "delete buffer" },
 			p = { "<Cmd>BufferLinePick<CR>", "pick buffer" },
 			t = { "<Cmd>BufferLineGroupToggle docs<CR>", "toggle groups" },
@@ -440,7 +442,7 @@ M.config = function()
 		}
 	end
 	if lvim.builtin.fancy_telescope.active then
-		--Whichkey-f
+		-- Whichkey-f
 		lvim.builtin.which_key.mappings.f = {
 			name = "File",
 			b = {

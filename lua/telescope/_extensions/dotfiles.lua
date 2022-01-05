@@ -5,7 +5,7 @@ local conf = require("telescope.config").values
 
 local dotfiles_list = function(opts)
 	-- local dir = opts.path or ''
-	local list = {}
+	local list = {"~/.config/lvim/lua/user/lvimColorScheme.lua"}
 	--打开文件夹
 	-- local p = io.popen('rg --files --hidden'..dir)
 	-- for file in p:lines()do

@@ -11,7 +11,7 @@ M.config = function()
 			max_item_count = 10,--[[ , keyword_length = 5  ]]
 		},
 		{ name = "path", max_item_count = 5 },
-		{ name = "luasnip", priority = 9, max_item_count = 3 },
+		{ name = "luasnip", priority = 999, max_item_count = 3 },
 		{ name = "nvim_lua" },
 		{ name = "calc" },
 		{ name = "emoji" },
@@ -139,10 +139,6 @@ M.config = function()
 	lvim.builtin.lualine.style = "default"
 	lvim.builtin.lualine.options.theme = "auto"
   lvim.builtin.lualine.options.disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" }
-
-	-- Vscode theme
-	-- =========================================
-	vim.g.vscode_style = "dark"
 
 	-- Comment.nvim
 	-- =========================================

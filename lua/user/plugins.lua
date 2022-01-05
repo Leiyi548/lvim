@@ -3,65 +3,41 @@ local M = {}
 M.config = function()
 	lvim.plugins = {
 		{
-			"abzcoding/zephyr-nvim",
-		},
-		{
 			"ellisonleao/gruvbox.nvim",
 			requires = { "rktjmp/lush.nvim" },
 			after = "lush.nvim",
-			config = function()
-				vim.cmd([[
-          let g:gruvbox_italicize_comments = 0
-        ]])
-			end,
 		},
 		{
 			"Mofiqul/vscode.nvim",
 		},
 		{
-			"abzcoding/tokyonight.nvim",
-			branch = "feature/vim-diagnostics",
+			"folke/tokyonight.nvim",
 		},
 		{
 			"rose-pine/neovim",
 			as = "rose-pine",
-			config = function()
-				require("user.theme").rose_pine()
-			end,
 		},
 		{
 			"abzcoding/doom-one.nvim",
 			branch = "feat/nvim-cmp-floating",
-			config = function()
-				-- require("user.theme").doom()
-			end,
 		},
 		{
 			"catppuccin/nvim",
 		},
 		{
 			"projekt0n/github-nvim-theme",
-			config = function()
-				-- require("user.theme").github()
-			end,
 		},
 		{
 			"shaunsingh/nord.nvim",
 		},
 		{
 			"rebelot/kanagawa.nvim",
-			config = function()
-				require("user.theme").kanagawa()
-			end,
 		},
 		{
 			"olimorris/onedarkpro.nvim",
 		},
 		{
 			"EdenEast/nightfox.nvim",
-			config = function()
-				require("user.theme").nightfox()
-			end,
 		},
 		{
 			"dracula/vim",

@@ -1,417 +1,157 @@
-local M = {}
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━❰ rose_pine configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+-- Github:    https://github.com/rose-pine/neovim
+-- Set variant
+-- Defaults to 'dawn' if vim background is light
+-- @usage 'base' | 'moon' | 'dawn' | 'rose-pine[-moon][-dawn]'
+vim.g.rose_pine_variant = "base"
+-- Disable italics
+vim.g.rose_pine_disable_italics = false
+-- Use terminal background
+vim.g.rose_pine_disable_background = false
+-- Use bold vertical split line
+vim.g.rose_pine_bold_vertical_split_line = true
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━❰ end rose_pine configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-M.kanagawa = function()
-	local kanagawa = require("kanagawa")
-	kanagawa.setup({
-		undercurl = true, -- enable undercurls
-		commentStyle = "italic",
-		functionStyle = "NONE",
-		keywordStyle = "italic",
-		statementStyle = "bold",
-		typeStyle = "NONE",
-		variablebuiltinStyle = "italic",
-		specialReturn = true, -- special highlight for the return keyword
-		specialException = true, -- special highlight for exception handling keywords
-		transparent = lvim.transparent_window,
-		colors = {},
-		overrides = {},
-	})
-end
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━❰ vscode configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+-- Github:    https://github.com/Mofiqul/vscode.nvim
+-- Lua:
+-- For dark theme
+vim.g.vscode_style = "dark"
+-- For light theme
+-- vim.g.vscode_style = "light"
+-- Enable transparent background.
+-- vim.g.vscode_transparent = 1
+-- Make comments italic
+vim.g.vscode_italic_comment = 1
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━❰ end vscode configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-M.github = function()
-	require("github-theme").setup({
-		theme_style = "dark_default", -- Set theme variant (options: dark/dark_default/dimmed/light/light_default)
-		function_style = "NONE",
-		comment_style = "NONE", -- italic
-		keyword_style = "NONE",
-		variable_style = "NONE",
-		sidebars = { "qf", "vista_kind", "terminal", "packer" },
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━❰ tokyonight configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+-- Github:    https://github.com/folke/tokyonight.nvim
+-- Example config in Lua
+vim.g.tokyonight_style = "day" -- storm night day
+vim.g.tokyonight_cterm_colors = false
+vim.g.tokyonight_terminal_colors = true
+-- Make comments italic
+vim.g.tokyonight_italic_comments = true
+-- Make keyword italic
+vim.g.tokyonight_italic_keywords = true
+-- Make functions italic
+vim.g.tokyonight_italic_functions = false
+-- Make variable italic
+vim.g.tokyonight_italic_variables = false
+vim.g.tokyonight_transparent = lvim.transparent_window
+-- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard StatusLine and LuaLine.
+vim.g.tokyonight_hide_inactive_statusline = true
+-- Sidebar like windows like NvimTree get a darker background
+vim.g.tokyonight_dark_sidebar = true
+-- Float windows like the lsp diagnostics windows get a darker background.
+vim.g.tokyonight_dark_float = true
+-- Set a darker background on sidebar-like windows. For example: ["qf", "vista_kind", "terminal", "packer"]
+vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+-- Change the "hint" color to the "orange" color, and make the "error" color bright red
+-- vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━❰ end tokyonight configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-		-- Change the "hint" color to the "orange" color, and make the "error" color bright red
-		colors = { hint = "orange", error = "#ff0000" },
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━❰ nord configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+-- Github:    https://github.com/shaunsingh/nord.nvim
+-- Example config in lua
+-- Make sidebars and popup menus like nvim-tree and telescope have a different background
+vim.g.nord_contrast = true
+-- Enable the border between verticaly split windows visable
+vim.g.nord_borders = true
+-- Disable the setting of background color so that NeoVim can use your terminal background
+vim.g.nord_disable_background = false
+-- Re-enables the backgrond of the sidebar if you disabled the background of everything
+vim.g.nord_enable_sidebar_background = false
+-- enables/disables italics
+vim.g.nord_italic = true
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━❰ end nord configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-		-- Overwrite the highlight groups
-		overrides = function(c)
-			return {
-				htmlTag = { fg = c.red, bg = "#282c34", sp = c.hint, style = "underline" },
-				DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },
-				-- this will remove the highlight groups
-				TSField = {},
-			}
-		end,
-	})
-end
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━❰ github configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+-- Github:    https://github.com/projekt0n/github-nvim-theme
+vim.g.github_function_style = "NONE"
+vim.g.github_comment_style = "italic"
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━❰ end github configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-M.tokyonight = function()
-	vim.g.tokyonight_dev = true
-	vim.g.tokyonight_style = "storm"
-	vim.g.tokyonight_sidebars = {
-		"qf",
-		"vista_kind",
-		"terminal",
-		"packer",
-		"spectre_panel",
-		"NeogitStatus",
-		"help",
-	}
-	vim.g.tokyonight_cterm_colors = false
-	vim.g.tokyonight_terminal_colors = true
-	vim.g.tokyonight_italic_comments = true
-	vim.g.tokyonight_italic_keywords = true
-	vim.g.tokyonight_italic_functions = false
-	vim.g.tokyonight_italic_variables = false
-	vim.g.tokyonight_transparent = lvim.transparent_window
-	vim.g.tokyonight_hide_inactive_statusline = true
-	vim.g.tokyonight_dark_sidebar = true
-	vim.g.tokyonight_dark_float = true
-	local _time = os.date("*t")
-	if _time.hour < 8 then
-		vim.g.tokyonight_style = "night"
-	end
-end
-M.vscode = function()
-	vim.g.vscode_style = "dark"
-	vim.cmd([[highlight! link CmpItemAbbrMatchFuzzy #569CD6]])
-	vim.cmd([[highlight! link CmpItemKindText #9CDCFE]])
-	vim.cmd([[highlight! link CmpItemKindMethod #C586c0]])
-	vim.cmd([[highlight! link CmpItemKindFunction #C586c0]])
-	vim.cmd([[highlight! link CmpItemKindConstructor Green]])
-	vim.cmd([[highlight! link CmpItemKindField Aqua]])
-	vim.cmd([[highlight! link CmpItemKindVariable #9CDCFE]])
-	vim.cmd([[highlight! link CmpItemKindClass Green]])
-	vim.cmd([[highlight! link CmpItemKindInterface #9CDCFE]])
-	vim.cmd([[highlight! link CmpItemKindValue Orange]])
-	vim.cmd([[highlight! link CmpItemKindKeyword #D4D4D4]])
-	vim.cmd([[highlight! link CmpItemKindSnippet Red]])
-	vim.cmd([[highlight! link CmpItemKindFile Orange]])
-	vim.cmd([[highlight! link CmpItemKindFolder Orange]])
-end
-M.rose_pine = function()
-	-- Set variant
-	-- Defaults to 'dawn' if vim background is light
-	-- @usage 'base' | 'moon' | 'dawn' | 'rose-pine[-moon][-dawn]'
-	vim.g.rose_pine_variant = "base"
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━❰ kanagawa configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+-- Github:    https://github.com/rebelot/kanagawa.nvim
+local kanagawa = require("kanagawa")
+kanagawa.setup({
+	undercurl = true, -- enable undercurls
+	commentStyle = "italic",
+	functionStyle = "NONE",
+	keywordStyle = "NONE",
+	statementStyle = "bold",
+	typeStyle = "NONE",
+	variablebuiltinStyle = "NONE",
+	specialReturn = true, -- special highlight for the return keyword
+	specialException = true, -- special highlight for exception handling keywords
+	transparent = lvim.transparent_window,
+	colors = {},
+	overrides = {},
+})
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━❰ end  kanagawa configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-	-- Disable italics
-	vim.g.rose_pine_disable_italics = false
-
-	-- Use terminal background
-	vim.g.rose_pine_disable_background = false
-
-	-- Use bold vertical split line
-	vim.g.rose_pine_bold_vertical_split_line = true
-	-- vim.cmd([[colorscheme rose-pine]])
-end
-M.nightfox = function()
-	local nightfox = require("nightfox")
-
-	-- This function set the configuration of nightfox. If a value is not passed in the setup function
-	-- it will be taken from the default configuration above
-	nightfox.setup({
-		fox = "nordfox", -- change the colorscheme to use nordfox
-		-- fox = "Duskfox",
-		styles = {
-			comments = "italic", -- change style of comments to be italic
-			keywords = "bold", -- change style of keywords to be bold
-			functions = "italic,bold", -- styles can be a comma separated list
-		},
-		inverse = {
-			match_paren = true, -- inverse the highlighting of match_parens
-		},
-		colors = {
-			red = "#FF000", -- Override the red color for MAX POWER
-			bg_alt = "#000000",
-		},
-		hlgroups = {
-			TSPunctDelimiter = { fg = "${red}" }, -- Override a highlight group with the color red
-			LspCodeLens = { bg = "#000000", style = "italic" },
-		},
-	})
-
-	-- Load the configuration set above and apply the colorscheme
-	--nightfox.load()
-end
-
-M.catppuccino = function()
-	local catppuccino = require("catppuccino")
-	catppuccino.setup({
-		colorscheme = "dark_catppuccino",
-		transparency = false,
-		term_colors = false,
-		styles = {
-			comments = "italic",
-			functions = "NONE",
-			keywords = "italic",
-			strings = "NONE",
-			variables = "NONE",
-		},
-		integrations = {
-			treesitter = true,
-			native_lsp = {
-				enabled = true,
-				virtual_text = {
-					errors = "italic",
-					hints = "italic",
-					warnings = "italic",
-					information = "italic",
-				},
-				underlines = {
-					errors = "underline",
-					hints = "underline",
-					warnings = "underline",
-					information = "underline",
-				},
-			},
-			lsp_trouble = true,
-			lsp_saga = false,
-			gitgutter = false,
-			gitsigns = true,
-			telescope = true,
-			nvimtree = {
-				enabled = true,
-				show_root = true,
-			},
-			which_key = true,
-			indent_blankline = {
-				enabled = true,
-				colored_indent_levels = true,
-			},
-			dashboard = true,
-			neogit = false,
-			vim_sneak = false,
-			fern = false,
-			barbar = true,
-			bufferline = true,
-			markdown = true,
-			lightspeed = false,
-			ts_rainbow = false,
-			hop = true,
-		},
-	})
-	-- catppuccino.load()
-end
-
-M.doom = function()
-	local doom = require("doom-one")
-	doom.setup({
-		cursor_coloring = true,
-		terminal_colors = false,
-		italic_comments = true,
-		enable_treesitter = true,
-		transparent_background = false,
-		pumblend = {
-			enable = true,
-			transparency_amount = 20,
-		},
-		plugins_integrations = {
-			barbar = true,
-			bufferline = true,
-			cmp = true,
-			gitgutter = false,
-			gitsigns = true,
-			telescope = true,
-			neogit = false,
-			nvim_tree = true,
-			dashboard = true,
-			startify = true,
-			whichkey = true,
-			indent_blankline = true,
-			vim_illuminate = false,
-			lspsaga = false,
-		},
-	})
-end
-
-M.colors = {
-	tokyonight_colors = {
-		none = "NONE",
-		bg_dark = "#1f2335",
-		bg_alt = "#1f2335",
-		bg = "#1a1b26",
-		bg_highlight = "#292e42",
-		terminal_black = "#414868",
-		fg = "#c0caf5",
-		fg_dark = "#a9b1d6",
-		fg_gutter = "#3b4261",
-		dark3 = "#545c7e",
-		comment = "#565f89",
-		dark5 = "#737aa2",
-		blue0 = "#3d59a1",
-		blue = "#7aa2f7",
-		cyan = "#7dcfff",
-		blue1 = "#2ac3de",
-		blue2 = "#0db9d7",
-		blue5 = "#89ddff",
-		blue6 = "#B4F9F8",
-		blue7 = "#394b70",
-		magenta = "#bb9af7",
-		magenta2 = "#ff007c",
-		purple = "#9d7cd8",
-		orange = "#ff9e64",
-		yellow = "#e0af68",
-		green = "#9ece6a",
-		green1 = "#73daca",
-		green2 = "#41a6b5",
-		teal = "#1abc9c",
-		red = "#f7768e",
-		red1 = "#db4b4b",
-		-- git = { change = "#6183bb", add = "#449dab", delete = "#914c54", conflict = "#bb7a61" },
-		git = { change = "#6183bb", add = "#449dab", delete = "#f7768e", conflict = "#bb7a61" },
-		gitSigns = { add = "#164846", change = "#394b70", delete = "#823c41" },
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━❰ nightfox configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+-- Github:    https://github.com/EdenEast/nightfox.nvim
+local nightfox = require("nightfox")
+-- This function set the configuration of nightfox. If a value is not passed in the setup function
+-- it will be taken from the default configuration above
+nightfox.setup({
+	fox = "nordfox", -- change the colorscheme to use nordfox (nightfox nordfox dayfox dawnfox duskfox)
+	styles = {
+		comments = "italic", -- change style of comments to be italic
+		keywords = "bold", -- change style of keywords to be bold
+		functions = "italic,bold", -- styles can be a comma separated list
 	},
-
-	catppuccino_colors = {
-		none = "NONE",
-		-- bg = "#2a2e36", -- nvim bg
-		bg = "#222424",
-		fg = "#abb2bf", -- fg color (text)
-		fg_gutter = "#3b4261",
-		black = "#393b44",
-		gray = "#2a2e36",
-		red = "#c94f6d",
-		green = "#97c374",
-		yellow = "#dbc074",
-		blue = "#61afef",
-		magenta = "#c678dd",
-		cyan = "#63cdcf",
-		white = "#dfdfe0",
-		orange = "#F4A261",
-		pink = "#D67AD2",
-		black_br = "#7f8c98",
-		red_br = "#e06c75",
-		green_br = "#58cd8b",
-		yellow_br = "#FFE37E",
-		blue_br = "#84CEE4",
-		magenta_br = "#B8A1E3",
-		cyan_br = "#59F0FF",
-		white_br = "#FDEBC3",
-		orange_br = "#F6A878",
-		pink_br = "#DF97DB",
-		comment = "#526175",
-		bg_alt = "#0e171c", -- nvim bg
-		git = {
-			add = "#dfdfe0",
-			change = "#F6A878",
-			delete = "#e06c75",
-			conflict = "#FFE37E",
-		},
+	inverse = {
+		match_paren = true, -- inverse the highlighting of match_parens
 	},
-
-	doom_one_colors = {
-		grey = "#3f444a",
-		red = "#ff6c6b",
-		orange = "#da8548",
-		green = "#98be65",
-		yellow = "#ECBE7B",
-		blue = "#51afef",
-		dark_blue = "#2257A0",
-		magenta = "#c678dd",
-		violet = "#a9a1e1",
-		cyan = "#46D9FF",
-		white = "#efefef",
-
-		bg_alt = "#282c34",
-		bg = "#21242b",
-		bg_highlight = "#21252a",
-		bg_popup = "#3E4556",
-		bg_statusline = "#3E4556",
-		bg_highlighted = "#4A4A45",
-
-		fg = "#bbc2cf",
-		fg_alt = "#5B6268",
-
-		git = {
-			add = "#98be65",
-			change = "#51afef",
-			delete = "#ff6c6b",
-			conflict = "#da8548",
-		},
+	colors = {
+		red = "#FF000", -- Override the red color for MAX POWER
+		bg_alt = "#000000",
 	},
-
-	onedarker_colors = {
-		fg = "#abb2bf",
-		bg_alt = "#1f2227",
-		bg = "#282c34",
-		dark = "#282c34",
-		accent = "#BBBBBB",
-		dark_gray = "#2a2f3e",
-		context = "#4b5263",
-		popup_back = "#282c34",
-		search_orange = "#613214",
-		search_blue = "#5e81ac",
-		gray = "#5c6370",
-		light_gray = "#abb2bf",
-		blue = "#61AFEF",
-		dark_blue = "#223E55",
-		green = "#98C379",
-		cyan = "#56B6C2",
-		red = "#e06c75",
-		orange = "#D19A66",
-		light_red = "#be5046",
-		yellow = "#E5C07B",
-		yellow_orange = "#D7BA7D",
-		purple = "#C678DD",
-		magenta = "#D16D9E",
-		cursor_fg = "#515052",
-		cursor_bg = "#AEAFAD",
-		error_red = "#F44747",
-		warning_orange = "#ff8800",
-		info_yellow = "#FFCC66",
-		hint_blue = "#4FC1FF",
-		purple_test = "#ff007c",
-		cyan_test = "#00dfff",
-		ui_blue = "#264F78",
-		git = {
-			add = "#587c0c",
-			change = "#0c7d9d",
-			delete = "#e06c75",
-			conflict = "#ff8800",
-		},
+	hlgroups = {
+		TSPunctDelimiter = { fg = "${red}" }, -- Override a highlight group with the color red
+		LspCodeLens = { bg = "#000000", style = "italic" },
 	},
+})
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━❰ end  nightfox configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-	zephyr_colors = {
-		base0 = "#1B2229",
-		base1 = "#1c1f24",
-		base2 = "#202328",
-		base3 = "#23272e",
-		base4 = "#3f444a",
-		base5 = "#5B6268",
-		base6 = "#73797e",
-		base7 = "#9ca0a4",
-		base8 = "#b1b1b1",
-
-		bg_alt = "#282a36",
-		bg = "#2E323C",
-		bg_popup = "#3E4556",
-		bg_highlight = "#2E323C",
-		bg_visual = "#b3deef",
-		fg = "#bbc2cf",
-		fg_alt = "#5B6268",
-		red = "#e95678",
-		redwine = "#d16d9e",
-		orange = "#D98E48",
-		yellow = "#f0c674",
-		light_green = "#abcf84",
-		green = "#afd700",
-		dark_green = "#98be65",
-		cyan = "#36d0e0",
-		blue = "#61afef",
-		violet = "#b294bb",
-		magenta = "#c678dd",
-		teal = "#1abc9c",
-		grey = "#928374",
-		brown = "#c78665",
-		black = "#000000",
-		bracket = "#80A0C2",
-		currsor_bg = "#4f5b66",
-		none = "NONE",
-		git = {
-			add = "#98be65",
-			change = "#61afef",
-			delete = "#e95678",
-			conflict = "#D98e48",
-		},
-	},
-}
-
-return M
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━❰ gruvbox configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+-- Github:    https://github.com/ellisonleao/gruvbox.nvim
+-- Configuration:    https://github.com/morhetz/gruvbox/wiki/Configuration
+vim.gruvbox_italicize_comments = 1
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━❰ end gruvbox configs ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
