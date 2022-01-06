@@ -56,8 +56,8 @@ M.config = function()
 	lvim.keys.insert_mode["<C-a>"] = "<HOME>"
 	lvim.keys.insert_mode["<C-e>"] = "<END>"
 	lvim.keys.insert_mode["<C-b>"] = "<LEFT>"
+  -- quickcopy
 	lvim.keys.insert_mode["<C-f>"] = "<RIGHT>"
-	-- quickcopy
 	lvim.keys.normal_mode["Y"] = "y$"
 	lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
 	lvim.keys.normal_mode["<leader>y"] = '"+y'
@@ -65,15 +65,12 @@ M.config = function()
 	lvim.keys.normal_mode["<leader>yy"] = '"+yy'
 	lvim.keys.normal_mode["<leader>p"] = '"+p"'
 	lvim.keys.visual_mode["<leader>p"] = '"+p'
-	-- butter :q
+	-- better :q
 	vim.cmd([[
    nnoremap q: :q
    ]])
-	-- telescope
-	-- fuzzy finder
-	lvim.keys.visual_mode["<leader>st"] = "<Cmd>lua require('user.telescope').grep_string_visual()<CR>"
 	-- hop
-	-- easymotion(hop)
+	-- =========================================
 	lvim.keys.normal_mode["E"] = "<cmd>HopChar1<cr>"
 	lvim.keys.visual_mode["E"] = "<cmd>HopChar1<cr>"
 	lvim.keys.normal_mode["sl"] = "<cmd>HopLineStart<cr>"
@@ -120,13 +117,15 @@ M.config = function()
 		{}
 	)
 	-- Luasnip
+	-- =========================================
 	vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
 	vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
 	-- X closes a buffer
 	lvim.keys.normal_mode["<S-x>"] = ":bdelete!<cr>"
 	-- run 保持终端
 	vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { silent = true })
-	--tmux navigation
+	-- tmuxNavigation
+	-- =========================================
 	if lvim.builtin.tmuxNavigator.active then
 		lvim.keys.normal_mode["<C-h>"] = "<CMD>lua require('Navigator').left()<cr>"
 		lvim.keys.normal_mode["<C-j>"] = "<CMD>lua require('Navigator').down()<cr>"
@@ -137,15 +136,17 @@ M.config = function()
 		lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
 		lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
 	end
-	--whichkey
+	-- Whichkey
+	-- =========================================
 	lvim.builtin.which_key.vmappings = {
 		s = {
 			name = "Search",
-			c = { name = "clear-search-result" },
+			c = { name = "clear search result" },
 			p = { "<cmd>HopPattern<cr>", "search like /" },
 			s = { "<cmd>HopChar1<cr>", "search by char1" },
 			w = { "<cmd>HopWord<cr>", "search word" },
 			l = { "<cmd>HopLine<cr>", "search line" },
+      t = { "<cmd>lua require('user.telescope').grep_string_visual()<cr>","search visual word"}
 		},
 		y = { name = "CopyClipboard" },
 		p = { name = "Paste" },
@@ -405,10 +406,10 @@ M.config = function()
 			r = { "<cmd>lua require('lvim.utils').reload_lv_config()<cr>", "Reload configurations" },
 			u = { "<cmd>LvimUpdate<cr>", "Update LunarVim" },
 		},
-		--Whichkey-s
+		-- Whichkey-s
 		s = {
 			name = "Search",
-			c = { name = "clear-search-result" },
+			c = { "clear search result" },
 			p = { "<cmd>HopPattern<cr>", "search like /" },
 			--s = { "<cmd>HopChar2<cr>","search by char2" },
 			s = { "<cmd>HopChar1<cr>", "search by char1" },
@@ -420,7 +421,7 @@ M.config = function()
 			i = { ":TSConfigInfo<cr>", "Info" },
 		},
 	}
-	--plugins keybindings
+	-- plugins keybindings
 	if lvim.builtin.fancy_bufferline.active then
 		-- Whichkey-b
 		lvim.builtin.which_key.mappings.b = {
