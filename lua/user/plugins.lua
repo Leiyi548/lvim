@@ -45,9 +45,9 @@ M.config = function()
 		{
 			"sainnhe/edge",
 		},
-    {
-      "lunarvim/darkplus.nvim",
-    },
+		{
+			"lunarvim/darkplus.nvim",
+		},
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y", "s", "S" },
@@ -249,14 +249,15 @@ M.config = function()
 			"kevinhwang91/rnvimr",
 			cmd = "RnvimrToggle",
 			config = function()
-				-- vim.g.rnvimr_ex_enable = 1
-				-- Make Ranger replace netrw and be the file explorer
+				-- Make Ranger replace Netrw and be the file explorer
+				vim.g.rnvimr_ex_enable = 0
+				-- Disable a border for floating window
 				vim.g.rnvimr_draw_border = 1
 				--Make Ranger to be hidden after picking a file
-				--vim.g.rnvimr_pick_enable = 1
-				vim.g.rnvimr_bw_enable = 1
-				vim.api.nvim_set_keymap("n", "<leader>tr", ":RnvimrToggle<CR>", { noremap = true, silent = true })
-				--vim.api.nvim_set_keymap("t", "<C-a>", ":RnvimrResize", { noremap = true, silent = true })
+				vim.g.rnvimr_pick_enable = 0
+        -- Add a shadow window, value is equal to 100 will disable shadow
+        vim.g.rnvimr_shadow_winblend = 70
+        vim.cmd([[source ~/.config/lvim/lua/user/rnvimr.vim]])
 			end,
 		},
 		{
@@ -408,7 +409,7 @@ M.config = function()
 			config = function()
 				require("user.mark")
 			end,
-      disable = not lvim.builtin.fancy_mark.active;
+			disable = not lvim.builtin.fancy_mark.active,
 		},
 		{
 			"mbbill/undotree",
@@ -501,20 +502,20 @@ M.config = function()
 			"tpope/vim-fugitive",
 			cmd = { "Git", "G" },
 		},
-    {
-      "folke/zen-mode.nvim",
-      config = function ()
-        require("user.zen").config()
-      end,
-      cmd = {"ZenMode"},
-    },
-    {
-      'folke/twilight.nvim',
-      config = function ()
-        require("user.twilight").config()
-      end,
-      cmd = {"Twilight"},
-    }
+		{
+			"folke/zen-mode.nvim",
+			config = function()
+				require("user.zen").config()
+			end,
+			cmd = { "ZenMode" },
+		},
+		{
+			"folke/twilight.nvim",
+			config = function()
+				require("user.twilight").config()
+			end,
+			cmd = { "Twilight" },
+		},
 	}
 end
 return M

@@ -5,7 +5,7 @@ M.config = function()
 	-- =========================================
 	lvim.builtin.cmp.sources = {
 		{ name = "nvim_lsp", max_item_count = 10 },
-		{ name = "cmp_tabnine", max_item_count = 3 },
+		{ name = "cmp_tabnine", max_item_count = 5 },
 		{
 			name = "buffer",
 			max_item_count = 10,--[[ , keyword_length = 5  ]]
@@ -58,7 +58,7 @@ M.config = function()
 			emoji = "  ",
 			path = "[PATH]", -- 率
 			calc = "  ", -- 
-			cmp_tabnine = " ﮧ ", -- "  "
+			cmp_tabnine = "[Tabnine]", -- "  "
 			tmux = "[TMUX]", -- 
 		}
 		local status_cmp_ok, cmp = pcall(require, "cmp")
