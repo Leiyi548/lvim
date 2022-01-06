@@ -73,7 +73,6 @@ M.config = function()
 			return vim_item
 		end
 		lvim.builtin.cmp.formatting.fields = { "abbr", "kind", "menu" } -- Organise the layout of the menu
-		-- lvim.builtin.cmp.documentation.border = nil
 		lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 		lvim.builtin.cmp.mapping["<C-d>"] = cmp.mapping.scroll_docs(4)
 		lvim.builtin.cmp.mapping["<C-u>"] = cmp.mapping.scroll_docs(-4)
