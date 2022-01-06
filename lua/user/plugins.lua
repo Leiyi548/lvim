@@ -48,6 +48,9 @@ M.config = function()
 		{
 			"lunarvim/darkplus.nvim",
 		},
+    {
+      'rmehri01/onenord.nvim'
+    },
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y", "s", "S" },
