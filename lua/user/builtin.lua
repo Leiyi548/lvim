@@ -369,7 +369,7 @@ M.config = function()
 		v = { "j", "k", ";" },
 	}
 	lvim.builtin.which_key.setup.window.winblend = 10
-	lvim.builtin.which_key.setup.window.border = "none"
+	lvim.builtin.which_key.setup.window.border = "single" -- none, single, double, shadow
 	lvim.builtin.which_key.on_config_done = function(wk)
 		local keys = {
 			["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },
