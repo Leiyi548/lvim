@@ -194,8 +194,8 @@ M.config = function()
 			C = { "<cmd>PackerClean<cr>", "Clean" },
 			i = { "<cmd>PackerInstall<cr>", "Install" },
 			r = { "<cmd>lua require('lvim.utils').reload_lv_config()<cr>", "Reload" },
-			s = { "<cmd>PackerStatus<cr>", "Status" },
-			S = { "<cmd>PackerSync<cr>", "Sync" },
+			S = { "<cmd>PackerStatus<cr>", "Status" },
+			s = { "<cmd>PackerSync<cr>", "Sync" },
 			u = { "<cmd>PackerUpdate<cr>", "Update" },
 		},
 		--Whichkey-r
