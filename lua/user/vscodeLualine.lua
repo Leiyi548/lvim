@@ -79,43 +79,7 @@ local mode = function()
 	-- return "▊ "
 	return "-- NORMAL --"
 end
-local file_icons = {
-	Brown = { "" },
-	Aqua = { "" },
-	LightBlue = { "", "" },
-	Blue = { "", "", "", "", "", "", "", "", "", "", "", "", "" },
-	Darkblue = { "", "" },
-	Purple = { "", "", "", "", "" },
-	Red = { "", "", "", "", "", "" },
-	Beige = { "", "", "" },
-	Yellow = { "", "", "λ", "", "" },
-	Orange = { "", "" },
-	Darkorange = { "", "", "", "", "" },
-	Pink = { "", "" },
-	Salmon = { "" },
-	Green = { "", "", "", "", "", "" },
-	Lightgreen = { "", "", "", "﵂" },
-	White = { "", "", "", "", "", "" },
-}
 
-local file_icon_colors = {
-	Brown = "#905532",
-	Aqua = "#3AFFDB",
-	Blue = "#689FB6",
-	Darkblue = "#44788E",
-	Purple = "#834F79",
-	Red = "#AE403F",
-	Beige = "#F5C06F",
-	Yellow = "#F09F17",
-	Orange = "#D4843E",
-	Darkorange = "#F16529",
-	Pink = "#CB6F6F",
-	Salmon = "#EE6E73",
-	Green = "#8FAA54",
-	Lightgreen = "#31B53E",
-	White = "#FFFFFF",
-	LightBlue = "#5fd7ff",
-}
 
 local function get_file_info()
 	return vim.fn.expand("%:t"), vim.fn.expand("%:e")
@@ -230,13 +194,13 @@ M.config = function()
 			-- Disable sections and component separators
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
-			theme = {
-				-- We are going to use lualine_c an lualine_x as left and
-				-- right section. Both are highlighted by c theme .  So we
-				-- are just setting default looks o statusline
-				normal = { c = { fg = colors.fg, bg = colors.bg } },
-				inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
-			},
+			-- theme = {
+			-- 	-- We are going to use lualine_c an lualine_x as left and
+			-- 	-- right section. Both are highlighted by c theme .  So we
+			-- 	-- are just setting default looks o statusline
+			-- 	normal = { c = { fg = colors.fg, bg = colors.bg } },
+			-- 	inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
+			-- },
 			disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" },
 		},
 		sections = {
@@ -267,14 +231,14 @@ M.config = function()
 						return ""
 						-- return mode()
 					end,
-					color = "LualineModeInactive",
+					-- color = "LualineModeInactive",
 					padding = { left = 0, right = 0 },
 					-- left_padding = 1,
 				},
 				{
 					"filename",
 					cond = conditions.buffer_not_empty,
-					color = { fg = colors.fg, gui = "bold" },
+					-- color = { fg = colors.fg, gui = "bold" },
 				},
 			},
 			lualine_x = {},
@@ -296,7 +260,7 @@ M.config = function()
 			return "  "
 		end,
 		cond = conditions.check_git_workspace,
-		color = { fg = colors.fg }, -- Sets highlighting of component
+		-- color = { fg = colors.fg }, -- Sets highlighting of component
 		padding = 0,
 	})
 	ins_left({
@@ -307,47 +271,17 @@ M.config = function()
 		--   return "▊"
 		-- end,
 		-- -- color = "LualineMode",
-		color = { fg = colors.fg }, -- Sets highlighting of component
+		-- color = { fg = colors.fg }, -- Sets highlighting of component
 		-- left_padding = 0, -- We don't need space before this
 		padding = 0,
 	})
 
-	-- ins_left {
-	--   function()
-	--     local utils = require "lvim.core.lualine.utils"
-	--     local filename = vim.fn.expand "%"
-	--     local kube_env = os.getenv "KUBECONFIG"
-	--     local kube_filename = "kubectl-edit"
-	--     if (vim.bo.filetype == "yaml") and (string.sub(filename, 1, kube_filename:len()) == kube_filename) then
-	--       return string.format("⎈  (%s)", utils.env_cleanup(kube_env))
-	--     end
-	--     return ""
-	--   end,
-	--   color = { fg = colors.cyan },
-	--   cond = conditions.hide_in_width,
-	-- }
 	ins_left({
 		function()
 			return ""
 		end,
 		padding = 0,
 	})
-	-- ins_left {
-	--   function()
-	--     vim.api.nvim_command("hi! LualineFileIconColor guifg=" .. get_file_icon_color() .. " guibg=" .. colors.bg)
-	--     return get_file_icon()
-	--   end,
-	--   padding = { left = 2, right = 0 },
-	--   cond = conditions.buffer_not_empty,
-	--   color = "LualineFileIconColor",
-	--   gui = "bold",
-	-- }
-	-- ins_left {
-	--   "filename",
-	--   cond = conditions.buffer_not_empty,
-	--   padding = { left = 1, right = 1 },
-	--   color = { fg = colors.fg, gui = "bold" },
-	-- }
 	local ok, _ = pcall(require, "vim.diagnostic")
 	if ok then
 		ins_left({
@@ -469,7 +403,7 @@ M.config = function()
 			end
 			return "" -- """
 		end,
-		color = { fg = colors.fg },
+		-- color = { fg = colors.fg },
 	})
 
 	ins_right({
@@ -485,65 +419,6 @@ M.config = function()
 		cond = conditions.hide_in_width,
 		-- cond = nil,
 	})
-	-- ins_right({
-	-- 	function(msg)
-	-- 		msg = msg or "LS Inactive"
-	-- 		local buf_clients = vim.lsp.buf_get_clients()
-	-- 		if next(buf_clients) == nil then
-	-- 			if type(msg) == "boolean" or #msg == 0 then
-	-- 				return "LSP Inactive"
-	-- 			end
-	-- 			return msg
-	-- 		end
-	-- 		local buf_ft = vim.bo.filetype
-	-- 		local buf_client_names = {}
-	-- 		local trim = vim.fn.winwidth(0) < 70
-
-	-- 		-- add client
-	-- 		-- local utils = require "lsp.utils"
-	-- 		-- local active_client = utils.get_active_client_by_ft(buf_ft)
-	-- 		for _, client in pairs(buf_clients) do
-	-- 			if client.name ~= "null-ls" then
-	-- 				local _added_client = client.name
-	-- 				if trim then
-	-- 					_added_client = string.sub(client.name, 1, 4)
-	-- 				end
-	-- 				table.insert(buf_client_names, _added_client)
-	-- 			end
-	-- 		end
-	-- 		-- vim.list_extend(buf_client_names, active_client or {})
-
-	-- 		-- add formatter
-	-- 		local formatters = require("lvim.lsp.null-ls.formatters")
-	-- 		local supported_formatters = {}
-	-- 		for _, fmt in pairs(formatters.list_registered_providers(buf_ft)) do
-	-- 			local _added_formatter = fmt
-	-- 			if trim then
-	-- 				_added_formatter = string.sub(fmt, 1, 4)
-	-- 			end
-	-- 			table.insert(supported_formatters, _added_formatter)
-	-- 		end
-	-- 		vim.list_extend(buf_client_names, supported_formatters)
-
-	-- 		-- add linter
-	-- 		local linters = require("lvim.lsp.null-ls.linters")
-	-- 		local supported_linters = {}
-	-- 		for _, lnt in pairs(linters.list_registered_providers(buf_ft)) do
-	-- 			local _added_linter = lnt
-	-- 			if trim then
-	-- 				_added_linter = string.sub(lnt, 1, 4)
-	-- 			end
-	-- 			table.insert(supported_linters, _added_linter)
-	-- 		end
-	-- 		vim.list_extend(buf_client_names, supported_linters)
-
-	-- 		return "[" .. table.concat(buf_client_names, ", ") .. "]"
-	-- 	end,
-	-- 	icon = " ",
-	-- 	color = { fg = colors.fg },
-	-- 	cond = conditions.hide_in_width_lsp,
-	-- })
-
 	ins_right({
 		function()
 			return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
@@ -559,45 +434,6 @@ M.config = function()
 		-- right_padding = 0,
 		color = { fg = colors.fg },
 	})
-	-- Add components to right sections
-	-- ins_right {
-	--   -- filesize component
-	--   function()
-	--     local function format_file_size(file)
-	--       local size = vim.fn.getfsize(file)
-	--       if size <= 0 then
-	--         return ""
-	--       end
-	--       local sufixes = { "b", "k", "m", "g" }
-	--       local i = 1
-	--       while size > 1024 do
-	--         size = size / 1024
-	--         i = i + 1
-	--       end
-	--       return string.format("%.1f%s", size, sufixes[i])
-	--     end
-	--     local file = vim.fn.expand "%:p"
-	--     if string.len(file) == 0 then
-	--       return ""
-	--     end
-	--     return format_file_size(file)
-	--   end,
-	--   cond = conditions.buffer_not_empty,
-	-- }
-	-- ins_right {
-	--   "fileformat",
-	--   -- upper = true,
-	--   fmt = string.upper,
-	--   icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-	--   color = { fg = colors.green, gui = "bold" },
-	--   cond = conditions.hide_in_width,
-	-- }
-
-	-- ins_right {
-	--   clock,
-	--   cond = conditions.hide_in_width,
-	--   color = { fg = colors.blue, bg = colors.bg },
-	-- }
 
 	ins_right({
 		"filetype",
@@ -618,7 +454,7 @@ M.config = function()
 		padding = 1,
 		-- left_padding = 0,
 		-- right_padding = 0,
-		color = { fg = colors.fg, bg = colors.bg },
+		-- color = { fg = colors.fg, bg = colors.bg },
 		cond = nil,
 	})
 

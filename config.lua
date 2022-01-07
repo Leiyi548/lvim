@@ -11,7 +11,7 @@ lvim.builtin.ZFvim = { active = false } -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
 lvim.builtin.fancy_statusline = { active = false } -- enable/disable fancy statusline
 lvim.builtin.global_status_line = { active = false } -- use the global status line
-lvim.builtin.vscode_line = { active = false } -- enable if you want to use lualine style like vscode
+lvim.builtin.vscode_line = { active = true } -- enable if you want to use lualine style like vscode
 lvim.builtin.fancy_bufferline = { active = true } -- enable/disable fancy bufferline
 lvim.builtin.bufferline.active = not lvim.builtin.fancy_bufferline.active
 lvim.builtin.fancy_rename = { active = true } -- enable open like vscode rename style
@@ -42,7 +42,7 @@ if lvim.builtin.fancy_statusline.active and not lvim.builtin.vscode_line.active 
 end
 
 if lvim.builtin.vscode_line.active and not lvim.builtin.fancy_statusline.active then
-	require("user.vscode_lualine").config()
+	require("user.vscodeLualine").config()
 end
 -- Additional Plugins
 -- =========================================
