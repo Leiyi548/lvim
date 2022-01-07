@@ -48,37 +48,20 @@ end
 local mode = function()
 	local mod = vim.fn.mode()
 	if mod == "n" or mod == "no" or mod == "nov" then
-		-- return "  "
-		-- return "▊ "
 		return "-- NORMAL --"
 	elseif mod == "i" or mod == "ic" or mod == "ix" then
-		-- return "  "
-		-- return "▊ "
 		return "-- INSERT --"
 	elseif mod == "V" or mod == "v" or mod == "vs" or mod == "Vs" or mod == "cv" then
-		-- return "  "
-		-- return "▊ "
 		return "-- VISUAL --"
 	elseif mod == "c" or mod == "ce" then
-		-- return " ﴣ "
-		-- return "▊ "
 		return "-- COMMMAND --"
 	elseif mod == "r" or mod == "rm" or mod == "r?" then
-		-- return "  "
-		-- return "▊ "
 		return "-- NORMAL --"
 	elseif mod == "R" or mod == "Rc" or mod == "Rv" or mod == "Rv" then
-		-- return "  "
-		-- return "▊ "
 		return "-- REPLACE --"
 	end
-	-- return "  "
-	-- return "▊ "
 	return "-- NORMAL --"
 end
-
-
-
 
 local default_colors = {
 	-- bg = "#252525",
@@ -188,8 +171,6 @@ M.config = function()
 						vim.api.nvim_command(
 							"hi! LualineModeInactive guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_alt
 						)
-						-- return ""
-						-- return "▊"
 						return ""
 						-- return mode()
 					end,
@@ -223,6 +204,7 @@ M.config = function()
 		end,
 		cond = conditions.check_git_workspace,
 		-- color = { fg = colors.fg }, -- Sets highlighting of component
+		color = {},
 		padding = 0,
 	})
 	ins_left({
@@ -234,6 +216,7 @@ M.config = function()
 		-- end,
 		-- -- color = "LualineMode",
 		-- color = { fg = colors.fg }, -- Sets highlighting of component
+		color = {},
 		-- left_padding = 0, -- We don't need space before this
 		padding = 0,
 	})
@@ -259,6 +242,7 @@ M.config = function()
 			-- sections = {'error', 'warn', 'info', 'hint'},
 			-- cond = conditions.hide_in_width,
 			colored = false,
+			color = {},
 			always_visible = true,
 			padding = { left = 2, right = 2 },
 		})
@@ -276,6 +260,7 @@ M.config = function()
 			},
 			-- cond = conditions.hide_in_width,
 			colored = false,
+			color = {},
 			always_visible = true,
 			padding = { left = 2, right = 2 },
 		})
@@ -284,13 +269,14 @@ M.config = function()
 		-- mode component
 		function()
 			-- auto change color according to neovims mode
-			vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
+			-- vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
 			return mode()
 			-- return ""
 		end,
 
 		-- color = { fg = colors.red },
-		color = "LualineMode",
+		-- color = "LualineMode",
+		color = {},
 		padding = { left = 0, right = 0 },
 		-- left_padding = 1,
 	})
@@ -310,7 +296,8 @@ M.config = function()
 			end
 			return ""
 		end,
-		color = { fg = colors.fg },
+		-- color = { fg = colors.fg },
+		color = {},
 		cond = conditions.hide_in_width,
 	})
 	ins_left({
@@ -348,6 +335,7 @@ M.config = function()
 	ins_left({
 		lsp_progress,
 		cond = conditions.hide_small,
+		color = {},
 	})
 
 	-- Insert mid section. You can make any number of sections in neovim :)
@@ -365,6 +353,7 @@ M.config = function()
 			end
 			return "" -- """
 		end,
+		color = {},
 		-- color = { fg = colors.fg },
 	})
 
@@ -386,7 +375,8 @@ M.config = function()
 			return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
 		end,
 		cond = conditions.hide_in_width,
-		color = { fg = colors.fg, bg = colors.bg },
+		-- color = { fg = colors.fg, bg = colors.bg },
+		color = {},
 	})
 
 	ins_right({
@@ -394,13 +384,15 @@ M.config = function()
 		padding = 0,
 		-- left_padding = 0,
 		-- right_padding = 0,
-		color = { fg = colors.fg },
+		-- color = { fg = colors.fg },
+		color = {},
 	})
 
 	ins_right({
 		"filetype",
 		cond = conditions.hide_in_width,
-		color = { fg = colors.fg, bg = colors.bg },
+		-- color = { fg = colors.fg, bg = colors.bg },
+		color = {},
 		icon = "",
 	})
 
@@ -417,10 +409,14 @@ M.config = function()
 		-- left_padding = 0,
 		-- right_padding = 0,
 		-- color = { fg = colors.fg, bg = colors.bg },
+		color = {},
 		cond = nil,
 	})
 
 	-- Now don't forget to initialize lualine
+  lvim.builtin.lualine.options.theme = nil
+  require("lvim.core.lualine.styles").update()
+  require("lvim.core.lualine.utils").validate_theme()
 	lvim.builtin.lualine.options = config.options
 	lvim.builtin.lualine.sections = config.sections
 	lvim.builtin.lualine.inactive_sections = config.inactive_sections
