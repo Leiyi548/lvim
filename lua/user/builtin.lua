@@ -135,7 +135,7 @@ M.config = function()
 	-- Lualine
 	-- =========================================
 	lvim.builtin.lualine.active = true
-	lvim.builtin.lualine.style = "default"
+	lvim.builtin.lualine.style = "lvim" -- lvim default
 	lvim.builtin.lualine.options.theme = "auto"
   lvim.builtin.lualine.options.disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" }
 
