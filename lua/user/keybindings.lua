@@ -69,6 +69,10 @@ M.config = function()
 	vim.cmd([[
    nnoremap q: :q
    ]])
+	-- HTML preview in Google Chrome
+	-- =========================================
+  lvim.keys.normal_mode["<M-b>"] = "<cmd>AsyncTask Application<cr>"
+  lvim.keys.insert_mode["<M-b>"] = "<cmd>AsyncTask Application<cr>"
 	-- Neogen
 	-- =========================================
   lvim.keys.normal_mode["<C-]>"] = "<cmd>lua require('neogen').jump_next()<CR>"
@@ -204,7 +208,6 @@ M.config = function()
 			a = { "<cmd>RnvimrToggle<cr>", "ranger" },
 			t = { "<cmd>AsyncTask file-run<cr>", "Run on default terminal" },
 			f = { "<cmd>AsyncTask file-run-floaterm<cr>", "Run on floaterm" },
-			l = { "<cmd>AsyncTask file-run-toggleTerminal<cr>", "Run on toggleTerminal" },
 		},
 		--Whichkey-F
 		F = {
@@ -218,7 +221,7 @@ M.config = function()
 			s = { "<cmd>lua require('user.telescope').git_status()<cr>", "Git Status" },
 			z = { "<cmd>lua require('user.telescope').search_only_certain_files()<cr>", "Certain Filetype" },
 		},
-		--Whichkey-f
+		-- Whichkey-f
 		f = {
 			name = "File",
 			b = {
