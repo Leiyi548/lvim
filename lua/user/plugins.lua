@@ -329,7 +329,7 @@ M.config = function()
 			--after = "ZFVimJob",
 			disable = not lvim.builtin.ZFvim.active,
 			config = function() --"let g:ZFVimIM_matchLimit = -1
-				vim.cmd([[ 
+				vim.cmd([[
         let g:ZFVimIM_cloudAsync_outputTo = {}
         let g:ZFVimIM_keymap = 0
         inoremap <expr><silent> ;; ZFVimIME_keymap_toggle_i()
@@ -394,13 +394,14 @@ M.config = function()
 			"danymat/neogen",
 			config = function()
 				require("neogen").setup({
-					enabled = true,
-					jump_map = "<C-,>",
+					enabled = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
+          input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
 				})
 			end,
 			ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go", "java" },
 			event = "InsertEnter",
 			requires = "nvim-treesitter/nvim-treesitter",
+      disable = not lvim.builtin.neogen.active
 		},
 		{
 			"junegunn/vim-easy-align",

@@ -69,6 +69,9 @@ M.config = function()
 	vim.cmd([[
    nnoremap q: :q
    ]])
+	-- Neogen
+	-- =========================================
+  lvim.keys.normal_mode["<C-]>"] = "<cmd>lua require('neogen').jump_next()<CR>"
 	-- hop
 	-- =========================================
 	lvim.keys.normal_mode["E"] = "<cmd>HopChar1<cr>"
@@ -146,7 +149,7 @@ M.config = function()
 			s = { "<cmd>HopChar1<cr>", "search by char1" },
 			w = { "<cmd>HopWord<cr>", "search word" },
 			l = { "<cmd>HopLine<cr>", "search line" },
-      t = { "<cmd>lua require('user.telescope').grep_string_visual()<cr>","search visual word"}
+      v = { "<cmd>lua require('user.telescope').grep_string_visual()<cr>","search visual word"}
 		},
 		y = { name = "CopyClipboard" },
 		p = { name = "Paste" },

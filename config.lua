@@ -27,6 +27,7 @@ lvim.builtin.fancy_number = { active = false } -- change to true if you want fan
 lvim.builtin.orginal_lsp = { active = false } -- orginal lsp diagnostic
 lvim.builtin.fancy_telescope = { active = true } -- use orginal telescope
 lvim.builtin.fancy_mark = { active = false } -- enable use marks.nvim plugins
+lvim.builtin.neogen = {active = true } -- enable use neogen to comment function
 
 -- Customization
 -- =========================================
