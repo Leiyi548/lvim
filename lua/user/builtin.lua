@@ -367,7 +367,7 @@ M.config = function()
 		i = { "j", "k", ";" },
 		v = { "j", "k", ";" },
 	}
-	lvim.builtin.which_key.setup.window.winblend = 10
+	lvim.builtin.which_key.setup.window.winblend = 20
 	lvim.builtin.which_key.setup.window.border = "single" -- none, single, double, shadow
 	lvim.builtin.which_key.on_config_done = function(wk)
 		local keys = {

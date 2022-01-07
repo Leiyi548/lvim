@@ -33,17 +33,17 @@ end
 
 local colors = function(opts)
 	pickers.new(opts, {
-		prompt_title = "colors",
-		results_title = "lvim colorscheme",
+		prompt_title = "Colorscheme",
+		results_title = "Change colorscheme",
 		finder = finders.new_table(colorthemes),
-		-- 改变 telescope的大小
 		--layout_strategy = "vertical",
 		layout_strategy = "horizontal",
+		winblend = 20,
 		-- layout_strategy = "center",
 		--layout_strategy = "cursor",
 		layout_config = {
-			-- height = 0.5,
-			-- width = 0.8,
+			height = 0.5,
+			width = 0.5,
 			-- preview_cutoff = 1,
 			-- preview_height = 0.7,
 			prompt_position = "top", -- top bottom
