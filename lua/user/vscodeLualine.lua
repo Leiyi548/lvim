@@ -1,8 +1,5 @@
 local M = {}
 local kind = require("user.lsp_kind")
-local function clock()
-	return " " .. os.date("%H:%M")
-end
 
 local function lsp_progress()
 	local messages = vim.lsp.util.get_progress_messages()
@@ -81,42 +78,7 @@ local mode = function()
 end
 
 
-local function get_file_info()
-	return vim.fn.expand("%:t"), vim.fn.expand("%:e")
-end
 
-local function get_file_icon()
-	local icon
-	local ok, devicons = pcall(require, "nvim-web-devicons")
-	if not ok then
-		print("No icon plugin found. Please install 'kyazdani42/nvim-web-devicons'")
-		return ""
-	end
-	local f_name, f_extension = get_file_info()
-	icon = devicons.get_icon(f_name, f_extension)
-	if icon == nil then
-		icon = ""
-	end
-	return icon
-end
-
-local function get_file_icon_color()
-	local f_name, f_ext = get_file_info()
-	local has_devicons, devicons = pcall(require, "nvim-web-devicons")
-	if has_devicons then
-		local icon, iconhl = devicons.get_icon(f_name, f_ext)
-		if icon ~= nil then
-			return vim.fn.synIDattr(vim.fn.hlID(iconhl), "fg")
-		end
-	end
-
-	local icon = get_file_icon():match("%S+")
-	for k, _ in pairs(file_icons) do
-		if vim.fn.index(file_icons[k], icon) ~= -1 then
-			return file_icon_colors[k]
-		end
-	end
-end
 
 local default_colors = {
 	-- bg = "#252525",
