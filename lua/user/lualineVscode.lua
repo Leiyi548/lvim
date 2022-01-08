@@ -64,25 +64,18 @@ local mode = function()
 end
 
 local default_colors = {
-	-- bg = "#252525",
-	-- bg_alt = "#252525",
-	-- bg = "#68217a",
-	-- bg_alt = "#68217a",
-	-- bg = "#327ac6",
-	-- bg_alt = "#327ac6",
-	bg = "#007acc",
-	bg_alt = "#007acc",
-	fg = "#d4d4d4",
-	yellow = "#ECBE7B", -- #dcdcaa
-	yellow_orange = "#d7ba7d",
-	cyan = "#4ec9b0",
-	light_blue = "#9cdcfe",
-	green = "#6a9955",
-	orange = "#ce9178",
-	violet = "#c586c0",
-	magenta = "#d16d9e",
-	blue = "#569cd6",
-	red = "#d16969",
+	bg = "#202328",
+	fg = "#bbc2cf",
+	yellow = "#ECBE7B",
+	cyan = "#008080",
+	darkblue = "#081633",
+	green = "#98be65",
+	orange = "#FF8800",
+	violet = "#a9a1e1",
+	magenta = "#c678dd",
+	purple = "#c678dd",
+	blue = "#51afef",
+	red = "#ec5f67",
 	git = { change = "#0c7d9d", add = "#587c0c", delete = "#94151b", conflict = "#bb7a61" },
 }
 
@@ -135,18 +128,11 @@ M.config = function()
 	-- Config
 	local config = {
 		options = {
-			icons_enabled = false,
-      theme = "auto",
+			icons_enabled = true,
+			theme = "auto",
 			-- Disable sections and component separators
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
-			-- theme = {
-			-- 	-- We are going to use lualine_c an lualine_x as left and
-			-- 	-- right section. Both are highlighted by c theme .  So we
-			-- 	-- are just setting default looks o statusline
-			-- 	normal = { c = { fg = colors.fg, bg = colors.bg } },
-			-- 	inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
-			-- },
 			disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" },
 		},
 		sections = {
@@ -181,6 +167,7 @@ M.config = function()
 				},
 				{
 					"filename",
+					color = {},
 					cond = conditions.buffer_not_empty,
 					-- color = { fg = colors.fg, gui = "bold" },
 				},
@@ -206,7 +193,8 @@ M.config = function()
 		cond = conditions.check_git_workspace,
 		-- color = { fg = colors.fg }, -- Sets highlighting of component
 		color = {},
-		padding = 0,
+		-- padding = 1,
+		left_padding = 1,
 	})
 	ins_left({
 		"b:gitsigns_head",
@@ -278,6 +266,7 @@ M.config = function()
 		-- color = "LualineMode",
 		color = {},
 		padding = { left = 0, right = 0 },
+		always_visible = true,
 		-- left_padding = 1,
 	})
 	ins_left({
@@ -360,21 +349,22 @@ M.config = function()
 	ins_right({
 		"diff",
 		source = diff_source,
-		symbols = { added = "  ", modified = "柳", removed = " " },
+		symbols = { added = " ", modified = "柳", removed = " " },
 		diff_color = {
-			added = { fg = colors.fg },
-			modified = { fg = colors.fg },
-			removed = { fg = colors.fg },
+			added = { fg = colors.green },
+			modified = { fg = colors.yellow },
+			removed = { fg = colors.red },
 		},
 		color = {},
-		cond = conditions.hide_in_width,
-		-- cond = nil,
+		-- cond = conditions.hide_in_width,
+		cond = nil,
 	})
 	ins_right({
 		function()
 			return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
 		end,
-		cond = conditions.hide_in_width,
+		-- cond = conditions.hide_in_width,
+		always_visible = true,
 		-- color = { fg = colors.fg, bg = colors.bg },
 		color = {},
 	})
@@ -391,7 +381,6 @@ M.config = function()
 	ins_right({
 		"filetype",
 		cond = conditions.hide_in_width,
-		-- color = { fg = colors.fg, bg = colors.bg },
 		color = {},
 		icon = "",
 	})
@@ -409,14 +398,14 @@ M.config = function()
 		-- left_padding = 0,
 		-- right_padding = 0,
 		-- color = { fg = colors.fg, bg = colors.bg },
-		color = { fg = colors.yellow},
+		color = { fg = colors.yellow },
 		cond = nil,
 	})
 
 	-- Now don't forget to initialize lualine
-  lvim.builtin.lualine.options.theme = nil
-  require("lvim.core.lualine.styles").update()
-  require("lvim.core.lualine.utils").validate_theme()
+	lvim.builtin.lualine.options.theme = nil
+	require("lvim.core.lualine.styles").update()
+	require("lvim.core.lualine.utils").validate_theme()
 	lvim.builtin.lualine.options = config.options
 	lvim.builtin.lualine.sections = config.sections
 	lvim.builtin.lualine.inactive_sections = config.inactive_sections
