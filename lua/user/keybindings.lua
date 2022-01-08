@@ -211,7 +211,7 @@ M.config = function()
 		},
 		--Whichkey-F
 		F = {
-			name = "Find",
+			name = "Custom Find",
 			i = { "<cmd>lua require('user.telescope').installed_plugins()<cr>", "Installed Plugins" },
 			b = { "<cmd>lua require('user.telescope').builtin()<cr>", "Builtin" },
 			f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
@@ -223,10 +223,10 @@ M.config = function()
 		},
 		-- Whichkey-f
 		f = {
-			name = "File",
+			name = "Find",
 			b = {
 				"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({}))<cr>",
-				"Find buffer",
+				"Buffer",
 			},
 			c = { "<cmd>luafile" .. "~/.config/lvim/lua/user/colors.lua" .. "<cr>", "Colorscheme" },
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
@@ -451,10 +451,10 @@ M.config = function()
 	if lvim.builtin.fancy_telescope.active then
 		-- Whichkey-f
 		lvim.builtin.which_key.mappings.f = {
-			name = "File",
+			name = "Find",
 			b = {
 				"<cmd>lua require'telescope.builtin'.buffers()<cr>",
-				"Find buffer",
+				"Buffer",
 			},
 			c = { "<cmd>luafile" .. "~/.config/lvim/lua/user/colors.lua" .. "<cr>", "Colorscheme" },
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
