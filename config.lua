@@ -50,6 +50,11 @@ require("user.keybindings").config()
 -- Autocommands
 -- =========================================
 require("user.autocommands").config()
+-- Language override
+-- =========================================
+lvim.lsp.override = vim.tbl_filter(function(name)
+  return name ~= "emmet_ls"
+end, lvim.lsp.override)
 -- Colorscheme
 -- =========================================
 require("user.lvimColorScheme")
