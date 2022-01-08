@@ -3,7 +3,7 @@ M.config = function()
 	lvim.autocommands.custom_groups = {
 		-- toggleterm
 		{ "TermOpen", "term://*", "lua require('user.keybindings').set_terminal_keymaps()" },
-		{ "TermOpen", "term://*", "nnoremap <silent> <buffer> q :q<CR>" },
+		{ "TermOpen", "term://*", "nnoremap <silent> <buffer> q :bdelete!<cr>" },
 		-- quickfix
 		{ "FileType", "quickfix", "nnoremap <silent> <buffer> q :q<cr>" },
 		-- dashboard

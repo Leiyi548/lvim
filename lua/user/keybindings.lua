@@ -8,15 +8,12 @@ M.set_terminal_keymaps = function()
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 end
+
 M.config = function()
-  --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-  --━━━━━━━━━━━━━━━━━━━❰ Mappings ❱━━━━━━━━━━━━━━━━━━--
-  --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-  --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-  --━━━━━━━━━━━━━━━━━❰ end Mappings ❱━━━━━━━━━━━━━━━━--
-  --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 	-- leader key
 	lvim.leader = "space"
+	-- run 保持终端
+	vim.api.nvim_set_keymap("t", "<esc>", "<C-\\><C-n>", { silent = true })
 	-- normal_mode
 	if lvim.builtin.fancy_bufferline.active then
 		lvim.keys.normal_mode["<Tab>"] = "<cmd>BufferLineCycleNext<cr>"
@@ -129,8 +126,6 @@ M.config = function()
 	vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
 	-- X closes a buffer
 	lvim.keys.normal_mode["<S-x>"] = ":bdelete!<cr>"
-	-- run 保持终端
-	vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { silent = true })
 	-- tmuxNavigation
 	-- =========================================
 	if lvim.builtin.tmuxNavigator.active then
@@ -205,8 +200,8 @@ M.config = function()
 		--Whichkey-r
 		r = {
 			name = "Run",
-			a = { "<cmd>RnvimrToggle<cr>", "ranger" },
-			t = { "<cmd>AsyncTask file-run<cr>", "Run on default terminal" },
+			a = { "<cmd>RnvimrToggle<cr>", "Ranger" },
+			r = { "<cmd>AsyncTask file-run<cr>", "Run on Terminal" },
 			f = { "<cmd>AsyncTask file-run-floaterm<cr>", "Run on floaterm" },
 		},
 		--Whichkey-F
@@ -249,7 +244,7 @@ M.config = function()
 			},
 			j = {
 				"<cmd>lua require'telescope.builtin'.jumplist(require('telescope.themes').get_dropdown({}))<cr>",
-				"jumplist",
+				"Jumplist",
 			},
 			R = { "<cmd>Telescope registers<cr>", "Registers" },
 			g = {
@@ -262,7 +257,7 @@ M.config = function()
 			},
 			n = {
 				"<cmd>lua require('user.telescope').find_note()<cr>",
-				"note",
+				"Notes",
 			},
 			s = {
 				"<cmd>lua require'telescope'.extensions.luasnip.luasnip(require('telescope.themes').get_cursor({}))<cr>",
@@ -282,6 +277,7 @@ M.config = function()
 		--Whichkey-g
 		g = {
 			name = "Git",
+			g = { "Lazygit"},
 			j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 			t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle blame" },
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -477,7 +473,7 @@ M.config = function()
 			},
 			j = {
 				"<cmd>lua require'telescope.builtin'.jumplist(require('telescope.themes').get_dropdown({}))<cr>",
-				"jumplist",
+				"Jumplist",
 			},
 			R = { "<cmd>Telescope registers<cr>", "Registers" },
 			g = {
@@ -490,7 +486,7 @@ M.config = function()
 			},
 			n = {
 				"<cmd>lua require('user.telescope').find_note()<cr>",
-				"note",
+				"Notes",
 			},
 			s = {
 				"<cmd>lua require'telescope'.extensions.luasnip.luasnip(require('telescope.themes').get_cursor({}))<cr>",
