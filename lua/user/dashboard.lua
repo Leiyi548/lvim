@@ -38,7 +38,7 @@ M.config = function()
 		val =" 今天是周" .. date,
 		opts = {
 			position = "center",
-			hl = "String",
+			hl = "Whichkey",
 		},
 	}
 
@@ -49,7 +49,8 @@ M.config = function()
 		val = fortune(),
 		opts = {
 			position = "center",
-			hl = "Comment",
+			-- hl = "Comment",
+			hl = "String",
 		},
 	}
 
@@ -84,14 +85,14 @@ M.config = function()
 	local buttons = {
 		type = "group",
 		val = {
-			button("f", "   Find File ", ":Telescope find_files<CR>"),
-			button("n", "    New file", ":ene <BAR> startinsert <CR>"), -- 
-			button("w", "   Find word", "<cmd>Telescope live_grep<CR>"),
-			button("p", "   Recent Projects", ":Telescope projects<CR>"),
-			button("r", "   Recent Files", ":Telescope oldfiles<CR>"),
+			button("f", "   Find File ", ":Telescope find_files<cr>"),
+			button("n", "    New file", ":ene <BAR> startinsert <cr>"), -- 
+			button("w", "   Find word", "<cmd>Telescope live_grep<cr>"),
+			button("p", "   Recent Projects", ":Telescope projects<cr>"),
+			button("r", "   Recent Files", ":Telescope oldfiles<cr>"),
 			button("c", "   Colorscheme", "<cmd>luafile" .. "~/.config/lvim/lua/user/colors.lua" .. "<cr>"),
-			button("o", "   Configure", ":e ~/.config/lvim/config.lua <CR>"),
-			button("q", "   Quit", ":q<CR>"),
+			button("o", "   Configure", ":e ~/.config/lvim/config.lua <cr>"),
+			button("q", "   Quit", ":q<cr>"),
 		},
 		opts = {
 			spacing = 1,
@@ -108,7 +109,7 @@ M.config = function()
 
 	local opts = {
 		layout = {
-			{ type = "padding", val = 1 },
+			{ type = "padding", val = 3 },
 			section.header,
 			{ type = "padding", val = 2 },
 			section.heading,
