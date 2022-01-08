@@ -73,7 +73,7 @@ local default_colors = {
 	bg = "#007acc",
 	bg_alt = "#007acc",
 	fg = "#d4d4d4",
-	yellow = "#dcdcaa",
+	yellow = "#ECBE7B", -- #dcdcaa
 	yellow_orange = "#d7ba7d",
 	cyan = "#4ec9b0",
 	light_blue = "#9cdcfe",
@@ -136,6 +136,7 @@ M.config = function()
 	local config = {
 		options = {
 			icons_enabled = false,
+      theme = "auto",
 			-- Disable sections and component separators
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
@@ -271,7 +272,6 @@ M.config = function()
 			-- auto change color according to neovims mode
 			-- vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
 			return mode()
-			-- return ""
 		end,
 
 		-- color = { fg = colors.red },
@@ -409,7 +409,7 @@ M.config = function()
 		-- left_padding = 0,
 		-- right_padding = 0,
 		-- color = { fg = colors.fg, bg = colors.bg },
-		color = {},
+		color = { fg = colors.yellow},
 		cond = nil,
 	})
 
