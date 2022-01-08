@@ -167,9 +167,9 @@ M.config = function()
 				},
 				{
 					"filename",
+          file_status = true,      -- Displays file status (readonly status, modified status)
 					color = {},
 					cond = conditions.buffer_not_empty,
-					-- color = { fg = colors.fg, gui = "bold" },
 				},
 			},
 			lualine_x = {},
@@ -218,10 +218,9 @@ M.config = function()
 				info = kind.icons.info,
 				hint = kind.icons.hint,
 			},
-			sections = { "error", "warn" },
 			-- sections = {'error', 'warn', 'info', 'hint'},
-			-- cond = conditions.hide_in_width,
-			colored = false,
+			sections = { "error", "warn" },
+			colored = true,
 			color = {},
 			always_visible = true,
 			padding = { left = 2, right = 2 },

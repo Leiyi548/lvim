@@ -1,11 +1,11 @@
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
--- general
 lvim.lint_on_save = false
 lvim.format_on_save = false
 lvim.debug = false
 lvim.log.level = "warn"
 lvim.lsp.automatic_servers_installation = true
 
+-- builtin
+-- =========================================
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.ZFvim = { active = false } -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
