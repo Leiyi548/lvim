@@ -133,7 +133,7 @@ M.config = function()
 			-- Disable sections and component separators
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
-			disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" },
+			disabled_filetypes = { "dashboard", "Outline", "alpha", "NvimTree" },
 		},
 		sections = {
 			-- these are to remove the defaults
@@ -188,25 +188,16 @@ M.config = function()
 
 	ins_left({
 		function()
-			return "  "
+			return ""
 		end,
 		cond = conditions.check_git_workspace,
-		-- color = { fg = colors.fg }, -- Sets highlighting of component
 		color = {},
-		-- padding = 1,
 		left_padding = 1,
 	})
 	ins_left({
 		"b:gitsigns_head",
-		-- color = "LualineBranchMode",
 		cond = conditions.check_git_workspace,
-		-- function()
-		--   return "▊"
-		-- end,
-		-- -- color = "LualineMode",
-		-- color = { fg = colors.fg }, -- Sets highlighting of component
 		color = {},
-		-- left_padding = 0, -- We don't need space before this
 		padding = 0,
 	})
 
@@ -257,13 +248,8 @@ M.config = function()
 	ins_left({
 		-- mode component
 		function()
-			-- auto change color according to neovims mode
-			-- vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
 			return mode()
 		end,
-
-		-- color = { fg = colors.red },
-		-- color = "LualineMode",
 		color = {},
 		padding = { left = 0, right = 0 },
 		always_visible = true,
@@ -285,10 +271,10 @@ M.config = function()
 			end
 			return ""
 		end,
-		-- color = { fg = colors.fg },
 		color = {},
 		cond = conditions.hide_in_width,
 	})
+
 	ins_left({
 		provider = function()
 			return testing()
@@ -305,6 +291,7 @@ M.config = function()
 			hl = { fg = colors.fg },
 		},
 	})
+
 	ins_left({
 		provider = function()
 			if vim.g.using_persistence then
@@ -343,7 +330,6 @@ M.config = function()
 			return "" -- """
 		end,
 		color = {},
-		-- color = { fg = colors.fg },
 	})
 
 	ins_right({
@@ -356,25 +342,32 @@ M.config = function()
 			removed = { fg = colors.red },
 		},
 		color = {},
-		-- cond = conditions.hide_in_width,
 		cond = nil,
 	})
 	ins_right({
 		function()
-			return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
+			if next(vim.treesitter.highlighter.active) then
+				return "  "
+			end
+			return ""
 		end,
-		-- cond = conditions.hide_in_width,
-		always_visible = true,
-		-- color = { fg = colors.fg, bg = colors.bg },
-		color = {},
+		padding = 0,
+		color = { fg = colors.green },
+		cond = conditions.hide_in_width,
 	})
 
 	ins_right({
-		"location",
-		padding = 0,
-		-- left_padding = 0,
-		-- right_padding = 0,
-		-- color = { fg = colors.fg },
+		function()
+			return "Spaces:" .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
+		end,
+		always_visible = true,
+		color = {},
+	})
+
+
+	ins_right({
+		"encoding",
+		cond = conditions.hide_in_width,
 		color = {},
 	})
 
@@ -383,6 +376,12 @@ M.config = function()
 		cond = conditions.hide_in_width,
 		color = {},
 		icon = "",
+	})
+
+	ins_right({
+		"location",
+		padding = 0,
+		color = { fg = colors.yellow },
 	})
 
 	ins_right({
@@ -395,17 +394,11 @@ M.config = function()
 			return chars[index]
 		end,
 		padding = 1,
-		-- left_padding = 0,
-		-- right_padding = 0,
-		-- color = { fg = colors.fg, bg = colors.bg },
 		color = { fg = colors.yellow },
 		cond = nil,
 	})
 
 	-- Now don't forget to initialize lualine
-	lvim.builtin.lualine.options.theme = nil
-	require("lvim.core.lualine.styles").update()
-	require("lvim.core.lualine.utils").validate_theme()
 	lvim.builtin.lualine.options = config.options
 	lvim.builtin.lualine.sections = config.sections
 	lvim.builtin.lualine.inactive_sections = config.inactive_sections
