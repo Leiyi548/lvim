@@ -53,7 +53,7 @@ M.config = function()
 	lvim.keys.insert_mode["<C-a>"] = "<HOME>"
 	lvim.keys.insert_mode["<C-e>"] = "<END>"
 	lvim.keys.insert_mode["<C-b>"] = "<LEFT>"
-  -- quickcopy
+	-- quickcopy
 	lvim.keys.insert_mode["<C-f>"] = "<RIGHT>"
 	lvim.keys.normal_mode["Y"] = "y$"
 	lvim.keys.normal_mode["<leader>Y"] = 'gg"+yG'
@@ -68,12 +68,12 @@ M.config = function()
    ]])
 	-- HTML preview in Google Chrome
 	-- =========================================
-  lvim.keys.normal_mode["<M-b>"] = "<cmd>AsyncTask Application<cr>"
-  lvim.keys.insert_mode["<M-b>"] = "<cmd>AsyncTask Application<cr>"
+	lvim.keys.normal_mode["<M-b>"] = "<cmd>AsyncTask Application<cr>"
+	lvim.keys.insert_mode["<M-b>"] = "<cmd>AsyncTask Application<cr>"
 	-- Neogen
 	-- =========================================
-  lvim.keys.normal_mode["<C-]>"] = "<cmd>lua require('neogen').jump_next()<CR>"
-	-- hop
+	lvim.keys.normal_mode["<C-]>"] = "<cmd>lua require('neogen').jump_next()<CR>"
+	-- HOP
 	-- =========================================
 	lvim.keys.normal_mode["E"] = "<cmd>HopChar1<cr>"
 	lvim.keys.visual_mode["E"] = "<cmd>HopChar1<cr>"
@@ -138,6 +138,12 @@ M.config = function()
 		lvim.keys.visual_mode["<C-k>"] = "<CMD>lua require('Navigator').up()<cr>"
 		lvim.keys.visual_mode["<C-l>"] = "<CMD>lua require('Navigator').right()<cr>"
 	end
+	-- Harpoon
+	-- =========================================
+	-- lvim.keys.normal_mode["tu"] = "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>"
+	-- lvim.keys.normal_mode["te"] = "<cmd>lua require('harpoon.term').gotoTerminal(2)<CR>"
+	-- lvim.keys.normal_mode["cu"] = "<cmd>lua require('harpoon.term').sendCommand(1, 1)<CR>"
+	-- lvim.keys.normal_mode["ce"] = "<cmd>lua require('harpoon.term').sendCommand(1, 2)<CR>"
 	-- Whichkey
 	-- =========================================
 	lvim.builtin.which_key.vmappings = {
@@ -148,20 +154,27 @@ M.config = function()
 			s = { "<cmd>HopChar1<cr>", "search by char1" },
 			w = { "<cmd>HopWord<cr>", "search word" },
 			l = { "<cmd>HopLine<cr>", "search line" },
-      v = { "<cmd>lua require('user.telescope').grep_string_visual()<cr>","search visual word"}
+			v = { "<cmd>lua require('user.telescope').grep_string_visual()<cr>", "search visual word" },
 		},
 		y = { name = "CopyClipboard" },
 		p = { name = "Paste" },
 	}
 	lvim.builtin.which_key.mappings = {
 		[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
+    ["<Space>"] = {"<cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>","Harpoon"},
+		["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add Mark" },
 		["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 		["u"] = { "<cmd>UndotreeToggle<cr>", "Undotree" },
+		["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 		-- ["o"] = { "<cmd>Vista!!<cr>","Outline"},
 		["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" },
 		["Y"] = { "CopyAll" },
 		["y"] = { "CopyClipboard" },
-		["z"] = { "<cmd>ZenMode<cr>","ZenMode" },
+		["z"] = { "<cmd>ZenMode<cr>", "ZenMode" },
+		["1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
+		["2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
+		["3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
+		["4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
 		b = {
 			name = "Buffers",
 			j = { "<cmd>BufferPick<cr>", "Jump" },
@@ -277,7 +290,7 @@ M.config = function()
 		--Whichkey-g
 		g = {
 			name = "Git",
-			g = { "Lazygit"},
+			g = { "Lazygit" },
 			j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 			t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle blame" },
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },

@@ -25,36 +25,47 @@ lvim.builtin.fancy_number = { active = false } -- change to true if you want fan
 lvim.builtin.orginal_lsp = { active = false } -- orginal lsp diagnostic
 lvim.builtin.fancy_telescope = { active = true } -- use orginal telescope
 lvim.builtin.fancy_mark = { active = false } -- enable use marks.nvim plugins
-lvim.builtin.neogen = {active = true } -- enable use neogen to comment function
+lvim.builtin.neogen = { active = true } -- enable use neogen to comment function
+lvim.builtin.harpoon = { active = true } -- enable use harpoon to navigation file
 
 -- Customization
 -- =========================================
 require("user.luasnipConfig")
+
 -- Textobjects
-vim.cmd([[source ~/.config/lvim/textobjects.vim]])
--- Lvim builtin setting
+-- =========================================
+vim.cmd([[source ~/.config/lvim/textobjects.vim]]) -- Lvim builtin setting
+
+-- Lvim buitlin
+-- =========================================
 require("user.builtin").config()
 
 if lvim.builtin.lualineVscode.active then
 	require("user.lualineVscode").config()
 end
+
 -- Additional Plugins
 -- =========================================
 require("user.plugins").config()
+
 -- Options
 -- =========================================
 require("user.options").config()
+
 -- Additional keybindings
 -- =========================================
 require("user.keybindings").config()
+
 -- Autocommands
 -- =========================================
 require("user.autocommands").config()
+
 -- Language override
 -- =========================================
 lvim.lsp.override = vim.tbl_filter(function(name)
-  return name ~= "emmet_ls"
+	return name ~= "emmet_ls"
 end, lvim.lsp.override)
+
 -- Colorscheme
 -- =========================================
 require("user.lvimColorScheme")

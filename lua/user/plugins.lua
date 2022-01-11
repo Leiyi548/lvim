@@ -486,7 +486,8 @@ M.config = function()
 			disable = not lvim.builtin.fancy_bufferline.active,
 		},
 		{
-			"simrat39/symbols-outline.nvim",
+			"zeertzjq/symbols-outline.nvim",
+      branch = "patch-1",
 			setup = function()
 				require("user.symbols_outline").config()
 			end,
@@ -520,6 +521,10 @@ M.config = function()
 			end,
 			cmd = { "Twilight" },
 		},
+    {
+      "ThePrimeagen/harpoon",
+      disable = not lvim.builtin.harpoon.active,
+    },
 	}
 end
 return M

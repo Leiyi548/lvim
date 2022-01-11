@@ -220,7 +220,7 @@ M.config = function()
 			},
 			-- sections = {'error', 'warn', 'info', 'hint'},
 			sections = { "error", "warn" },
-			colored = true,
+			colored = false,
 			color = {},
 			always_visible = true,
 			padding = { left = 2, right = 2 },
