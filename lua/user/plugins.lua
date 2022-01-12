@@ -323,6 +323,7 @@ M.config = function()
 					post_hook = nil, -- Function to run after the scrolling animation ends
 				})
 			end,
+      disable = not lvim.builtin.neoscroll.active,
 		},
 		{
 			"ZSaberLv0/ZFVimIM",

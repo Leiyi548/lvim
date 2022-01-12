@@ -27,6 +27,7 @@ lvim.builtin.fancy_telescope = { active = true } -- use orginal telescope
 lvim.builtin.fancy_mark = { active = false } -- enable use marks.nvim plugins
 lvim.builtin.neogen = { active = true } -- enable use neogen to comment function
 lvim.builtin.harpoon = { active = true } -- enable use harpoon to navigation file
+lvim.builtin.neoscroll = { active = false } -- enable use neoscroll if you want to use neoscroll
 
 -- Customization
 -- =========================================
