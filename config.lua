@@ -19,7 +19,7 @@ lvim.builtin.easy_align = { active = false } -- change to true if you want easy_
 lvim.builtin.tabnine = { active = true } -- change to true if you want tabnine
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
 lvim.builtin.dap.active = false
-lvim.builtin.notify.active = true
+lvim.builtin.notify.active = false
 lvim.builtin.tmuxNavigator = { active = true } -- enable use tmuxNavigator
 lvim.builtin.fancy_number = { active = false } -- change to true if you want fancy number
 lvim.builtin.orginal_lsp = { active = false } -- orginal lsp diagnostic

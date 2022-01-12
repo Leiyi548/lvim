@@ -27,25 +27,40 @@ M.config = function()
 		native_menu = false,
 		-- custom_menu = true,
 	}
-	lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
+	-- lvim.builtin.cmp.formatting.source_names = {
+	-- 	buffer = "  ", -- ﬘     "[Buf]" 
+	-- 	nvim_lsp = "  ",
+	-- 	luasnip = "  ", -- "(LuaSnip)"
+	-- 	org = "[Org]",
+	-- 	treesitter = "  ",
+	-- 	nvim_lua = "  ", -- "(NvLua)"
+	-- 	spell = " 暈",
+	-- 	look = "  ",
+	-- 	emoji = "  ",
+	-- 	path = "  ", -- 率
+	-- 	calc = "  ", -- 
+	-- 	cmp_tabnine = " ﮧ ", -- "  "
+	-- 	tmux = "[tmux]", -- 
+	-- }
 	lvim.builtin.cmp.formatting.source_names = {
-		buffer = "  ", -- ﬘     "[Buf]" 
-		nvim_lsp = "  ",
-		luasnip = "  ", -- "(LuaSnip)"
-		org = "[Org]",
+		buffer = "[BUF]", -- ﬘     "[Buf]" 
+		nvim_lsp = "[LSP]",
+		luasnip = "[SNIP]", -- "(LuaSnip)"
+		org = "[ORG]",
 		treesitter = "  ",
-		nvim_lua = "  ", -- "(NvLua)"
+		nvim_lua = "[NVLUA]", -- "(NvLua)"
 		spell = " 暈",
 		look = "  ",
 		emoji = "  ",
-		path = "  ", -- 率
+		path = "[PATH]", -- 率
 		calc = "  ", -- 
-		cmp_tabnine = " ﮧ ", -- "  "
-		tmux = "[tmux]", -- 
+		cmp_tabnine = "[Tabnine]", -- "  "
+		tmux = "[TMUX]", -- 
 	}
 	require("cmp").setup.cmdline(":", { sources = { { name = "cmdline" } } })
 	-- fancy_cmp
 	if lvim.builtin.fancy_cmp.active then
+		lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
 		lvim.builtin.cmp.formatting.source_names = {
 			buffer = "[BUF]", -- ﬘     "[Buf]" 
 			nvim_lsp = "[LSP]",
@@ -137,7 +152,7 @@ M.config = function()
 	lvim.builtin.lualine.active = true
 	lvim.builtin.lualine.style = "lvim" -- lvim default
 	lvim.builtin.lualine.options.theme = "auto"
-  lvim.builtin.lualine.options.disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" }
+	lvim.builtin.lualine.options.disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" }
 
 	-- Comment.nvim
 	-- =========================================
@@ -346,7 +361,7 @@ M.config = function()
 	-- Terminal
 	-- =========================================
 	lvim.builtin.terminal.active = true
-  lvim.builtin.terminal.open_mapping = [[<C-t>]]
+	lvim.builtin.terminal.open_mapping = [[<C-t>]]
 	lvim.builtin.terminal.close_on_exit = false
 	-- lvim.builtin.terminal.hide_numbers = false
 	-- horizontal_size
