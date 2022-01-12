@@ -9,12 +9,12 @@ lvim.lsp.automatic_servers_installation = true
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.ZFvim = { active = false } -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
-lvim.builtin.lualineVscode = { active = true } -- enable if you want to use lualine style like vscode
+lvim.builtin.lualineVscode = { active = false } -- enable if you want to use lualine style like vscode
 lvim.builtin.fancy_bufferline = { active = true } -- enable/disable fancy bufferline
 lvim.builtin.bufferline.active = not lvim.builtin.fancy_bufferline.active
 lvim.builtin.fancy_rename = { active = true } -- enable open like vscode rename style
 lvim.builtin.fancy_dashboard = { active = true } --change to true if you want to fancy_dashboard
-lvim.builtin.fancy_cmp = { active = true } -- enable open fancy_cmp style
+lvim.builtin.fancy_cmp = { active = false } -- enable open fancy_cmp style
 lvim.builtin.easy_align = { active = false } -- change to true if you want easy_align
 lvim.builtin.tabnine = { active = true } -- change to true if you want tabnine
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
@@ -43,6 +43,7 @@ require("user.builtin").config()
 if lvim.builtin.lualineVscode.active then
 	require("user.lualineVscode").config()
 end
+require("user.lualine")
 
 -- Additional Plugins
 -- =========================================

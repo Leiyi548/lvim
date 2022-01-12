@@ -31,12 +31,11 @@ local dotfiles = function(opts)
 		}),
 		layout_strategy = "vertical",
 		layout_config = {
-			height = 0.3,
-			width = 0.8,
+			width = 0.3,
+			height = 0.8,
 			prompt_position = "top",
-			--prompt_position = 'bottom'
 		},
-		previewer = conf.file_previewer(opts),
+		-- previewer = conf.file_previewer(opts),
 		sorter = conf.file_sorter(opts),
 	}):find()
 end

@@ -161,7 +161,7 @@ M.config = function()
 	}
 	lvim.builtin.which_key.mappings = {
 		[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
-    ["<Space>"] = {"<cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>","Harpoon"},
+    -- ["<Space>"] = {"<cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>","Harpoon"},
 		["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add Mark" },
 		["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 		["u"] = { "<cmd>UndotreeToggle<cr>", "Undotree" },
@@ -171,10 +171,10 @@ M.config = function()
 		["Y"] = { "CopyAll" },
 		["y"] = { "CopyClipboard" },
 		["z"] = { "<cmd>ZenMode<cr>", "ZenMode" },
-		["1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
-		["2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
-		["3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
-		["4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
+		-- ["1"] = { "<CMD>lua require('harpoon.ui').nav_file(1)<CR>", "goto1" },
+		-- ["2"] = { "<CMD>lua require('harpoon.ui').nav_file(2)<CR>", "goto2" },
+		-- ["3"] = { "<CMD>lua require('harpoon.ui').nav_file(3)<CR>", "goto3" },
+		-- ["4"] = { "<CMD>lua require('harpoon.ui').nav_file(4)<CR>", "goto4" },
 		b = {
 			name = "Buffers",
 			j = { "<cmd>BufferPick<cr>", "Jump" },
@@ -199,7 +199,7 @@ M.config = function()
 				"Sort by language",
 			},
 		},
-		--Whichkey-p
+		-- Whichkey-p
 		p = {
 			name = "Packer",
 			c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -210,14 +210,14 @@ M.config = function()
 			s = { "<cmd>PackerSync<cr>", "Sync" },
 			u = { "<cmd>PackerUpdate<cr>", "Update" },
 		},
-		--Whichkey-r
+		-- Whichkey-r
 		r = {
 			name = "Run",
 			a = { "<cmd>RnvimrToggle<cr>", "Ranger" },
 			r = { "<cmd>AsyncTask file-run<cr>", "Run on Terminal" },
 			f = { "<cmd>AsyncTask file-run-floaterm<cr>", "Run on floaterm" },
 		},
-		--Whichkey-F
+		-- Whichkey-F
 		F = {
 			name = "Custom Find",
 			i = { "<cmd>lua require('user.telescope').installed_plugins()<cr>", "Installed Plugins" },
