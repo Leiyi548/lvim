@@ -161,7 +161,7 @@ M.config = function()
 	}
 	lvim.builtin.which_key.mappings = {
 		[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
-    ["<Space>"] = {"<cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>","Harpoon"},
+		["<Space>"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon" },
 		["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add Mark" },
 		["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 		["u"] = { "<cmd>UndotreeToggle<cr>", "Undotree" },
@@ -468,7 +468,7 @@ M.config = function()
 			c = { "<cmd>luafile" .. "~/.config/lvim/lua/user/colors.lua" .. "<cr>", "Colorscheme" },
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
 			d = {
-				"<cmd>lua require'telescope'.extensions.dotfiles.dotfiles(require('telescope.themes').get_dropdown({}))<cr>",
+				"<cmd>lua require('user.telescope').findDotfile()<cr>",
 				"Dotfiles",
 			},
 			-- e = { "<cmd>Telescope emoji<cr>", "emoji" },

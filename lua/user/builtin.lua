@@ -354,7 +354,7 @@ M.config = function()
 		end,
 		find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
 	}
-	require("telescope").load_extension("dotfiles")
+	-- require("telescope").load_extension("dotfiles")
 	-- require("telescope").load_extension('emoji')
 	-- require("telescope").load_extension("file_create")
 	require("telescope").load_extension("luasnip")
