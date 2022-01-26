@@ -48,9 +48,9 @@ M.config = function()
 		{
 			"lunarvim/darkplus.nvim",
 		},
-    {
-      'rmehri01/onenord.nvim'
-    },
+		{
+			"rmehri01/onenord.nvim",
+		},
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y", "s", "S" },
@@ -258,9 +258,9 @@ M.config = function()
 				vim.g.rnvimr_draw_border = 1
 				--Make Ranger to be hidden after picking a file
 				vim.g.rnvimr_pick_enable = 0
-        -- Add a shadow window, value is equal to 100 will disable shadow
-        vim.g.rnvimr_shadow_winblend = 70
-        vim.cmd([[source ~/.config/lvim/lua/user/rnvimr.vim]])
+				-- Add a shadow window, value is equal to 100 will disable shadow
+				vim.g.rnvimr_shadow_winblend = 70
+				vim.cmd([[source ~/.config/lvim/lua/user/rnvimr.vim]])
 			end,
 		},
 		{
@@ -323,7 +323,7 @@ M.config = function()
 					post_hook = nil, -- Function to run after the scrolling animation ends
 				})
 			end,
-      disable = not lvim.builtin.neoscroll.active,
+			disable = not lvim.builtin.neoscroll.active,
 		},
 		{
 			"ZSaberLv0/ZFVimIM",
@@ -396,13 +396,13 @@ M.config = function()
 			config = function()
 				require("neogen").setup({
 					enabled = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
-          input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
+					input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
 				})
 			end,
 			ft = { "lua", "python", "javascript", "typescriptreact", "c", "cpp", "go", "java" },
 			event = "InsertEnter",
 			requires = "nvim-treesitter/nvim-treesitter",
-      disable = not lvim.builtin.neogen.active
+			disable = not lvim.builtin.neogen.active,
 		},
 		{
 			"junegunn/vim-easy-align",
@@ -488,7 +488,7 @@ M.config = function()
 		},
 		{
 			"zeertzjq/symbols-outline.nvim",
-      branch = "patch-1",
+			branch = "patch-1",
 			setup = function()
 				require("user.symbols_outline").config()
 			end,
@@ -522,10 +522,13 @@ M.config = function()
 			end,
 			cmd = { "Twilight" },
 		},
-    {
-      "ThePrimeagen/harpoon",
-      disable = not lvim.builtin.harpoon.active,
-    },
+		{
+			"ThePrimeagen/harpoon",
+			disable = not lvim.builtin.harpoon.active,
+		},
+		{
+			"nathom/filetype.nvim",
+		}
 	}
 end
 return M

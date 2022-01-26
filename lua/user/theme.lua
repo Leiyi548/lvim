@@ -5,7 +5,7 @@
 -- Set variant
 -- Defaults to 'dawn' if vim background is light
 -- @usage 'base' | 'moon' | 'dawn' | 'rose-pine[-moon][-dawn]'
-vim.g.rose_pine_variant = "base"
+vim.g.rose_pine_variant = "moon"
 -- Disable italics
 vim.g.rose_pine_disable_italics = false
 -- Use terminal background
@@ -38,7 +38,7 @@ vim.g.vscode_italic_comment = 1
 --━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 -- Github:    https://github.com/folke/tokyonight.nvim
 -- Example config in Lua
-vim.g.tokyonight_style = "day" -- storm night day
+vim.g.tokyonight_style = "storm" -- storm night day
 vim.g.tokyonight_cterm_colors = false
 vim.g.tokyonight_terminal_colors = true
 -- Make comments italic

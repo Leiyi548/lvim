@@ -8,8 +8,12 @@ M.config = function()
 		{ "FileType", "quickfix", "nnoremap <silent> <buffer> q :q<cr>" },
 		-- dashboard
 		-- { "FileType", "alpha", "nnoremap <silent> <buffer> q :q<CR>" },
+		{ "FileType", "alpha", "nnoremap <silent> <buffer> q :q<CR>" },
 	}
 end
+vim.cmd([[
+     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
+]])
 if lvim.builtin.fancy_number.active then
 	vim.cmd([[
     augroup numbertoggle
