@@ -1,5 +1,5 @@
 lvim.lint_on_save = false
-lvim.format_on_save = false
+lvim.format_on_save = true
 lvim.debug = false
 lvim.log.level = "warn"
 lvim.lsp.automatic_servers_installation = true
@@ -28,7 +28,7 @@ lvim.builtin.fancy_mark = { active = false } -- enable use marks.nvim plugins
 lvim.builtin.neogen = { active = true } -- enable use neogen to comment function
 lvim.builtin.harpoon = { active = true } -- enable use harpoon to navigation file
 lvim.builtin.neoscroll = { active = false } -- enable use neoscroll if you want to use neoscroll
-lvim.builtin.fancy_f = {active  = false} -- enable to open hop f F
+lvim.builtin.fancy_f = { active = false } -- enable to open hop f F
 
 -- Customization
 -- =========================================

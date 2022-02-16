@@ -71,7 +71,7 @@ M.config = function()
 			end,
 			ft = "markdown",
 			config = function()
-				vim.g.mkdp_markdown_css = "~/.config/nvim/colorscheme/markdown.css"
+				vim.g.mkdp_markdown_css = "~/.config/lvim/markdown.css"
 				vim.g.mkdp_auto_close = 0
 				vim.cmd([[
     source ~/.config/lvim/md-snippets.vim
@@ -161,7 +161,7 @@ M.config = function()
 			end,
 		},
 
-		--orgmode.nvim
+		-- orgmode.nvim
 		{
 			"nvim-orgmode/orgmode.nvim",
 			keys = { "go", "gC" },
@@ -528,7 +528,7 @@ M.config = function()
 		},
 		{
 			"nathom/filetype.nvim",
-		}
+		},
 	}
 end
 return M
