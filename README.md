@@ -1,4 +1,4 @@
-# lvim-config
+# lvim
 
 我现在用的[lunarvim](https://github.com/LunarVim/LunarVim)这是别人 github 项目地址\
 我参考的 lvim 配置是另一个大佬他的[配置](https://github.com/abzcoding/lvim)
@@ -9,9 +9,9 @@
 ![photo2](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020192604.png)
 ![photo3](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211020192658.png)
 ![photo4](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124202856.png)
-![photo5](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203004.png) 
-![photo6](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203056.png) 
-![photo7](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203159.png) 
+![photo5](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203004.png)
+![photo6](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203056.png)
+![photo7](https://gitee.com/gu-shenwei666/blogimg/raw/master/image/20211124203159.png)
 
 ## Install
 
@@ -50,7 +50,7 @@ brew search nerd-font
   curl -Ls https://raw.githubusercontent.com/daipeihust/im-select/master/install_mac.sh | sh  # install im-select
 ```
 
-- 去github安装[Neovim](https://github.com/neovim/neovim)
+- 去 github 安装[Neovim](https://github.com/neovim/neovim)
 
 ```shell
 例子:
@@ -81,11 +81,11 @@ brew install golangci-lint
 brew upgrade golangci-lint
 npm install gofmt
 npm install eslint
-Lua 
-brew install luarocks 
+Lua
+brew install luarocks
 luarocks install luacheck # lint
 brew install stylua #formatter
-Typescript 
+Typescript
 brew install eslint
 ```
 
@@ -289,6 +289,5 @@ Note that,
 | <kbd>Shift</kbd>+<kbd>left/right</kbd> |  𝐍   | 选中区域并进入 visual-multi-mode                                                                  |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>           |  𝐍   | 在当前位置插入一个光标（然后使用上下左右键移动到指定未知添加下一个光标，hjkl 键会移动添加的光标） |
 | <kbd>Ctrl</kbd>+<kbd>down/up</kbd>     |  𝐍   | 垂直方向插入多光标                                                                                |
-
 
 </details>
