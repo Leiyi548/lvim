@@ -510,27 +510,6 @@ M.config = function()
 			},
 		}
 	end
-	local Terminal = require("toggleterm.terminal").Terminal
-	local toggle_horizontal = function()
-		local horizontal = Terminal:new({
-			direction = "horizontal",
-			float_opts = { border = "double" },
-			on_open = function(term)
-				vim.cmd("startinsert!")
-				vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-			end,
-			---@diagnostic disable-next-line: unused-local
-			-- on_close = function(term)
-			-- 	vim.cmd("Closing terminal")
-			-- end,
-		})
-		horizontal:toggle()
-	end
-	lvim.builtin.which_key.mappings.t = {
-		name = "Terminal",
-		t = { toggle_horizontal, "Terminal" },
-	}
-
 	function WhichkeyMarkdown()
 		lvim.builtin.which_key.mappings["o"] = {
 			"<cmd>Vista!!<cr>",

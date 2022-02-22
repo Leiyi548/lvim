@@ -298,6 +298,7 @@ M.config = function()
         autocmd BufRead,BufNewFile *.md setlocal spell
         ]])
 			end,
+			disable = true,
 		},
 		{
 			"Pocco81/AutoSave.nvim",
@@ -478,14 +479,14 @@ M.config = function()
 			branch = "master",
 			event = "BufWrite",
 		},
-		{
-			"akinsho/bufferline.nvim",
-			config = function()
-				require("user.bufferlineConfig").config()
-			end,
-			requires = "nvim-web-devicons",
-			disable = not lvim.builtin.fancy_bufferline.active,
-		},
+		-- {
+		-- 	"akinsho/bufferline.nvim",
+		-- 	config = function()
+		-- 		require("user.bufferlineConfig").config()
+		-- 	end,
+		-- 	requires = "nvim-web-devicons",
+		-- 	disable = not lvim.builtin.fancy_bufferline.active,
+		-- },
 		{
 			"zeertzjq/symbols-outline.nvim",
 			branch = "patch-1",

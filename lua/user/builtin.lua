@@ -208,37 +208,6 @@ M.config = function()
 			"markdown",
 		},
 	}
-	lvim.builtin.treesitter.query_linter = {
-		enable = true,
-		use_virtual_text = true,
-		lint_events = { "BufWrite", "CursorHold" },
-	}
-	lvim.builtin.treesitter.on_config_done = function()
-		local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-		parser_config.solidity = {
-			install_info = {
-				url = "https://github.com/JoranHonig/tree-sitter-solidity",
-				files = { "src/parser.c" },
-				requires_generate_from_grammar = true,
-			},
-			filetype = "solidity",
-		}
-		parser_config.jsonc.used_by = "json"
-		parser_config.markdown = {
-			install_info = {
-				url = "https://github.com/ikatyang/tree-sitter-markdown",
-				files = { "src/parser.c", "src/scanner.cc" },
-			},
-		}
-		parser_config.org = {
-			install_info = {
-				url = "https://github.com/milisims/tree-sitter-org",
-				revision = "main",
-				files = { "src/parser.c", "src/scanner.cc" },
-			},
-			filetype = "org",
-		}
-	end
 
 	lvim.builtin.treesitter.textobjects = {
 		lookahead = true,
