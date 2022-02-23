@@ -15,7 +15,7 @@ M.config = function()
 	-- run 保持终端
 	vim.api.nvim_set_keymap("t", "<esc>", "<C-\\><C-n>", { silent = true })
 	-- normal_mode
-	if lvim.builtin.fancy_bufferline.active then
+	if lvim.builtin.bufferline.active then
 		lvim.keys.normal_mode["<Tab>"] = "<cmd>BufferLineCycleNext<cr>"
 		lvim.keys.normal_mode["<S-Tab>"] = "<cmd>BufferLineCyclePrev<cr>"
 	end
@@ -440,7 +440,7 @@ M.config = function()
 		},
 	}
 	-- plugins keybindings
-	if lvim.builtin.fancy_bufferline.active then
+	if lvim.builtin.bufferline.active then
 		-- Whichkey-b
 		lvim.builtin.which_key.mappings.b = {
 			name = "Buffers",

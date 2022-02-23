@@ -9,8 +9,7 @@ lvim.lsp.automatic_servers_installation = true
 lvim.builtin.orgmode = { active = false } -- change to true if you want orgmode.nvim
 lvim.builtin.ZFvim = { active = false } -- change to ture if you want ZFvim
 lvim.builtin.autosave = { active = false } -- change to true if you want to autosave file
-lvim.builtin.lualineVscode = { active = true } -- enable if you want to use lualine style like vscode
-lvim.builtin.fancy_bufferline = { active = false } -- enable/disable fancy bufferline
+lvim.builtin.lualineVscode = { active = false } -- enable if you want to use lualine style like vscode
 lvim.builtin.fancy_rename = { active = true } -- enable open like vscode rename style
 lvim.builtin.fancy_dashboard = { active = true } --change to true if you want to fancy_dashboard
 lvim.builtin.fancy_cmp = { active = false } -- enable open fancy_cmp style
@@ -18,7 +17,7 @@ lvim.builtin.easy_align = { active = false } -- change to true if you want easy_
 lvim.builtin.tabnine = { active = false } -- change to true if you want tabnine
 lvim.builtin.dashboard.active = not lvim.builtin.fancy_dashboard.active
 lvim.builtin.dap.active = false
-lvim.builtin.notify.active = false
+lvim.builtin.notify.active = true
 lvim.builtin.tmuxNavigator = { active = true } -- enable use tmuxNavigator
 lvim.builtin.fancy_number = { active = false } -- change to true if you want fancy number
 lvim.builtin.orginal_lsp = { active = false } -- orginal lsp diagnostic
@@ -28,6 +27,7 @@ lvim.builtin.neogen = { active = true } -- enable use neogen to comment function
 lvim.builtin.harpoon = { active = true } -- enable use harpoon to navigation file
 lvim.builtin.neoscroll = { active = false } -- enable use neoscroll if you want to use neoscroll
 lvim.builtin.fancy_f = { active = false } -- enable to open hop f F
+lvim.builtin.symbol_outline = { active = false }
 
 -- Customization
 -- =========================================

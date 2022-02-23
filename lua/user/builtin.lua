@@ -21,7 +21,6 @@ M.config = function()
 		{ name = "spell", max_item_count = 3 },
 		{ name = "orgmode" },
 	}
-	lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 	lvim.builtin.cmp.experimental = {
 		ghost_text = true,
 		native_menu = false,
@@ -57,10 +56,10 @@ M.config = function()
 		cmp_tabnine = "[Tabnine]", -- "  "
 		tmux = "[TMUX]", -- 
 	}
+	lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
 	require("cmp").setup.cmdline(":", { sources = { { name = "cmdline" } } })
 	-- fancy_cmp
 	if lvim.builtin.fancy_cmp.active then
-		lvim.builtin.cmp.formatting.kind_icons = kind.cmp_kind
 		lvim.builtin.cmp.formatting.source_names = {
 			buffer = "[BUF]", -- ﬘     "[Buf]" 
 			nvim_lsp = "[LSP]",
@@ -135,6 +134,9 @@ M.config = function()
 		relative_time = true,
 	}
 
+	-- bufferline
+	-- =========================================
+	lvim.builtin.bufferline.options.always_show_bufferline = true
 	-- Notify
 	-- =========================================
 	-- vim.notify = require("notify")

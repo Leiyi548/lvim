@@ -148,7 +148,7 @@ M.config = function()
 			end,
 		},
 
-		--search file
+		-- search file
 		{
 			"phaazon/hop.nvim",
 			as = "hop",
@@ -489,12 +489,12 @@ M.config = function()
 		-- },
 		{
 			"zeertzjq/symbols-outline.nvim",
-			branch = "patch-1",
 			setup = function()
 				require("user.symbols_outline").config()
 			end,
 			ft = { "lua", "python", "java", "javascript", "c", "cpp" },
 			event = "BufReadPost",
+			disable = not lvim.builtin.symbol_outline.active,
 		},
 		{
 			"filipdutescu/renamer.nvim",
